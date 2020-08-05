@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import SplitPane, { Pane } from 'react-split-pane';
 import './styles/global.css';
 
-function App() {
+const App: React.FC = () => {
     const width = window.innerHeight;
     return (
         <>
@@ -15,6 +15,6 @@ function App() {
             </SplitPane>
         </>
     );
-}
+};
 
 export default App;
