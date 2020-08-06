@@ -1,7 +1,7 @@
 import { ControlledEditor } from '@monaco-editor/react';
 import React from 'react';
-import { initialVal } from 'templates';
-import { editorOptions } from 'utils/editorOptions';
+import { editorOptions } from 'utils/editor-options';
+import { initialVal } from 'utils/template';
 
 const CodeEditor: React.FC = () => {
     const [value, setValue] = React.useState(initialVal);
