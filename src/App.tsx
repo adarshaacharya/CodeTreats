@@ -1,5 +1,8 @@
-import * as React from 'react';
-import SplitPane, { Pane } from 'react-split-pane';
+import CodeEditor from 'components/CodeEditor';
+import ErrorField from 'components/ErrorField';
+import OutputField from 'components/OutputField';
+import React from 'react';
+import SplitPane from 'react-split-pane';
 import './styles/global.css';
 
 const App: React.FC = () => {
@@ -7,10 +10,10 @@ const App: React.FC = () => {
     return (
         <>
             <SplitPane split='vertical' defaultSize={width}>
-                <Pane />
+                <CodeEditor />
                 <SplitPane split='horizontal' defaultSize={'50%'}>
-                    <Pane />
-                    <Pane />
+                    <OutputField />
+                    <ErrorField />
                 </SplitPane>
             </SplitPane>
         </>
