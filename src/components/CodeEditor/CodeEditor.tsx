@@ -1,17 +1,12 @@
 import { ControlledEditor } from '@monaco-editor/react';
 import React from 'react';
+import { initialVal } from 'templates';
+import { editorOptions } from 'utils/editorOptions';
 
 const CodeEditor: React.FC = () => {
-    const theme = "dark"
-    const options = {
-        fontFamily: 'Dank Mono',
-        fontLigatures : true,
-        fontSize : '20px',
-        wordWrap : true,
-        minimap : {
-            enabled : false
-        }
-    };
+    const [value, setValue] = React.useState(initialVal);
+    const theme = 'dark';
+
     const handleEditorChange = () => {
         console.log('change editor');
     };
@@ -21,7 +16,8 @@ const CodeEditor: React.FC = () => {
             language='javascript'
             theme={theme}
             onChange={handleEditorChange}
-            options={options}
+            options={editorOptions}
+            value={value}
         />
     );
 };
