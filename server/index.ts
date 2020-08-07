@@ -1,17 +1,35 @@
-import express, { Request, Response } from 'express';
+import cors from 'cors';
+import { config } from 'dotenv';
+import express, { Express, Response } from 'express';
+import path from 'path';
 
-const app = express();
+if (process.env.NODE_ENV !== 'production') {
+    config();
+}
+
+const app: Express = express();
+app.set('env', process.env.NODE_ENV);
+
+// handle post request
+app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
+// Serve static addes in prod env
+if (process.env.NODE_ENV === 'production') {
+    // Set static folder
+    app.use('/', express.static(path.join(__dirname, 'client')));
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('hello wolrd');
-});
+    // index.html for all page routes
+    app.get('*', (_, res: Response): void => {
+        res.sendFile(path.resolve(__dirname, 'client', 'index.html'));
+    });
+}
 
-app.use((err: Error, req: Request, res: Response) => {
-  res.status(500).json({
-    message: err.message,
-  });
-});
+const hostname = 'localhost';
+const PORT = process.env.PORT || 4000;
 
-app.listen(3000, () => console.log('server running'));
+const handleListening = () =>
+    console.log(`✅  Listening on: http://${hostname}:${PORT}`);
+
+app.listen(PORT, handleListening);

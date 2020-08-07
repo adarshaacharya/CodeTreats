@@ -2,8 +2,8 @@
 
 Run Javascript code in browser.
 
-#### ⚡ Format Code :
+#### ⚡ Run Code :
 
 ```sh
-    yarn format
+    npm run dev
 ```
