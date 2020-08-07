@@ -4,20 +4,22 @@ import { editorOptions } from 'utils/editor-options';
 import { initialVal } from 'utils/template';
 
 const CodeEditor: React.FC = () => {
-    const [value, setValue] = React.useState(initialVal);
+    const [code, setCode] = React.useState(initialVal);
+
     const theme = 'dark';
 
-    const handleEditorChange = () => {
-        console.log('change editor');
+    const handleCodeChange = () => {
+        setCode(code);
     };
+
     return (
         <ControlledEditor
             height='100vh'
             language='javascript'
             theme={theme}
-            onChange={handleEditorChange}
+            onChange={handleCodeChange}
             options={editorOptions}
-            value={value}
+            value={code}
         />
     );
 };
