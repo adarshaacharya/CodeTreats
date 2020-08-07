@@ -1,10 +1,12 @@
 import Axios from 'axios';
 import { Request, Response } from 'express';
+import getExtension from '../utils/lang-to-extension';
 
 export const SubmitCode = async (req: Request, res: Response) => {
     try {
-        const { sourceCode } = req.body;
-        const uri = `https://run.glot.io/languages/python/latest/`;
+        const { sourceCode, language } = req.body;
+        const extension = getExtension(language);
+        const uri = `https://run.glot.io/languages/${language}/latest/`;
 
         const axiosConfig = {
             headers: {
@@ -13,16 +15,16 @@ export const SubmitCode = async (req: Request, res: Response) => {
                 'Content-type': 'application/json',
             },
         };
-        const attributes = {
+        const data = {
             files: [
                 {
-                    name: `main.py`,
+                    name: `main.${extension}`,
                     content: sourceCode,
                 },
             ],
         };
-        const output = await Axios.post(uri, attributes, axiosConfig);
-        res.status(200).send(output.data)
+        const output = await Axios.post(uri, data, axiosConfig);
+        res.status(200).json(output.data);
     } catch (err) {
         console.log(err.message);
         res.status(500).json({ msg: 'Server error' });
