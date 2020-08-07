@@ -13,7 +13,8 @@
     "server:build": "tsc -p tsconfig.prod.json",
     "client:build": "npm --prefix ./client run build && npm run client:move-build",
     "client:move-build": "ts-node utils/move-from-to.ts client/build prod/client",
-    "heroku-postbuild": "npm run server:build && npm run client:install && npm run client:build"
+    "heroku-postbuild": "npm run server:build && npm run client:install && npm run client:build",
+    "format": "prettier --write \"**/*.{ts, tsx, js, jsx}\""
   },
   "keywords": [
     "typescript",
@@ -41,6 +42,7 @@
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.4",
+    "prettier": "^2.0.5",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   }
