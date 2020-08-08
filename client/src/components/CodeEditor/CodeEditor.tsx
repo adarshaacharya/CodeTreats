@@ -3,12 +3,12 @@ import React from 'react';
 import { editorOptions } from 'utils/editor-options';
 
 type Props = {
-    handleSubmit: (code: string) => void;
     code: string;
-    handleChange: (ev: KeyboardEvent, value: string) => void;
+    handleChange: (ev: Object, value: string) => void;
+    handleSubmit: (code: string) => void;
 };
 
-const CodeEditor: React.FC<Props> = ({ handleSubmit, code, handleChange }) => {
+const CodeEditor: React.FC<Props> = ({ code, handleChange, handleSubmit }) => {
     const theme = 'dark';
 
     return (
@@ -19,9 +19,10 @@ const CodeEditor: React.FC<Props> = ({ handleSubmit, code, handleChange }) => {
                 theme={theme}
                 options={editorOptions}
                 value={code}
-                onChange={(e) => handleChange(e, code)}
+                onChange={(ev, code) => handleChange(ev, code!)}
             />
             <button onClick={() => handleSubmit(code)}>Click</button>
+            {code}
         </>
     );
 };
