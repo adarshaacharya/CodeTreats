@@ -6,8 +6,13 @@ type Props = {
 };
 
 const OutputField: React.FC<Props> = ({ output }) => {
-    if (output?.stdout) return <div>{output.stdout}</div>;
-    return <>Output Field</>;
+    console.log(output);
+    if (output?.stdout)
+        return <textarea className='error' value={output.stdout} />;
+    if (output?.stderr)
+        return <textarea className='error' value={output.stderr} />;
+
+    return <textarea></textarea>;
 };
 
 export default OutputField;

@@ -5,12 +5,13 @@ import OutputField from 'components/OutputField';
 import React from 'react';
 import SplitPane from 'react-split-pane';
 import './styles/global.css';
+import Navbar from 'components/Navbar';
 
 const App: React.FC = () => {
     const width = window.innerHeight / 0.8;
 
     const [code, setCode] = React.useState('');
-    const [output, setOutput] = React.useState(null!);
+    const [output, setOutput] = React.useState(null);
 
     const handleChange = (ev: Object, code: string) => {
         setCode(code);
@@ -32,6 +33,7 @@ const App: React.FC = () => {
 
     return (
         <>
+        <Navbar/>
             <SplitPane split='vertical' defaultSize={width} maxSize={width}>
                 <CodeEditor
                     code={code}
