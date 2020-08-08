@@ -13,7 +13,7 @@ const CodeEditor: React.FC<Props> = ({ code, handleChange }) => {
     return (
         <>
             <ControlledEditor
-                height='80vh'
+                height='100vh'
                 language='javascript'
                 theme={theme}
                 options={editorOptions}

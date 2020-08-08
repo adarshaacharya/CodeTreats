@@ -12,11 +12,13 @@ const App: React.FC = () => {
 
     const [code, setCode] = React.useState('');
     const [output, setOutput] = React.useState(null);
+    const [loading, setLoading] = React.useState(false);
 
     const handleChange = (ev: Object, code: string) => {
         setCode(code);
     };
     const handleSubmit = async (code: string) => {
+        setLoading(true);
         const config = {
             headers: {
                 'Content-Type': 'application/json',
@@ -29,18 +31,16 @@ const App: React.FC = () => {
         };
         const result = await Axios.post('/api/code/submit', payload, config);
         setOutput(result.data);
+        setLoading(false);
     };
 
     return (
         <>
-            <Navbar handleSubmit={handleSubmit} code={code} />
+            <Navbar handleSubmit={handleSubmit} code={code} loading={loading}/>
             <SplitPane split='vertical' defaultSize={width} maxSize={width}>
-                <CodeEditor
-                    code={code}
-                    handleChange={handleChange}
-                />
+                <CodeEditor code={code} handleChange={handleChange} />
                 <SplitPane split='horizontal' defaultSize={'50vh'}>
-                    <OutputField output={output} />
+                    <OutputField output={output} loading={loading} />
                     <ErrorField />
                 </SplitPane>
             </SplitPane>

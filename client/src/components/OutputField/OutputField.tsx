@@ -3,16 +3,17 @@ import { stdout } from 'process';
 
 type Props = {
     output: any;
+    loading: boolean;
 };
 
-const OutputField: React.FC<Props> = ({ output }) => {
-    console.log(output);
+const OutputField: React.FC<Props> = ({ output, loading }) => {
+    if (loading) return <textarea disabled value='Running...' />;
     if (output?.stdout)
-        return <textarea className='error' value={output.stdout} />;
+        return <textarea className='error' value={output.stdout} disabled />;
     if (output?.stderr)
         return <textarea className='error' value={output.stderr} />;
 
-    return <textarea></textarea>;
+    return <textarea disabled></textarea>;
 };
 
 export default OutputField;
