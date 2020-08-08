@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const hostname = 'localhost';
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 
 const handleListening = () =>
     console.log(`✅  Listening on: http://${hostname}:${PORT}`);

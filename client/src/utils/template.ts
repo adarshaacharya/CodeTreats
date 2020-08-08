@@ -1,2 +1,3 @@
-export const initialVal = `console.log("Hello, world in Javascript! ")
-`;
+export const initialVal = {
+    text: "console.log('hello world')",
+};

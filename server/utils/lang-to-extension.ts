@@ -1,6 +1,5 @@
 export default function getExtension(language: string) {
     let extension = '';
-
     switch (language) {
         case 'javascript':
             extension = 'js';
