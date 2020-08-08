@@ -1,33 +1,15 @@
 import { ControlledEditor } from '@monaco-editor/react';
 import React from 'react';
 import { editorOptions } from 'utils/editor-options';
-import { initialVal } from 'utils/template';
-import Axios from 'axios';
 
-const CodeEditor: React.FC = () => {
+type Props = {
+    handleSubmit: (code: string) => void;
+    code: string;
+    handleChange: (ev: KeyboardEvent, value: string) => void;
+};
+
+const CodeEditor: React.FC<Props> = ({ handleSubmit, code, handleChange }) => {
     const theme = 'dark';
-    const [code, setCode] = React.useState(initialVal);
-    type CodeFunc = (ev: any, value: string | undefined) => void;
-
-    const handleChange: CodeFunc = (ev, value) => {
-        setCode(value!);
-    };
-    console.log(code);
-
-    const handleSubmit = async () => {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
-        const payload = {
-            language: 'javascript',
-            sourceCode: code,
-        };
-        const result = await Axios.post('/api/code/submit', payload, config);
-        console.log(result.data);
-    };
 
     return (
         <>
@@ -37,9 +19,9 @@ const CodeEditor: React.FC = () => {
                 theme={theme}
                 options={editorOptions}
                 value={code}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e, code)}
             />
-            <button onClick={handleSubmit}>Click</button>
+            <button onClick={() => handleSubmit(code)}>Click</button>
         </>
     );
 };
