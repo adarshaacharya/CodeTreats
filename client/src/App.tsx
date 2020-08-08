@@ -1,6 +1,5 @@
 import Axios from 'axios';
 import CodeEditor from 'components/CodeEditor';
-import ErrorField from 'components/ErrorField';
 import Navbar from 'components/Navbar';
 import OutputField from 'components/OutputField';
 import React from 'react';
@@ -36,13 +35,15 @@ const App: React.FC = () => {
 
     return (
         <>
-            <Navbar handleSubmit={handleSubmit} code={code} loading={loading}/>
-            <SplitPane split='vertical' defaultSize={width} maxSize={width}>
+            <Navbar handleSubmit={handleSubmit} code={code} loading={loading} />
+            <SplitPane
+                split='vertical'
+                defaultSize={width}
+                minSize={width}
+                maxSize={width}
+            >
                 <CodeEditor code={code} handleChange={handleChange} />
-                <SplitPane split='horizontal' defaultSize={'50vh'}>
-                    <OutputField output={output} loading={loading} />
-                    <ErrorField />
-                </SplitPane>
+                <OutputField output={output} loading={loading} />
             </SplitPane>
         </>
     );

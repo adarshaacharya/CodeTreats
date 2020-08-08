@@ -5,7 +5,9 @@ nav {
     align-items: center;
     border-bottom: 1px solid #0070f3;
     background: rgb(20, 20, 20);
+    z-index: 999;
 }
+
 ul {
     list-style: none;
 }

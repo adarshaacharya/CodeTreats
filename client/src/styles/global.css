@@ -56,10 +56,3 @@ body {
     border-color: transparent;
 }
 
-textarea {
-    height: 300px;
-    width: 100%;
-    background: #000000;
-    color: #00ff15;
-    padding: 40px 10px;
-}

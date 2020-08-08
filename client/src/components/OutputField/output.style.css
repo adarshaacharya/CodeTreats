@@ -1,0 +1,11 @@
+textarea {
+    height: 100vh;
+    width: 100%;
+    background: #1d1c1c;
+    color: #00ff15;
+    padding: 40px 10px;
+    border-left: 1px solid #0070f3;
+    cursor: text;
+    font-size: 1.3rem;
+    font-family: Dank Mono;
+}
