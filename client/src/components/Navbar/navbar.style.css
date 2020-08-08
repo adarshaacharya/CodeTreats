@@ -8,3 +8,14 @@ nav {
 ul {
     list-style: none;
 }
+
+.submit {
+    cursor: pointer;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 6px;
+    background: #5d80e9;
+    color: #fff;
+    font-size: 1rem;
+    font-family: Montserrat, 'sans-serif';
+}

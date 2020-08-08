@@ -1,11 +1,11 @@
 import Axios from 'axios';
 import CodeEditor from 'components/CodeEditor';
 import ErrorField from 'components/ErrorField';
+import Navbar from 'components/Navbar';
 import OutputField from 'components/OutputField';
 import React from 'react';
 import SplitPane from 'react-split-pane';
 import './styles/global.css';
-import Navbar from 'components/Navbar';
 
 const App: React.FC = () => {
     const width = window.innerHeight / 0.8;
@@ -33,18 +33,13 @@ const App: React.FC = () => {
 
     return (
         <>
-        <Navbar/>
+            <Navbar handleSubmit={handleSubmit} code={code} />
             <SplitPane split='vertical' defaultSize={width} maxSize={width}>
                 <CodeEditor
                     code={code}
                     handleChange={handleChange}
-                    handleSubmit={handleSubmit}
                 />
-                <SplitPane
-                    split='horizontal'
-                    defaultSize={'50vh'}
-                    maxSize={'50vh'}
-                >
+                <SplitPane split='horizontal' defaultSize={'50vh'}>
                     <OutputField output={output} />
                     <ErrorField />
                 </SplitPane>
