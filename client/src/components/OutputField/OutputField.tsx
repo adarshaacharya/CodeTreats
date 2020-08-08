@@ -3,11 +3,9 @@ import React from 'react';
 import './output.style.css';
 type Props = {
     output: any;
-    loading: boolean;
 };
 
-const OutputField: React.FC<Props> = ({ output, loading }) => {
-    if (loading) return <textarea value='Running...' disabled />;
+const OutputField: React.FC<Props> = ({ output }) => {
     if (output?.stdout)
         return <textarea className='error' value={output.stdout} disabled />;
     if (output?.stderr)

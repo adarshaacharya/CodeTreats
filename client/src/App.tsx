@@ -36,6 +36,7 @@ const App: React.FC = () => {
     return (
         <>
             <Navbar handleSubmit={handleSubmit} code={code} loading={loading} />
+
             <SplitPane
                 split='vertical'
                 defaultSize={width}
@@ -43,7 +44,7 @@ const App: React.FC = () => {
                 maxSize={width}
             >
                 <CodeEditor code={code} handleChange={handleChange} />
-                <OutputField output={output} loading={loading} />
+                <OutputField output={output} />
             </SplitPane>
         </>
     );

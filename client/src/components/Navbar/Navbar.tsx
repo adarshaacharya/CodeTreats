@@ -19,7 +19,7 @@ const Navbar: React.FC<Props> = ({ handleSubmit, code, loading }) => {
                     onClick={() => handleSubmit(code)}
                     disabled={loading}
                 >
-                    Run <Icon className="run"/>
+                    Run <Icon className='run' />
                 </button>
             </ul>
         </nav>
