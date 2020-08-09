@@ -1,9 +1,8 @@
-import React from 'react';
 import Axios from 'axios';
-
+import React from 'react';
+import { CODE_DID_UPDATE, SUBMIT_CODE } from '../types';
 import CodeContext from './code.context';
 import codeReducer from './code.reducer';
-import { SUBMIT_CODE, CODE_DID_UPDATE } from '../types';
 import { CodeState } from './code.type';
 
 const CodeState: React.FC = ({ children }) => {
@@ -11,8 +10,8 @@ const CodeState: React.FC = ({ children }) => {
         code: '',
         loading: true,
         output: null,
-        updateCode: (code: string) => void,
-        submitCode: (code: string) => void,
+        updateCode: () => null,
+        submitCode: () => null,
     };
 
     const [state, dispatch] = React.useReducer(codeReducer, initialValues);
