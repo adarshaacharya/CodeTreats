@@ -4,15 +4,15 @@ import CodeContext from '_context/code/code.context';
 import './navbar.style.css';
 
 type Props = {
-    handleSubmit: (code: string) => void;
     code: string;
-    loading: boolean;
+    // loading: boolean;
 };
 
-const Navbar: React.FC<Props> = ({ handleSubmit, code, loading }) => {
+const Navbar: React.FC<Props> = ({  code, }) => {
     const codeContext = React.useContext(CodeContext);
 
-    const { submitCode, } = codeContext;
+    const { loading, submitCode, } = codeContext;
+    console.log(loading)
     const handleCodeSubmit = (code : string) => {
         submitCode(code);
     };

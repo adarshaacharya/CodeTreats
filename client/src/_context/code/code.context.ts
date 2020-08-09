@@ -1,8 +1,8 @@
 import React from 'react';
 import { State } from './code.type';
 const initialValues: State = {
-    code: null,
-    loading: true,
+    code: '',
+    loading: false,
     output: {
         stdout: '',
         stderr: '',

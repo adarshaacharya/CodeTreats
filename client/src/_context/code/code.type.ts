@@ -4,7 +4,7 @@ export interface Output {
 }
 
 export interface State {
-    code: object | null;
+    code: string | null;
     loading: boolean;
     output: Output;
     updateCode: (code: string) => void;

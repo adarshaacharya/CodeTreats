@@ -1,14 +1,14 @@
 import Axios from 'axios';
 import React from 'react';
-import { CODE_DID_UPDATE, SUBMIT_CODE } from '../types';
+import { CODE_DID_UPDATE, SUBMIT_CODE, SET_LOADING } from '../types';
 import CodeContext from './code.context';
 import codeReducer from './code.reducer';
 import { State } from './code.type';
 
 const CodeState: React.FC = ({ children }) => {
     const initialValues: State = {
-        code: null,
-        loading: true,
+        code: '',
+        loading: false,
         output: {
             stdout: '',
             stderr: '',
@@ -21,7 +21,8 @@ const CodeState: React.FC = ({ children }) => {
 
     // updateCode
     const updateCode = (code: string) => {
-        console.clear();
+        console.log('code is uodated');
+        // console.clear();
         dispatch({
             type: CODE_DID_UPDATE,
             payload: code,
@@ -30,6 +31,7 @@ const CodeState: React.FC = ({ children }) => {
 
     // action functions
     const submitCode = async (code: string) => {
+        setLoading();
         const config = {
             headers: {
                 'Content-Type': 'application/json',
@@ -44,6 +46,12 @@ const CodeState: React.FC = ({ children }) => {
         dispatch({
             type: SUBMIT_CODE,
             payload: res.data,
+        });
+    };
+
+    const setLoading = () => {
+        dispatch({
+            type: SET_LOADING,
         });
     };
 

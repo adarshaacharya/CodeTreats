@@ -1,10 +1,10 @@
-import { SUBMIT_CODE, CODE_DID_UPDATE } from '../types';
+import { SUBMIT_CODE, CODE_DID_UPDATE, SET_LOADING } from '_context/types';
 
 import { Action, State } from './code.type';
 
 const initialState: State = {
-    code: null,
-    loading: true,
+    code: '',
+    loading: false,
     output: {
         stdout: '',
         stderr: '',
@@ -30,6 +30,12 @@ export default function codeReducer(
                 ...state,
                 output: payload,
                 loading: false,
+            };
+
+        case SET_LOADING:
+            return {
+                ...state,
+                loading: true,
             };
 
         default:
