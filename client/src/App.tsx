@@ -11,17 +11,10 @@ import CodeState from '_context/code/code.state';
 const App: React.FC = () => {
     const width = window.innerHeight / 0.8;
 
-    const [code, setCode] = React.useState(initialVal);
-    const [loading, setLoading] = React.useState(false);
-
-    const handleChange = (ev: Object, code: string) => {
-        setCode((prevC) => ({ ...prevC, text: code }));
-    };
-
     return (
         <>
             <CodeState>
-                <Navbar code={code.text}  />
+                <Navbar />
 
                 <SplitPane
                     split='vertical'
@@ -29,7 +22,7 @@ const App: React.FC = () => {
                     minSize={width}
                     maxSize={width}
                 >
-                    <CodeEditor code={code.text} handleChange={handleChange} />
+                    <CodeEditor />
                     <OutputField />
                 </SplitPane>
             </CodeState>

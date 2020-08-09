@@ -7,7 +7,7 @@ export interface State {
     code: string | null;
     loading: boolean;
     output: Output;
-    updateCode: (code: string) => void;
+    updateCode: (ev: any, code: string) => void;
     submitCode: (code: string) => void;
 }
 

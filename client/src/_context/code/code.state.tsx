@@ -20,9 +20,8 @@ const CodeState: React.FC = ({ children }) => {
     const [state, dispatch] = React.useReducer(codeReducer, initialValues);
 
     // updateCode
-    const updateCode = (code: string) => {
-        console.log('code is uodated');
-        // console.clear();
+    const updateCode = (ev: Object, code: string) => {
+        console.clear();
         dispatch({
             type: CODE_DID_UPDATE,
             payload: code,

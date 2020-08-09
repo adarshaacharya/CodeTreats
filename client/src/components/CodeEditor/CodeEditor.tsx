@@ -1,15 +1,12 @@
 import { ControlledEditor } from '@monaco-editor/react';
 import React from 'react';
 import { editorOptions } from 'utils/editor-options';
+import CodeContext from '_context/code/code.context';
 
-type Props = {
-    code: string;
-    handleChange: (ev: Object, value: string) => void;
-};
-
-const CodeEditor: React.FC<Props> = ({ code, handleChange }) => {
+const CodeEditor: React.FC = () => {
+    const codeContext = React.useContext(CodeContext);
+    const { code, updateCode } = codeContext;
     const theme = 'dark';
-
     return (
         <>
             <ControlledEditor
@@ -18,7 +15,7 @@ const CodeEditor: React.FC<Props> = ({ code, handleChange }) => {
                 theme={theme}
                 options={editorOptions}
                 value={code}
-                onChange={(ev, code) => handleChange(ev, code!)}
+                onChange={(ev, code) => updateCode(ev, code!)}
             />
             {code}
         </>
