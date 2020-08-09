@@ -3,7 +3,10 @@ import { State } from './code.type';
 const initialValues: State = {
     code: null,
     loading: true,
-    output: null,
+    output: {
+        stdout: '',
+        stderr: '',
+    },
     updateCode: () => null,
     submitCode: () => null,
 };

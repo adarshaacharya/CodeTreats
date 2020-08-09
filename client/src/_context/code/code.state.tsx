@@ -9,7 +9,10 @@ const CodeState: React.FC = ({ children }) => {
     const initialValues: State = {
         code: null,
         loading: true,
-        output: null,
+        output: {
+            stdout: '',
+            stderr: '',
+        },
         updateCode: () => null,
         submitCode: () => null,
     };

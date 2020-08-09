@@ -1,11 +1,12 @@
 import React from 'react';
+import CodeContext from '_context/code/code.context';
 
 import './output.style.css';
-type Props = {
-    output: any;
-};
 
-const OutputField: React.FC<Props> = ({ output }) => {
+const OutputField: React.FC = () => {
+    const codeContext = React.useContext(CodeContext);
+    const { output } = codeContext;
+
     if (output?.stdout)
         return <textarea className='error' value={output.stdout} disabled />;
     if (output?.stderr)

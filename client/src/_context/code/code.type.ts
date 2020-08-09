@@ -1,7 +1,12 @@
+export interface Output {
+    stdout: string | null;
+    stderr: string | null;
+}
+
 export interface State {
-    code: object | null ;
+    code: object | null;
     loading: boolean;
-    output: object | null;
+    output: Output;
     updateCode: (code: string) => void;
     submitCode: (code: string) => void;
 }

@@ -51,7 +51,7 @@ const App: React.FC = () => {
                     maxSize={width}
                 >
                     <CodeEditor code={code.text} handleChange={handleChange} />
-                    <OutputField output={output} />
+                    <OutputField  />
                 </SplitPane>
             </CodeState>
         </>
