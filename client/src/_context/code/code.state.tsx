@@ -4,20 +4,14 @@ import { CODE_DID_UPDATE, SUBMIT_CODE, SET_LOADING } from '../types';
 import CodeContext from './code.context';
 import codeReducer from './code.reducer';
 import { State } from './code.type';
+import { initialState as initialValues } from './code.reducer'; // to avoid name conflict
 
 const CodeState: React.FC = ({ children }) => {
-    const initialValues: State = {
-        code: '',
-        loading: false,
-        output: {
-            stdout: '',
-            stderr: '',
-        },
-        updateCode: () => null,
-        submitCode: () => null,
+    const initialState: State = {
+        ...initialValues,
     };
 
-    const [state, dispatch] = React.useReducer(codeReducer, initialValues);
+    const [state, dispatch] = React.useReducer(codeReducer, initialState);
 
     // updateCode
     const updateCode = (ev: Object, code: string) => {
@@ -30,24 +24,29 @@ const CodeState: React.FC = ({ children }) => {
 
     // action functions
     const submitCode = async (code: string) => {
-        setLoading();
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
+        try {
+            setLoading();
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            };
 
-        const payload = {
-            language: 'javascript',
-            sourceCode: code,
-        };
-        const res = await Axios.post('/api/code/submit', payload, config);
-        dispatch({
-            type: SUBMIT_CODE,
-            payload: res.data,
-        });
+            const payload = {
+                language: 'javascript',
+                sourceCode: code,
+            };
+            const res = await Axios.post('/api/code/submit', payload, config);
+            dispatch({
+                type: SUBMIT_CODE,
+                payload: res.data,
+            });
+        } catch (error) {
+            console.log(error);
+        }
     };
 
+    // set loading
     const setLoading = () => {
         dispatch({
             type: SET_LOADING,

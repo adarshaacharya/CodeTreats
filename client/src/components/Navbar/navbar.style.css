@@ -33,3 +33,7 @@ ul {
 .submit:hover {
     opacity: 0.9;
 }
+
+.submit[disabled] {
+    cursor: not-allowed;
+}

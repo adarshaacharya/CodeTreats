@@ -5,16 +5,15 @@ import './output.style.css';
 
 const OutputField: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
-    const { output } = codeContext;
+    const { output, loading } = codeContext;
 
-    if (output?.stdout)
-        return <textarea className='error' value={output.stdout} disabled />;
-    if (output?.stderr)
-        return <textarea className='error' value={output.stderr} disabled />;
+    if (loading)
+        return <textarea className='error' value='running...' disabled />;
 
+    const value = output?.stderr || output?.stdout || '';
     return (
         <>
-            <textarea disabled />
+            <textarea value={value} disabled />
         </>
     );
 };

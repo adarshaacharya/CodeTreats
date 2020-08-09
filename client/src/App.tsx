@@ -5,7 +5,6 @@ import OutputField from 'components/OutputField';
 import React from 'react';
 import SplitPane from 'react-split-pane';
 import './styles/global.css';
-import { initialVal } from 'utils/template';
 import CodeState from '_context/code/code.state';
 
 const App: React.FC = () => {
@@ -19,7 +18,6 @@ const App: React.FC = () => {
                 <SplitPane
                     split='vertical'
                     defaultSize={width}
-                    minSize={width}
                     maxSize={width}
                 >
                     <CodeEditor />

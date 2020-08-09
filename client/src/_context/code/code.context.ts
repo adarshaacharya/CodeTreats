@@ -1,16 +1,11 @@
 import React from 'react';
 import { State } from './code.type';
-const initialValues: State = {
-    code: '',
-    loading: false,
-    output: {
-        stdout: '',
-        stderr: '',
-    },
-    updateCode: () => null,
-    submitCode: () => null,
+import { initialState } from './code.reducer';
+
+const DEFAULT_VALUE: State = {
+    ...initialState,
 };
 
-const CodeContext = React.createContext(initialValues);
+const CodeContext = React.createContext(DEFAULT_VALUE);
 
 export default CodeContext;

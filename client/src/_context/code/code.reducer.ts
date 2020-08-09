@@ -2,8 +2,8 @@ import { SUBMIT_CODE, CODE_DID_UPDATE, SET_LOADING } from '_context/types';
 
 import { Action, State } from './code.type';
 
-const initialState: State = {
-    code: '',
+export const initialState: State = {
+    code: 'console.log("hello world")',
     loading: false,
     output: {
         stdout: '',
