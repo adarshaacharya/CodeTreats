@@ -6,6 +6,7 @@ import React from 'react';
 import SplitPane from 'react-split-pane';
 import './styles/global.css';
 import { initialVal } from 'utils/template';
+import CodeState from '_context/code/code.state';
 
 const App: React.FC = () => {
     const width = window.innerHeight / 0.8;
@@ -36,21 +37,23 @@ const App: React.FC = () => {
 
     return (
         <>
-            <Navbar
-                handleSubmit={handleSubmit}
-                code={code.text}
-                loading={loading}
-            />
+            <CodeState>
+                <Navbar
+                    handleSubmit={handleSubmit}
+                    code={code.text}
+                    loading={loading}
+                />
 
-            <SplitPane
-                split='vertical'
-                defaultSize={width}
-                minSize={width}
-                maxSize={width}
-            >
-                <CodeEditor code={code.text} handleChange={handleChange} />
-                <OutputField output={output} />
-            </SplitPane>
+                <SplitPane
+                    split='vertical'
+                    defaultSize={width}
+                    minSize={width}
+                    maxSize={width}
+                >
+                    <CodeEditor code={code.text} handleChange={handleChange} />
+                    <OutputField output={output} />
+                </SplitPane>
+            </CodeState>
         </>
     );
 };

@@ -3,11 +3,11 @@ import React from 'react';
 import { CODE_DID_UPDATE, SUBMIT_CODE } from '../types';
 import CodeContext from './code.context';
 import codeReducer from './code.reducer';
-import { CodeState } from './code.type';
+import { State } from './code.type';
 
 const CodeState: React.FC = ({ children }) => {
-    const initialValues: CodeState = {
-        code: '',
+    const initialValues: State = {
+        code: null,
         loading: true,
         output: null,
         updateCode: () => null,

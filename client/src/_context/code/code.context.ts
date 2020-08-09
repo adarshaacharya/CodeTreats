@@ -1,7 +1,7 @@
 import React from 'react';
-import { CodeState } from './code.type';
-const initialValues: CodeState = {
-    code: '',
+import { State } from './code.type';
+const initialValues: State = {
+    code: null,
     loading: true,
     output: null,
     updateCode: () => null,

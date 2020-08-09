@@ -1,9 +1,9 @@
 import { SUBMIT_CODE, CODE_DID_UPDATE } from '../types';
 
-import { Action, CodeState } from './code.type';
+import { Action, State } from './code.type';
 
-const initialState: CodeState = {
-    code: '',
+const initialState: State = {
+    code: null,
     loading: true,
     output: null,
     updateCode: () => null,
@@ -11,7 +11,7 @@ const initialState: CodeState = {
 };
 
 export default function codeReducer(
-    state: CodeState = initialState,
+    state: State = initialState,
     action: Action
 ) {
     const { type, payload } = action;

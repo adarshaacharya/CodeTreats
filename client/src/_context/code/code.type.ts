@@ -1,5 +1,5 @@
-export interface CodeState {
-    code: string ;
+export interface State {
+    code: object | null ;
     loading: boolean;
     output: object | null;
     updateCode: (code: string) => void;

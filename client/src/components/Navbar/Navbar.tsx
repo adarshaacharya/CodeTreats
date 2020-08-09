@@ -1,6 +1,7 @@
-import React from 'react';
-import './navbar.style.css';
 import { ReactComponent as Icon } from 'images/run-button.svg';
+import React from 'react';
+import CodeContext from '_context/code/code.context';
+import './navbar.style.css';
 
 type Props = {
     handleSubmit: (code: string) => void;
@@ -9,14 +10,18 @@ type Props = {
 };
 
 const Navbar: React.FC<Props> = ({ handleSubmit, code, loading }) => {
-    console.log(loading);
+    const codeContext = React.useContext(CodeContext);
 
+    const { submitCode, } = codeContext;
+    const handleCodeSubmit = (code : string) => {
+        submitCode(code);
+    };
     return (
         <nav>
             <ul>
                 <button
                     className='submit'
-                    onClick={() => handleSubmit(code)}
+                    onClick={() => handleCodeSubmit(code)}
                     disabled={loading}
                 >
                     Run <Icon className='run' />
