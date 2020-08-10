@@ -7,7 +7,7 @@ const CodeEditor: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { code, updateCode, language } = codeContext;
     const theme = 'dark';
-    console.log(language, "langugae")
+    console.log(language, 'langugae');
     return (
         <>
             <ControlledEditor

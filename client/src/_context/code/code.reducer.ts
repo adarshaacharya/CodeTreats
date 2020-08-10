@@ -3,7 +3,7 @@ import {
     CODE_DID_UPDATE,
     SET_LOADING,
     SUBMIT_CODE,
-    UPDATE_LANGUAGE
+    UPDATE_LANGUAGE,
 } from '_context/types';
 import { Action, State } from './code.type';
 
@@ -40,7 +40,7 @@ export default function codeReducer(
             return {
                 ...state,
                 language: payload,
-                code : getTemplate(payload)
+                code: getTemplate(payload),
             };
 
         case SUBMIT_CODE:

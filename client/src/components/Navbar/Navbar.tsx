@@ -1,21 +1,16 @@
 import { ReactComponent as Icon } from 'images/run-button.svg';
 import React from 'react';
-import languages from 'utils/language-select';
 import CodeContext from '_context/code/code.context';
+import LanguageSelector from './LanguageSelector';
 import './navbar.style.css';
 
 const Navbar: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
 
     const { code, loading, submitCode, language, updateLanguage } = codeContext;
-    console.log(loading, 'Navbar');
 
     const onCodeSubmit = (code: string, language: string) => {
         submitCode(code, language);
-    };
-
-    const onLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        updateLanguage(event.target.value);
     };
 
     return (
@@ -31,16 +26,7 @@ const Navbar: React.FC = () => {
                     </button>
                 </li>
                 <li>
-                    <select name='languages' onChange={onLanguageChange}>
-                        {languages.map((language) => (
-                            <option
-                                value={language.value}
-                                selected={language.selected}
-                            >
-                                {language.name}
-                            </option>
-                        ))}
-                    </select>
+                    <LanguageSelector />
                 </li>
             </ul>
         </nav>
