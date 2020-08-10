@@ -4,6 +4,7 @@ import {
     SET_LOADING,
     SUBMIT_CODE,
     UPDATE_LANGUAGE,
+    INPUT_DID_UPDATE,
 } from '_context/types';
 import { Action, State } from './code.type';
 
@@ -11,12 +12,14 @@ import { Action, State } from './code.type';
 export const initialState: State = {
     code: getTemplate('javascript'),
     language: 'javascript',
+    input: '',
     loading: false,
     output: {
         stdout: '',
         stderr: '',
     },
     updateCode: () => null,
+    updateInput: () => null,
     updateLanguage: () => null,
     submitCode: () => null,
 };
@@ -34,6 +37,12 @@ export default function codeReducer(
             return {
                 ...state,
                 code: payload,
+            };
+
+        case INPUT_DID_UPDATE:
+            return {
+                ...state,
+                input: payload,
             };
 
         case UPDATE_LANGUAGE:

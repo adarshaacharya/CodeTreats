@@ -5,6 +5,7 @@ import {
     SET_LOADING,
     SUBMIT_CODE,
     UPDATE_LANGUAGE,
+    INPUT_DID_UPDATE,
 } from '../types';
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
@@ -23,6 +24,14 @@ const CodeState: React.FC = ({ children }) => {
         dispatch({
             type: CODE_DID_UPDATE,
             payload: code,
+        });
+    };
+
+    // upate Input
+    const updateInput = (input: string) => {
+        dispatch({
+            type: INPUT_DID_UPDATE,
+            payload: input,
         });
     };
 
@@ -72,7 +81,9 @@ const CodeState: React.FC = ({ children }) => {
                 language: state.language,
                 loading: state?.loading,
                 output: state.output,
+                input: state.input,
                 updateCode,
+                updateInput,
                 updateLanguage,
                 submitCode,
             }}

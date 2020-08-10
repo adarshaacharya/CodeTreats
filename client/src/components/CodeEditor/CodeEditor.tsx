@@ -7,7 +7,7 @@ const CodeEditor: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { code, updateCode, language } = codeContext;
     console.log(language, 'langugae');
-    return (
+    return (  
         <>
             <ControlledEditor
                 height='100vh'
