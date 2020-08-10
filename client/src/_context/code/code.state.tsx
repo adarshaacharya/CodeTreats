@@ -1,11 +1,15 @@
 import Axios from 'axios';
 import React from 'react';
-import { CODE_DID_UPDATE, SUBMIT_CODE, SET_LOADING } from '../types';
+import {
+    CODE_DID_UPDATE,
+    SUBMIT_CODE,
+    SET_LOADING,
+    UPDATE_LANGUAGE,
+} from '../types';
 import CodeContext from './code.context';
 import codeReducer from './code.reducer';
 import { State } from './code.type';
 import { initialState as initialValues } from './code.reducer'; // to avoid name conflict
-import languages from 'utils/language-select';
 
 const CodeState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -23,8 +27,16 @@ const CodeState: React.FC = ({ children }) => {
         });
     };
 
+    // update language
+    const updateLanguage = (lang: string) => {
+        dispatch({
+            type: UPDATE_LANGUAGE,
+            payload: lang,
+        });
+    };
+
     // action functions
-    const submitCode = async (code: string, language : string) => {
+    const submitCode = async (code: string, language: string) => {
         try {
             setLoading();
             const config = {
@@ -62,6 +74,7 @@ const CodeState: React.FC = ({ children }) => {
                 loading: state?.loading,
                 output: state.output,
                 updateCode,
+                updateLanguage,
                 submitCode,
             }}
         >

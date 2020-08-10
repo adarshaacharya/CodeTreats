@@ -1,4 +1,9 @@
-import { SUBMIT_CODE, CODE_DID_UPDATE, SET_LOADING } from '_context/types';
+import {
+    SUBMIT_CODE,
+    CODE_DID_UPDATE,
+    SET_LOADING,
+    UPDATE_LANGUAGE,
+} from '_context/types';
 
 import { Action, State } from './code.type';
 
@@ -11,6 +16,7 @@ export const initialState: State = {
         stderr: '',
     },
     updateCode: () => null,
+    updateLanguage: () => null,
     submitCode: () => null,
 };
 
@@ -24,6 +30,12 @@ export default function codeReducer(
             return {
                 ...state,
                 code: payload,
+            };
+
+        case UPDATE_LANGUAGE:
+            return {
+                ...state,
+                language: payload,
             };
 
         case SUBMIT_CODE:

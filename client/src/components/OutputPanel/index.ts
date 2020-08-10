@@ -1,2 +1,2 @@
-import OutputField from './OutputPanel';
-export default OutputField;
+import OutputPanel from './OutputPanel';
+export default OutputPanel;
