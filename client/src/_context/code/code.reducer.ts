@@ -1,14 +1,15 @@
+import getTemplate from 'utils/language-templates';
 import {
-    SUBMIT_CODE,
     CODE_DID_UPDATE,
     SET_LOADING,
-    UPDATE_LANGUAGE,
+    SUBMIT_CODE,
+    UPDATE_LANGUAGE
 } from '_context/types';
-
 import { Action, State } from './code.type';
 
+//initial  value on first render
 export const initialState: State = {
-    code: 'console.log("hello world")',
+    code: getTemplate('javascript'),
     language: 'javascript',
     loading: false,
     output: {
@@ -20,10 +21,13 @@ export const initialState: State = {
     submitCode: () => null,
 };
 
+console.log(initialState);
+//reducer
 export default function codeReducer(
     state: State = initialState,
     action: Action
 ) {
+    console.log('from reducer');
     const { type, payload } = action;
     switch (type) {
         case CODE_DID_UPDATE:
@@ -36,6 +40,7 @@ export default function codeReducer(
             return {
                 ...state,
                 language: payload,
+                code : getTemplate(payload)
             };
 
         case SUBMIT_CODE:

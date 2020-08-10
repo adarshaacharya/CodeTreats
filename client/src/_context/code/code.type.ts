@@ -9,7 +9,7 @@ export interface State {
     loading: boolean;
     output: Output;
 
-    updateCode: (ev: any, code: string) => void;
+    updateCode: (ev: Object, code: string) => void;
     updateLanguage: (lang: string) => void;
     submitCode: (code: string, language: string) => void;
 }

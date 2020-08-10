@@ -5,13 +5,14 @@ import CodeContext from '_context/code/code.context';
 
 const CodeEditor: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
-    const { code, updateCode } = codeContext;
+    const { code, updateCode, language } = codeContext;
     const theme = 'dark';
+    console.log(language, "langugae")
     return (
         <>
             <ControlledEditor
                 height='100vh'
-                language='javascript'
+                language={language}
                 theme={theme}
                 options={editorOptions}
                 value={code}

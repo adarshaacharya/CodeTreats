@@ -2,14 +2,13 @@ import Axios from 'axios';
 import React from 'react';
 import {
     CODE_DID_UPDATE,
-    SUBMIT_CODE,
     SET_LOADING,
+    SUBMIT_CODE,
     UPDATE_LANGUAGE,
 } from '../types';
 import CodeContext from './code.context';
-import codeReducer from './code.reducer';
+import codeReducer, { initialState as initialValues } from './code.reducer';
 import { State } from './code.type';
-import { initialState as initialValues } from './code.reducer'; // to avoid name conflict
 
 const CodeState: React.FC = ({ children }) => {
     const initialState: State = {

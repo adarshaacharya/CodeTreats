@@ -1,6 +1,6 @@
 # Javascript Runner
 
-Run Javascript code in browser.
+Browser based VSCODE like code editor.
 
 ⚡ Run Code :
 
