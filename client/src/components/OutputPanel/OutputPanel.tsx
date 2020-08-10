@@ -7,12 +7,23 @@ const OutputPanel: React.FC = () => {
     const { output, loading, language } = codeContext;
     let value = '';
     if (loading)
-        return <textarea className='error' value='running...' disabled />;
+        return (
+            <textarea
+                className='error output__area'
+                placeholder='running...'
+                disabled
+            />
+        );
 
     value = output?.stderr || output?.stdout || '';
     return (
         <>
-            <textarea value={value} disabled />
+            <textarea
+                value={value}
+                disabled
+                className='output__area'
+                placeholder='Output will display here...'
+            />
         </>
     );
 };
