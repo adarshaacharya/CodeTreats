@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import CodeEditor from 'components/CodeEditor';
 import Navbar from 'components/Navbar';
-import OutputField from 'components/OutputField';
+import OutputPanel from 'components/OutputPanel';
 import React from 'react';
 import SplitPane from 'react-split-pane';
 import './styles/global.css';
@@ -21,7 +21,7 @@ const App: React.FC = () => {
                     maxSize={width}
                 >
                     <CodeEditor />
-                    <OutputField />
+                    <OutputPanel />
                 </SplitPane>
             </CodeState>
         </>

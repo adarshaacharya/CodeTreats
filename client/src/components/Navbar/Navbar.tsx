@@ -6,17 +6,17 @@ import './navbar.style.css';
 const Navbar: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
 
-    const { code, loading, submitCode } = codeContext;
+    const { code, loading, submitCode, language } = codeContext;
     console.log(loading);
-    const handleCodeSubmit = (code: string) => {
-        submitCode(code);
+    const handleCodeSubmit = (code: string, language: string) => {
+        submitCode(code, language);
     };
     return (
         <nav>
             <ul>
                 <button
                     className='submit'
-                    onClick={() => handleCodeSubmit(code!)}
+                    onClick={() => handleCodeSubmit(code!, language)}
                     disabled={loading}
                 >
                     Run <Icon className='run' />

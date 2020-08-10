@@ -5,6 +5,7 @@ import CodeContext from './code.context';
 import codeReducer from './code.reducer';
 import { State } from './code.type';
 import { initialState as initialValues } from './code.reducer'; // to avoid name conflict
+import languages from 'utils/language-select';
 
 const CodeState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -23,7 +24,7 @@ const CodeState: React.FC = ({ children }) => {
     };
 
     // action functions
-    const submitCode = async (code: string) => {
+    const submitCode = async (code: string, language : string) => {
         try {
             setLoading();
             const config = {
@@ -33,7 +34,7 @@ const CodeState: React.FC = ({ children }) => {
             };
 
             const payload = {
-                language: 'javascript',
+                language: language,
                 sourceCode: code,
             };
             const res = await Axios.post('/api/code/submit', payload, config);
@@ -57,6 +58,7 @@ const CodeState: React.FC = ({ children }) => {
         <CodeContext.Provider
             value={{
                 code: state?.code,
+                language: state.language,
                 loading: state?.loading,
                 output: state.output,
                 updateCode,

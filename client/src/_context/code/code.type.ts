@@ -5,10 +5,12 @@ export interface Output {
 
 export interface State {
     code: string | null;
+    language: string;
     loading: boolean;
     output: Output;
+
     updateCode: (ev: any, code: string) => void;
-    submitCode: (code: string) => void;
+    submitCode: (code: string, language : string) => void;
 }
 
 export interface Action {

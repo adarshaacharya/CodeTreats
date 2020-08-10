@@ -4,6 +4,7 @@ import { Action, State } from './code.type';
 
 export const initialState: State = {
     code: 'console.log("hello world")',
+    language: 'javascript',
     loading: false,
     output: {
         stdout: '',

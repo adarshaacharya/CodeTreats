@@ -1,9 +1,9 @@
 import React from 'react';
 import CodeContext from '_context/code/code.context';
+import './output-panel.style.css';
 
-import './output.style.css';
 
-const OutputField: React.FC = () => {
+const OutputPanel: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { output, loading } = codeContext;
 
@@ -18,10 +18,5 @@ const OutputField: React.FC = () => {
     );
 };
 
-export default OutputField;
+export default OutputPanel;
 
-// {stdout: "hello world↵", stderr: "", error: ""}
-// error: ""
-// stderr: ""
-// stdout: "hello world↵"
-// __proto__: Object
