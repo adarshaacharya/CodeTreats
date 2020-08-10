@@ -1,6 +1,6 @@
 import React from 'react';
-import LanguageSelector from './LanguageSelector';
 import './navbar.style.css';
+import LanguageSelector from './LanguageSelector';
 import RunCodeButton from './RunCodeButton';
 
 const Navbar = () => {
@@ -10,8 +10,8 @@ const Navbar = () => {
                 <li>
                     <RunCodeButton />
                 </li>
-                <li>
                     <LanguageSelector />
+                <li>
                 </li>
             </ul>
         </nav>

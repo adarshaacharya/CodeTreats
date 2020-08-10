@@ -6,6 +6,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background: #f1f1f1;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .Resizer {
     background: #000;
     opacity: 0.2;
@@ -55,4 +61,3 @@ body {
 .Resizer.disabled:hover {
     border-color: transparent;
 }
-

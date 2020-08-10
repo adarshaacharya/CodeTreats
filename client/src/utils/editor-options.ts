@@ -9,4 +9,8 @@ export const editorOptions: Object = {
     minimap: {
         enabled: false,
     },
+    dragAndDrop: true,
+    mouseWheelZoom: true,
 };
+
+export const theme = 'dark';

@@ -1,16 +1,17 @@
 nav {
-    display: flex;
-    height: 60px;
-    justify-content: center;
+    height: 70px;
     align-items: center;
     border-bottom: 1px solid #0070f3;
     background: rgb(20, 20, 20);
     z-index: 999;
+    padding: 0.5rem 0;
 }
 
 ul {
     list-style: none;
     display: flex;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .submit {
@@ -31,10 +32,14 @@ ul {
     padding-left: 13px;
 }
 
-.submit:hover {
-    opacity: 0.9;
+.select__wrapper select {
+    padding: 0.8rem 2rem;
+    background: rgba(19, 19, 19, 0.616);
+    color: #fff;
+    border: 1px solid #0070f3;
+    border-radius: 4px;
 }
 
-.submit[disabled] {
-    cursor: not-allowed;
+.select__wrapper select option {
+    background: rgba(0, 0, 0, 0.836);
 }

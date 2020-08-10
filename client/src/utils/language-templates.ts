@@ -3,14 +3,14 @@ export default function getTemplate(lang: string) {
 
     switch (lang) {
         case 'python':
-            template = `print('Hello world in Python')`;
+            template = `a = 10\nprint(a)`;
             break;
 
         case 'javascript':
-            template = `console.log('Hello world in JS')`;
+            template = `const a = 10;\nconsole.log(a);`;
             break;
         case 'typescript':
-            template = `let a: number;\na= 10;\nconsole.log(a);`;
+            template = `let a: number;\na = 10;\nconsole.log(a);`;
     }
     return template;
 }
