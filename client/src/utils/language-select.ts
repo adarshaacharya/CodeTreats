@@ -9,6 +9,11 @@ const languages = [
         value: 'javascript',
         selected: true,
     },
+    {
+        name: 'Typescript',
+        value: 'typescript',
+        selected: false,
+    },
 ];
 
 export default languages;

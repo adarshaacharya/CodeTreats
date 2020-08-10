@@ -9,6 +9,8 @@ export default function getTemplate(lang: string) {
         case 'javascript':
             template = `console.log('Hello world in JS')`;
             break;
+        case 'typescript':
+            template = `let a: number;\na= 10;\nconsole.log(a);`;
     }
     return template;
 }
