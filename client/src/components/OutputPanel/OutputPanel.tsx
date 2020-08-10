@@ -12,7 +12,6 @@ const OutputPanel: React.FC = () => {
     value = output?.stderr || output?.stdout || '';
     return (
         <>
-            {language}
             <textarea value={value} disabled />
         </>
     );
