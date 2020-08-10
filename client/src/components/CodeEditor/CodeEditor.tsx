@@ -1,13 +1,12 @@
 import { ControlledEditor } from '@monaco-editor/react';
 import React from 'react';
-import { editorOptions , theme} from 'utils/editor-options';
+import { editorOptions, theme } from 'utils/editor-options';
 import CodeContext from '_context/code/code.context';
 
 const CodeEditor: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { code, updateCode, language } = codeContext;
-    console.log(language, 'langugae');
-    return (  
+    return (
         <>
             <ControlledEditor
                 height='100vh'

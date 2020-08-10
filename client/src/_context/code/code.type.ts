@@ -13,7 +13,7 @@ export interface State {
     updateCode: (ev: Object, code: string) => void;
     updateInput: (input: string) => void;
     updateLanguage: (lang: string) => void;
-    submitCode: (code: string, language: string) => void;
+    submitCode: (code: string, language: string, input: string) => void;
 }
 
 export interface Action {

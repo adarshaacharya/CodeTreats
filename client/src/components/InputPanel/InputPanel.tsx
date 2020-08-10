@@ -4,12 +4,13 @@ import CodeContext from '_context/code/code.context';
 
 const InputPanel = () => {
     const codeContext = React.useContext(CodeContext);
-    const { input } = codeContext;
+    const { updateInput } = codeContext;
     return (
         <>
             <textarea
                 className='input__area'
                 placeholder='Enter your input here..'
+                onChange={(e) => updateInput(e.target.value)}
             />
         </>
     );

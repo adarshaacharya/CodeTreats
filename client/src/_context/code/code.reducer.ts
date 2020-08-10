@@ -24,13 +24,11 @@ export const initialState: State = {
     submitCode: () => null,
 };
 
-console.log(initialState);
 //reducer
 export default function codeReducer(
     state: State = initialState,
     action: Action
 ) {
-    console.log('from reducer');
     const { type, payload } = action;
     switch (type) {
         case CODE_DID_UPDATE:

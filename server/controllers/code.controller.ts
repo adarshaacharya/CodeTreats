@@ -2,9 +2,12 @@ import Axios from 'axios';
 import { Request, Response } from 'express';
 import getExtension from '../utils/lang-to-extension';
 
+// @route   POST api/code/submit
+// @desc     Submit code from user
+// @access  Public
 export const SubmitCode = async (req: Request, res: Response) => {
     try {
-        const { sourceCode, language } = req.body;
+        const { userInput, sourceCode, language } = req.body;
         const extension = getExtension(language);
         const uri = `https://run.glot.io/languages/${language}/latest/`;
 
@@ -16,6 +19,7 @@ export const SubmitCode = async (req: Request, res: Response) => {
             },
         };
         const data = {
+            stdin: userInput,
             files: [
                 {
                     name: `main.${extension}`,

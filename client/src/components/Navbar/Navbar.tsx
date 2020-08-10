@@ -10,9 +10,8 @@ const Navbar = () => {
                 <li>
                     <RunCodeButton />
                 </li>
-                    <LanguageSelector />
-                <li>
-                </li>
+                <LanguageSelector />
+                <li></li>
             </ul>
         </nav>
     );

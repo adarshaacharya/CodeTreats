@@ -44,7 +44,11 @@ const CodeState: React.FC = ({ children }) => {
     };
 
     // action functions
-    const submitCode = async (code: string, language: string) => {
+    const submitCode = async (
+        code: string,
+        language: string,
+        input: string
+    ) => {
         try {
             setLoading();
             const config = {
@@ -56,6 +60,7 @@ const CodeState: React.FC = ({ children }) => {
             const payload = {
                 language: language,
                 sourceCode: code,
+                userInput: input,
             };
             const res = await Axios.post('/api/code/submit', payload, config);
             dispatch({

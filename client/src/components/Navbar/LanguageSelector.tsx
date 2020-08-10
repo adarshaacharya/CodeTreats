@@ -10,7 +10,7 @@ const LanguageSelector = () => {
         updateLanguage(event.target.value);
     };
     return (
-        <div className="select__wrapper">
+        <div className='select__wrapper'>
             <select
                 name='languages'
                 onChange={onLanguageChange}

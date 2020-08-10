@@ -4,15 +4,15 @@ import CodeContext from '_context/code/code.context';
 
 const RunCodeButton = () => {
     const codeContext = React.useContext(CodeContext);
-    const { code, loading, submitCode, language } = codeContext;
-
-    const onCodeSubmit = (code: string, language: string) => {
-        submitCode(code, language);
+    const { code, input, loading, submitCode, language } = codeContext;
+    console.log(input);
+    const onCodeSubmit = (code: string, language: string, input: string) => {
+        submitCode(code, language, input);
     };
     return (
         <button
             className='submit'
-            onClick={() => onCodeSubmit(code!, language)}
+            onClick={() => onCodeSubmit(code!, language, input!)} // since we have place input as string or null
             disabled={loading}
         >
             Run <Icon className='run' />

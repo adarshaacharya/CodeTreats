@@ -4,7 +4,7 @@ import './output-panel.style.css';
 
 const OutputPanel: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
-    const { output, loading, language } = codeContext;
+    const { output, loading } = codeContext;
     let value = '';
     if (loading)
         return (
