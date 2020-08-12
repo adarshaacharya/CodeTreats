@@ -1,5 +1,5 @@
 {
-  "name": "js-code-runner",
+  "name": "code-runner",
   "version": "1.0.0",
   "description": "In browser code editor for js snippet",
   "main": "index.js",
