@@ -14,18 +14,10 @@ const App: React.FC = () => {
         <>
             <CodeState>
                 <Navbar />
-                <SplitPane
-                    split='vertical'
-                    defaultSize={width1}
-                    maxSize={width1}
-                >
+                <SplitPane split='vertical' defaultSize={width1} maxSize={width1}>
                     <CodeEditor />
 
-                    <SplitPane
-                        split='horizontal'
-                        defaultSize={width2}
-                        maxSize={width2}
-                    >
+                    <SplitPane split='horizontal' defaultSize={width2} maxSize={width2}>
                         <InputPanel />
                         <OutputPanel />
                     </SplitPane>

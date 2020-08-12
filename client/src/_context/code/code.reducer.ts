@@ -1,11 +1,5 @@
 import getTemplate from 'utils/language-templates';
-import {
-    CODE_DID_UPDATE,
-    SET_LOADING,
-    SUBMIT_CODE,
-    UPDATE_LANGUAGE,
-    INPUT_DID_UPDATE,
-} from '_context/types';
+import { CODE_DID_UPDATE, SET_LOADING, SUBMIT_CODE, UPDATE_LANGUAGE, INPUT_DID_UPDATE } from '_context/types';
 import { Action, State } from './code.type';
 
 //initial  value on first render
@@ -25,10 +19,7 @@ export const initialState: State = {
 };
 
 //reducer
-export default function codeReducer(
-    state: State = initialState,
-    action: Action
-) {
+export default function codeReducer(state: State = initialState, action: Action) {
     const { type, payload } = action;
     switch (type) {
         case CODE_DID_UPDATE:

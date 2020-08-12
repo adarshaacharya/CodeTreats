@@ -1,12 +1,6 @@
 import Axios from 'axios';
 import React from 'react';
-import {
-    CODE_DID_UPDATE,
-    SET_LOADING,
-    SUBMIT_CODE,
-    UPDATE_LANGUAGE,
-    INPUT_DID_UPDATE,
-} from '../types';
+import { CODE_DID_UPDATE, SET_LOADING, SUBMIT_CODE, UPDATE_LANGUAGE, INPUT_DID_UPDATE } from '../types';
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
 import { State } from './code.type';
@@ -44,11 +38,7 @@ const CodeState: React.FC = ({ children }) => {
     };
 
     // action functions
-    const submitCode = async (
-        code: string,
-        language: string,
-        input: string
-    ) => {
+    const submitCode = async (code: string, language: string, input: string) => {
         try {
             setLoading();
             const config = {

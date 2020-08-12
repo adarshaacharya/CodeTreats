@@ -11,11 +11,7 @@ const LanguageSelector = () => {
     };
     return (
         <div className='select__wrapper'>
-            <select
-                name='languages'
-                onChange={onLanguageChange}
-                defaultValue={languages[1].value}
-            >
+            <select name='languages' onChange={onLanguageChange} defaultValue={languages[1].value}>
                 {languages.map((language) => (
                     <option value={language.value} key={language.value}>
                         {language.label}

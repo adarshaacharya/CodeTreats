@@ -6,24 +6,12 @@ const OutputPanel: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { output, loading } = codeContext;
     let value = '';
-    if (loading)
-        return (
-            <textarea
-                className='error output__area'
-                placeholder='running...'
-                disabled
-            />
-        );
+    if (loading) return <textarea className='error output__area' value='running...' disabled />;
 
     value = output?.stderr || output?.stdout || '';
     return (
         <>
-            <textarea
-                value={value}
-                disabled
-                className='output__area'
-                placeholder='Output will display here...'
-            />
+            <textarea value={value} disabled className='output__area' placeholder='Output will display here...' />
         </>
     );
 };

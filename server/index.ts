@@ -1,3 +1,4 @@
+import compression from 'compression';
 import cors from 'cors';
 import { config } from 'dotenv';
 import express, { Express, Response } from 'express';
@@ -16,7 +17,9 @@ app.set('env', process.env.NODE_ENV);
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(compression());
 
+//routes
 app.use('/api/code', CodeRoute);
 
 // Serve static addes in prod env
@@ -33,7 +36,6 @@ if (process.env.NODE_ENV === 'production') {
 const hostname = 'localhost';
 const PORT = process.env.PORT || 5000;
 
-const handleListening = () =>
-    console.log(`✅  Listening on: http://${hostname}:${PORT}`);
+const handleListening = () => console.log(`✅  Listening on: http://${hostname}:${PORT}`);
 
 app.listen(PORT, handleListening);
