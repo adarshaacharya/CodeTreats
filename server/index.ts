@@ -3,17 +3,22 @@ import cors from 'cors';
 import { config } from 'dotenv';
 import express, { Express, Response } from 'express';
 import path from 'path';
+import connectDB from './database/db';
 //  routes
 import CodeRoute from './routes/code.route';
 import SnippetRoute from './routes/snippet.route';
 
-
+// env variable config
 if (process.env.NODE_ENV !== 'production') {
     config();
 }
 
+// exporess settings
 const app: Express = express();
 app.set('env', process.env.NODE_ENV);
+
+// db
+connectDB();
 
 // handle post request
 app.use(cors());
@@ -23,8 +28,7 @@ app.use(compression());
 
 //routes
 app.use('/api/code', CodeRoute);
-app.use('/api/code', CodeRoute);
-
+app.use('/api/snippet', SnippetRoute);
 
 // Serve static addes in prod env
 if (process.env.NODE_ENV === 'production') {
