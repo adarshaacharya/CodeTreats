@@ -4,9 +4,8 @@ import Snippet from '../models/snippet.model';
 // @route   POST api/snippets
 // @desc     Get all snippets
 // @access  Public
-export const getAllSnippets = async (req: Request, res: Response): Promise<void> => {
+export const getAllSnippets = async (_req: Request, res: Response): Promise<void> => {
     try {
-        console.log(req);
         const snippets = await Snippet.find();
         res.status(200).json(snippets);
     } catch (error) {
