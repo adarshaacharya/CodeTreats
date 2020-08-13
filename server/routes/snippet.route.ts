@@ -1,10 +1,13 @@
 import { Router } from 'express';
-import { saveSnippet, getSnippetbyId } from '../controllers/snippet.controller';
+import { getAllSnippets, getSnippetbyId, saveSnippet } from '../controllers/snippet.controller';
 
 const SnippetRoute = Router();
 
+// get all snippets
+SnippetRoute.get('/', getAllSnippets);
+
 // save snippet
-SnippetRoute.post('/save', saveSnippet);
+SnippetRoute.post('/', saveSnippet);
 
 // get snippet by id
 SnippetRoute.post('/:id', getSnippetbyId);

@@ -23,12 +23,12 @@ connectDB();
 // handle post request
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }))
 app.use(compression());
 
 //routes
 app.use('/api/code', CodeRoute);
-app.use('/api/snippet', SnippetRoute);
+app.use('/api/snippets', SnippetRoute);
 
 // Serve static addes in prod env
 if (process.env.NODE_ENV === 'production') {

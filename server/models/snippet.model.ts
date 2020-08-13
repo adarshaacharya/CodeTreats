@@ -5,6 +5,7 @@ interface ISnippet extends Document {
     sourceCode: string;
     input: string;
     language: string;
+    date: Date;
 }
 
 const SnippetSchema: Schema = new Schema({
@@ -21,6 +22,10 @@ const SnippetSchema: Schema = new Schema({
     language: {
         type: String,
         required: true,
+    },
+    date: {
+        type: Date,
+        default: Date.now,
     },
 });
 
