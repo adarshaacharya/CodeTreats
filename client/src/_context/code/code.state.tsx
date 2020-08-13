@@ -1,10 +1,9 @@
-import Axios from 'axios';
 import React from 'react';
-import { CODE_DID_UPDATE, SET_LOADING, SUBMIT_CODE, UPDATE_LANGUAGE, INPUT_DID_UPDATE } from '../types';
+import api from 'utils/api';
+import { CODE_DID_UPDATE, FETCH_SNIPPETS, INPUT_DID_UPDATE, SET_LOADING, SUBMIT_CODE, UPDATE_LANGUAGE } from '../types';
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
 import { State } from './code.type';
-import api from 'utils/api';
 
 const CodeState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -14,7 +13,7 @@ const CodeState: React.FC = ({ children }) => {
     const [state, dispatch] = React.useReducer(codeReducer, initialState);
 
     // updateCode
-    const updateCode = (ev: Object, code: string) => {
+    const updateCode = (code: string) => {
         console.clear();
         dispatch({
             type: CODE_DID_UPDATE,
@@ -58,6 +57,18 @@ const CodeState: React.FC = ({ children }) => {
         }
     };
 
+    const fetchSnippets = async () => {
+        try {
+            const res = await api.get(`/snippets`);
+            dispatch({
+                type: FETCH_SNIPPETS,
+                payload: res.data,
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     // set loading
     const setLoading = () => {
         dispatch({
@@ -76,6 +87,7 @@ const CodeState: React.FC = ({ children }) => {
                 updateCode,
                 updateInput,
                 updateLanguage,
+                fetchSnippets,
                 submitCode,
             }}
         >

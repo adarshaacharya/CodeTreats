@@ -10,10 +10,11 @@ export interface State {
     loading: boolean;
     output: Output;
 
-    updateCode: (ev: Object, code: string) => void;
+    updateCode: ( code: string) => void;
     updateInput: (input: string) => void;
     updateLanguage: (lang: string) => void;
     submitCode: (code: string, language: string, input: string) => void;
+    fetchSnippets: () => void;
 }
 
 export interface Action {

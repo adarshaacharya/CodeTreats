@@ -6,6 +6,11 @@ import CodeContext from '_context/code/code.context';
 const CodeEditor: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { code, updateCode, language } = codeContext;
+
+    const handleEditorChange = (ev?: object, value?: string) => {
+        updateCode(value!);
+    };
+
     return (
         <>
             <ControlledEditor
@@ -14,7 +19,7 @@ const CodeEditor: React.FC = () => {
                 theme={theme}
                 options={editorOptions}
                 value={code}
-                onChange={(ev, code) => updateCode(ev, code!)}
+                onChange={handleEditorChange}
             />
             {code}
         </>

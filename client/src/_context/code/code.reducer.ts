@@ -1,11 +1,11 @@
-import getTemplate from 'utils/language-templates';
+import getTemplate from 'utils/language-examples';
 import {
     CODE_DID_UPDATE,
-    GET_SNIPPET,
+    FETCH_SNIPPETS,
     INPUT_DID_UPDATE,
     SET_LOADING,
     SUBMIT_CODE,
-    UPDATE_LANGUAGE,
+    UPDATE_LANGUAGE
 } from '_context/types';
 import { Action, State } from './code.type';
 
@@ -23,6 +23,7 @@ export const initialState: State = {
     updateInput: () => null,
     updateLanguage: () => null,
     submitCode: () => null,
+    fetchSnippets: () => null,
 };
 
 //reducer
@@ -59,6 +60,12 @@ export default function codeReducer(state: State = initialState, action: Action)
             return {
                 ...state,
                 loading: true,
+            };
+
+        case FETCH_SNIPPETS:
+            return {
+                ...state,
+                ...payload,
             };
 
         default:

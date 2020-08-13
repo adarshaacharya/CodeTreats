@@ -9,6 +9,7 @@ const LanguageSelector = () => {
     const onLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         updateLanguage(event.target.value);
     };
+
     return (
         <div className='select__wrapper'>
             <select name='languages' onChange={onLanguageChange} defaultValue={languages[1].value}>

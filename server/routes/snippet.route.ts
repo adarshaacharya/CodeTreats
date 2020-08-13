@@ -7,7 +7,7 @@ const SnippetRoute = Router();
 SnippetRoute.get('/', getAllSnippets);
 
 // get snippet by id
-SnippetRoute.post('/:id', getSnippetbyId);
+SnippetRoute.get('/:id', getSnippetbyId);
 
 // save snippet
 SnippetRoute.post('/', saveSnippet);
