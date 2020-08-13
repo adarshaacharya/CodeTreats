@@ -4,6 +4,7 @@ import { CODE_DID_UPDATE, SET_LOADING, SUBMIT_CODE, UPDATE_LANGUAGE, INPUT_DID_U
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
 import { State } from './code.type';
+import api from 'utils/api';
 
 const CodeState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -41,18 +42,13 @@ const CodeState: React.FC = ({ children }) => {
     const submitCode = async (code: string, language: string, input: string) => {
         try {
             setLoading();
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            };
 
             const payload = {
                 language: language,
                 sourceCode: code,
                 userInput: input,
             };
-            const res = await Axios.post('/api/code/submit', payload, config);
+            const res = await api.post('/code/submit', payload);
             dispatch({
                 type: SUBMIT_CODE,
                 payload: res.data,
