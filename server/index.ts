@@ -5,6 +5,8 @@ import express, { Express, Response } from 'express';
 import path from 'path';
 //  routes
 import CodeRoute from './routes/code.route';
+import SnippetRoute from './routes/snippet.route';
+
 
 if (process.env.NODE_ENV !== 'production') {
     config();
@@ -21,6 +23,8 @@ app.use(compression());
 
 //routes
 app.use('/api/code', CodeRoute);
+app.use('/api/code', CodeRoute);
+
 
 // Serve static addes in prod env
 if (process.env.NODE_ENV === 'production') {
