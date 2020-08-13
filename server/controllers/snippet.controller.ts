@@ -6,7 +6,7 @@ import Snippet from '../models/snippet.model';
 // @access  Public
 export const getAllSnippets = async (_req: Request, res: Response): Promise<void> => {
     try {
-        const snippets = await Snippet.find();
+        const snippets = await Snippet.find().sort({ date: -1 });
         res.status(200).json(snippets);
     } catch (error) {
         console.log(error);

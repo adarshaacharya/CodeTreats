@@ -5,7 +5,7 @@ import getExtension from '../utils/lang-to-extension';
 // @route   POST api/code/submit
 // @desc     Submit code from user
 // @access  Public
-export const SubmitCode = async (req: Request, res: Response) => {
+export const SubmitCode = async (req: Request, res: Response): Promise<void> => {
     try {
         const { userInput, sourceCode, language } = req.body;
         const extension = getExtension(language);
