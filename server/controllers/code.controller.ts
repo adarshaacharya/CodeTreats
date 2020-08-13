@@ -28,7 +28,7 @@ export const SubmitCode = async (req: Request, res: Response) => {
             ],
         };
         const output = await Axios.post(uri, data, axiosConfig);
-        res.status(200).json(output.data);
+        res.status(201).json(output.data);
     } catch (err) {
         console.log(err.message);
         res.status(500).json({ msg: 'Server error' });
