@@ -9,16 +9,18 @@ import CodeContext from '_context/code/code.context';
 const Snippet = () => {
     const { id } = useParams();
     const codeContext = React.useContext(CodeContext);
-    const { fetchSnippetbyId, code, updateCode } = codeContext;
+    const { fetchSnippetbyId, code, updateCode, updateLanguage, language } = codeContext;
 
     const width1 = window.innerHeight / 0.8;
     const width2 = window.innerHeight / 2;
     React.useEffect(() => {
         fetchSnippetbyId(id);
 
+        // code cleanup(important to switch diff editor)
         return () => {
-            console.log('unmounting ');
+            console.log('unmounting code..');
             updateCode(code!);
+            updateLanguage(language);
         };
     }, [id]);
 

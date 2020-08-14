@@ -1,15 +1,12 @@
 import { ControlledEditor } from '@monaco-editor/react';
-import React from 'react';
+import React, { Props } from 'react';
 import { editorOptions, theme } from 'utils/editor-options';
 import CodeContext from '_context/code/code.context';
 
-type Props = {
-    snippetCode?: string;
-};
-
-const CodeEditor: React.FC<Props> = ({ snippetCode }) => {
+const CodeEditor: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { code, updateCode, language } = codeContext;
+    console.log(language);
 
     const handleEditorChange = (ev?: object, value?: string) => {
         updateCode(value!);
@@ -22,7 +19,7 @@ const CodeEditor: React.FC<Props> = ({ snippetCode }) => {
                 language={language}
                 theme={theme}
                 options={editorOptions}
-                value={snippetCode || code}
+                value={code}
                 onChange={handleEditorChange}
             />
             {code}
