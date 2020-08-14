@@ -47,3 +47,10 @@ ul {
 .submit[disabled] {
     cursor: not-allowed;
 }
+
+
+.nav__item {
+    text-decoration: none;
+    color: aqua;
+    font-size: 2rem;
+}

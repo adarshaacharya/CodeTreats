@@ -8,11 +8,8 @@ Browser based VSCODE like code editor.
     npm run dev
 ```
 
-Format code before commit : (it will format both client and server code)
+- Husky will format before every commits
 
-```sh
-    npm run format
-```
 
 Sample Input :
 
