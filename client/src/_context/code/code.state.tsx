@@ -41,7 +41,6 @@ const CodeState: React.FC = ({ children }) => {
     const submitCode = async (code: string, language: string, input: string) => {
         try {
             setLoading();
-
             const payload = {
                 language: language,
                 sourceCode: code,
@@ -70,6 +69,8 @@ const CodeState: React.FC = ({ children }) => {
         }
     };
 
+    const fetchSnippetbyId = (id: string) => {};
+
     // set loading
     const setLoading = () => {
         dispatch({
@@ -91,6 +92,7 @@ const CodeState: React.FC = ({ children }) => {
                 updateLanguage,
                 submitCode,
                 fetchSnippets,
+                fetchSnippetbyId,
             }}
         >
             {children}

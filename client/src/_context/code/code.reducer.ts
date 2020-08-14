@@ -26,6 +26,7 @@ export const initialState: State = {
     updateLanguage: () => null,
     submitCode: () => null,
     fetchSnippets: () => null,
+    fetchSnippetbyId: () => null,
 };
 
 //reducer

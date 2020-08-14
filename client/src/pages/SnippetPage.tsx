@@ -1,7 +1,11 @@
 import React from 'react';
-
+import Snippet from 'components/Snippet';
 const SnippetPage = () => {
-    return <h2>Snippet Page</h2>;
+    return (
+        <>
+            <Snippet />
+        </>
+    );
 };
 
 export default SnippetPage;

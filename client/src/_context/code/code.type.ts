@@ -24,6 +24,7 @@ export interface State {
     updateLanguage: (lang: string) => void;
     submitCode: (code: string, language: string, input: string) => void;
     fetchSnippets: () => void;
+    fetchSnippetbyId: (id : string) => void;
 }
 
 export interface Action {
