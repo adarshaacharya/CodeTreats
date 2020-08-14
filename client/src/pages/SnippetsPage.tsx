@@ -1,17 +1,12 @@
-import CodeEditor from 'components/CodeEditor';
-import InputPanel from 'components/InputPanel';
-import OutputPanel from 'components/OutputPanel';
 import React from 'react';
-import SplitPane from 'react-split-pane';
+import Snippets from 'components/Snippets';
 
-const SnippetPage = () => {
-    const width1 = window.innerHeight / 0.8;
-    const width2 = window.innerHeight / 2;
+const SnippetsPage = () => {
     return (
         <>
-            <h1>Snippets</h1>
+            <Snippets />
         </>
     );
 };
 
-export default SnippetPage;
+export default SnippetsPage;

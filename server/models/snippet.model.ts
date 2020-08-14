@@ -11,6 +11,7 @@ interface ISnippet extends Document {
 const SnippetSchema: Schema = new Schema({
     title: {
         type: String,
+        required: true,
     },
     sourceCode: {
         type: String,

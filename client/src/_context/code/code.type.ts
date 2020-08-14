@@ -1,6 +1,14 @@
-export interface Output {
+interface Output {
     stdout: string | null;
     stderr: string | null;
+}
+
+interface Snippet {
+    _id: string;
+    title: string;
+    sourceCode: string | null;
+    language: string;
+    date: Date;
 }
 
 export interface State {
@@ -9,8 +17,9 @@ export interface State {
     language: string;
     loading: boolean;
     output: Output;
+    snippets: Snippet[];
 
-    updateCode: ( code: string) => void;
+    updateCode: (code: string) => void;
     updateInput: (input: string) => void;
     updateLanguage: (lang: string) => void;
     submitCode: (code: string, language: string, input: string) => void;

@@ -32,9 +32,10 @@ export const getSnippetbyId = async (req: Request, res: Response): Promise<void>
 // @access  Public
 export const saveSnippet = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { sourceCode, language } = req.body;
+        const { title, sourceCode, language } = req.body;
 
         const newSnippet = new Snippet({
+            title,
             sourceCode,
             language,
         });

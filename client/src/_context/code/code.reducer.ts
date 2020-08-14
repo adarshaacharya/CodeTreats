@@ -5,9 +5,10 @@ import {
     INPUT_DID_UPDATE,
     SET_LOADING,
     SUBMIT_CODE,
-    UPDATE_LANGUAGE
+    UPDATE_LANGUAGE,
 } from '_context/types';
 import { Action, State } from './code.type';
+import { resolveAny } from 'dns';
 
 //initial  value on first render
 export const initialState: State = {
@@ -19,6 +20,7 @@ export const initialState: State = {
         stdout: '',
         stderr: '',
     },
+    snippets: [],
     updateCode: () => null,
     updateInput: () => null,
     updateLanguage: () => null,
@@ -65,7 +67,8 @@ export default function codeReducer(state: State = initialState, action: Action)
         case FETCH_SNIPPETS:
             return {
                 ...state,
-                ...payload,
+                snippets: payload,
+                loading: false,
             };
 
         default:

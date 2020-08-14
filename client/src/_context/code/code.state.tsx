@@ -59,6 +59,7 @@ const CodeState: React.FC = ({ children }) => {
 
     const fetchSnippets = async () => {
         try {
+            setLoading();
             const res = await api.get(`/snippets`);
             dispatch({
                 type: FETCH_SNIPPETS,
@@ -84,11 +85,12 @@ const CodeState: React.FC = ({ children }) => {
                 loading: state?.loading,
                 output: state.output,
                 input: state.input,
+                snippets: state.snippets,
                 updateCode,
                 updateInput,
                 updateLanguage,
-                fetchSnippets,
                 submitCode,
+                fetchSnippets,
             }}
         >
             {children}
