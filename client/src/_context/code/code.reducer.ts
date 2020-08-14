@@ -1,16 +1,12 @@
 import getTemplate from 'utils/language-examples';
 import {
     CODE_DID_UPDATE,
-
-
-
-
-
-    FETCH_SNIPPET, FETCH_SNIPPETS,
+    FETCH_SNIPPET,
+    FETCH_SNIPPETS,
     INPUT_DID_UPDATE,
     SET_LOADING,
     SUBMIT_CODE,
-    UPDATE_LANGUAGE
+    UPDATE_LANGUAGE,
 } from '_context/types';
 import { Action, State } from './code.type';
 

@@ -3,15 +3,17 @@ import React from 'react';
 import { editorOptions, theme } from 'utils/editor-options';
 import CodeContext from '_context/code/code.context';
 
-const CodeEditor: React.FC = () => {
+type Props = {
+    snippetCode?: string;
+};
+
+const CodeEditor: React.FC<Props> = ({ snippetCode }) => {
     const codeContext = React.useContext(CodeContext);
     const { code, updateCode, language } = codeContext;
 
     const handleEditorChange = (ev?: object, value?: string) => {
         updateCode(value!);
     };
-    if (!code || !language) return <p>Loading..</p>;
-
 
     return (
         <>
@@ -20,7 +22,7 @@ const CodeEditor: React.FC = () => {
                 language={language}
                 theme={theme}
                 options={editorOptions}
-                value={code}
+                value={snippetCode || code}
                 onChange={handleEditorChange}
             />
             {code}
