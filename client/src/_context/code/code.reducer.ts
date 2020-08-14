@@ -1,14 +1,18 @@
 import getTemplate from 'utils/language-examples';
 import {
     CODE_DID_UPDATE,
-    FETCH_SNIPPETS,
+
+
+
+
+
+    FETCH_SNIPPET, FETCH_SNIPPETS,
     INPUT_DID_UPDATE,
     SET_LOADING,
     SUBMIT_CODE,
-    UPDATE_LANGUAGE,
+    UPDATE_LANGUAGE
 } from '_context/types';
 import { Action, State } from './code.type';
-import { resolveAny } from 'dns';
 
 //initial  value on first render
 export const initialState: State = {
@@ -69,6 +73,14 @@ export default function codeReducer(state: State = initialState, action: Action)
             return {
                 ...state,
                 snippets: payload,
+                loading: false,
+            };
+
+        case FETCH_SNIPPET:
+            return {
+                ...state,
+                language: payload.language,
+                code: payload.sourceCode,
                 loading: false,
             };
 

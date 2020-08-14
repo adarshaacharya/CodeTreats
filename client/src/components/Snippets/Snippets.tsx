@@ -1,11 +1,10 @@
 import React from 'react';
-import CodeContext from '_context/code/code.context';
 import { Link } from 'react-router-dom';
+import CodeContext from '_context/code/code.context';
 
 const Snippets = () => {
     const codeContext = React.useContext(CodeContext);
     const { snippets, fetchSnippets, loading } = codeContext;
-
     React.useEffect(() => {
         fetchSnippets();
     }, []);

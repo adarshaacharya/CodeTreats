@@ -10,6 +10,8 @@ const CodeEditor: React.FC = () => {
     const handleEditorChange = (ev?: object, value?: string) => {
         updateCode(value!);
     };
+    if (!code || !language) return <p>Loading..</p>;
+
 
     return (
         <>

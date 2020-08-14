@@ -8,6 +8,7 @@ const RunCodeButton = () => {
     const onCodeSubmit = (code: string, language: string, input: string) => {
         submitCode(code, language, input);
     };
+
     return (
         <button
             className='submit'
