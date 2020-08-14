@@ -9,7 +9,7 @@ import CodeContext from '_context/code/code.context';
 const Snippet = () => {
     const { id } = useParams();
     const codeContext = React.useContext(CodeContext);
-    const { fetchSnippetbyId, code, language, loading } = codeContext;
+    const { fetchSnippetbyId } = codeContext;
 
     const width1 = window.innerHeight / 0.8;
     const width2 = window.innerHeight / 2;
@@ -17,8 +17,6 @@ const Snippet = () => {
         console.log('side effect');
         fetchSnippetbyId(id);
     }, [id]);
-
-    if (loading || !code || !language) return <p>Loading..</p>;
 
     return (
         <div>
