@@ -18,7 +18,7 @@ const Snippet = () => {
 
         // code cleanup(important to switch diff editor)
         return () => {
-            console.log('unmounting code..');
+            console.log('🦄 Unmounting Component..');
             updateCode(code!);
             updateLanguage(language);
         };
