@@ -4,9 +4,7 @@ import LanguageSelector from './LanguageSelector';
 import './navbar.style.css';
 import RunCodeButton from './RunCodeButton';
 
-
-
-const Navbar : React.FC = () => {
+const Navbar: React.FC = () => {
     return (
         <nav>
             <ul>

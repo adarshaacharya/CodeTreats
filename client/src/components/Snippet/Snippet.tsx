@@ -9,13 +9,17 @@ import CodeContext from '_context/code/code.context';
 const Snippet = () => {
     const { id } = useParams();
     const codeContext = React.useContext(CodeContext);
-    const { fetchSnippetbyId } = codeContext;
+    const { fetchSnippetbyId, code, updateCode } = codeContext;
 
     const width1 = window.innerHeight / 0.8;
     const width2 = window.innerHeight / 2;
     React.useEffect(() => {
-        console.log('side effect');
         fetchSnippetbyId(id);
+
+        return () => {
+            console.log('unmounting ');
+            updateCode(code!);
+        };
     }, [id]);
 
     return (
