@@ -1,8 +1,7 @@
 import React from 'react';
 
-
-const useForm = (initialVal: {}) => {
-    const [formData, setFormData] = React.useState(initialVal);
+const useForm = () => {
+    const [formData, setFormData] = React.useState({});
 
     const handleInput = (event: React.FormEvent<HTMLInputElement>) => {
         setFormData({
