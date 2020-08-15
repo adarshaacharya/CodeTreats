@@ -1,23 +1,27 @@
 import CodeEditor from 'components/CodeEditor';
 import InputPanel from 'components/InputPanel';
 import OutputPanel from 'components/OutputPanel';
+import SaveSnippet from 'components/SaveSnippet';
 import React from 'react';
-import SplitPane from 'react-split-pane';
+import { Col, Row } from 'react-flexbox-grid';
 
 const HomePage: React.FC = () => {
     const width1 = window.innerHeight / 0.8;
     const width2 = window.innerHeight / 2;
     return (
-        <React.Fragment>
-            <SplitPane split='vertical' defaultSize={width1} maxSize={width1}>
-                <CodeEditor />
+        <>
+            <Row>
+                <Col lg={6}>
+                    <CodeEditor />
+                </Col>
 
-                <SplitPane split='horizontal' defaultSize={width2} maxSize={width2}>
+                <Col lg={6}>
                     <InputPanel />
                     <OutputPanel />
-                </SplitPane>
-            </SplitPane>
-        </React.Fragment>
+                    <SaveSnippet />
+                </Col>
+            </Row>
+        </>
     );
 };
 

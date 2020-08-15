@@ -1,9 +1,10 @@
-textarea {
-    height: 30vh;
+input {
+    height: 20vh;
     width: 95%;
+
     background: #1d1c1c;
     color: #00ff15;
-    padding: 40px 10px;
+    padding: 10px;
     border-left: 1px solid #0070f3;
     cursor: text;
     font-size: 1.3rem;

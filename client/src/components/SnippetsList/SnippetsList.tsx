@@ -3,7 +3,7 @@ import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import CodeContext from '_context/code/code.context';
 
-const Snippets = () => {
+const SnippetsList = () => {
     const codeContext = React.useContext(CodeContext);
     const { snippets, fetchSnippets, loading } = codeContext;
     React.useEffect(() => {
@@ -27,4 +27,4 @@ const Snippets = () => {
     );
 };
 
-export default Snippets;
+export default SnippetsList;

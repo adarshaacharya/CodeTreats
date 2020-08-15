@@ -22,7 +22,6 @@ const CodeEditor: React.FC = () => {
                 value={code}
                 onChange={handleEditorChange}
             />
-            {code}
         </>
     );
 };

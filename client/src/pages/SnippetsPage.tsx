@@ -1,10 +1,10 @@
 import React from 'react';
-import Snippets from 'components/Snippets';
+import SnippetsList from 'components/SnippetsList';
 
 const SnippetsPage = () => {
     return (
         <>
-            <Snippets />
+            <SnippetsList />
         </>
     );
 };
