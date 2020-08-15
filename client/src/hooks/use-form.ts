@@ -1,7 +1,13 @@
 import React from 'react';
 
-const useForm = () => {
-    const [formData, setFormData] = React.useState({});
+type Props = {
+    title?: string;
+};
+
+type TReturn = [Props, (event: React.FormEvent<HTMLInputElement>) => void];
+
+const useForm = (initialVal: Props): TReturn => {
+    const [formData, setFormData] = React.useState(initialVal || {});
 
     const handleInput = (event: React.FormEvent<HTMLInputElement>) => {
         setFormData({
@@ -10,7 +16,7 @@ const useForm = () => {
         });
     };
 
-    return [handleInput, formData];
+    return [formData, handleInput];
 };
 
 export default useForm;

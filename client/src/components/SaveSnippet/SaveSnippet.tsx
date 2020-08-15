@@ -11,17 +11,13 @@ const SaveSnippet = () => {
         title: '',
     };
 
-    const [snippet, setSnippet] = React.useState(initialVal);
+    const [formData, handleInput] = useForm(initialVal);
 
-    const { title } = snippet;
-    const onFormChange = (e: React.FormEvent<HTMLInputElement>) => {
-        setSnippet({ ...snippet, [e.currentTarget.name]: e.currentTarget.value });
-    };
-
+    const { title } = formData;
     const onFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         addSnippet({
-            title,
+            title: title!,
             sourceCode: code,
             language,
         });
@@ -34,7 +30,7 @@ const SaveSnippet = () => {
                 id='title'
                 placeholder='Type snippet title..'
                 value={title}
-                onChange={onFormChange}
+                onChange={handleInput}
             />
 
             <button className='save__snippet' type='submit'>
