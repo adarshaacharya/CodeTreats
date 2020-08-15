@@ -1,42 +1,52 @@
+import useForm from 'hooks/use-form';
 import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import CodeContext from '_context/code/code.context';
 import './style.css';
-import useForm from 'hooks/use-form';
 
 const SaveSnippet = () => {
     const codeContext = React.useContext(CodeContext);
     const { addSnippet, code, language } = codeContext;
 
-    const initialVal = {
-        title: '',
-    };
-
+    const initialVal = { title: '' };
     const [formData, handleInput] = useForm(initialVal);
 
-    const { title } = formData;
     const onFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         addSnippet({
-            title: title!,
+            title: formData.title!,
             sourceCode: code,
             language,
         });
     };
-    return (
-        <form onSubmit={onFormSubmit} autoComplete='off'>
-            <input
-                type='text'
-                name='title'
-                id='title'
-                placeholder='Type snippet title..'
-                value={title}
-                onChange={handleInput}
-            />
 
-            <button className='save__snippet' type='submit'>
-                Save Snippet
-            </button>
-        </form>
+    const notify = () => {
+        toast.success('Success Notification !', {
+            position: toast.POSITION.TOP_CENTER,
+        });
+    };
+
+    return (
+        <>
+            <ToastContainer />
+            <form onSubmit={onFormSubmit} autoComplete='off'>
+                <input
+                    type='text'
+                    name='title'
+                    id='title'
+                    placeholder='Type snippet title..'
+                    value={formData.title}
+                    onChange={handleInput}
+                    required
+                />
+
+                <button className='save__snippet' type='submit' onClick={notify}>
+                    Save Snippet
+                </button>
+            </form>
+        </>
     );
 };
 
