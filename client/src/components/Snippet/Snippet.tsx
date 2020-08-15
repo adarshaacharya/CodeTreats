@@ -15,13 +15,13 @@ const Snippet = () => {
     const width2 = window.innerHeight / 2;
     React.useEffect(() => {
         fetchSnippetbyId(id);
-
         // code cleanup(important to switch diff editor)
         return () => {
             console.log('🦄 Unmounting Component..');
             updateCode(code!);
             updateLanguage(language);
         };
+        // eslint-disable-next-line
     }, [id]);
 
     return (

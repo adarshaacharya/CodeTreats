@@ -2,9 +2,6 @@ import React from 'react';
 import languages from 'utils/language-options';
 import CodeContext from '_context/code/code.context';
 
-type Props = {
-    snippetLanguage?: string;
-};
 const LanguageSelector = () => {
     const codeContext = React.useContext(CodeContext);
     const { updateLanguage, language } = codeContext;
