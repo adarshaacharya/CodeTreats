@@ -8,10 +8,11 @@ import {
     SET_LOADING,
     SUBMIT_CODE,
     UPDATE_LANGUAGE,
+    ADD_SNIPPET,
 } from '../types';
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
-import { State } from './code.type';
+import { State, ISnippet } from './code.type';
 
 const CodeState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -90,6 +91,19 @@ const CodeState: React.FC = ({ children }) => {
         }
     };
 
+    const addSnippet = async (snippet: ISnippet) => {
+        try {
+            setLoading();
+            const res = await api.post(`api/snippets`, snippet);
+            dispatch({
+                type: ADD_SNIPPET,
+                payload: res.data,
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     // set loading
     const setLoading = () => {
         dispatch({
@@ -112,6 +126,7 @@ const CodeState: React.FC = ({ children }) => {
                 submitCode,
                 fetchSnippets,
                 fetchSnippetbyId,
+                addSnippet,
             }}
         >
             {children}

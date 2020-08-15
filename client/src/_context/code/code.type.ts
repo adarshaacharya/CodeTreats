@@ -1,14 +1,14 @@
-interface Output {
+interface IOutput {
     stdout: string | null;
     stderr: string | null;
 }
 
-interface Snippet {
+export interface ISnippet {
     _id: string;
     title: string;
     sourceCode: string | null;
     language: string;
-    date: Date;
+    date?: Date;
 }
 
 export interface State {
@@ -16,8 +16,8 @@ export interface State {
     input: string | null;
     language: string;
     loading: boolean;
-    output: Output;
-    snippets: Snippet[];
+    output: IOutput;
+    snippets: ISnippet[];
 
     updateCode: (code: string) => void;
     updateInput: (input: string) => void;
@@ -25,6 +25,7 @@ export interface State {
     submitCode: (code: string, language: string, input: string) => void;
     fetchSnippets: () => void;
     fetchSnippetbyId: (sid: string) => void;
+    addSnippet: (snippet: ISnippet) => void;
 }
 
 export interface Action {

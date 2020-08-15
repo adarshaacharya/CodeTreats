@@ -7,6 +7,7 @@ import {
     SET_LOADING,
     SUBMIT_CODE,
     UPDATE_LANGUAGE,
+    ADD_SNIPPET,
 } from '_context/types';
 import { Action, State } from './code.type';
 
@@ -27,6 +28,7 @@ export const initialState: State = {
     submitCode: () => null,
     fetchSnippets: () => null,
     fetchSnippetbyId: () => null,
+    addSnippet: () => null,
 };
 
 //reducer
@@ -77,6 +79,13 @@ export default function codeReducer(state: State = initialState, action: Action)
                 ...state,
                 language: payload.language,
                 code: payload.sourceCode,
+                loading: false,
+            };
+
+        case ADD_SNIPPET:
+            return {
+                ...state,
+                snippets: [payload, ...state.snippets],
                 loading: false,
             };
 
