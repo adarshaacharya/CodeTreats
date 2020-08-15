@@ -1,12 +1,21 @@
 input {
-    height: 20vh;
+    height: 10vh;
     width: 95%;
-
     background: #1d1c1c;
     color: #00ff15;
     padding: 10px;
-    border-left: 1px solid #0070f3;
+    border-top: 5px solid #26dfec;
+    margin-top: 3rem;
     cursor: text;
     font-size: 1.3rem;
-    font-family: Dank Mono;
+    border-radius: 10px;
+}
+
+.save__snippet {
+    margin: 10px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #0070f3;
+    background: #fa6400;
+    color: #fff;
 }

@@ -4,7 +4,7 @@ interface IOutput {
 }
 
 export interface ISnippet {
-    _id: string;
+    _id?: string;
     title: string;
     sourceCode: string | null;
     language: string;

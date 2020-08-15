@@ -2,8 +2,10 @@ import CodeEditor from 'components/CodeEditor';
 import InputPanel from 'components/InputPanel';
 import OutputPanel from 'components/OutputPanel';
 import React from 'react';
+import { Row, Col } from 'react-grid-system';
 import { useParams } from 'react-router-dom';
 import CodeContext from '_context/code/code.context';
+import SaveSnippet from 'components/SaveSnippet';
 
 const Snippet = () => {
     const { id } = useParams();
@@ -23,9 +25,17 @@ const Snippet = () => {
 
     return (
         <>
-            <CodeEditor />
-            <InputPanel />
-            <OutputPanel />
+            <Row debug>
+                <Col md={6}>
+                    <CodeEditor />
+                </Col>
+
+                <Col md={6}>
+                    <InputPanel />
+                    <OutputPanel />
+                    <SaveSnippet />
+                </Col>
+            </Row>
         </>
     );
 };

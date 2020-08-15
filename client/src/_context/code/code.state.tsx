@@ -1,18 +1,17 @@
 import React from 'react';
 import api from 'utils/api';
 import {
-    CODE_DID_UPDATE,
+    ADD_SNIPPET, CODE_DID_UPDATE,
     FETCH_SNIPPET,
     FETCH_SNIPPETS,
     INPUT_DID_UPDATE,
     SET_LOADING,
     SUBMIT_CODE,
-    UPDATE_LANGUAGE,
-    ADD_SNIPPET,
+    UPDATE_LANGUAGE
 } from '../types';
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
-import { State, ISnippet } from './code.type';
+import { ISnippet, State } from './code.type';
 
 const CodeState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -94,7 +93,7 @@ const CodeState: React.FC = ({ children }) => {
     const addSnippet = async (snippet: ISnippet) => {
         try {
             setLoading();
-            const res = await api.post(`api/snippets`, snippet);
+            const res = await api.post(`/snippets`, snippet);
             dispatch({
                 type: ADD_SNIPPET,
                 payload: res.data,
