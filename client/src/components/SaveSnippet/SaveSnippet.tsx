@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import CodeContext from '_context/code/code.context';
 import './save-snippet.style.css';
 import { useSfx } from 'hooks/use-sfx';
+import SaveModal from './SaveModal';
 
 const SaveSnippet: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
@@ -27,6 +28,7 @@ const SaveSnippet: React.FC = () => {
         notifySubmission();
     };
 
+
     return (
         <>
             <form onSubmit={onFormSubmit} autoComplete='off'>
@@ -44,6 +46,9 @@ const SaveSnippet: React.FC = () => {
                     Save Snippet
                 </button>
             </form>
+
+            <SaveModal />
+          
         </>
     );
 };

@@ -1,5 +1,5 @@
-import useSound from 'use-sound';
 import ting from 'assets/sounds/ting.mp3';
+import useSound from 'use-sound';
 
 export function useSfx() {
     const [playTing] = useSound(ting, {
@@ -10,3 +10,5 @@ export function useSfx() {
         playTing,
     };
 }
+
+
