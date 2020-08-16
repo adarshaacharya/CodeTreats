@@ -1,14 +1,12 @@
 input {
-    height: 10vh;
     width: 95%;
-    background: #1d1c1c;
+    background: inherit;
     color: #00ff15;
     padding: 10px;
-    border-top: 5px solid #26dfec;
-    margin-top: 3rem;
     cursor: text;
-    font-size: 1.3rem;
-    border-radius: 10px;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    border: 1px solid rgba(122, 118, 118, 0.473);
 }
 
 .save__snippet {
@@ -21,24 +19,15 @@ input {
 }
 
 .dark {
-    color: black;
-}
-/* 
-.Modal {
-    top: 50%;
-    left: 50%;
-    right: auto;
-    bottom: auto;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    width: 480px;
-    background: #2c323d;
-    color: #ffffff;
+    color: #fff;
 }
 
-.Overlay {
-    background: rgba(0, 0, 0, 0.7);
-} */
+hr {
+    border: none;
+    border-bottom: 1px solid #444;
+    margin: 20px 0;
+    transition: border-color 0.1s ease-in-out;
+}
 
 .Modal {
     position: absolute;
@@ -48,9 +37,8 @@ input {
     bottom: auto;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    width: 480px;
-    padding: 30px;
-    background: #2c323d;
+    width: 500px;
+    background: #222429;
     color: #fff;
     border-radius: 6px;
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.8);
@@ -59,11 +47,10 @@ input {
 .Modal .header {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
-}
-
-.Modal .header h3 {
     color: #fff;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 15px;
 }
 
 .Modal .header button {
@@ -73,13 +60,14 @@ input {
 }
 
 .Modal .body {
-    color: #fff;
-    padding: 40px 0;
+    padding: 5px 20px;
 }
 
 .Modal .footer {
     display: flex;
     gap: 30px;
+    justify-content: flex-end;
+    padding: 15px;
 }
 
 .Modal .close__button {
@@ -110,6 +98,7 @@ input {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.7);
 }
+
 .ReactModal__Overlay {
     opacity: 0;
     transition: opacity 200ms ease-in-out;
