@@ -4,13 +4,14 @@ import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
 const SaveModal = () => {
-    const [modalIsOpen, setModalIsOpen] = React.useState(false);
+    const [showModal, setshowModal] = React.useState(false);
 
-    const handleClose = () => setModalIsOpen(false);
+    const handleClose = () => setshowModal(false);
+    const handleOpen = () => setshowModal(true);
     return (
         <>
             <Modal
-                isOpen={modalIsOpen}
+                isOpen={showModal}
                 onRequestClose={handleClose}
                 closeTimeoutMS={200}
                 className='Modal'
@@ -31,7 +32,7 @@ const SaveModal = () => {
                 </div>
             </Modal>
 
-            <button className='save__snippet' type='submit' onClick={() => setModalIsOpen(true)}>
+            <button className='save__snippet' type='submit' onClick={handleOpen}>
                 Modal Test
             </button>
         </>

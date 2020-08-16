@@ -1,11 +1,10 @@
 import useForm from 'hooks/use-form';
+import { useSfx } from 'hooks/use-sfx';
+import { notify } from 'layout';
 import React from 'react';
-import { toast } from 'react-toastify';
 import CodeContext from '_context/code/code.context';
 import './save-snippet.style.css';
-import { useSfx } from 'hooks/use-sfx';
 import SaveModal from './SaveModal';
-import { notify } from 'layout/Toast';
 
 const SaveSnippet: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
