@@ -93,7 +93,6 @@ const CodeState: React.FC = ({ children }) => {
 
     const addSnippet = async (snippet: ISnippet) => {
         try {
-            setLoading();
             const res = await api.post(`/snippets`, snippet);
             dispatch({
                 type: ADD_SNIPPET,

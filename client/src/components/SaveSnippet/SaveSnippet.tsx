@@ -1,17 +1,18 @@
 import useForm from 'hooks/use-form';
 import React from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import CodeContext from '_context/code/code.context';
-import './style.css';
+import './save-snippet.style.css';
 
-const SaveSnippet = () => {
+const SaveSnippet: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { addSnippet, code, language } = codeContext;
 
     const initialVal = { title: '' };
     const [formData, handleInput] = useForm(initialVal);
+    
+    const notifySubmission = () => toast('Code has been saved successfully 😎');
 
     const onFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -20,12 +21,7 @@ const SaveSnippet = () => {
             sourceCode: code,
             language,
         });
-    };
-
-    const notify = () => {
-        toast.success('Success Notification !', {
-            position: toast.POSITION.TOP_CENTER,
-        });
+        notifySubmission();
     };
 
     return (
@@ -42,7 +38,7 @@ const SaveSnippet = () => {
                     required
                 />
 
-                <button className='save__snippet' type='submit' onClick={notify}>
+                <button className='save__snippet' type='submit'>
                     Save Snippet
                 </button>
             </form>

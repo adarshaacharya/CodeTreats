@@ -86,7 +86,6 @@ export default function codeReducer(state: State = initialState, action: Action)
             return {
                 ...state,
                 snippets: [payload, ...state.snippets],
-                loading: false,
             };
 
         default:
