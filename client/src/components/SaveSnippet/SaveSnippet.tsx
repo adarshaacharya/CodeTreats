@@ -28,7 +28,6 @@ const SaveSnippet: React.FC = () => {
         notifySubmission();
     };
 
-
     return (
         <>
             <form onSubmit={onFormSubmit} autoComplete='off'>
@@ -48,7 +47,6 @@ const SaveSnippet: React.FC = () => {
             </form>
 
             <SaveModal />
-          
         </>
     );
 };

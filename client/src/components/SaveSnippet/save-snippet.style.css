@@ -23,17 +23,101 @@ input {
 .dark {
     color: black;
 }
+/* 
+.Modal {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    background: #2c323d;
+    color: #ffffff;
+}
 
+.Overlay {
+    background: rgba(0, 0, 0, 0.7);
+} */
 
+.Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    padding: 30px;
+    background: #2c323d;
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+}
+
+.Modal .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.Modal .header h3 {
+    color: #fff;
+}
+
+.Modal .header button {
+    cursor: pointer;
+    background: inherit;
+    border: none;
+}
+
+.Modal .body {
+    color: #fff;
+    padding: 40px 0;
+}
+
+.Modal .footer {
+    display: flex;
+}
+
+.Modal .close__button {
+    padding: 10px 30px;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #ff0077;
+    font-size: 1rem;
+}
+
+.Modal .save__button {
+    padding: 10px 30px;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #00c3ff;
+    font-size: 1rem;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
 .ReactModal__Overlay {
     opacity: 0;
     transition: opacity 200ms ease-in-out;
 }
 
-.ReactModal__Overlay--after-open{
+.ReactModal__Overlay--after-open {
     opacity: 1;
 }
 
-.ReactModal__Overlay--before-close{
+.ReactModal__Overlay--before-close {
     opacity: 0;
 }
