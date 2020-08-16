@@ -1,7 +1,6 @@
 import useForm from 'hooks/use-form';
 import React from 'react';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import CodeContext from '_context/code/code.context';
 import './save-snippet.style.css';
 
@@ -26,7 +25,6 @@ const SaveSnippet: React.FC = () => {
 
     return (
         <>
-            <ToastContainer />
             <form onSubmit={onFormSubmit} autoComplete='off'>
                 <input
                     type='text'

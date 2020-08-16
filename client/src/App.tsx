@@ -5,6 +5,8 @@ import { useRoutes } from 'routes';
 import CodeState from '_context/code/code.state';
 import './styles/global.css';
 import history from 'utils/history';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App: React.FC = () => {
     const routes = useRoutes();
@@ -13,6 +15,7 @@ const App: React.FC = () => {
             <CodeState>
                 <Router history={history}>
                     <>
+                        <ToastContainer />
                         <Navbar />
                         {routes}
                     </>
