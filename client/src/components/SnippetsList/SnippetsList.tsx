@@ -25,6 +25,7 @@ const SnippetsList = () => {
                         {snippet.title} &rarr;
                         <Moment format='YYY/MM/DD'>{snippet.date}</Moment>
                     </h4>
+                    <hr/>
                 </Link>
             ))}
         </>

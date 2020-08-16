@@ -1,21 +1,22 @@
 import Navbar from 'components/Navbar';
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { useRoutes } from 'routes';
 import CodeState from '_context/code/code.state';
 import './styles/global.css';
+import history from 'utils/history';
 
 const App: React.FC = () => {
     const routes = useRoutes();
     return (
         <>
             <CodeState>
-                <BrowserRouter>
+                <Router history={history}>
                     <>
                         <Navbar />
                         {routes}
                     </>
-                </BrowserRouter>
+                </Router>
             </CodeState>
         </>
     );

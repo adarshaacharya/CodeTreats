@@ -13,6 +13,7 @@ import {
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
 import { ISnippet, State } from './code.type';
+import history from 'utils/history';
 
 const CodeState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -98,6 +99,9 @@ const CodeState: React.FC = ({ children }) => {
                 type: ADD_SNIPPET,
                 payload: res.data,
             });
+
+            // programmatic navigation from custom history obj
+            history.push('/snippets');
         } catch (error) {
             console.log(error);
         }
