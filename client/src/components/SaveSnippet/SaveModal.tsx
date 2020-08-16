@@ -4,32 +4,34 @@ import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
 const SaveModal = () => {
-    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [modalIsOpen, setModalIsOpen] = React.useState(false);
+
+    const handleClose = () => setModalIsOpen(false);
     return (
         <>
             <Modal
                 isOpen={modalIsOpen}
-                onRequestClose={() => setIsOpen(false)}
+                onRequestClose={handleClose}
                 closeTimeoutMS={200}
                 className='Modal'
                 overlayClassName='Overlay'
             >
                 <div className='header'>
                     <h3 className='dark'>Enter title for snippet</h3>
-                    <button onClick={() => setIsOpen(false)}>❌</button>
+                    <button onClick={handleClose}>❌</button>
                 </div>
                 <p className='dark body'>Modal Body</p>
                 <div className='footer'>
-                    <button onClick={() => setIsOpen(false)} className='save__button'>
-                        Close
+                    <button onClick={handleClose} className='save__button'>
+                        Save
                     </button>
-                    <button onClick={() => setIsOpen(false)} className='close__button'>
+                    <button onClick={handleClose} className='close__button'>
                         Close
                     </button>
                 </div>
             </Modal>
 
-            <button className='save__snippet' type='submit' onClick={() => setIsOpen(true)}>
+            <button className='save__snippet' type='submit' onClick={() => setModalIsOpen(true)}>
                 Modal Test
             </button>
         </>

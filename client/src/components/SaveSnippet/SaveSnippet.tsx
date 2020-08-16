@@ -5,6 +5,7 @@ import CodeContext from '_context/code/code.context';
 import './save-snippet.style.css';
 import { useSfx } from 'hooks/use-sfx';
 import SaveModal from './SaveModal';
+import { notify } from 'layout/Toast';
 
 const SaveSnippet: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
@@ -15,8 +16,6 @@ const SaveSnippet: React.FC = () => {
     const initialVal = { title: '' };
     const [formData, handleInput] = useForm(initialVal);
 
-    const notifySubmission = () => toast('Code has been saved successfully 😎');
-
     const onFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         addSnippet({
@@ -25,7 +24,7 @@ const SaveSnippet: React.FC = () => {
             language,
         });
         playTing();
-        notifySubmission();
+        notify.default('Code has been saved successfully 😎');
     };
 
     return (
