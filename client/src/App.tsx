@@ -3,7 +3,7 @@ import React from 'react';
 import { Router } from 'react-router-dom';
 import { useRoutes } from 'routes';
 import CodeState from '_context/code/code.state';
-import './styles/global.css';
+import 'assets/styles/global.css';
 import history from 'utils/history';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
