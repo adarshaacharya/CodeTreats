@@ -17,6 +17,9 @@ const FormattedIcon = (props: Props): JSX.Element => {
 
         case 'python':
             return <IconPython />;
+            
+        default:
+            throw new Error('Unknown icon type: ' + name);
     }
 };
 
