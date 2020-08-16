@@ -14,6 +14,7 @@ const SnippetsList = () => {
 
     if (loading) return <p>loading...</p>;
     if (snippets.length < 1) return <p>No snippets found.</p>;
+
     return (
         <>
             {snippets.map((snippet) => (

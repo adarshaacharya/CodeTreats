@@ -11,7 +11,7 @@ const SaveSnippet: React.FC = () => {
 
     const initialVal = { title: '' };
     const [formData, handleInput] = useForm(initialVal);
-    
+
     const notifySubmission = () => toast('Code has been saved successfully 😎');
 
     const onFormSubmit = (e: React.FormEvent) => {
