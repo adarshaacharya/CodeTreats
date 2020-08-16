@@ -4,3 +4,8 @@
     padding: 3rem;
     text-decoration: none;
 }
+
+svg {
+    height: 20px;
+    width: 20px;
+}

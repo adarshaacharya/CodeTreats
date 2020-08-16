@@ -5,8 +5,9 @@ type Props = {
     name: string;
 };
 
-const FormattedIcon = (props: Props): React.ReactNode => {
+const FormattedIcon = (props: Props): JSX.Element => {
     const { name } = props;
+
     switch (name) {
         case 'javascript':
             return <IconJavascript />;

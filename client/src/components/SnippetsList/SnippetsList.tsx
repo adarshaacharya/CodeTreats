@@ -3,6 +3,7 @@ import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import CodeContext from '_context/code/code.context';
 import './snippets-list.style.css';
+import { FormattedIcon } from 'components/icons';
 
 const SnippetsList = () => {
     const codeContext = React.useContext(CodeContext);
@@ -20,7 +21,7 @@ const SnippetsList = () => {
             {snippets.map((snippet) => (
                 <Link key={snippet._id} to={`/snippets/${snippet._id}`} className='snippet__item'>
                     <h4>
-                        🐎 {snippet.language} &rarr;
+                        <FormattedIcon name={snippet.language} />
                         {snippet.title} &rarr;
                         <Moment format='YYY/MM/DD'>{snippet.date}</Moment>
                     </h4>
