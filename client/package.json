@@ -21,7 +21,8 @@
         "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.1",
         "react-toastify": "^6.0.8",
-        "typescript": "~3.7.2"
+        "typescript": "~3.7.2",
+        "use-sound": "^1.0.2"
     },
     "scripts": {
         "start": "react-scripts start",

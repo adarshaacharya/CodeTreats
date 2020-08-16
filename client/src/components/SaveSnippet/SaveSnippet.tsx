@@ -3,10 +3,13 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import CodeContext from '_context/code/code.context';
 import './save-snippet.style.css';
+import { useSfx } from 'hooks/use-sfx';
 
 const SaveSnippet: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { addSnippet, code, language } = codeContext;
+
+    const { playTing } = useSfx();
 
     const initialVal = { title: '' };
     const [formData, handleInput] = useForm(initialVal);
@@ -20,6 +23,7 @@ const SaveSnippet: React.FC = () => {
             sourceCode: code,
             language,
         });
+        playTing();
         notifySubmission();
     };
 
