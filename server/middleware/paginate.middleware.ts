@@ -1,18 +1,34 @@
 import { Request, Response, NextFunction } from 'express';
 
-const paginate = (model : any) =>
- async (req: Request, res: Response, next: NextFunction)  
- => {
-    const page = parseInt(req.params.page);
-    const limit = parseInt(req.params.limit);
+interface IResults {
+    next: {
+        page: number;
+        limit: number;
+    };
+    previous: {
+        page: number;
+        limit: number;
+    };
+    data: any[];
+}
+
+const paginate = (model: any) => async (req: Request, res: Response, next: NextFunction) => {
+    const page = parseInt(req.params.page); // page no
+    const limit = parseInt(req.params.limit); // no of items in page
 
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
 
-    const results = {
-        next: {},
-        previous: {},
-        results: [],
+    const results: IResults = {
+        next: {
+            page,
+            limit,
+        },
+        previous: {
+            page,
+            limit,
+        },
+        data: [],
     };
 
     if (endIndex < (await model.countDocuments().exec())) {
@@ -29,13 +45,14 @@ const paginate = (model : any) =>
         };
     }
     try {
-        results.results = await model.find().limit(limit).skip(startIndex).exec();
-        res.results = results;
+        results.data = await model.find().limit(limit).skip(startIndex).exec();
+
+        res.result = results;
         next();
-      } catch (error) {
+    } catch (error) {
+        console.log('Server error');
         res.status(500).json({ message: error.message });
-      }
-    };
+    }
 };
 
 module.exports = paginate;
