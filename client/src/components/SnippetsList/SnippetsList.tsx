@@ -23,7 +23,7 @@ const SnippetsList = () => {
                     <h4>
                         <FormattedIcon name={snippet.language} />
                         {snippet.title} &rarr;
-                        <Moment format='YYY/MM/DD'>{snippet.date}</Moment>
+                        <Moment fromNow>{snippet.date}</Moment>
                     </h4>
                     <hr />
                 </Link>

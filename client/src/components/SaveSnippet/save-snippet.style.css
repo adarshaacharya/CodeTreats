@@ -7,6 +7,7 @@ input {
     font-size: 1.2rem;
     border-radius: 3px;
     border: 1px solid rgba(122, 118, 118, 0.473);
+    background: rgba(92, 90, 90, 0.24);
 }
 
 .save__snippet {
@@ -19,7 +20,7 @@ input {
 }
 
 .dark {
-    color: #fff;
+    color: inherit;
 }
 
 hr {
@@ -39,7 +40,6 @@ hr {
     transform: translate(-50%, -50%);
     width: 500px;
     background: #222429;
-    color: #fff;
     border-radius: 6px;
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.8);
 }
@@ -47,7 +47,6 @@ hr {
 .Modal .header {
     display: flex;
     justify-content: space-between;
-    color: #fff;
     font-weight: bold;
     font-size: 1.3rem;
     padding: 15px;
