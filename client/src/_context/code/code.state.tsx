@@ -1,5 +1,6 @@
 import React from 'react';
 import api from 'utils/api';
+import history from 'utils/history';
 import {
     ADD_SNIPPET,
     CODE_DID_UPDATE,
@@ -8,12 +9,11 @@ import {
     INPUT_DID_UPDATE,
     SET_LOADING,
     SUBMIT_CODE,
-    UPDATE_LANGUAGE,
+    UPDATE_LANGUAGE
 } from '../types';
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
 import { ISnippet, State } from './code.type';
-import history from 'utils/history';
 
 const CodeState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -69,10 +69,10 @@ const CodeState: React.FC = ({ children }) => {
     const fetchSnippets = async () => {
         try {
             setLoading();
-            const res = await api.get(`/snippets`);
+            const res = await api.get(`/snippets?page=1&limit=5`); //res.data -> { prev, next, snippets}
             dispatch({
                 type: FETCH_SNIPPETS,
-                payload: res.data,
+                payload: res.data.snippets,
             });
         } catch (error) {
             console.log(error);

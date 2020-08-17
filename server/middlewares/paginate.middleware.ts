@@ -26,7 +26,7 @@ const paginate = (model: any) => async (req: Request, res: Response, next: NextF
     }
 
     try {
-        results.data = await model.find().sort({ date: -1 }).limit(limit).skip(startIndex).exec()
+        results.snippets = await model.find().sort({ date: -1 }).limit(limit).skip(startIndex).exec();
         res.paginatedResults = results;
         next();
     } catch (error) {
