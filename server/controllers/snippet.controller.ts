@@ -1,14 +1,18 @@
 import { Request, Response } from 'express';
 import Snippet from '../models/snippet.model';
 
+interface SnippetRequestBodyInterface {
+    title: string;
+    sourceCode: string;
+    language: string;
+}
+
 // @route   POST api/snippets
 // @desc     Get all snippets
 // @access  Public
 export const getAllSnippets = async (_req: Request, res: Response): Promise<void> => {
-    // console.log(res.results);
     try {
-        const snippets = await Snippet.find().sort({ date: -1 });
-        res.status(200).json(snippets);
+        res.status(200).json(res.paginatedResults);
     } catch (error) {
         console.log(error);
         res.status(500).send('Server error');
@@ -33,7 +37,7 @@ export const getSnippetbyId = async (req: Request, res: Response): Promise<void>
 // @access  Public
 export const saveSnippet = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { title, sourceCode, language } = req.body;
+        const { title, sourceCode, language } = req.body as SnippetRequestBodyInterface;
 
         const newSnippet = new Snippet({
             title,

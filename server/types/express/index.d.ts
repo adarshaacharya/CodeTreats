@@ -1,16 +1,24 @@
 declare namespace Express {
     interface Response {
         // result middleware
-        results: {
-            next: {
-                page: number;
-                limit: number;
-            };
+        paginatedResults: {
             previous: {
                 page: number;
                 limit: number;
             };
+            next: {
+                page: number;
+                limit: number;
+            };
+
             data: any[];
         };
     }
 }
+
+// declare namespace Express {
+//     interface Response {
+//         // result middleware
+//         results: any;
+//     }
+// }

@@ -8,7 +8,6 @@ import connectDB from './database/init';
 import CodeRoute from './routes/code.route';
 import SnippetRoute from './routes/snippet.route';
 
-
 // env variable config
 if (process.env.NODE_ENV !== 'production') {
     config();

@@ -9,9 +9,9 @@ async function connectDB() {
             useFindAndModify: false,
             useUnifiedTopology: true,
         });
-        console.log('✅  Connected to DB');
+        console.log('✅  Connected to database successfully.');
     } catch (error) {
-        console.log(`❌ Error on DB Connection:${error}`);
+        console.log(`❌ Error on database Connection:${error}`);
         process.exit(1);
     }
 }

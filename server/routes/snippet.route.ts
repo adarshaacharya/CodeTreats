@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { getAllSnippets, getSnippetbyId, saveSnippet } from '../controllers/snippet.controller';
-import paginate from '../middleware/paginate.middleware';
+import paginate from '../middlewares/paginate.middleware';
 import Snippet from '../models/snippet.model';
 const SnippetRoute = Router();
 
