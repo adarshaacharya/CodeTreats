@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
+import { NextFunction, Request, Response } from 'express';
 
 interface IResults {
     next: {
@@ -55,4 +55,4 @@ const paginate = (model: any) => async (req: Request, res: Response, next: NextF
     }
 };
 
-module.exports = paginate;
+export default paginate;

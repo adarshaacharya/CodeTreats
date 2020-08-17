@@ -17,8 +17,16 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "baseUrl": "./server",
-        "typeRoots": ["server/types", "node_modules/@types"]
+        "typeRoots": [
+            "server/types",
+            "node_modules/@types"
+        ]
     },
-    "include": ["server/**/*.ts"],
-    "exclude": ["node_modules", "client"]
+    "include": [
+        "server/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "client"
+    ]
 }
