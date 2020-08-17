@@ -13,9 +13,9 @@ interface IResults {
 }
 
 const paginate = (model: any) => async (req: Request, res: Response, next: NextFunction) => {
-    const page = parseInt(req.params.page); // page no
-    const limit = parseInt(req.params.limit); // no of items in page
-
+    const page = parseInt(req.query.page as string); // page no
+    const limit = parseInt(req.query.limit as string); // no of items in page
+console.log(page, limit)
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
 
@@ -47,7 +47,7 @@ const paginate = (model: any) => async (req: Request, res: Response, next: NextF
     try {
         results.data = await model.find().limit(limit).skip(startIndex).exec();
 
-        res.result = results;
+        res.results = results;
         next();
     } catch (error) {
         console.log('Server error');

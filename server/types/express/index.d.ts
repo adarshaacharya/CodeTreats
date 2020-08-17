@@ -1,7 +1,7 @@
 declare namespace Express {
     interface Response {
         // result middleware
-        result: {
+        results: {
             next: {
                 page: number;
                 limit: number;

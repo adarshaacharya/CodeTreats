@@ -3,11 +3,11 @@ import cors from 'cors';
 import { config } from 'dotenv';
 import express, { Express, Response } from 'express';
 import path from 'path';
-import connectDB from './database/db';
-
+import connectDB from './database/init';
 //  routes
 import CodeRoute from './routes/code.route';
 import SnippetRoute from './routes/snippet.route';
+
 
 // env variable config
 if (process.env.NODE_ENV !== 'production') {
