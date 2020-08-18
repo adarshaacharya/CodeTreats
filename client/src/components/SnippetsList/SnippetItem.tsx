@@ -1,7 +1,7 @@
+import { FormattedIcon } from 'components/icons';
 import React from 'react';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
-import { FormattedIcon } from 'components/icons';
 import { ISnippet } from '_context/code/code.type';
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 const SnippetItem: React.FC<Props> = ({ snippet }) => {
     return (
         <>
-            <Link key={snippet._id} to={`/snippets/${snippet._id}`} className='snippet__item'>
+            <Link to={`/snippets/${snippet._id}`} className='snippet__item'>
                 <h4>
                     <FormattedIcon name={snippet.language} />
                     {snippet.title} &rarr;

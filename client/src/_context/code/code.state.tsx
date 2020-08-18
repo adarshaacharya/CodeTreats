@@ -10,6 +10,8 @@ import {
     SET_LOADING,
     SUBMIT_CODE,
     UPDATE_LANGUAGE,
+    CLEAR_FILTER,
+    FILTER_SNIPPETS,
 } from '../types';
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
@@ -92,6 +94,7 @@ const CodeState: React.FC = ({ children }) => {
         }
     };
 
+    // save snippet
     const addSnippet = async (snippet: ISnippet) => {
         try {
             const res = await api.post(`/snippets`, snippet);
@@ -108,10 +111,19 @@ const CodeState: React.FC = ({ children }) => {
     };
 
     // filter snippets
-    const filterSnippets = (text: string) => {};
+    const filterSnippets = (text: string) => {
+        dispatch({
+            type: FILTER_SNIPPETS,
+            payload: text,
+        });
+    };
 
     // clear filters
-    const clearFilter = () => {};
+    const clearFilter = () => {
+        dispatch({
+            type: CLEAR_FILTER,
+        });
+    };
 
     // set loading
     const setLoading = () => {

@@ -96,11 +96,16 @@ export default function codeReducer(state: State = initialState, action: Action)
         case FILTER_SNIPPETS:
             return {
                 ...state,
+                filtered: state.snippets.filter((snippet) => {
+                    const regx = new RegExp(`${action.payload}`, 'gi');
+                    return snippet.title.match(regx);
+                }),
             };
 
         case CLEAR_FILTER:
             return {
                 ...state,
+                filtered: [],
             };
 
         default:
