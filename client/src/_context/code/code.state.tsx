@@ -9,7 +9,7 @@ import {
     INPUT_DID_UPDATE,
     SET_LOADING,
     SUBMIT_CODE,
-    UPDATE_LANGUAGE
+    UPDATE_LANGUAGE,
 } from '../types';
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
@@ -69,7 +69,7 @@ const CodeState: React.FC = ({ children }) => {
     const fetchSnippets = async () => {
         try {
             setLoading();
-            const res = await api.get(`/snippets?page=1&limit=5`); //res.data -> { prev, next, snippets}
+            const res = await api.get(`/snippets`); //res.data -> { prev, next, snippets}
             dispatch({
                 type: FETCH_SNIPPETS,
                 payload: res.data.snippets,
