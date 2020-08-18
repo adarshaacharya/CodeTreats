@@ -1,5 +1,4 @@
 import React from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import CodeContext from '_context/code/code.context';
 import SnippetItem from './SnippetItem';
 import './snippets-list.style.css';
@@ -17,23 +16,11 @@ const SnippetsList = () => {
 
     return (
         <>
-            <TransitionGroup>
-                {filtered.length
-                    ? filtered.map((snippet) => (
-                          <CSSTransition key={snippet._id} timeout={500} classNames='item'>
-                              <SnippetItem snippet={snippet} />
-                          </CSSTransition>
-                      ))
-                    : snippets.map((snippet) => (
-                          <CSSTransition key={snippet._id} timeout={500} classNames='item'>
-                              <SnippetItem snippet={snippet} />
-                          </CSSTransition>
-                      ))}
-            </TransitionGroup>
+            {filtered.length > 0
+                ? filtered.map((snippet) => <SnippetItem snippet={snippet} key={snippet._id} />)
+                : snippets.map((snippet) => <SnippetItem snippet={snippet} key={snippet._id} />)}
         </>
     );
 };
-
-
 
 export default SnippetsList;

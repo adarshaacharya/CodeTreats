@@ -6,7 +6,7 @@ const SnippetsPage = () => {
     return (
         <>
             <SearchBar />
-            
+
             <SnippetsList />
         </>
     );
