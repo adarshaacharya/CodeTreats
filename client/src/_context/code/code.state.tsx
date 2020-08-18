@@ -107,6 +107,12 @@ const CodeState: React.FC = ({ children }) => {
         }
     };
 
+    // filter snippets
+    const filterSnippets = (text: string) => {};
+
+    // clear filters
+    const clearFilter = () => {};
+
     // set loading
     const setLoading = () => {
         dispatch({
@@ -130,6 +136,8 @@ const CodeState: React.FC = ({ children }) => {
                 fetchSnippets,
                 fetchSnippetbyId,
                 addSnippet,
+                filterSnippets,
+                clearFilter,
             }}
         >
             {children}

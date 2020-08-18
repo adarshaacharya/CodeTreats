@@ -26,6 +26,8 @@ export interface State {
     fetchSnippets: () => void;
     fetchSnippetbyId: (sid: string) => void;
     addSnippet: (snippet: ISnippet) => void;
+    filterSnippets: (text: string) => void;
+    clearFilter: () => void;
 }
 
 export interface Action {

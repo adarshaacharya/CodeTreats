@@ -7,3 +7,6 @@ export const UPDATE_LANGUAGE: string = 'UPDATE_LANGUAGE';
 export const FETCH_SNIPPETS: string = 'FETCH_SNIPPETS';
 export const FETCH_SNIPPET: string = 'FETCH_SNIPPET';
 export const ADD_SNIPPET: string = 'ADD_SNIPPET';
+
+export const FILTER_SNIPPETS = 'FILTER_SNIPPETS';
+export const CLEAR_FILTER = 'CLEAR_FILTER';

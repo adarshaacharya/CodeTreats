@@ -8,6 +8,8 @@ import {
     SUBMIT_CODE,
     UPDATE_LANGUAGE,
     ADD_SNIPPET,
+    FILTER_SNIPPETS,
+    CLEAR_FILTER,
 } from '_context/types';
 import { Action, State } from './code.type';
 
@@ -29,6 +31,8 @@ export const initialState: State = {
     fetchSnippets: () => null,
     fetchSnippetbyId: () => null,
     addSnippet: () => null,
+    filterSnippets: () => null,
+    clearFilter: () => null,
 };
 
 //reducer
@@ -86,6 +90,16 @@ export default function codeReducer(state: State = initialState, action: Action)
             return {
                 ...state,
                 snippets: [payload, ...state.snippets],
+            };
+
+        case FILTER_SNIPPETS:
+            return {
+                ...state,
+            };
+
+        case CLEAR_FILTER:
+            return {
+                ...state,
             };
 
         default:

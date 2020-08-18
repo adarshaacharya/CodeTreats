@@ -17,7 +17,7 @@ const SnippetsList = () => {
 
     return (
         <>
-            <TransitionGroup className='snippets-list'>
+            <TransitionGroup>
                 {snippets.map((snippet) => (
                     <CSSTransition key={snippet._id} timeout={500} classNames='item'>
                         <SnippetItem snippet={snippet} />
