@@ -129,6 +129,7 @@ const CodeState: React.FC = ({ children }) => {
                 output: state.output,
                 input: state.input,
                 snippets: state.snippets,
+                filtered: state.filtered,
                 updateCode,
                 updateInput,
                 updateLanguage,

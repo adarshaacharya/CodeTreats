@@ -18,6 +18,7 @@ export interface State {
     loading: boolean;
     output: IOutput;
     snippets: ISnippet[];
+    filtered: ISnippet[];
 
     updateCode: (code: string) => void;
     updateInput: (input: string) => void;

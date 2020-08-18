@@ -24,6 +24,7 @@ export const initialState: State = {
         stderr: '',
     },
     snippets: [],
+    filtered: [],
     updateCode: () => null,
     updateInput: () => null,
     updateLanguage: () => null,
