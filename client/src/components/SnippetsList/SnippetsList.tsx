@@ -1,4 +1,5 @@
 import React from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import CodeContext from '_context/code/code.context';
 import SnippetItem from './SnippetItem';
 import './snippets-list.style.css';
@@ -6,6 +7,7 @@ import './snippets-list.style.css';
 const SnippetsList = () => {
     const codeContext = React.useContext(CodeContext);
     const { snippets, fetchSnippets, loading, filtered } = codeContext;
+
     React.useEffect(() => {
         fetchSnippets();
         // eslint-disable-next-line
@@ -16,9 +18,19 @@ const SnippetsList = () => {
 
     return (
         <>
-            {filtered.length > 0
-                ? filtered.map((snippet) => <SnippetItem snippet={snippet} key={snippet._id} />)
-                : snippets.map((snippet) => <SnippetItem snippet={snippet} key={snippet._id} />)}
+            <TransitionGroup>
+                {filtered.length
+                    ? filtered.map((snippet) => (
+                          <CSSTransition key={snippet._id}  timeout={500} classNames='item'>
+                              <SnippetItem snippet={snippet} />
+                          </CSSTransition>
+                      ))
+                    : snippets.map((snippet) => (
+                          <CSSTransition key={snippet._id}  timeout={500} classNames='item'>
+                              <SnippetItem snippet={snippet} />
+                          </CSSTransition>
+                      ))}
+            </TransitionGroup>
         </>
     );
 };
