@@ -1,9 +1,7 @@
 import React from 'react';
-import Moment from 'react-moment';
-import { Link } from 'react-router-dom';
 import CodeContext from '_context/code/code.context';
 import './snippets-list.style.css';
-import { FormattedIcon } from 'components/icons';
+import SnippetItem from './SnippetItem';
 
 const SnippetsList = () => {
     const codeContext = React.useContext(CodeContext);
@@ -19,14 +17,7 @@ const SnippetsList = () => {
     return (
         <>
             {snippets.map((snippet) => (
-                <Link key={snippet._id} to={`/snippets/${snippet._id}`} className='snippet__item'>
-                    <h4>
-                        <FormattedIcon name={snippet.language} />
-                        {snippet.title} &rarr;
-                        <Moment fromNow>{snippet.date}</Moment>
-                    </h4>
-                    <hr />
-                </Link>
+                <SnippetItem snippet={snippet} />
             ))}
         </>
     );
