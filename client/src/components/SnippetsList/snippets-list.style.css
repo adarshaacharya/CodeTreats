@@ -28,6 +28,10 @@ svg {
     width: 60%;
 }
 
+.active__page {
+    border-bottom: 3px solid rgb(0, 217, 255);
+}
+
 .item-enter {
     opacity: 0;
 }

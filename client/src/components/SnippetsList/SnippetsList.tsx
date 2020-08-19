@@ -1,16 +1,16 @@
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import CodeContext from '_context/code/code.context';
-import Paginate from './Paginate';
 import SnippetItem from './SnippetItem';
 import './snippets-list.style.css';
+import PaginateSnippets from 'components/PaginateSnippets';
 
 const SnippetsList = () => {
     const codeContext = React.useContext(CodeContext);
     const { snippets, fetchSnippets, loading, filtered } = codeContext;
 
     const [currentPage, setCurrentPage] = React.useState(1);
-    const [snippetsCountPerPage] = React.useState(8);
+    const [snippetsCountPerPage] = React.useState(5);
 
     React.useEffect(() => {
         fetchSnippets();
@@ -26,7 +26,7 @@ const SnippetsList = () => {
 
     const indexOfLastSnippet = currentPage * snippetsCountPerPage;
     const indexOfFirstSnippet = indexOfLastSnippet - snippetsCountPerPage;
-    const currentSnippets = snippets.slice(indexOfFirstSnippet, indexOfLastSnippet);
+    const currentSnippets = snippets.slice(indexOfFirstSnippet, indexOfLastSnippet); // snippets of current page
 
     return (
         <>
@@ -43,7 +43,7 @@ const SnippetsList = () => {
                           </CSSTransition>
                       ))}
             </TransitionGroup>
-            <Paginate handlePageChange={handlePageChange} currentPage={currentPage} />
+            <PaginateSnippets handlePageChange={handlePageChange} currentPage={currentPage} />
         </>
     );
 };
