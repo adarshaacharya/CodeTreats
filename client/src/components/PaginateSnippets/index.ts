@@ -1,2 +1,2 @@
-import PaginateSnippets from './PaginateSnippets'
-export default PaginateSnippets
+import PaginateSnippets from './PaginateSnippets';
+export default PaginateSnippets;

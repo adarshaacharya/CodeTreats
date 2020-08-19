@@ -4,7 +4,7 @@
     gap: 2rem;
     color: rgb(20, 255, 157);
     text-align: center;
-    padding: 3rem;
+    padding: 1rem;
     text-decoration: none;
     font-size: 1.7rem;
 }
@@ -38,7 +38,7 @@ svg {
 
 .item-enter-active {
     opacity: 1;
-    transition: opacity 1000ms ease-in;
+    transition: opacity 500ms ease-in;
 }
 
 .item-exit {
@@ -47,5 +47,5 @@ svg {
 
 .item-exit-active {
     opacity: 0;
-    transition: opacity 1000ms ease-in;
+    transition: opacity 500ms ease-in;
 }

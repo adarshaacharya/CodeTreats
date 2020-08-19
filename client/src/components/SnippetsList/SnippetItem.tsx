@@ -2,6 +2,7 @@ import { FormattedIcon } from 'components/icons';
 import React from 'react';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import { ISnippet } from '_context/code/code.type';
 import CopyLinkButton from './CopyLinkButton';
 
@@ -14,11 +15,13 @@ const SnippetItem: React.FC<Props> = ({ snippet }) => {
 
     return (
         <>
-            <div className='snippet__item'>
-                <FormattedIcon name={language} />
-                <Link to={`/snippets/${_id}`}>{title}</Link> <Moment fromNow>{date}</Moment>
-                <CopyLinkButton id={_id!} />
-            </div>
+            <CSSTransition key={snippet._id} timeout={500} classNames='item'>
+                <div className='snippet__item' >
+                    <FormattedIcon name={language} />
+                    <Link to={`/snippets/${_id}`}>{title}</Link> <Moment fromNow>{date}</Moment>
+                    <CopyLinkButton id={_id!} />
+                </div>
+            </CSSTransition>
             <hr />
         </>
     );
