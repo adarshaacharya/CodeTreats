@@ -21,7 +21,11 @@ svg {
     color: #fff;
     padding: 4px;
     border-radius: 5px;
-    font-size: .8rem;
+    font-size: 0.8rem;
+}
+
+.success-container {
+    width: 60%;
 }
 
 .item-enter {

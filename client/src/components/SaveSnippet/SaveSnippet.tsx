@@ -27,7 +27,7 @@ const SaveSnippet: React.FC = () => {
             language,
         });
         playTing();
-        notify.default('Code has been saved successfully 😎');
+        notify.dark('Code has been saved successfully 😎');
     };
 
     return (

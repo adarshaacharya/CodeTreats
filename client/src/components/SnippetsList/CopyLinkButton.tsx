@@ -1,6 +1,7 @@
 import React from 'react';
 import CopyToClipBoard from 'react-copy-to-clipboard';
 import { notify } from 'layout';
+import { useSfx } from 'hooks/use-sfx';
 
 type Props = {
     id: string;
@@ -8,17 +9,18 @@ type Props = {
 
 const CopyLinkButton: React.FC<Props> = ({ id }) => {
     const [copied, setCopied] = React.useState(false);
+    const { playClick } = useSfx();
 
     const onLinkCopy = () => {
         setCopied(true);
-        notify.success('Link copied.', 1000);
+        notify.success('Link copied to clipboard. 🦄', 2000);
+        playClick();
     };
 
-    console.log(copied, 'console test');
     return (
         <>
             <CopyToClipBoard text={`http://localhost:3000/snippets/${id}`} onCopy={onLinkCopy}>
-                <button className='copy'>{copied ? 'Link Copied' : 'Copy Link'}</button>
+                <button className='copy'>Copy Link</button>
             </CopyToClipBoard>
         </>
     );
