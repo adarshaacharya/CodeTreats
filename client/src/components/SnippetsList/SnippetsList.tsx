@@ -7,7 +7,6 @@ import './snippets-list.style.css';
 const SnippetsList = () => {
     const codeContext = React.useContext(CodeContext);
     const { snippets, fetchSnippets, loading, filtered } = codeContext;
-   
 
     React.useEffect(() => {
         fetchSnippets();

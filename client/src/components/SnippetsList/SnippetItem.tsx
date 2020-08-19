@@ -12,7 +12,6 @@ type Props = {
 const SnippetItem: React.FC<Props> = ({ snippet }) => {
     const { _id, title, language, date } = snippet;
 
-
     return (
         <>
             <div className='snippet__item'>

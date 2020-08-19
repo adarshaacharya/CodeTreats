@@ -15,7 +15,7 @@ const App: React.FC = () => {
             <CodeState>
                 <Router history={history}>
                     <>
-                        <ToastContainer />
+                        <ToastContainer newestOnTop />
                         <Navbar />
                         {routes}
                     </>

@@ -16,6 +16,12 @@ svg {
 
 .copy {
     cursor: pointer;
+    border: none;
+    background: rgb(26, 49, 255);
+    color: #fff;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: .8rem;
 }
 
 .item-enter {
