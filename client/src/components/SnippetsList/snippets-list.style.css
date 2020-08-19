@@ -1,4 +1,7 @@
 .snippet__item {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
     color: rgb(20, 255, 157);
     text-align: center;
     padding: 3rem;
@@ -9,6 +12,10 @@
 svg {
     height: 30px;
     width: 30px;
+}
+
+.copy {
+    cursor: pointer;
 }
 
 .item-enter {

@@ -7,6 +7,7 @@ import './snippets-list.style.css';
 const SnippetsList = () => {
     const codeContext = React.useContext(CodeContext);
     const { snippets, fetchSnippets, loading, filtered } = codeContext;
+   
 
     React.useEffect(() => {
         fetchSnippets();
@@ -21,12 +22,12 @@ const SnippetsList = () => {
             <TransitionGroup>
                 {filtered.length
                     ? filtered.map((snippet) => (
-                          <CSSTransition key={snippet._id}  timeout={500} classNames='item'>
+                          <CSSTransition key={snippet._id} timeout={500} classNames='item'>
                               <SnippetItem snippet={snippet} />
                           </CSSTransition>
                       ))
                     : snippets.map((snippet) => (
-                          <CSSTransition key={snippet._id}  timeout={500} classNames='item'>
+                          <CSSTransition key={snippet._id} timeout={500} classNames='item'>
                               <SnippetItem snippet={snippet} />
                           </CSSTransition>
                       ))}

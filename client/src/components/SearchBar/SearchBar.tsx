@@ -3,7 +3,7 @@ import CodeContext from '_context/code/code.context';
 
 const SearchBar = () => {
     const codeContext = React.useContext(CodeContext);
-    const { filtered, filterSnippets, clearFilter } = codeContext;
+    const { filterSnippets, clearFilter } = codeContext;
     const valueRef = React.useRef<HTMLInputElement>(null!); // set valueRef.curent property to null
 
     const onFormChange = (event: FormEvent<HTMLInputElement>) => {
