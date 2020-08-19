@@ -24,7 +24,7 @@ export interface State {
     updateInput: (input: string) => void;
     updateLanguage: (lang: string) => void;
     submitCode: (code: string, language: string, input: string) => void;
-    fetchSnippets: () => void;
+    fetchSnippets: (pageNum?: number, limit?: number) => void;
     fetchSnippetbyId: (sid: string) => void;
     addSnippet: (snippet: ISnippet) => void;
     filterSnippets: (text: string) => void;

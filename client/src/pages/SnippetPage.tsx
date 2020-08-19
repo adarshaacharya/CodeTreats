@@ -1,5 +1,5 @@
-import React from 'react';
 import Snippet from 'components/Snippet';
+import React from 'react';
 const SnippetPage = () => {
     return (
         <>

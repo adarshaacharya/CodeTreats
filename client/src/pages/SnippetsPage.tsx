@@ -1,12 +1,11 @@
-import React from 'react';
-import SnippetsList from 'components/SnippetsList';
 import SearchBar from 'components/SearchBar';
+import SnippetsList from 'components/SnippetsList';
+import React from 'react';
 
 const SnippetsPage = () => {
     return (
         <>
             <SearchBar />
-
             <SnippetsList />
         </>
     );
