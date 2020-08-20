@@ -12,7 +12,9 @@ interface SnippetRequestBodyInterface {
 // @access  Public
 export const getAllSnippets = async (_req: Request, res: Response): Promise<void> => {
     try {
-        res.status(200).json(res.paginatedResults);
+        const snippets = await Snippet.find().sort({ date: -1 });
+
+        res.status(200).json(snippets);
     } catch (error) {
         console.log(error);
         res.status(500).send('Server error');

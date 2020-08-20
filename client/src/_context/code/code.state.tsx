@@ -68,19 +68,21 @@ const CodeState: React.FC = ({ children }) => {
         }
     };
 
+    // fetch list of snippets
     const fetchSnippets = async (pageNum?: number, limit?: number) => {
         try {
             setLoading();
-            const res = await api.get(`/snippets`); //res.data -> { prev, next, snippets}
+            const res = await api.get(`/snippets`); 
             dispatch({
                 type: FETCH_SNIPPETS,
-                payload: res.data.snippets,
+                payload: res.data,
             });
         } catch (error) {
             console.log(error);
         }
     };
 
+    // fetch single snippets
     const fetchSnippetbyId = async (snipId: string) => {
         try {
             setLoading();
