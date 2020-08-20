@@ -43,9 +43,11 @@ const SnippetsList = () => {
             ) : (
                 currentSnippets.map((snippet) => <SnippetItem snippet={snippet} key={snippet._id} />)
             )}
+
             <PaginateSnippets handlePageChange={handlePageChange} currentPage={currentPage} />
         </>
     );
+
 };
 
 export default SnippetsList;

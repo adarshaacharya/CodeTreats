@@ -1,23 +1,25 @@
+import { useSfx } from 'hooks/use-sfx';
 import React from 'react';
 import api from 'utils/api';
 import history from 'utils/history';
 import {
     ADD_SNIPPET,
+    CLEAR_FILTER,
     CODE_DID_UPDATE,
     FETCH_SNIPPET,
     FETCH_SNIPPETS,
+    FILTER_SNIPPETS,
     INPUT_DID_UPDATE,
     SET_LOADING,
     SUBMIT_CODE,
-    UPDATE_LANGUAGE,
-    CLEAR_FILTER,
-    FILTER_SNIPPETS,
+    UPDATE_LANGUAGE
 } from '../types';
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
 import { ISnippet, State } from './code.type';
 
 const CodeState: React.FC = ({ children }) => {
+    const { playTing } = useSfx();
     const initialState: State = {
         ...initialValues,
     };
@@ -72,7 +74,7 @@ const CodeState: React.FC = ({ children }) => {
     const fetchSnippets = async (pageNum?: number, limit?: number) => {
         try {
             setLoading();
-            const res = await api.get(`/snippets`); 
+            const res = await api.get(`/snippets`);
             dispatch({
                 type: FETCH_SNIPPETS,
                 payload: res.data,
@@ -104,6 +106,8 @@ const CodeState: React.FC = ({ children }) => {
                 type: ADD_SNIPPET,
                 payload: res.data,
             });
+
+
 
             // programmatic navigation from custom history obj
             history.push('/snippets');
