@@ -6,7 +6,6 @@ import CodeContext from '_context/code/code.context';
 import './save-snippet.style.css';
 import Modal from 'react-modal';
 import useModal from 'hooks/use-modal';
-import { title } from 'process';
 
 Modal.setAppElement('#root');
 
@@ -23,7 +22,7 @@ const SaveSnippet: React.FC = () => {
     const onFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (formData.title === '') return;
-        
+
         addSnippet({
             title: formData.title!,
             sourceCode: code,
@@ -59,9 +58,9 @@ const SaveSnippet: React.FC = () => {
                             name='title'
                             id='title'
                             placeholder='Type snippet title..'
+                            required={true}
                             value={formData.title}
                             onChange={handleInput}
-                            required={true}
                         />
                     </form>
                 </div>

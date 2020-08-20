@@ -107,8 +107,6 @@ const CodeState: React.FC = ({ children }) => {
                 payload: res.data,
             });
 
-
-
             // programmatic navigation from custom history obj
             history.push('/snippets');
         } catch (error) {
@@ -165,3 +163,4 @@ const CodeState: React.FC = ({ children }) => {
 };
 
 export default CodeState;
+

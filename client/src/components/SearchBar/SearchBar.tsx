@@ -1,4 +1,5 @@
 import React, { FormEvent } from 'react';
+import escapeRegExp from 'utils/escape-regExp';
 import CodeContext from '_context/code/code.context';
 
 const SearchBar = () => {
@@ -9,7 +10,8 @@ const SearchBar = () => {
     const onFormChange = (event: FormEvent<HTMLInputElement>) => {
         // checks if any value exists on box
         if (valueRef.current.value) {
-            filterSnippets(event.currentTarget.value);
+            const escapedString = escapeRegExp(event.currentTarget.value);
+            filterSnippets(escapedString);
         } else {
             clearFilter();
         }

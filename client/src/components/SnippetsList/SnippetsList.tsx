@@ -32,7 +32,7 @@ const SnippetsList = () => {
 
     return (
         <>
-            {filtered.length ? (
+            {filtered.length ? (  
                 <TransitionGroup>
                     {filtered.map((snippet) => (
                         <CSSTransition timeout={500} classNames='item' key={snippet._id}>
@@ -47,7 +47,6 @@ const SnippetsList = () => {
             <PaginateSnippets handlePageChange={handlePageChange} currentPage={currentPage} />
         </>
     );
-
 };
 
 export default SnippetsList;
