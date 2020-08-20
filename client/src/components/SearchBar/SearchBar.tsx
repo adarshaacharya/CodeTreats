@@ -7,7 +7,7 @@ const SearchBar = () => {
     const valueRef = React.useRef<HTMLInputElement>(null!); // set valueRef.curent property to null
 
     const onFormChange = (event: FormEvent<HTMLInputElement>) => {
-        // checks if any value exists
+        // checks if any value exists on box
         if (valueRef.current.value) {
             filterSnippets(event.currentTarget.value);
         } else {

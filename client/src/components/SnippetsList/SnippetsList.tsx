@@ -15,8 +15,6 @@ const SnippetsList = () => {
 
     React.useEffect(() => {
         fetchSnippets();
-
-        return () => fetchSnippets();
     }, []);
 
     // Get current snippets
@@ -37,8 +35,8 @@ const SnippetsList = () => {
             {filtered.length ? (
                 <TransitionGroup>
                     {filtered.map((snippet) => (
-                        <CSSTransition key={snippet._id} timeout={500} classNames='item'>
-                            <SnippetItem snippet={snippet} key={snippet._id} />
+                        <CSSTransition timeout={500} classNames='item' key={snippet._id}>
+                            <SnippetItem snippet={snippet} />
                         </CSSTransition>
                     ))}
                 </TransitionGroup>
