@@ -21,7 +21,7 @@ const SaveSnippet: React.FC = () => {
 
     const onFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (formData.title === '') return;
+        // if (formData.title === '') return;
 
         addSnippet({
             title: formData.title!,

@@ -1,13 +1,14 @@
+import { useSfx } from 'hooks/use-sfx';
+import { notify } from 'layout';
 import React from 'react';
 import CopyToClipBoard from 'react-copy-to-clipboard';
-import { notify } from 'layout';
-import { useSfx } from 'hooks/use-sfx';
 
 type Props = {
     id: string;
 };
 
 const CopyLinkButton: React.FC<Props> = ({ id }) => {
+    // eslint-disable-next-line
     const [copied, setCopied] = React.useState(false);
     const { playClick } = useSfx();
 

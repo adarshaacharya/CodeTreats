@@ -15,6 +15,7 @@ const SnippetsList = () => {
 
     React.useEffect(() => {
         fetchSnippets();
+        // eslint-disable-next-line
     }, []);
 
     // Get current snippets
@@ -32,7 +33,7 @@ const SnippetsList = () => {
 
     return (
         <>
-            {filtered.length ? (  
+            {filtered.length ? (
                 <TransitionGroup>
                     {filtered.map((snippet) => (
                         <CSSTransition timeout={500} classNames='item' key={snippet._id}>

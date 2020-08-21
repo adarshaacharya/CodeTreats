@@ -13,7 +13,10 @@ const SearchBar = () => {
             const escapedString = escapeRegExp(event.currentTarget.value);
             filterSnippets(escapedString);
         } else {
-            clearFilter();
+            // slow clear filter so that component doesn't unmount before filtered state is []
+            setTimeout(() => {
+                clearFilter();
+            }, 500);
         }
     };
 

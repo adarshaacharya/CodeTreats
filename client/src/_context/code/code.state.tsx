@@ -1,4 +1,3 @@
-import { useSfx } from 'hooks/use-sfx';
 import React from 'react';
 import api from 'utils/api';
 import history from 'utils/history';
@@ -19,7 +18,6 @@ import codeReducer, { initialState as initialValues } from './code.reducer';
 import { ISnippet, State } from './code.type';
 
 const CodeState: React.FC = ({ children }) => {
-    const { playTing } = useSfx();
     const initialState: State = {
         ...initialValues,
     };
@@ -163,4 +161,3 @@ const CodeState: React.FC = ({ children }) => {
 };
 
 export default CodeState;
-
