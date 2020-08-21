@@ -1,11 +1,11 @@
+import { Col, Row } from 'antd';
 import CodeEditor from 'components/CodeEditor';
 import InputPanel from 'components/InputPanel';
 import OutputPanel from 'components/OutputPanel';
+import SaveSnippet from 'components/SaveSnippet';
 import React from 'react';
-import { Row, Col } from 'react-grid-system';
 import { useParams } from 'react-router-dom';
 import CodeContext from '_context/code/code.context';
-import SaveSnippet from 'components/SaveSnippet';
 
 const Snippet = () => {
     const { id } = useParams();
@@ -25,12 +25,12 @@ const Snippet = () => {
 
     return (
         <>
-            <Row debug>
-                <Col md={6}>
+            <Row >
+                <Col md={12}>
                     <CodeEditor />
                 </Col>
 
-                <Col md={6}>
+                <Col md={12}>
                     <InputPanel />
                     <OutputPanel />
                     <SaveSnippet />

@@ -1,6 +1,6 @@
-import { toast, Slide } from 'react-toastify';
+import { Slide, toast } from 'react-toastify';
 
-export const notify = {
+const notify = {
     default: (message: string) => {
         toast(message);
     },
@@ -16,3 +16,5 @@ export const notify = {
         });
     },
 };
+
+export { notify };

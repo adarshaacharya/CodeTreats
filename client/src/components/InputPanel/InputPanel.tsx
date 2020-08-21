@@ -1,6 +1,6 @@
 import React from 'react';
-import './input-panel.style.css';
 import CodeContext from '_context/code/code.context';
+import './input-panel.style.css';
 
 const InputPanel = () => {
     const codeContext = React.useContext(CodeContext);
@@ -8,7 +8,6 @@ const InputPanel = () => {
     return (
         <>
             <textarea
-                className='input__area'
                 placeholder='Enter your input here..'
                 onChange={(e) => updateInput(e.target.value)}
             />

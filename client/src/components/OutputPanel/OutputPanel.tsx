@@ -13,7 +13,7 @@ const OutputPanel: React.FC = () => {
     value = output?.stderr || output?.stdout || '';
     return (
         <>
-            <textarea value={value} disabled className='output__area' placeholder='Output will display here...' />
+            <textarea value={value} disabled placeholder='Output will display here...' />
         </>
     );
 };

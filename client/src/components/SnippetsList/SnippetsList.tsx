@@ -29,7 +29,7 @@ const SnippetsList = () => {
         setCurrentPage(pageNumber);
     };
 
-    if (loading) return <Spinner />
+    if (loading) return <Spinner />;
     if (!snippets.length) return <p>No snippets found.</p>;
 
     return (

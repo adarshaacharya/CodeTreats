@@ -3,17 +3,17 @@ import InputPanel from 'components/InputPanel';
 import OutputPanel from 'components/OutputPanel';
 import SaveSnippet from 'components/SaveSnippet';
 import React from 'react';
-import { Col, Row } from 'react-grid-system';
+import { Row, Col } from 'antd';
 
 const HomePage: React.FC = () => {
     return (
         <>
-            <Row debug>
-                <Col md={6}>
+            <Row>
+                <Col span={12}>
                     <CodeEditor />
                 </Col>
 
-                <Col md={6}>
+                <Col span={12}>
                     <InputPanel />
                     <OutputPanel />
                     <SaveSnippet />
