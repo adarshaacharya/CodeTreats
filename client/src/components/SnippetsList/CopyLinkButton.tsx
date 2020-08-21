@@ -10,18 +10,24 @@ type Props = {
 const CopyLinkButton: React.FC<Props> = ({ id }) => {
     // eslint-disable-next-line
     const [copied, setCopied] = React.useState(false);
+    const [copiedText, setCopiedText] = React.useState('Copy URL');
     const { playClick } = useSfx();
 
     const onLinkCopy = () => {
         setCopied(true);
+        setCopiedText('Copied');
         notify.success('Link copied to clipboard. 🦄', 2000);
         playClick();
+
+        setInterval(() => {
+            setCopiedText('Copy URL');
+        }, 3000);
     };
 
     return (
         <>
             <CopyToClipBoard text={`http://localhost:3000/snippets/${id}`} onCopy={onLinkCopy}>
-                <button className='copy'>Copy Link</button>
+                <button className='copy'>{copiedText}</button>
             </CopyToClipBoard>
         </>
     );

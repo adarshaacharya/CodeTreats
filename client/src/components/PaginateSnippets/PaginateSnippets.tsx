@@ -13,7 +13,7 @@ const PaginateSnippets: React.FC<Props> = ({ handlePageChange, currentPage }) =>
 
     const TOTAL_COUNT = snippets.length;
     const PAGE_RANGE = 5;
-    console.log("paginate snippets")
+    console.log('paginate snippets');
     return (
         <div style={{ padding: '20px' }}>
             <Pagination
