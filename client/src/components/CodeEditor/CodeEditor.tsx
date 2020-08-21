@@ -6,7 +6,6 @@ import CodeContext from '_context/code/code.context';
 const CodeEditor: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { code, updateCode, language } = codeContext;
-    console.log(language);
 
     const handleEditorChange = (ev?: object, value?: string) => {
         updateCode(value!);

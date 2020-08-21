@@ -61,3 +61,10 @@ There is a Heroku post build script so that you do not have to compile your Reac
 
 ## Packages used for Mongodb databases
 - mongoose , @types/mongoose
+
+
+## Test App component
+
+```bash
+yarn test
+```
