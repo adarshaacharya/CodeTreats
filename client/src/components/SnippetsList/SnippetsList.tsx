@@ -4,6 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import CodeContext from '_context/code/code.context';
 import SnippetItem from './SnippetItem';
 import './snippets-list.style.css';
+import Spinner from 'layout/Spinner';
 
 const SnippetsList = () => {
     const codeContext = React.useContext(CodeContext);
@@ -28,7 +29,7 @@ const SnippetsList = () => {
         setCurrentPage(pageNumber);
     };
 
-    if (loading) return <p>loading...</p>;
+    if (!loading) return <Spinner />;
     if (!snippets.length) return <p>No snippets found.</p>;
 
     return (
