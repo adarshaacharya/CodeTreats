@@ -4,7 +4,6 @@ import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import CodeContext from '_context/code/code.context';
 import SnippetItem from './SnippetItem';
-import './snippets-list.style.css';
 
 const SnippetsList = () => {
     const codeContext = React.useContext(CodeContext);

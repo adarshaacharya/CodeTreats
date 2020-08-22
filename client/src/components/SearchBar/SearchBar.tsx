@@ -1,19 +1,19 @@
-import React, { FormEvent } from 'react';
+import { Input } from 'antd';
+import React from 'react';
 import escapeRegExp from 'utils/escape-regExp';
 import CodeContext from '_context/code/code.context';
 
 const SearchBar = () => {
     const codeContext = React.useContext(CodeContext);
     const { filterSnippets, clearFilter } = codeContext;
-    const valueRef = React.useRef<HTMLInputElement>(null!); // set valueRef.curent property to null
 
-    const onFormChange = (event: FormEvent<HTMLInputElement>) => {
+    const onSnippetSearch = (val: string) => {
         // checks if any value exists on box
-        if (valueRef.current.value) {
-            const escapedString = escapeRegExp(event.currentTarget.value);
+        if (val) {
+            const escapedString = escapeRegExp(val);
             filterSnippets(escapedString);
         } else {
-            // slow clear filter so that component doesn't unmount before filtered state is []
+            //slow clear filter so that component doesn't unmount before filtered state is []
             setTimeout(() => {
                 clearFilter();
             }, 500);
@@ -22,9 +22,17 @@ const SearchBar = () => {
 
     return (
         <>
-            <form>
-                <input ref={valueRef} type='text' placeholder='Search Snippets...' onChange={onFormChange} />
-            </form>
+            <div className='center'>
+                <Input.Search
+                    placeholder='Search snippets'
+                    onSearch={(value) => onSnippetSearch(value)}
+                    onPressEnter={(e) => onSnippetSearch(e.currentTarget?.value)}
+                    onChange={(e) => onSnippetSearch(e.currentTarget?.value)}
+                    size='large'
+                    enterButton
+                    style={{ width: 700 }}
+                />
+            </div>
         </>
     );
 };

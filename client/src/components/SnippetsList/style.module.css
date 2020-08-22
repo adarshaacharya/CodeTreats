@@ -1,4 +1,4 @@
-.snippet__item {
+.item {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -9,7 +9,7 @@
     font-size: 1.7rem;
 }
 
-.snippet__item svg {
+.item svg {
     height: 30px;
     width: 30px;
 }

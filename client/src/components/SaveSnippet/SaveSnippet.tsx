@@ -5,7 +5,6 @@ import { notify } from 'layout';
 import React from 'react';
 import CodeContext from '_context/code/code.context';
 
-
 const SaveSnippet: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { addSnippet, code, language } = codeContext;

@@ -5,8 +5,10 @@ import React from 'react';
 const SnippetsPage = () => {
     return (
         <>
-            <SearchBar />
-            <SnippetsList />
+            <div className='container'>
+                <SearchBar />
+                <SnippetsList />
+            </div>
         </>
     );
 };
