@@ -16,7 +16,7 @@ const Refactor: React.FC<Props> = ({ snippets }) => {
                 itemLayout='horizontal'
                 dataSource={snippets}
                 renderItem={(snippet) => (
-                    <List.Item className="snippet__item">
+                    <List.Item className='snippet__item'>
                         <List.Item.Meta
                             avatar={<FormattedIcon name={snippet.language} />}
                             title={

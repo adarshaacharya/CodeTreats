@@ -1,5 +1,5 @@
+import { Pagination } from 'antd';
 import React from 'react';
-import Pagination from 'react-js-pagination';
 import CodeContext from '_context/code/code.context';
 
 type Props = {
@@ -12,22 +12,19 @@ const PaginateSnippets: React.FC<Props> = ({ handlePageChange, currentPage }) =>
     const { snippets } = codeContext;
 
     const TOTAL_COUNT = snippets.length;
-    const PAGE_RANGE = 5;
 
     return (
-        <div style={{ padding: '20px' }}>
-            <Pagination
-                prevPageText='<<<'
-                nextPageText='>>>'
-                firstPageText='first'
-                lastPageText='last'
-                activePage={currentPage}
-                totalItemsCount={TOTAL_COUNT}
-                pageRangeDisplayed={PAGE_RANGE}
-                onChange={handlePageChange}
-                activeClass='active__page'
-            />
-        </div>
+        <>
+            <div className='center'>
+                <Pagination
+                    onChange={handlePageChange}
+                    defaultCurrent={1}
+                    current={currentPage}
+                    total={TOTAL_COUNT}
+                    showSizeChanger={false}
+                />
+            </div>
+        </>
     );
 };
 
