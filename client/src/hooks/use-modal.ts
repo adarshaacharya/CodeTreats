@@ -7,7 +7,7 @@ type useModalReturn = {
     setVisible: (val: boolean) => void;
 };
 
-const useModal = (defaultOpen: boolean): useModalReturn => {
+export const useModal = (defaultOpen: boolean): useModalReturn => {
     const [visible, setVisible] = React.useState<boolean>(defaultOpen);
 
     const showModal = () => setVisible(true);

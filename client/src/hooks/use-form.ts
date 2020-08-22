@@ -6,7 +6,7 @@ type Props = {
 
 type TReturn = [Props, (event: React.FormEvent<HTMLInputElement>) => void];
 
-const useForm = (initialVal: Props): TReturn => {
+export const useForm = (initialVal: Props): TReturn => {
     const [formData, setFormData] = React.useState(initialVal || {});
 
     const handleInput = React.useCallback((event: React.FormEvent<HTMLInputElement>) => {

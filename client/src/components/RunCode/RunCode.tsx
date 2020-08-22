@@ -16,7 +16,7 @@ const RunCode = () => {
             type='primary'
             icon={<CaretRightOutlined />}
             onClick={() => onCodeSubmit(code!, language, input!)} // since we have place input as string or null
-            disabled={loading}
+            loading={loading}
         >
             Run Code
         </Button>

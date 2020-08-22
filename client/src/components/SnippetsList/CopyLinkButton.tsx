@@ -1,4 +1,4 @@
-import { useSfx } from 'hooks/use-sfx';
+import { useSfx } from 'hooks';
 import { notify } from 'layout';
 import React from 'react';
 import CopyToClipBoard from 'react-copy-to-clipboard';

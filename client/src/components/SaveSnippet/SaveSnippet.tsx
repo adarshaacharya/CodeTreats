@@ -1,11 +1,10 @@
 import { FolderOutlined } from '@ant-design/icons';
 import { Button, Form, Input, Modal } from 'antd';
-import useForm from 'hooks/use-form';
-import useModal from 'hooks/use-modal';
-import { useSfx } from 'hooks/use-sfx';
+import { useForm, useModal, useSfx } from 'hooks';
 import { notify } from 'layout';
 import React from 'react';
 import CodeContext from '_context/code/code.context';
+
 
 const SaveSnippet: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
@@ -17,6 +16,7 @@ const SaveSnippet: React.FC = () => {
 
     const initialVal = { title: '' };
     const [formData, handleInput] = useForm(initialVal);
+    const [form] = Form.useForm();
 
     const onFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -38,7 +38,6 @@ const SaveSnippet: React.FC = () => {
             console.log('Validate Failed:', error);
         }
     };
-    const [form] = Form.useForm();
 
     return (
         <>
