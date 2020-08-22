@@ -1,4 +1,5 @@
-import { ReactComponent as Icon } from 'images/run-button.svg';
+import { CaretRightOutlined,  } from '@ant-design/icons';
+import { Button } from 'antd';
 import React from 'react';
 import CodeContext from '_context/code/code.context';
 
@@ -10,13 +11,15 @@ const RunCode = () => {
     };
 
     return (
-        <button
-            className='submit'
+        <Button
+            size='large'
+            type='primary'
+            icon={<CaretRightOutlined />}
             onClick={() => onCodeSubmit(code!, language, input!)} // since we have place input as string or null
             disabled={loading}
         >
-            Run <Icon className='run' />
-        </button>
+            Run Code
+        </Button>
     );
 };
 

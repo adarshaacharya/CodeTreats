@@ -1,3 +1,4 @@
+import { FolderOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import useForm from 'hooks/use-form';
 import useModal from 'hooks/use-modal';
@@ -71,13 +72,13 @@ const SaveSnippet: React.FC = () => {
                     <Button type='primary' onClick={onFormSubmit}>
                         Save
                     </Button>
-                    <Button danger onClick={closeModal} className='close__button'>
+                    <Button danger onClick={closeModal}>
                         Close
                     </Button>
                 </div>
             </Modal>
 
-            <Button type='primary' size='large' onClick={openModal} className='my-1'>
+            <Button size='large' onClick={openModal} icon={<FolderOutlined />}>
                 Save Snippet
             </Button>
         </>

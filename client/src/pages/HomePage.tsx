@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd';
+import { Col, Row, Space } from 'antd';
 import CodeEditor from 'components/CodeEditor';
 import InputPanel from 'components/InputPanel';
 import LanguageSelector from 'components/LanguageSelector';
@@ -20,14 +20,10 @@ const HomePage: React.FC = () => {
                     <InputPanel />
                     <OutputPanel />
 
-                    <Row gutter={16}>
-                        <Col>
-                            <RunCode />
-                        </Col>
-                        <Col>
-                            <SaveSnippet />
-                        </Col>
-                    </Row>
+                    <Space size='large' className='my-1'>
+                        <RunCode />
+                        <SaveSnippet />
+                    </Space>
                 </Col>
             </Row>
         </>
