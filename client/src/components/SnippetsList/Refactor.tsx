@@ -1,46 +1,34 @@
+import { List } from 'antd';
+import { FormattedIcon } from 'components/icons';
 import React from 'react';
-import { List, Typography, Divider } from 'antd';
+import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
+import { ISnippet } from '_context/code/code.type';
 
-const data = [
-    'Racing car sprays burning fuel into crowd.',
-    'Japanese princess to wed commoner.',
-    'Australian walks 100km after outback crash.',
-    'Man charged over missing wedding girl.',
-    'Los Angeles battles huge wildfires.',
-];
-
-const Refactor = () => {
+type Props = {
+    snippets: ISnippet[];
+};
+const Refactor: React.FC<Props> = ({ snippets }) => {
     return (
         <>
-            <Divider orientation='left'>Default Size</Divider>
-            <List
-                header={<div>Header</div>}
-                footer={<div>Footer</div>}
-                bordered
-                dataSource={data}
-                renderItem={(item) => (
-                    <List.Item>
-                        <Typography.Text mark>[ITEM]</Typography.Text> {item}
-                    </List.Item>
-                )}
-            />
-            <Divider orientation='left'>Small Size</Divider>
-            <List
-                size='small'
-                header={<div>Header</div>}
-                footer={<div>Footer</div>}
-                bordered
-                dataSource={data}
-                renderItem={(item) => <List.Item>{item}</List.Item>}
-            />
-            <Divider orientation='left'>Large Size</Divider>
             <List
                 size='large'
-                header={<div>Header</div>}
-                footer={<div>Footer</div>}
-                bordered
-                dataSource={data}
-                renderItem={(item) => <List.Item>{item}</List.Item>}
+                itemLayout='horizontal'
+                dataSource={snippets}
+                renderItem={(snippet) => (
+                    <List.Item className="snippet__item">
+                        <List.Item.Meta
+                            avatar={<FormattedIcon name={snippet.language} />}
+                            title={
+                                <Link to={`/snippets/${snippet._id}`}>
+                                    {' '}
+                                    <h2>{snippet.title}</h2>
+                                </Link>
+                            }
+                            description={<Moment fromNow>{snippet.date}</Moment>}
+                        />
+                    </List.Item>
+                )}
             />
         </>
     );

@@ -1,11 +1,11 @@
+import { List } from 'antd';
 import PaginateSnippets from 'components/PaginateSnippets';
 import { Spinner } from 'layout';
 import React from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { TransitionGroup } from 'react-transition-group';
 import CodeContext from '_context/code/code.context';
 import SnippetItem from './SnippetItem';
 import './style.css';
-import Refactor from './Refactor';
 
 const SnippetsList = () => {
     const codeContext = React.useContext(CodeContext);
@@ -37,17 +37,22 @@ const SnippetsList = () => {
         <>
             {filtered.length ? (
                 <TransitionGroup>
-                    {filtered.map((snippet) => (
-                        <CSSTransition timeout={500} classNames='item' key={snippet._id}>
-                            <SnippetItem snippet={snippet} />
-                        </CSSTransition>
-                    ))}
+                    <List
+                        size='large'
+                        itemLayout='horizontal'
+                        dataSource={filtered}
+                        renderItem={(snippet) => <SnippetItem snippet={snippet} />}
+                    />
                 </TransitionGroup>
             ) : (
-                currentSnippets.map((snippet) => <SnippetItem snippet={snippet} key={snippet._id} />)
+                <List
+                    size='large'
+                    itemLayout='horizontal'
+                    dataSource={currentSnippets}
+                    renderItem={(snippet) => <SnippetItem snippet={snippet} />}
+                />
             )}
 
-            <Refactor />
             <PaginateSnippets handlePageChange={handlePageChange} currentPage={currentPage} />
         </>
     );

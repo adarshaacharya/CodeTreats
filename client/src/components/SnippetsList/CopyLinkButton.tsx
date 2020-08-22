@@ -27,7 +27,7 @@ const CopyLinkButton: React.FC<Props> = ({ id }) => {
     return (
         <>
             <CopyToClipBoard text={`http://localhost:3000/snippets/${id}`} onCopy={onLinkCopy}>
-                <button className="copy">{copiedText}</button>
+                <button className='copy'>{copiedText}</button>
             </CopyToClipBoard>
         </>
     );

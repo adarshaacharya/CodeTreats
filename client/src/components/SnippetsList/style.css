@@ -1,17 +1,6 @@
-.snippet__item {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    color: rgb(20, 255, 157);
-    text-align: center;
-    padding: 1rem;
-    text-decoration: none;
-    font-size: 1.7rem;
-}
-
 .snippet__item svg {
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
 }
 
 .copy {
