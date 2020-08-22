@@ -1,88 +1,121 @@
 import { FolderOutlined } from '@ant-design/icons';
-import { Button } from 'antd';
+import { Button, Form, Input, Modal } from 'antd';
 import useForm from 'hooks/use-form';
 import useModal from 'hooks/use-modal';
 import { useSfx } from 'hooks/use-sfx';
 import { notify } from 'layout';
 import React from 'react';
-import Modal from 'react-modal';
 import CodeContext from '_context/code/code.context';
-import './save-snippet.style.css';
-
-Modal.setAppElement('#root');
 
 const SaveSnippet: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { addSnippet, code, language } = codeContext;
 
     const { playTing } = useSfx();
-    const { openModal, closeModal, modalIsOpen } = useModal(false);
+    const { showModal, closeModal, visible, setVisible } = useModal(false);
+    const [confirmLoading, setConfirmLoading] = React.useState(false);
 
     const initialVal = { title: '' };
     const [formData, handleInput] = useForm(initialVal);
 
-    const onFormSubmit = (e: React.FormEvent) => {
+    const onFormSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // if (formData.title === '') return;
-
-        addSnippet({
-            title: formData.title!,
-            sourceCode: code,
-            language,
-        });
-        playTing();
-        notify.dark('Code has been saved successfully 😎');
+        try {
+            await form.validateFields();
+            setConfirmLoading(true);
+            setTimeout(() => {
+                setVisible(false);
+                setConfirmLoading(false);
+                addSnippet({
+                    title: formData.title!,
+                    sourceCode: code,
+                    language,
+                });
+                playTing();
+                notify.dark('Code has been saved successfully 😎');
+            }, 2000);
+        } catch (error) {
+            console.log('Validate Failed:', error);
+        }
     };
+    const [form] = Form.useForm();
 
     return (
         <>
+            <Button onClick={showModal} size='large' icon={<FolderOutlined />}>
+                Save Snippet
+            </Button>
+
             <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                shouldCloseOnOverlayClick={false}
-                shouldCloseOnEsc={true}
-                closeTimeoutMS={200}
-                contentLabel='Save New Snippet'
-                className='Modal'
-                overlayClassName='Overlay'
+                title='Create a new snippet'
+                visible={visible}
+                onOk={onFormSubmit}
+                confirmLoading={confirmLoading}
+                onCancel={closeModal}
             >
-                <div className='header'>
-                    <p className='dark'>Enter meaningful title for snippet.</p>
-                    <button onClick={closeModal}>❌</button>
-                </div>
-
-                <hr />
-
-                <div className='body'>
-                    <form onSubmit={onFormSubmit} autoComplete='off'>
-                        <input
+                <Form form={form} autoComplete='off'>
+                    <Form.Item name='title' rules={[{ required: true, message: "You can't leave title empty!" }]}>
+                        <Input
                             type='text'
+                            size='large'
                             name='title'
-                            id='title'
                             placeholder='Type snippet title..'
-                            required={true}
                             value={formData.title}
                             onChange={handleInput}
                         />
-                    </form>
-                </div>
-
-                <hr />
-                <div className='footer'>
-                    <Button type='primary' onClick={onFormSubmit}>
-                        Save
-                    </Button>
-                    <Button danger onClick={closeModal}>
-                        Close
-                    </Button>
-                </div>
+                    </Form.Item>
+                </Form>
             </Modal>
-
-            <Button size='large' onClick={openModal} icon={<FolderOutlined />}>
-                Save Snippet
-            </Button>
         </>
     );
 };
 
 export default SaveSnippet;
+
+{
+    /* <Modal
+isOpen={modalIsOpen}
+onRequestClose={closeModal}
+shouldCloseOnOverlayClick={false}
+shouldCloseOnEsc={true}
+closeTimeoutMS={200}
+contentLabel='Save New Snippet'
+className='Modal'
+overlayClassName='Overlay'
+>
+<div className='header'>
+    <p className='dark'>Enter meaningful title for snippet.</p>
+    <button onClick={closeModal}>❌</button>
+</div>
+
+<hr />
+
+<div className='body'>
+    <form onSubmit={onFormSubmit} autoComplete='off'>
+        <input
+            type='text'
+            name='title'
+            id='title'
+            placeholder='Type snippet title..'
+            required={true}
+            value={formData.title}
+            onChange={handleInput}
+        />
+    </form>
+</div>
+
+<hr />
+<div className='footer'>
+    <Button type='primary' onClick={onFormSubmit}>
+        Save
+    </Button>
+    <Button danger onClick={closeModal}>
+        Close
+    </Button>
+</div>
+</Modal>
+
+<Button size='large' onClick={openModal} icon={<FolderOutlined />}>
+Save Snippet
+</Button> */
+}

@@ -1,19 +1,20 @@
 import React from 'react';
 
 type useModalReturn = {
-    openModal: () => void;
+    showModal: () => void;
     closeModal: () => void;
-    modalIsOpen: boolean;
+    visible: boolean;
+    setVisible: (val: boolean) => void;
 };
 
 const useModal = (defaultOpen: boolean): useModalReturn => {
-    const [modalIsOpen, setIsOpen] = React.useState<boolean>(defaultOpen);
+    const [visible, setVisible] = React.useState<boolean>(defaultOpen);
 
-    const openModal = () => setIsOpen(true);
+    const showModal = () => setVisible(true);
 
-    const closeModal = () => setIsOpen(false);
+    const closeModal = () => setVisible(false);
 
-    return { openModal, closeModal, modalIsOpen };
+    return { showModal, closeModal, visible, setVisible };
 };
 
 export default useModal;

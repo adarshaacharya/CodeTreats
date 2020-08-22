@@ -1,4 +1,4 @@
-import { CaretRightOutlined,  } from '@ant-design/icons';
+import { CaretRightOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import React from 'react';
 import CodeContext from '_context/code/code.context';

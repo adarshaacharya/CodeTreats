@@ -6,6 +6,7 @@ import OutputPanel from 'components/OutputPanel';
 import SaveSnippet from 'components/SaveSnippet';
 import React from 'react';
 import RunCode from 'components/RunCode';
+import CollectionsPage from 'components/SaveSnippet/CollectionPage';
 
 const HomePage: React.FC = () => {
     return (
@@ -23,6 +24,7 @@ const HomePage: React.FC = () => {
                     <Space size='large' className='my-1'>
                         <RunCode />
                         <SaveSnippet />
+                        <CollectionsPage />
                     </Space>
                 </Col>
             </Row>
