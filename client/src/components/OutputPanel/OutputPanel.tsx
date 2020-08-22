@@ -2,17 +2,18 @@ import { Input } from 'antd';
 import React from 'react';
 import CodeContext from '_context/code/code.context';
 
+const { TextArea } = Input;
+
 const OutputPanel: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { output, loading } = codeContext;
-    let value = '';
 
-    if (loading) return <Input.TextArea rows={7} value='running...' className='font-md' />;
+    if (loading) return <TextArea rows={7} value='running...' className='font-md my-1' />;
 
-    value = output?.stderr || output?.stdout || '';
+    let value = output?.stderr || output?.stdout || '';
     return (
         <>
-            <Input.TextArea rows={7} value={value} placeholder='Output will display here...' className='font-md my-1' />
+            <TextArea rows={7} value={value} placeholder='Output' className='font-md my-1' />
         </>
     );
 };

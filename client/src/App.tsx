@@ -1,5 +1,5 @@
 import 'assets/styles/global.css';
-import Navbar from 'components/Navbar';
+import { Navbar } from 'layout';
 import React from 'react';
 import { Router } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
