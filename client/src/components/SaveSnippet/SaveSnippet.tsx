@@ -1,11 +1,14 @@
+import { Button } from 'antd';
 import useForm from 'hooks/use-form';
+import useModal from 'hooks/use-modal';
 import { useSfx } from 'hooks/use-sfx';
 import { notify } from 'layout';
 import React from 'react';
+import Modal from 'react-modal';
 import CodeContext from '_context/code/code.context';
 import './save-snippet.style.css';
-import Modal from 'react-modal';
-import useModal from 'hooks/use-modal';
+
+
 
 Modal.setAppElement('#root');
 
@@ -67,18 +70,19 @@ const SaveSnippet: React.FC = () => {
 
                 <hr />
                 <div className='footer'>
-                    <button className='save__button' type='submit' onClick={onFormSubmit}>
+                    <Button type='primary' onClick={onFormSubmit}>
                         Save
-                    </button>
-                    <button onClick={closeModal} className='close__button'>
+                    </Button>
+                    <Button danger onClick={closeModal} className='close__button'>
                         Close
-                    </button>
+                    </Button>
                 </div>
             </Modal>
 
-            <button className='save__snippet' onClick={openModal}>
+            <Button type='primary' size='large'  onClick={openModal} className="m-1">
                 Save Snippet
-            </button>
+            </Button>
+            
         </>
     );
 };

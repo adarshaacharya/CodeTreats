@@ -25,7 +25,7 @@ const Snippet = () => {
 
     return (
         <>
-            <Row >
+            <Row>
                 <Col md={12}>
                     <CodeEditor />
                 </Col>

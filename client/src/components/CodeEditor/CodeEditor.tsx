@@ -14,7 +14,7 @@ const CodeEditor: React.FC = () => {
     return (
         <>
             <ControlledEditor
-                height='100vh'
+                height='90vh'
                 language={language}
                 theme={theme}
                 options={editorOptions}

@@ -1,9 +1,10 @@
+import { Col, Row } from 'antd';
 import CodeEditor from 'components/CodeEditor';
 import InputPanel from 'components/InputPanel';
+import LanguageSelector from 'components/Navbar/LanguageSelector';
 import OutputPanel from 'components/OutputPanel';
 import SaveSnippet from 'components/SaveSnippet';
 import React from 'react';
-import { Row, Col } from 'antd';
 
 const HomePage: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const HomePage: React.FC = () => {
                 </Col>
 
                 <Col span={12}>
+                    <LanguageSelector />
                     <InputPanel />
                     <OutputPanel />
                     <SaveSnippet />

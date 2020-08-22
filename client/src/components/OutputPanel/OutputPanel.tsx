@@ -1,19 +1,18 @@
-import { Spinner } from 'layout';
+import { Input } from 'antd';
 import React from 'react';
 import CodeContext from '_context/code/code.context';
-import './output-panel.style.css';
 
 const OutputPanel: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
     const { output, loading } = codeContext;
     let value = '';
-    // if (loading) return <textarea className='error output__area' value='running...' disabled />;
 
-    if (loading) return <Spinner />;
+    if (loading) return <Input.TextArea rows={7} value='running...' className='font-md' />;
+
     value = output?.stderr || output?.stdout || '';
     return (
         <>
-            <textarea value={value} disabled placeholder='Output will display here...' />
+            <Input.TextArea rows={7} value={value} placeholder='Output will display here...' className='font-md' />
         </>
     );
 };
