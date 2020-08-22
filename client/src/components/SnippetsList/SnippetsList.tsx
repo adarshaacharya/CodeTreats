@@ -4,6 +4,8 @@ import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import CodeContext from '_context/code/code.context';
 import SnippetItem from './SnippetItem';
+import './style.css';
+import Refactor from './Refactor';
 
 const SnippetsList = () => {
     const codeContext = React.useContext(CodeContext);
@@ -45,6 +47,7 @@ const SnippetsList = () => {
                 currentSnippets.map((snippet) => <SnippetItem snippet={snippet} key={snippet._id} />)
             )}
 
+            <Refactor />
             <PaginateSnippets handlePageChange={handlePageChange} currentPage={currentPage} />
         </>
     );

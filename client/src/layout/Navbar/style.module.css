@@ -1,4 +1,4 @@
-nav {
+.navbar {
     height: 8vh;
     align-items: center;
     border-bottom: 1px solid #0070f3;
@@ -7,7 +7,7 @@ nav {
     padding: 0.5rem 0;
 }
 
-ul {
+.nav__items {
     list-style: none;
     display: flex;
     justify-content: center;

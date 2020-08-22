@@ -1,4 +1,4 @@
-.item {
+.snippet__item {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -9,7 +9,7 @@
     font-size: 1.7rem;
 }
 
-.item svg {
+.snippet__item svg {
     height: 30px;
     width: 30px;
 }
@@ -30,22 +30,4 @@
 
 .active__page {
     border-bottom: 3px solid rgb(0, 217, 255);
-}
-
-.item-enter {
-    opacity: 0;
-}
-
-.item-enter-active {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
-}
-
-.item-exit {
-    opacity: 1;
-}
-
-.item-exit-active {
-    opacity: 0;
-    transition: opacity 500ms ease-in;
 }

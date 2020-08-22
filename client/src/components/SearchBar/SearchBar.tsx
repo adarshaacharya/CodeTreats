@@ -30,7 +30,7 @@ const SearchBar = () => {
                     onChange={(e) => onSnippetSearch(e.currentTarget?.value)}
                     size='large'
                     enterButton
-                    style={{ width: 700 }}
+                    style={{ width: 600 }}
                 />
             </div>
         </>

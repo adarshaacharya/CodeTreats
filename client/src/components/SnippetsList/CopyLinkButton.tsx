@@ -2,7 +2,6 @@ import { useSfx } from 'hooks';
 import { notify } from 'layout';
 import React from 'react';
 import CopyToClipBoard from 'react-copy-to-clipboard';
-import styles from './style.module.css';
 
 type Props = {
     id: string;
@@ -28,7 +27,7 @@ const CopyLinkButton: React.FC<Props> = ({ id }) => {
     return (
         <>
             <CopyToClipBoard text={`http://localhost:3000/snippets/${id}`} onCopy={onLinkCopy}>
-                <button className={styles.copy}>{copiedText}</button>
+                <button className="copy">{copiedText}</button>
             </CopyToClipBoard>
         </>
     );
