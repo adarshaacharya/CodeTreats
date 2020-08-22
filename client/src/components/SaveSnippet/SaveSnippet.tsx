@@ -8,8 +8,6 @@ import Modal from 'react-modal';
 import CodeContext from '_context/code/code.context';
 import './save-snippet.style.css';
 
-
-
 Modal.setAppElement('#root');
 
 const SaveSnippet: React.FC = () => {
@@ -79,10 +77,9 @@ const SaveSnippet: React.FC = () => {
                 </div>
             </Modal>
 
-            <Button type='primary' size='large'  onClick={openModal} className="m-1">
+            <Button type='primary' size='large' onClick={openModal} className='my-1'>
                 Save Snippet
             </Button>
-            
         </>
     );
 };

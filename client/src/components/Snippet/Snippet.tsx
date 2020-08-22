@@ -6,6 +6,7 @@ import SaveSnippet from 'components/SaveSnippet';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import CodeContext from '_context/code/code.context';
+import LanguageSelector from 'components/LanguageSelector';
 
 const Snippet = () => {
     const { id } = useParams();
@@ -31,6 +32,7 @@ const Snippet = () => {
                 </Col>
 
                 <Col md={12}>
+                    <LanguageSelector />
                     <InputPanel />
                     <OutputPanel />
                     <SaveSnippet />

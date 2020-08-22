@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
                 <li>
                     <RunCodeButton />
                 </li>
-              
+
                 <li>
                     <Link to='/snippets' className='nav__item'>
                         Snippets

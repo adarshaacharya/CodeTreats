@@ -9,7 +9,7 @@
     font-size: 1.7rem;
 }
 
-svg {
+.snippet__item svg {
     height: 30px;
     width: 30px;
 }

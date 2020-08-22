@@ -13,7 +13,7 @@ const InputPanel = () => {
                 placeholder='Enter your input here..'
                 onChange={(e) => updateInput(e.target.value)}
                 rows={5}
-                className='font-md'
+                className='font-md my-1'
             />
         </>
     );

@@ -1,3 +1,4 @@
+import { Select } from 'antd';
 import React from 'react';
 import languages from 'utils/language-options';
 import CodeContext from '_context/code/code.context';
@@ -6,20 +7,30 @@ const LanguageSelector = () => {
     const codeContext = React.useContext(CodeContext);
     const { updateLanguage, language } = codeContext;
 
-    const onLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        updateLanguage(event.target.value);
+    const { Option } = Select;
+
+    const onLanguageChange = (value: string) => {
+        updateLanguage(value);
     };
 
     return (
-        <div className='select__wrapper'>
-            <select name='languages' onChange={onLanguageChange} value={language}>
+        <>
+            <Select
+                showSearch
+                style={{ width: '100%' }}
+                onChange={onLanguageChange}
+                value={language}
+                autoFocus
+                size='large'
+                className='my-1'
+            >
                 {languages.map((language) => (
-                    <option value={language.value} key={language.value}>
+                    <Option value={language.value} key={language.value}>
                         {language.label}
-                    </option>
+                    </Option>
                 ))}
-            </select>
-        </div>
+            </Select>
+        </>
     );
 };
 

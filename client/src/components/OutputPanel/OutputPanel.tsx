@@ -12,7 +12,7 @@ const OutputPanel: React.FC = () => {
     value = output?.stderr || output?.stdout || '';
     return (
         <>
-            <Input.TextArea rows={7} value={value} placeholder='Output will display here...' className='font-md' />
+            <Input.TextArea rows={7} value={value} placeholder='Output will display here...' className='font-md my-1' />
         </>
     );
 };

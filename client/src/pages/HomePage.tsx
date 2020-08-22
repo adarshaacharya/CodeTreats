@@ -1,7 +1,7 @@
-import { Col, Row } from 'antd';
+import { Col, Row, Space } from 'antd';
 import CodeEditor from 'components/CodeEditor';
 import InputPanel from 'components/InputPanel';
-import LanguageSelector from 'components/Navbar/LanguageSelector';
+import LanguageSelector from 'components/LanguageSelector';
 import OutputPanel from 'components/OutputPanel';
 import SaveSnippet from 'components/SaveSnippet';
 import React from 'react';
@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
                     <CodeEditor />
                 </Col>
 
-                <Col span={12}>
+                <Col span={12} className='p-1'>
                     <LanguageSelector />
                     <InputPanel />
                     <OutputPanel />
