@@ -1,4 +1,9 @@
-.snippet__item svg {
+.item {
+    display: flex;
+    gap: 1rem;
+}
+
+.item svg {
     height: 35px;
     width: 35px;
 }

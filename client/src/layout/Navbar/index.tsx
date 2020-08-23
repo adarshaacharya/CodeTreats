@@ -1,24 +1,24 @@
+import { CodeOutlined, HomeOutlined } from '@ant-design/icons';
+import { Menu } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './style.module.css';
+
 
 export const Navbar: React.FC = () => {
-    return (
-        <nav className={styles.navbar}>
-            <ul className={styles.nav__items}>
-                <li>
-                    <Link to='/' className={styles.nav__item}>
-                        {' '}
-                        Home{' '}
-                    </Link>
-                </li>
+    const [current, setCurrent] = React.useState('home');
 
-                <li>
-                    <Link to='/snippets' className={styles.nav__item}>
-                        Snippets
-                    </Link>
-                </li>
-            </ul>
-        </nav>
+    const handleClick = (event: any) => setCurrent(event.key);
+
+    return (
+        <div className="mt-1 mx-1">
+                <Menu mode='horizontal' defaultSelectedKeys={['home']} selectedKeys={[current]} onClick={handleClick} >
+                    <Menu.Item key='home' icon={<HomeOutlined />}>
+                        <Link to='/'>Home </Link>
+                    </Menu.Item>
+                    <Menu.Item key='snippets' icon={<CodeOutlined />}>
+                        <Link to='/snippets'>Snippets </Link>
+                    </Menu.Item>
+                </Menu>
+        </div>
     );
 };

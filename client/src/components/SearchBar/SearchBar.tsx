@@ -1,4 +1,4 @@
-import { Input } from 'antd';
+import { Input, Divider } from 'antd';
 import React from 'react';
 import escapeRegExp from 'utils/escape-regExp';
 import CodeContext from '_context/code/code.context';
@@ -22,7 +22,7 @@ const SearchBar = () => {
 
     return (
         <>
-            <div className='center'>
+            <div className='center mb-2'>
                 <Input.Search
                     placeholder='Search snippets'
                     onSearch={(value) => onSnippetSearch(value)}

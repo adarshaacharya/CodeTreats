@@ -1,11 +1,16 @@
 @import '~antd/dist/antd.dark.css';
 /* @import '~antd/dist/antd.compact.css'; */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-        'Helvetica Neue', sans-serif;
+    font-family: Helvetica;
     /* background: #191919; */
 }
+
 
 /* Utilities */
 .container {
@@ -69,6 +74,9 @@ body {
 .py-3 {
     padding: 3rem 0;
 }
+.py-4 {
+    padding: 4rem 0;
+}
 
 /* Margin */
 .m {
@@ -95,9 +103,23 @@ body {
 .my-3 {
     margin: 3rem 0;
 }
-
+.mx-1 {
+    margin: 0 1rem;
+}
+.mx-2 {
+    margin: 0 2rem;
+}
 .mx-3 {
     margin: 0 2rem;
+}
+.mb-2 {
+    margin-bottom: 2rem;
+}
+.mt-1 {
+    margin-top: 1rem;
+}
+.mt-2 {
+    margin-top: 2rem;
 }
 
 .center {

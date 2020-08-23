@@ -7,6 +7,7 @@ const SnippetsPage = () => {
         <>
             <div className='container'>
                 <SearchBar />
+
                 <SnippetsList />
             </div>
         </>

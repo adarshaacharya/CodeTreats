@@ -7,10 +7,11 @@ import SaveSnippet from 'components/SaveSnippet';
 import React from 'react';
 import RunCode from 'components/RunCode';
 
+
 const HomePage: React.FC = () => {
     return (
         <>
-            <Row>
+            <Row className='mx-1'>
                 <Col span={14}>
                     <CodeEditor />
                 </Col>

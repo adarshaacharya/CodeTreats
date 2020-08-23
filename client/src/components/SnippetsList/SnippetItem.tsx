@@ -4,6 +4,9 @@ import React from 'react';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import { ISnippet } from '_context/code/code.type';
+import CopyLinkButton from './CopyLinkButton';
+import styles from './style.module.css';
+
 type Props = {
     snippet: ISnippet;
 };
@@ -13,7 +16,7 @@ const SnippetItem: React.FC<Props> = ({ snippet }) => {
 
     return (
         <>
-            <List.Item className='snippet__item'>
+            <List.Item className={styles.item}>
                 <List.Item.Meta
                     avatar={<FormattedIcon name={language} />}
                     title={
@@ -22,8 +25,9 @@ const SnippetItem: React.FC<Props> = ({ snippet }) => {
                             <h2>{title}</h2>
                         </Link>
                     }
-                    description={<Moment fromNow>{date}</Moment>}
                 />
+                <Moment fromNow>{date}</Moment>
+                <CopyLinkButton id={`http://localhost:3000/snippets/${_id}`} />
             </List.Item>
         </>
     );

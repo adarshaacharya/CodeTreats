@@ -15,7 +15,7 @@ const PaginateSnippets: React.FC<Props> = ({ handlePageChange, currentPage }) =>
 
     return (
         <>
-            <div className='center'>
+            <div className='center mt-2'>
                 <Pagination
                     onChange={handlePageChange}
                     defaultCurrent={1}
