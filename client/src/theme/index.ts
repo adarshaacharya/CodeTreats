@@ -1,6 +1,6 @@
 import { monaco } from '@monaco-editor/react';
 
-const defineTheme = (theme: any) => {
+const defineTheme = (theme: string) => {
     return new Promise((res) => {
         Promise.all([monaco.init(), import(`monaco-themes/themes/${theme}.json`)]).then(([monaco, themeData]) => {
             monaco.editor.defineTheme(theme, themeData);
@@ -8,5 +8,6 @@ const defineTheme = (theme: any) => {
         });
     });
 };
+
 
 export { defineTheme };

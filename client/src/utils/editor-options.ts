@@ -1,3 +1,4 @@
+import { defineTheme } from 'theme';
 
 /* 
     API Reference : https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html
@@ -14,7 +15,5 @@ export const editorOptions: Object = {
     mouseWheelZoom: true,
 };
 
-
-
-
 export const theme = 'dark';
+
