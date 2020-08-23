@@ -10,8 +10,6 @@ const ThemeSelector = () => {
     const { theme, updateTheme } = themeContext;
 
     function handleThemChange(theme: string) {
-        console.log(theme);
-
         if (defaultThemes.includes(theme)) {
             updateTheme(theme);
         } else {

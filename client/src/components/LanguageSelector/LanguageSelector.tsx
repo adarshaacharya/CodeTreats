@@ -1,4 +1,4 @@
-import { Select } from 'antd';
+import { Select, Divider } from 'antd';
 import React from 'react';
 import languages from 'utils/language-options';
 import CodeContext from '_context/code/code.context';
@@ -15,6 +15,7 @@ const LanguageSelector = () => {
 
     return (
         <>
+            <Divider orientation='left'> Select language </Divider>
             <Select
                 showSearch
                 style={{ width: '100%' }}
