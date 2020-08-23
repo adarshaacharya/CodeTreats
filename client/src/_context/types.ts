@@ -11,4 +11,4 @@ export const ADD_SNIPPET: string = 'ADD_SNIPPET';
 export const FILTER_SNIPPETS = 'FILTER_SNIPPETS';
 export const CLEAR_FILTER = 'CLEAR_FILTER';
 
-export const UPDATE_THEME : string = 'UPDATE_THEME'
+export const UPDATE_THEME: string = 'UPDATE_THEME';

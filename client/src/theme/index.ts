@@ -9,5 +9,4 @@ const defineTheme = (theme: string) => {
     });
 };
 
-
 export { defineTheme };

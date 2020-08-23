@@ -16,4 +16,3 @@ export const editorOptions: Object = {
 };
 
 export const theme = 'dark';
-
