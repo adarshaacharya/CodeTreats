@@ -42,7 +42,7 @@ const SnippetsList = () => {
                     renderItem={(snippet) => (
                         <TransitionGroup>
                             <CSSTransition timeout={500} classNames='item' key={snippet._id}>
-                                    <SnippetItem snippet={snippet} />
+                                <SnippetItem snippet={snippet} />
                             </CSSTransition>
                         </TransitionGroup>
                     )}

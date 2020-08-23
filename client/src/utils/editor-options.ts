@@ -1,10 +1,11 @@
+
 /* 
     API Reference : https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html
 */
 export const editorOptions: Object = {
     fontFamily: 'Dank Mono',
     fontLigatures: true,
-    fontSize: '20px',
+    fontSize: '16px',
     wordWrap: true,
     minimap: {
         enabled: false,
@@ -12,5 +13,8 @@ export const editorOptions: Object = {
     dragAndDrop: true,
     mouseWheelZoom: true,
 };
+
+
+
 
 export const theme = 'dark';

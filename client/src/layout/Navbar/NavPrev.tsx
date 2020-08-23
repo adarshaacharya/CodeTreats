@@ -4,8 +4,6 @@ import styles from './style.module.css';
 import { Menu } from 'antd';
 import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 
-
-
 export const Navbar: React.FC = () => {
     return (
         <nav className={styles.navbar}>

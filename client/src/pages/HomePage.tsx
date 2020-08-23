@@ -1,12 +1,11 @@
-import { Col, Row, Space } from 'antd';
+import { Col, Row, Space, Divider } from 'antd';
 import CodeEditor from 'components/CodeEditor';
 import InputPanel from 'components/InputPanel';
 import LanguageSelector from 'components/LanguageSelector';
 import OutputPanel from 'components/OutputPanel';
+import RunCode from 'components/RunCode';
 import SaveSnippet from 'components/SaveSnippet';
 import React from 'react';
-import RunCode from 'components/RunCode';
-
 
 const HomePage: React.FC = () => {
     return (
@@ -20,13 +19,13 @@ const HomePage: React.FC = () => {
                     <LanguageSelector />
                     <InputPanel />
                     <OutputPanel />
-
-                    <Space size='large' className='my-1'>
+                    <Space size='large' className='mt-1'>
                         <RunCode />
                         <SaveSnippet />
                     </Space>
                 </Col>
             </Row>
+            <Divider />
         </>
     );
 };

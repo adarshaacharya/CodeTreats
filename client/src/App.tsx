@@ -8,7 +8,6 @@ import { useRoutes } from 'routes';
 import history from 'utils/history';
 import CodeState from '_context/code/code.state';
 
-
 const App: React.FC = () => {
     const routes = useRoutes();
     return (
@@ -16,8 +15,8 @@ const App: React.FC = () => {
             <CodeState>
                 <Router history={history}>
                     <>
-                            <ToastContainer newestOnTop />
-                            <Navbar />
+                        <ToastContainer newestOnTop />
+                        <Navbar />
                         {routes}
                     </>
                 </Router>
