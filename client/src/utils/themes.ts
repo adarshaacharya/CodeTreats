@@ -48,5 +48,6 @@ export const monacoThemes = [
     'idleFingers',
     'krTheme',
     'monoindustrial',
-    'themelist',
 ];
+
+export const defaultThemes = ['light', 'dark'];
