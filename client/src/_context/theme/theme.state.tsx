@@ -20,13 +20,15 @@ const ThemeState: React.FC = ({ children }) => {
     };
 
     return (
-        <ThemeContext.Provider value={{
-            theme : state.theme,
-            updateTheme 
-        }}>
+        <ThemeContext.Provider
+            value={{
+                theme: state.theme,
+                updateTheme,
+            }}
+        >
             {children}
         </ThemeContext.Provider>
-    )
+    );
 };
 
 export default ThemeState;

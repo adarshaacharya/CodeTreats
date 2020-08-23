@@ -7,19 +7,22 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useRoutes } from 'routes';
 import history from 'utils/history';
 import CodeState from '_context/code/code.state';
+import ThemeState from '_context/theme/theme.state';
 
 const App: React.FC = () => {
     const routes = useRoutes();
     return (
         <>
             <CodeState>
-                <Router history={history}>
-                    <>
-                        <ToastContainer newestOnTop />
-                        <Navbar />
-                        {routes}
-                    </>
-                </Router>
+                <ThemeState>
+                    <Router history={history}>
+                        <>
+                            <ToastContainer newestOnTop />
+                            <Navbar />
+                            {routes}
+                        </>
+                    </Router>
+                </ThemeState>
             </CodeState>
         </>
     );
