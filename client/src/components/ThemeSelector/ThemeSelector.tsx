@@ -23,6 +23,7 @@ const ThemeSelector = () => {
         <>
             <Divider orientation='left'> Select theme </Divider>
             <Select
+                showSearch
                 size='large'
                 style={{ width: '100%' }}
                 onChange={handleThemChange}

@@ -1,6 +1,5 @@
-import * as React from 'react';
-import { State, Action } from './theme.type';
 import { UPDATE_THEME } from '_context/types';
+import { Action, State } from './theme.type';
 
 export const initialState: State = {
     theme: 'dark',
