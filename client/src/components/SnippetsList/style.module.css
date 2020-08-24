@@ -13,15 +13,7 @@
     border: none;
     background: rgb(26, 49, 255);
     color: #fff;
-    padding: 4px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-}
-
-.success-container {
-    width: 60%;
-}
-
-.active__page {
-    border-bottom: 3px solid rgb(0, 217, 255);
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 0.7rem;
 }

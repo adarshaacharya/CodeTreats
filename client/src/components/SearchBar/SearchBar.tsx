@@ -1,4 +1,4 @@
-import { Input, Divider } from 'antd';
+import { Input } from 'antd';
 import React from 'react';
 import escapeRegExp from 'utils/escape-regExp';
 import CodeContext from '_context/code/code.context';

@@ -14,6 +14,7 @@ export const useForm = (initialVal: Props): TReturn => {
             ...formData,
             [event.currentTarget.name]: event.currentTarget.value,
         });
+        //eslint-disable-next-line
     }, []);
 
     return [formData, handleInput];

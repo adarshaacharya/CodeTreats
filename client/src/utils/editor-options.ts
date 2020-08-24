@@ -1,5 +1,3 @@
-import { defineTheme } from 'theme';
-
 /* 
     API Reference : https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html
 */

@@ -50,5 +50,4 @@ export const monacoThemes = [
     'monoindustrial',
 ];
 
-
 export const defaultThemes = ['light', 'dark'];

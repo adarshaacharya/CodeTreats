@@ -34,6 +34,3 @@ const SnippetItem: React.FC<Props> = ({ snippet }) => {
 };
 
 export default SnippetItem;
-{
-    /* <CopyLinkButton id={_id!} /> */
-}

@@ -4,7 +4,7 @@ import React from 'react';
 import CodeContext from '_context/code/code.context';
 
 const text =
-    "Only provide input if you ask user for input, else leave empty. Some browser based language like Javascript, Typescipt doesn't accept inputs.";
+    "Only provide input if you ask user for input, else leave empty. Some browser based language like Javascript, Typescipt doesn't accept terminal inputs.";
 const InputPanel = () => {
     const codeContext = React.useContext(CodeContext);
     const { updateInput } = codeContext;
@@ -22,7 +22,7 @@ const InputPanel = () => {
             <TextArea
                 placeholder='Enter your input here..'
                 onChange={(e) => updateInput(e.target.value)}
-                rows={5}
+                rows={3}
                 className='font-md my-1'
             />
         </>

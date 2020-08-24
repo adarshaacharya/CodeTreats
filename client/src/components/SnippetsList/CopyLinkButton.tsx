@@ -9,7 +9,7 @@ type Props = {
 
 const CopyLinkButton: React.FC<Props> = ({ id }) => {
     // eslint-disable-next-line
-    const [copied, setCopied] = React.useState(false);
+    const [, setCopied] = React.useState(false);
     const [copiedText, setCopiedText] = React.useState('Copy URL');
     const { playClick } = useSfx();
 
