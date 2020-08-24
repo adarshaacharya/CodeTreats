@@ -1,6 +1,6 @@
 import { Select, Divider } from 'antd';
 import React from 'react';
-import languages from 'utils/language-options';
+import languages from 'config/editor/languages';
 import CodeContext from '_context/code/code.context';
 
 const LanguageSelector = () => {

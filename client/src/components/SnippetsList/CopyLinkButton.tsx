@@ -8,9 +8,8 @@ type Props = {
 };
 
 const CopyLinkButton: React.FC<Props> = ({ id }) => {
-    // eslint-disable-next-line
     const [, setCopied] = React.useState(false);
-    const [copiedText, setCopiedText] = React.useState('Copy URL');
+    const [copiedText, setCopiedText] = React.useState('Copy Link');
     const { playClick } = useSfx();
 
     const onLinkCopy = () => {
@@ -20,7 +19,7 @@ const CopyLinkButton: React.FC<Props> = ({ id }) => {
         playClick();
 
         setInterval(() => {
-            setCopiedText('Copy URL');
+            setCopiedText('Copy Link');
         }, 3000);
     };
 

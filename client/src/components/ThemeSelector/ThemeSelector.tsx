@@ -1,7 +1,7 @@
 import { Divider, Select } from 'antd';
 import React from 'react';
-import { defineTheme } from 'theme';
-import { defaultThemes, monacoThemes } from 'utils/themes';
+import { defineTheme } from 'utils/define-theme';
+import { defaultThemes, monacoThemes } from 'config/editor/themes';
 import ThemeContext from '_context/theme/theme.context';
 
 const { Option, OptGroup } = Select;

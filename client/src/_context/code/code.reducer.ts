@@ -1,4 +1,4 @@
-import getTemplate from 'utils/language-examples';
+import getTemplate from 'config/editor/examples';
 import {
     CODE_DID_UPDATE,
     FETCH_SNIPPET,

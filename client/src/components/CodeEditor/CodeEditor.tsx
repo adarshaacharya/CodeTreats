@@ -1,6 +1,6 @@
 import { ControlledEditor } from '@monaco-editor/react';
 import React from 'react';
-import { editorOptions } from 'utils/editor-options';
+import { editorOptions } from 'config/editor/options';
 import CodeContext from '_context/code/code.context';
 import ThemeContext from '_context/theme/theme.context';
 
