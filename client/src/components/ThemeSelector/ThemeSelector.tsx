@@ -1,7 +1,7 @@
 import { Divider, Select } from 'antd';
+import { defaultThemes, monacoThemes } from 'config/editor/themes';
 import React from 'react';
 import { defineTheme } from 'utils/define-theme';
-import { defaultThemes, monacoThemes } from 'config/editor/themes';
 import ThemeContext from '_context/theme/theme.context';
 
 const { Option, OptGroup } = Select;
@@ -9,13 +9,13 @@ const ThemeSelector = () => {
     const themeContext = React.useContext(ThemeContext);
     const { theme, updateTheme } = themeContext;
 
-    function handleThemChange(theme: string) {
+    const handleThemChange = (theme: string) => {
         if (defaultThemes.includes(theme)) {
             updateTheme(theme);
         } else {
             defineTheme(theme).then((_) => updateTheme(theme));
         }
-    }
+    };
 
     return (
         <>
@@ -30,23 +30,19 @@ const ThemeSelector = () => {
                 autoFocus
                 value={theme}
             >
-                <OptGroup label='Defaults'>
-                    {defaultThemes.map((theme) => (
+                {defaultThemes.map((theme) => (
+                    <Option value={theme} key={theme}>
+                        {theme}
+                    </Option>
+                ))}
+ 
+                {monacoThemes
+                    .filter((theme) => !theme.includes(' '))
+                    .map((theme) => (
                         <Option value={theme} key={theme}>
                             {theme}
                         </Option>
                     ))}
-                </OptGroup>
-
-                <OptGroup label='Others'>
-                    {monacoThemes
-                        .filter((theme) => !theme.includes(' '))
-                        .map((theme) => (
-                            <Option value={theme} key={theme}>
-                                {theme}
-                            </Option>
-                        ))}
-                </OptGroup>
             </Select>
         </>
     );
