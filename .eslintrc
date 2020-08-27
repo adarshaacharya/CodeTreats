@@ -25,6 +25,6 @@
       "no-useless-escape": "off",
       "no-duplicate-imports": "warn"
     },
-    "ignorePatterns": ["dist", "client", "build"]
+    "ignorePatterns": ["dist", "client", "build", "commitlintrc.js"]
   }
   
