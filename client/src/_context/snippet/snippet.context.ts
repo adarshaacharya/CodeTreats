@@ -1,9 +1,10 @@
-import React from 'react'
-import { State} from './snippet.type'
-import { initialState } from './snippet.reducer'
+import React from 'react';
+import { State } from './snippet.type';
+import { initialState } from './snippet.reducer';
 
+const DEFAULT_VALUE: State = {
+    ...initialState,
+};
+const SnippetContext = React.createContext(DEFAULT_VALUE);
 
-
-const SnippetContext = React.createContext(initialState)
-
-export default SnippetContext
+export default SnippetContext;

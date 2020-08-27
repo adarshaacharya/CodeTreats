@@ -9,4 +9,3 @@ const DEFAULT_VALUE: State = {
 const CodeContext = React.createContext(DEFAULT_VALUE);
 
 export default CodeContext;
-  
