@@ -35,7 +35,7 @@ const ThemeSelector = () => {
                         {theme}
                     </Option>
                 ))}
- 
+
                 {monacoThemes
                     .filter((theme) => !theme.includes(' '))
                     .map((theme) => (
