@@ -4,10 +4,11 @@ import { useForm, useModal, useSfx } from 'hooks';
 import { notify } from 'layout';
 import React from 'react';
 import CodeContext from '_context/code/code.context';
+import SnippetContext from '_context/snippet/snippet.context';
 
 const SaveSnippet: React.FC = () => {
-    const codeContext = React.useContext(CodeContext);
-    const { addSnippet, code, language } = codeContext;
+    const { code, language } = React.useContext(CodeContext);
+    const { addSnippet } = React.useContext(SnippetContext);
 
     const { playTing } = useSfx();
     const { showModal, closeModal, visible, setVisible } = useModal(false);

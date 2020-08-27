@@ -4,6 +4,7 @@ import { Action, State } from './snippet.type';
 export const initialState: State = {
     snippets: [],
     filtered: [],
+    loading: true,
     fetchSnippets: () => null,
     fetchSnippetbyId: () => null,
     addSnippet: () => null,

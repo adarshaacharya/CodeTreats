@@ -9,6 +9,7 @@ export interface ISnippet {
 export interface State {
     snippets: ISnippet[];
     filtered: ISnippet[];
+    loading: boolean;
 
     fetchSnippets: (pageNum?: number, limit?: number) => void;
     fetchSnippetbyId: (sid: string) => void;

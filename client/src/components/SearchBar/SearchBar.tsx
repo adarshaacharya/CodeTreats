@@ -1,11 +1,10 @@
 import { Input } from 'antd';
 import React from 'react';
 import escapeRegExp from 'utils/escape-regExp';
-import CodeContext from '_context/code/code.context';
+import SnippetContext from '_context/snippet/snippet.context';
 
 const SearchBar = () => {
-    const codeContext = React.useContext(CodeContext);
-    const { filterSnippets, clearFilter } = codeContext;
+    const { filterSnippets, clearFilter } = React.useContext(SnippetContext);
 
     const onSnippetSearch = (val: string) => {
         // checks if any value exists on box

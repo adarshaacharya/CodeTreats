@@ -84,6 +84,7 @@ const SnippetState: React.FC = ({ children }) => {
             value={{
                 snippets: state.snippets,
                 filtered: state.filtered,
+                loading: state.loading,
                 fetchSnippets,
                 fetchSnippetbyId,
                 addSnippet,

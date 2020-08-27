@@ -94,7 +94,7 @@ export default function codeReducer(state: State = initialState, action: Action)
             };
 
         case FILTER_SNIPPETS:
-            return {  
+            return {
                 ...state,
                 filtered: state.snippets.filter((snippet) => {
                     const regx = new RegExp(`${action.payload}`, 'gi');
