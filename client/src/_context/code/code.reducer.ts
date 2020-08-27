@@ -1,13 +1,5 @@
 import getTemplate from 'config/editor/examples';
-import {
-    CODE_DID_UPDATE,
-
-
-    INPUT_DID_UPDATE,
-    SET_LOADING,
-    SUBMIT_CODE,
-    UPDATE_LANGUAGE
-} from '_context/types';
+import { CODE_DID_UPDATE, INPUT_DID_UPDATE, SET_LOADING, SUBMIT_CODE, UPDATE_LANGUAGE } from '_context/types';
 import { Action, State } from './code.type';
 
 //initial  value on first render

@@ -1,12 +1,6 @@
 import React from 'react';
 import api from 'utils/api';
-import {
-    CODE_DID_UPDATE,
-    INPUT_DID_UPDATE,
-    SET_LOADING,
-    SUBMIT_CODE,
-    UPDATE_LANGUAGE
-} from '../types';
+import { CODE_DID_UPDATE, INPUT_DID_UPDATE, SET_LOADING, SUBMIT_CODE, UPDATE_LANGUAGE } from '../types';
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
 import { State } from './code.type';
