@@ -18,7 +18,7 @@ export const initialState: State = {
     code: getTemplate('javascript'),
     language: 'javascript',
     input: '',
-    loading: false,
+    loading: false,  
     output: {
         stdout: '',
         stderr: '',
