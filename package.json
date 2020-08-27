@@ -16,7 +16,7 @@
     "heroku-postbuild": "npm run server:build && npm run client:install && npm run client:build",
     "format": "prettier --write \"server/**/*.{ts,tsx,js,jsx}\" \"client/**/*.{ts,tsx,js,jsx}\"",
     "lint": "eslint ./server/**.{js,ts}",
-    "lint:fix": "eslint './server/**.{js,ts}' --quiet --fix"
+    "lint:fix": "eslint ./server/**.{js,ts} --quiet --fix"
   },
   "keywords": [
     "typescript",
