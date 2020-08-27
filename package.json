@@ -16,7 +16,7 @@
     "heroku-postbuild": "npm run server:build && npm run client:install && npm run client:build",
     "format": "prettier --write \"server/**/*.{ts,tsx,js,jsx}\" \"client/**/*.{ts,tsx,js,jsx}\"",
     "lint": "eslint ./server/**.{js,ts}",
-    "lint:fix": "eslint ./server/**.{js,ts} --quiet --fix"
+    "lint:fix": "eslint './server/**.{js,ts}' --quiet --fix"
   },
   "keywords": [
     "typescript",
@@ -31,15 +31,6 @@
   "repository": "https://github.com/adarshaacharya/JavaScriptRunner",
   "bugs": {
     "url": "https://github.com/adarshaacharya/JavaScriptRunner/issues"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": [
-        "npm run format",
-        "lint-staged"
-      ],
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "dependencies": {
     "@types/compression": "^1.7.0",
@@ -83,7 +74,13 @@
       "server/*"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "lint-staged": {
-    "*.{ts,js}": "eslint --cache --fix"
+    "*.{ts,js}": "eslint --fix"
   }
 }
