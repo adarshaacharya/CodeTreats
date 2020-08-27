@@ -23,17 +23,12 @@ export const initialState: State = {
         stdout: '',
         stderr: '',
     },
-    snippets: [],
-    filtered: [],
+ 
     updateCode: () => null,
     updateInput: () => null,
     updateLanguage: () => null,
     submitCode: () => null,
-    fetchSnippets: () => null,
-    fetchSnippetbyId: () => null,
-    addSnippet: () => null,
-    filterSnippets: () => null,
-    clearFilter: () => null,
+ 
 };
 
 //reducer
@@ -72,42 +67,7 @@ export default function codeReducer(state: State = initialState, action: Action)
                 loading: true,
             };
 
-        case FETCH_SNIPPETS:
-            return {
-                ...state,
-                snippets: payload,
-                loading: false,
-            };
-
-        case FETCH_SNIPPET:
-            return {
-                ...state,
-                language: payload.language,
-                code: payload.sourceCode,
-                loading: false,
-            };
-
-        case ADD_SNIPPET:
-            return {
-                ...state,
-                snippets: [payload, ...state.snippets],
-            };
-
-        case FILTER_SNIPPETS:
-            return {
-                ...state,
-                filtered: state.snippets.filter((snippet) => {
-                    const regx = new RegExp(`${action.payload}`, 'gi');
-                    return snippet.title.match(regx);
-                }),
-            };
-
-        case CLEAR_FILTER:
-            return {
-                ...state,
-                filtered: [],
-            };
-
+      
         default:
             return state;
     }

@@ -17,18 +17,13 @@ export interface State {
     language: string;
     loading: boolean;
     output: IOutput;
-    snippets: ISnippet[];
-    filtered: ISnippet[];
+ 
 
     updateCode: (code: string) => void;
     updateInput: (input: string) => void;
     updateLanguage: (lang: string) => void;
     submitCode: (code: string, language: string, input: string) => void;
-    fetchSnippets: (pageNum?: number, limit?: number) => void;
-    fetchSnippetbyId: (sid: string) => void;
-    addSnippet: (snippet: ISnippet) => void;
-    filterSnippets: (text: string) => void;
-    clearFilter: () => void;
+
 }
 
 export interface Action {

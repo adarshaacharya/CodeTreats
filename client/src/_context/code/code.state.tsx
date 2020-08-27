@@ -68,65 +68,6 @@ const CodeState: React.FC = ({ children }) => {
         }
     };
 
-    // fetch list of snippets
-    const fetchSnippets = async (pageNum?: number, limit?: number) => {
-        try {
-            setLoading();
-            const res = await api.get(`/snippets`);
-            dispatch({
-                type: FETCH_SNIPPETS,
-                payload: res.data,
-            });
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    // fetch single snippets
-    const fetchSnippetbyId = async (snipId: string) => {
-        try {
-            setLoading();
-            const res = await api.get(`/snippets/${snipId}`);
-            dispatch({
-                type: FETCH_SNIPPET,
-                payload: res.data,
-            });
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    // save snippet
-    const addSnippet = async (snippet: ISnippet) => {
-        try {
-            const res = await api.post(`/snippets`, snippet);
-            dispatch({
-                type: ADD_SNIPPET,
-                payload: res.data,
-            });
-
-            // programmatic navigation from custom history obj
-            history.push('/snippets');
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    // filter snippets
-    const filterSnippets = (text: string) => {
-        dispatch({
-            type: FILTER_SNIPPETS,
-            payload: text,
-        });
-    };
-
-    // clear filters
-    const clearFilter = () => {
-        dispatch({
-            type: CLEAR_FILTER,
-        });
-    };
-
     // set loading
     const setLoading = () => {
         dispatch({
@@ -142,17 +83,12 @@ const CodeState: React.FC = ({ children }) => {
                 loading: state?.loading,
                 output: state.output,
                 input: state.input,
-                snippets: state.snippets,
-                filtered: state.filtered,
+         
                 updateCode,
                 updateInput,
                 updateLanguage,
                 submitCode,
-                fetchSnippets,
-                fetchSnippetbyId,
-                addSnippet,
-                filterSnippets,
-                clearFilter,
+            
             }}
         >
             {children}
