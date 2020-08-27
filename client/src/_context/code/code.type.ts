@@ -17,13 +17,10 @@ export interface State {
     language: string;
     loading: boolean;
     output: IOutput;
- 
-
     updateCode: (code: string) => void;
     updateInput: (input: string) => void;
     updateLanguage: (lang: string) => void;
     submitCode: (code: string, language: string, input: string) => void;
-
 }
 
 export interface Action {

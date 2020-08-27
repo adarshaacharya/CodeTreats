@@ -1,21 +1,15 @@
 import React from 'react';
 import api from 'utils/api';
-import history from 'utils/history';
 import {
-    ADD_SNIPPET,
-    CLEAR_FILTER,
     CODE_DID_UPDATE,
-    FETCH_SNIPPET,
-    FETCH_SNIPPETS,
-    FILTER_SNIPPETS,
     INPUT_DID_UPDATE,
     SET_LOADING,
     SUBMIT_CODE,
-    UPDATE_LANGUAGE,
+    UPDATE_LANGUAGE
 } from '../types';
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
-import { ISnippet, State } from './code.type';
+import { State } from './code.type';
 
 const CodeState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -83,12 +77,10 @@ const CodeState: React.FC = ({ children }) => {
                 loading: state?.loading,
                 output: state.output,
                 input: state.input,
-         
                 updateCode,
                 updateInput,
                 updateLanguage,
                 submitCode,
-            
             }}
         >
             {children}

@@ -1,15 +1,12 @@
 import getTemplate from 'config/editor/examples';
 import {
     CODE_DID_UPDATE,
-    FETCH_SNIPPET,
-    FETCH_SNIPPETS,
+
+
     INPUT_DID_UPDATE,
     SET_LOADING,
     SUBMIT_CODE,
-    UPDATE_LANGUAGE,
-    ADD_SNIPPET,
-    FILTER_SNIPPETS,
-    CLEAR_FILTER,
+    UPDATE_LANGUAGE
 } from '_context/types';
 import { Action, State } from './code.type';
 
@@ -23,12 +20,10 @@ export const initialState: State = {
         stdout: '',
         stderr: '',
     },
- 
     updateCode: () => null,
     updateInput: () => null,
     updateLanguage: () => null,
     submitCode: () => null,
- 
 };
 
 //reducer
@@ -67,7 +62,6 @@ export default function codeReducer(state: State = initialState, action: Action)
                 loading: true,
             };
 
-      
         default:
             return state;
     }

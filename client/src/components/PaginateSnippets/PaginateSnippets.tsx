@@ -8,7 +8,7 @@ type Props = {
 };
 
 const PaginateSnippets: React.FC<Props> = ({ handlePageChange, currentPage }) => {
-    const { snippets} = React.useContext(SnippetContext);
+    const { snippets } = React.useContext(SnippetContext);
 
     const TOTAL_COUNT = snippets.length;
 
