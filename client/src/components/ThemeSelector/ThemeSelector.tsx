@@ -19,7 +19,7 @@ const ThemeSelector = () => {
 
     return (
         <>
-            <Divider orientation='left'> Select theme </Divider>
+            <Divider orientation='left' plain> Select theme </Divider>
             <Select
                 showSearch
                 size='large'

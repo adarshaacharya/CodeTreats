@@ -15,7 +15,10 @@ const LanguageSelector = () => {
 
     return (
         <>
-            <Divider orientation='left'> Select language </Divider>
+            <Divider orientation='left' plain>
+                {' '}
+                Select language{' '}
+            </Divider>
             <Select
                 showSearch
                 style={{ width: '100%' }}

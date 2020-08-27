@@ -12,7 +12,7 @@ const InputPanel = () => {
     const { TextArea } = Input;
     return (
         <>
-            <Divider orientation='left'>
+            <Divider orientation='left' plain>
                 {' '}
                 Custom Input &nbsp;
                 <Tooltip title={text}>

@@ -11,7 +11,9 @@ const OutputPanel: React.FC = () => {
     if (loading) {
         return (
             <>
-                <Divider orientation='left'>Output</Divider>
+                <Divider orientation='left' plain>
+                    Output
+                </Divider>
                 <TextArea rows={7} value='running...' className='font-md my-1' />
             </>
         );
@@ -20,7 +22,9 @@ const OutputPanel: React.FC = () => {
     let value = output?.stderr || output?.stdout || '';
     return (
         <>
-            <Divider orientation='left'>Output</Divider>
+            <Divider orientation='left' plain>
+                Output
+            </Divider>
             <TextArea rows={7} value={value} placeholder='Output' className='font-md my-1' />
         </>
     );
