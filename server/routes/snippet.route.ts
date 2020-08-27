@@ -9,6 +9,18 @@ SnippetRoute.get('/', getAllSnippets);
 // get snippet by id
 SnippetRoute.get('/:id', getSnippetbyId);
 
+
+
+
+
+
+
+
+
+
+
+
+
 // save snippet
 SnippetRoute.post('/', saveSnippet);
 
