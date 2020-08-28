@@ -26,9 +26,9 @@
   ],
   "author": "Aadarsha <connectwithadarsha@gmail.com>",
   "license": "MIT",
-  "repository": "https://github.com/adarshaacharya/JavaScriptRunner",
+  "repository": "https://github.com/adarshaacharya/CodeTreats",
   "bugs": {
-    "url": "https://github.com/adarshaacharya/JavaScriptRunner/issues"
+    "url": "https://github.com/adarshaacharya/CodeTreats/issues"
   },
   "dependencies": {
     "@types/compression": "^1.7.0",

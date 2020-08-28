@@ -25,7 +25,7 @@ Before running app locally make sure that you install following things:
 #### Step 1: Clone the repo:
 
 ```bash
-http://github.com/
+https://github.com/adarshaacharya/CodeTreats.git
 ```
 
 #### Step 2: Install dependencies
@@ -104,4 +104,4 @@ Give a ⭐️ if you like the project!
 ## 📝 License
 
 Copyright © 2020 [Aadarsha Acharya](https://github.com/adarshaacharya).<br />
-This project is [MIT](https://github.com/adarshaacharya/adarshaacharya.com.np/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/adarshaacharya/CodeTreats/blob/master/LICENSE) licensed.
