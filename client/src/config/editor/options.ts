@@ -2,7 +2,7 @@
     API Reference : https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditoroptions.html
 */
 export const editorOptions: Object = {
-    fontFamily: 'Dank Mono',
+    fontFamily: 'Dank Mono Regular',
     fontLigatures: true,
     fontSize: '16px',
     wordWrap: true,

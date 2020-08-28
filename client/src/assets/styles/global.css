@@ -1,7 +1,19 @@
 @import '~antd/dist/antd.dark.css';
 /* @import '~antd/dist/antd.compact.css'; */
 
+@font-face {
+    font-family: 'Dank Mono Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/DankMono-Regular.ttf') format('ttf');
+}
 
+@font-face {
+    font-family: 'Dank Mono Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/DankMono-Italic.ttf') format('ttf');
+}
 * {
     margin: 0;
     padding: 0;
@@ -151,4 +163,3 @@ body {
 svg {
     transition: fill 0.1s ease-in-out, stroke 0.1s ease-in-out;
 }
-
