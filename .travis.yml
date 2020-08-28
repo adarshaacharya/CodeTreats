@@ -4,8 +4,6 @@ node_js:
 
 install:
     - npm ci
-    # seems like we have to do client side too
-    - npm run heroku-prebuild
 
 before_script:
   - npm run develop:ci -- --silent &
