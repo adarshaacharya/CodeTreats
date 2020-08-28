@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+    - 12.18.3
+
+install:
+    - npm ci
+    # seems like we have to do client side too
+    - npm run heroku-prebuild
+
+cache:
+    npm: true
+    # cache both npm modules and Cypress binary
+    directories:
+        - ~/.npm
+
+before_script:
+  - npm run develop:ci -- --silent &
