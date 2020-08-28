@@ -1,17 +1,15 @@
+// env variable config
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 import compression from 'compression';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import express, { Express, Response } from 'express';
 import path from 'path';
 import connectDB from './database/init';
 //  routes
 import CodeRoute from './routes/code.route';
 import SnippetRoute from './routes/snippet.route';
-
-// env variable config
-if (process.env.NODE_ENV !== 'production') {
-    dotenv.config();
-}
 
 // exporess settings
 const app: Express = express();
