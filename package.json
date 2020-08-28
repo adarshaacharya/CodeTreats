@@ -19,6 +19,7 @@
     "develop": "concurrently \"npm run server\" \"npm run client\"",
     "develop:ci": "concurrently \"npm start\" \"cd client && npm start\"",
     "client:move-build": "ts-node utils/move-from-to.ts client/build prod/client",
+    "heroku-prebuild": "cd client && npm install --dev",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run server:build && npm run client:install && npm run client:build",
     "format": "prettier --write \"server/**/*.{ts,tsx,js,jsx}\" \"client/**/*.{ts,tsx,js,jsx}\""
   },

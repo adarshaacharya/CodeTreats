@@ -4,7 +4,7 @@ import React from 'react';
 import { defineTheme } from 'utils/define-theme';
 import ThemeContext from '_context/theme/theme.context';
 
-const { Option, OptGroup } = Select;
+const { Option } = Select;
 const ThemeSelector = () => {
     const themeContext = React.useContext(ThemeContext);
     const { theme, updateTheme } = themeContext;
