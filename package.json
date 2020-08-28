@@ -9,7 +9,7 @@
     "yarn": "1.22.4"
   },
   "scripts": {
-    "start": "node prod/index.js",
+    "start": "cross-env NODE_ENV=production node prod/index.js",
     "server": "nodemon server/index.ts",
     "client": "npm --prefix ./client run start",
     "client:install": "npm --prefix ./client install",
