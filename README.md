@@ -1,5 +1,7 @@
 # Code Treats
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/62f781ddecba4ec3b4f79d53f380a7a1)](https://app.codacy.com/manual/adarshaacharya/CodeTreats?utm_source=github.com&utm_medium=referral&utm_content=adarshaacharya/CodeTreats&utm_campaign=Badge_Grade_Dashboard)
+
 Interactive platform for running, saving and sharing code snippets.
 
 ## ⭐ Features
