@@ -1,6 +1,6 @@
 import compression from 'compression';
 import cors from 'cors';
-import { config } from 'dotenv';
+import dotenv from 'dotenv';
 import express, { Express, Response } from 'express';
 import path from 'path';
 import connectDB from './database/init';
@@ -10,7 +10,7 @@ import SnippetRoute from './routes/snippet.route';
 
 // env variable config
 if (process.env.NODE_ENV !== 'production') {
-    config();
+    dotenv.config();
 }
 
 // exporess settings

@@ -9,7 +9,7 @@
     "yarn": "1.22.4"
   },
   "scripts": {
-    "start": "node prod/index.js",
+    "start": "cross-env NODE_ENV=production node prod/index.js",
     "server": "nodemon server/index.ts",
     "client": "npm --prefix ./client run start",
     "client:install": "npm --prefix ./client install",
@@ -20,7 +20,7 @@
     "develop:ci": "concurrently \"npm start\" \"cd client && npm start\"",
     "client:move-build": "ts-node utils/move-from-to.ts client/build prod/client",
     "heroku-prebuild": "cd client && npm install --dev",
-    "heroku-postbuild": "npm run server:build && npm run client:install && npm run client:build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run server:build && npm run client:install && npm run client:build",
     "format": "prettier --write \"server/**/*.{ts,tsx,js,jsx}\" \"client/**/*.{ts,tsx,js,jsx}\""
   },
   "keywords": [
