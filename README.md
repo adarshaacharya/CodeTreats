@@ -1,6 +1,12 @@
 # Code Treats
 
+<p>
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/62f781ddecba4ec3b4f79d53f380a7a1)](https://app.codacy.com/manual/adarshaacharya/CodeTreats?utm_source=github.com&utm_medium=referral&utm_content=adarshaacharya/CodeTreats&utm_campaign=Badge_Grade_Dashboard)
+
+ <a href="https://github.com/adarshaacharya/CodeTreats/blob/master/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/github/license/adarshaacharya/CodeTreats" />
+</a>
+</p>
 
 Interactive platform for running, saving and sharing code snippets.
 
@@ -17,20 +23,18 @@ Interactive platform for running, saving and sharing code snippets.
 Before running app locally make sure that you install following things:
 
 -   Nodejs with npm or yarn installed
-
 -   [Mongodb](https://www.mongodb.com/) as database.
-
 -   Strongly recommended to use [Robot 3T](https://robomongo.org/) as MongoDB GUI for local database setup or simply use use [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/) as paste token in `DATABASE_URI`
 
 ## 🚀 Local Development
 
-#### Step 1: Clone the repo:
+### Step 1: Clone the repo
 
 ```bash
 https://github.com/adarshaacharya/CodeTreats.git
 ```
 
-#### Step 2: Install dependencies
+## Step 2: Install dependencies
 
 Install both client and server dependencies
 
@@ -44,7 +48,7 @@ $ npm run client:install
 
 ```
 
-#### Step 3: Configuration
+### Step 3: Configuration
 
 1. Create `.env` file in project root dir
 
@@ -58,7 +62,7 @@ $ npm run client:install
 
 4. Then [go to this page](https://glot.io/account/token) and copy & paste token in `GLOT_TOKEN = <YOUR_TOKEN_HERE>` in `.env` file.
 
-#### Step 4: Usage
+### Step 4: Usage
 
 Now you can run the application by :
 
@@ -98,7 +102,7 @@ Give a ⭐️ if you like the project!
 
 ## 👤 Author
 
--   Website: https://adarshaacharya.com.np/
+-   Website: <https://adarshaacharya.com.np/>
 -   Twitter: [@adarshatweets](https://twitter.com/adarshatweets)
 -   Github: [@adarshaacharya](https://github.com/adarshaacharya)
 -   LinkedIn: [@adarshaacharya](https://linkedin.com/in/adarshaacharya)
