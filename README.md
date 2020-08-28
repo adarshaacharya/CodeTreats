@@ -3,8 +3,10 @@
 <p>
 <a href="https://app.codacy.com/manual/adarshaacharya/CodeTreats?utm_source=github.com&utm_medium=referral&utm_content=adarshaacharya/CodeTreats&utm_campaign=Badge_Grade_Dashboard"><img src="https://api.codacy.com/project/badge/Grade/62f781ddecba4ec3b4f79d53f380a7a1"/></a>
  <a href="https://github.com/adarshaacharya/CodeTreats/blob/master/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/adarshaacharya/CodeTreats" />
+<img alt="License: MIT" src="https://img.shields.io/github/license/adarshaacharya/CodeTreats" />
 </a>
+<img alt="Travis (.com)" src="https://img.shields.io/travis/com/adarshaacharya/CodeTreats" />
+
 </p>
 
 Interactive platform for running, saving and sharing code snippets.
@@ -23,7 +25,7 @@ Before running app locally make sure that you install following things:
 
 -   Nodejs with npm or yarn installed
 -   [Mongodb](https://www.mongodb.com/) as database.
--   Strongly recommended to use [Robot 3T](https://robomongo.org/) as MongoDB GUI for local database setup or simply use use [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/) as paste token in `DATABASE_URI`
+-   Strongly recommended to use [Robot 3T](https://robomongo.org/) as MongoDB GUI for local database setup or simply use [MongoDB Atlas](https://docs.atlas.mongodb.com/getting-started/) and paste token in `DATABASE_URI`
 
 ## 🚀 Local Development
 
