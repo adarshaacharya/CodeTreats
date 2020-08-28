@@ -4,7 +4,7 @@
 export const editorOptions: Object = {
     fontFamily: 'Dank Mono Regular',
     fontLigatures: true,
-    fontSize: '16px',
+    fontSize: '17px',
     wordWrap: true,
     minimap: {
         enabled: false,

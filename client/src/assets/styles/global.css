@@ -5,14 +5,14 @@
     font-family: 'Dank Mono Regular';
     font-style: normal;
     font-weight: normal;
-    src: url('../fonts/DankMono-Regular.ttf') format('ttf');
+    src: url('../fonts/DankMono-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Dank Mono Italic';
     font-style: normal;
     font-weight: normal;
-    src: url('../fonts/DankMono-Italic.ttf') format('ttf');
+    src: url('../fonts/DankMono-Italic.ttf');
 }
 * {
     margin: 0;
