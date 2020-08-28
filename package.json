@@ -1,7 +1,7 @@
 {
-  "name": "code-runner",
+  "name": "code-treats",
   "version": "1.0.0",
-  "description": "In browser code editor for js snippet",
+  "description": "Interactive platform for running, saving and sharing code snippets.",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node prod/index.js",

@@ -1,6 +1,6 @@
-# Javascript Runner
+# Code Treats
 
-Browser based VSCODE like code editor.
+One platform for running, saving and sharing code snippets.
 
 ## ⭐ Features
 

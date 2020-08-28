@@ -14,7 +14,7 @@ const InputPanel = () => {
         <>
             <Divider orientation='left' plain>
                 {' '}
-                Custom Input &nbsp;
+                Custom Input (stdin) &nbsp;
                 <Tooltip title={text}>
                     <ExclamationCircleOutlined />
                 </Tooltip>

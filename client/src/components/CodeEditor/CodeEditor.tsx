@@ -3,6 +3,7 @@ import React from 'react';
 import { editorOptions } from 'config/editor/options';
 import CodeContext from '_context/code/code.context';
 import ThemeContext from '_context/theme/theme.context';
+import { Spinner } from 'layout';
 
 const CodeEditor: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
@@ -23,6 +24,7 @@ const CodeEditor: React.FC = () => {
                 theme={theme}
                 options={editorOptions}
                 value={code}
+                loading={<Spinner />}
                 onChange={handleEditorChange}
             />
         </>
