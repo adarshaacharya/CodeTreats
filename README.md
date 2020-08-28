@@ -1,6 +1,6 @@
 # Code Treats
 
-One platform for running, saving and sharing code snippets.
+Interactive platform for running, saving and sharing code snippets.
 
 ## ⭐ Features
 
