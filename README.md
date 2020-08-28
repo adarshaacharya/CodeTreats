@@ -6,7 +6,7 @@
 <img alt="License: MIT" src="https://img.shields.io/github/license/adarshaacharya/CodeTreats" />
 </a>
 <img alt="Travis (.com)" src="https://img.shields.io/travis/com/adarshaacharya/CodeTreats" />
-
+<img src="https://pyheroku-badge.herokuapp.com/?app=codetreats" alt="Heroku">
 </p>
 
 Interactive platform for running, saving and sharing code snippets.
