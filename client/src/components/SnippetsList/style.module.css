@@ -1,0 +1,19 @@
+.item {
+    display: flex;
+    gap: 1rem;
+}
+
+.item svg {
+    height: 35px;
+    width: 35px;
+}
+
+.copy {
+    cursor: pointer;
+    border: none;
+    background: rgb(26, 49, 255);
+    color: #fff;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 0.7rem;
+}

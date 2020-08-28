@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "CommonJS",
+        "sourceMap": false,
+        "outDir": "./prod",
+        "downlevelIteration": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "strictFunctionTypes": true,
+        "alwaysStrict": true,
+        "skipLibCheck": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": "./server",
+        "typeRoots": [
+            "server/types",
+            "node_modules/@types"
+        ]
+    },
+    "include": [
+        "server/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "client"
+    ]
+}
