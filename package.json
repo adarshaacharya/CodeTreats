@@ -48,7 +48,8 @@
     "express": "^4.17.1",
     "fs-extra": "^9.0.1",
     "monaco-editor": "^0.20.0",
-    "mongoose": "^5.9.28"
+    "mongoose": "^5.9.28",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.1",
@@ -57,9 +58,10 @@
     "@types/express": "^4.17.7",
     "@types/mongoose": "^5.7.36",
     "@types/node": "^14.0.27",
+    "@types/socket.io": "^2.1.11",
     "concurrently": "^5.2.0",
-    "dotenv": "^8.2.0",
     "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
     "husky": "^4.2.5",
     "nodemon": "^2.0.4",
     "prettier": "^2.1.1",

@@ -6,7 +6,11 @@ import compression from 'compression';
 import cors from 'cors';
 import express, { Express, Response } from 'express';
 import path from 'path';
+import http from 'http';
+import socketio from 'socket.io';
+
 import connectDB from './database/init';
+
 //  routes
 import CodeRoute from './routes/code.route';
 import SnippetRoute from './routes/snippet.route';
@@ -14,6 +18,10 @@ import SnippetRoute from './routes/snippet.route';
 // exporess settings
 const app: Express = express();
 app.set('env', process.env.NODE_ENV);
+
+//socket server
+const server = http.createServer(app);
+const io = socketio(server);
 
 // db
 connectDB();
@@ -27,6 +35,13 @@ app.use(compression());
 //routes
 app.use('/api/code', CodeRoute);
 app.use('/api/snippets', SnippetRoute);
+
+
+// socket config
+io.on('connection', () => {
+    console.log('a new connection has been established');
+})
+
 
 // Serve static addes in prod env
 if (process.env.NODE_ENV === 'production') {
@@ -44,4 +59,4 @@ const PORT = process.env.PORT || 5000;
 
 const handleListening = () => console.log(`✅  Listening on: http://${hostname}:${PORT}`);
 
-app.listen(PORT, handleListening);
+server.listen(PORT, handleListening);
