@@ -1,7 +1,7 @@
 import React from 'react';
 import CollabEditor from 'components/CollabEditor';
 
-const CollaboratePage = () => {
+const CollabEditorPage = () => {
     return (
         <>
             <CollabEditor />
@@ -9,4 +9,4 @@ const CollaboratePage = () => {
     );
 };
 
-export default CollaboratePage;
+export default CollabEditorPage;

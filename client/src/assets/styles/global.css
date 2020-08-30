@@ -164,8 +164,7 @@ svg {
     transition: fill 0.1s ease-in-out, stroke 0.1s ease-in-out;
 }
 
-
 /* colors */
 .text-cyan {
-    color : #00d9ff;
+    color: #00d9ff;
 }

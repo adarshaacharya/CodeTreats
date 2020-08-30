@@ -1,0 +1,10 @@
+.container {
+    margin: 5% 30%;
+}
+
+.card {
+    background: inherit;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0 -2px 10px rgb(75, 120, 202);
+}

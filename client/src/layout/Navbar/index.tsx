@@ -1,10 +1,11 @@
 import { Menu } from 'antd';
 import React from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation, Route, Redirect } from 'react-router-dom';
 
 const items = [
     { key: '1', label: 'Home', path: '/' },
     { key: '2', label: 'Snippets', path: '/snippets' },
+    { key: '3', label: 'Collab Editor', path: '/collab' },
 ];
 
 export const Navbar: React.FC = (props) => {
@@ -17,7 +18,7 @@ export const Navbar: React.FC = (props) => {
         const clicked = items.find((_item) => _item.key === item.key);
         history.push(clicked?.path as string);
     };
-    
+
     React.useEffect(() => {
         setCurrent(items.find((_item) => location.pathname === _item.path)?.key); // change key on location change
     }, [location]);
