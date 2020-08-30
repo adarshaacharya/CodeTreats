@@ -36,12 +36,10 @@ app.use(compression());
 app.use('/api/code', CodeRoute);
 app.use('/api/snippets', SnippetRoute);
 
-
 // socket config
 io.on('connection', () => {
     console.log('a new connection has been established');
-})
-
+});
 
 // Serve static addes in prod env
 if (process.env.NODE_ENV === 'production') {

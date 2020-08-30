@@ -13,10 +13,11 @@ export const Navbar: React.FC = (props) => {
     const [current, setCurrent] = React.useState(items.find((_item) => location.pathname === _item.path)?.key); // stores current path key
 
     // change page route
-    const handleClick = (item: any) => {
+    const onMenuClick = (item: any) => {
         const clicked = items.find((_item) => _item.key === item.key);
         history.push(clicked?.path as string);
     };
+    
     React.useEffect(() => {
         setCurrent(items.find((_item) => location.pathname === _item.path)?.key); // change key on location change
     }, [location]);
@@ -30,7 +31,7 @@ export const Navbar: React.FC = (props) => {
 
     return (
         <div className='mt-1 mx-1'>
-            <Menu mode='horizontal' selectedKeys={[current!]} onClick={handleClick}>
+            <Menu mode='horizontal' selectedKeys={[current!]} onClick={onMenuClick}>
                 {items.map((item) => (
                     <Menu.Item key={item.key}>{item.label}</Menu.Item>
                 ))}

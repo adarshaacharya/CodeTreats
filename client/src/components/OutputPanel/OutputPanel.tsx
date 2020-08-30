@@ -14,7 +14,7 @@ const OutputPanel: React.FC = () => {
                 <Divider orientation='left' plain>
                     Output
                 </Divider>
-                <TextArea rows={7} value='running...' className='font-md my-1' />
+                <TextArea rows={7} value='running...' className='font-md my-1 text-cyan' />
             </>
         );
     }
@@ -25,7 +25,7 @@ const OutputPanel: React.FC = () => {
             <Divider orientation='left' plain>
                 Output
             </Divider>
-            <TextArea rows={7} value={value} placeholder='Output' className='font-md my-1' />
+            <TextArea rows={7} value={value} placeholder='Output' className='font-md my-1 text-cyan' />
         </>
     );
 };
