@@ -91,6 +91,9 @@ body {
     padding: 4rem 0;
 }
 
+.pt-1 {
+    padding-top: 0.5rem;
+}
 /* Margin */
 .m {
     margin: 0.5rem;
@@ -167,4 +170,8 @@ svg {
 /* colors */
 .text-cyan {
     color: #00d9ff;
+}
+
+.menu_left {
+    float: right;
 }

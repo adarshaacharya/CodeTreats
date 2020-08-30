@@ -1,6 +1,7 @@
 import { Menu } from 'antd';
+import logo from 'assets/img/logo.svg';
 import React from 'react';
-import { useHistory, useLocation, Route, Redirect } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const items = [
     { key: '1', label: 'Home', path: '/' },
@@ -36,6 +37,9 @@ export const Navbar: React.FC = (props) => {
                 {items.map((item) => (
                     <Menu.Item key={item.key}>{item.label}</Menu.Item>
                 ))}
+                <Menu.Item className='menu_left'>
+                    <img src={logo} height="50px" className="pt-1"/>
+                </Menu.Item>
             </Menu>
         </div>
     );

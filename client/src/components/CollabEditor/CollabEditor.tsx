@@ -14,7 +14,7 @@ const CollabEditor = () => {
     };
 
     const onFormSubmit = (values: IVal) => {
-      console.log(values)
+        console.log(values);
     };
 
     const [form] = Form.useForm();
