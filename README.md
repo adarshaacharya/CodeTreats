@@ -13,7 +13,7 @@ Interactive platform for running, saving and sharing code snippets.
 
 ## ⭐ Features
 
--   Code Editor with VS Code like interactive environment with features like auto-completion
+-   Code Editor with VS Code like interactive environment with features like auto-completion, code-formatting
 -   Supports three languages
 -   15+ Themes Support
 -   Save snippets pubicilty with shareable link
