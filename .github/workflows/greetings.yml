@@ -1,0 +1,13 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'Thank you for submitting the issue. This automated message, author of this repo will reply you back soon.'' first issue'
+        pr-message: 'Thank you for taking interest in project. I will review the pull request and merge it soon.'' first pr'
