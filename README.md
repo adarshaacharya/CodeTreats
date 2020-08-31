@@ -1,5 +1,7 @@
 <p align="center">
+<a href="http://codetreats.herokuapp.com/">
 <img src="assets/logo.svg" alt="Logo" height="100px"/>
+</a>
 </p>
 
 <p align="center">
