@@ -1,4 +1,4 @@
-# Code Treats
+<img src="assets/Github.svg" alt="Logo" />
 
 <p>
 <a href="https://app.codacy.com/manual/adarshaacharya/CodeTreats?utm_source=github.com&utm_medium=referral&utm_content=adarshaacharya/CodeTreats&utm_campaign=Badge_Grade_Dashboard"><img src="https://api.codacy.com/project/badge/Grade/62f781ddecba4ec3b4f79d53f380a7a1"/></a>

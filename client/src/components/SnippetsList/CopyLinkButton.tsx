@@ -1,15 +1,12 @@
+import { message } from 'antd';
 import { useSfx } from 'hooks';
-import { notify } from 'layout';
 import React from 'react';
 import CopyToClipBoard from 'react-copy-to-clipboard';
 import style from './style.module.css';
-import { message } from 'antd';
 
 type Props = {
     id: string;
 };
-
-const END_POINT = 'http://codetreats.herokuapp.com/';
 
 const CopyLinkButton: React.FC<Props> = ({ id }) => {
     const [, setCopied] = React.useState(false);
@@ -28,7 +25,7 @@ const CopyLinkButton: React.FC<Props> = ({ id }) => {
 
     return (
         <>
-            <CopyToClipBoard text={`END_POINT${id}`} onCopy={onLinkCopy}>
+            <CopyToClipBoard text={`http://codetreats.herokuapp.com/${id}`} onCopy={onLinkCopy}>
                 <button className={style.copy}>{copiedText}</button>
             </CopyToClipBoard>
         </>

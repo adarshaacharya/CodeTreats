@@ -37,9 +37,9 @@ export const Navbar: React.FC = (props) => {
                 {items.map((item) => (
                     <Menu.Item key={item.key}>{item.label}</Menu.Item>
                 ))}
-                <Menu.Item className='menu_left'>
-                    <img src={logo} height="50px" className="pt-1"/>
-                </Menu.Item>
+                <div className='menu_left'>
+                    <img src={logo} height='50px' className='pt-1' alt='logo' />
+                </div>
             </Menu>
         </div>
     );

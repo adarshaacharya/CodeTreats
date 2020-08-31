@@ -21,15 +21,15 @@ const CollabEditor = () => {
     return (
         <>
             <div className={styles.container}>
-                <Card title='Create a Room' className={styles.card}>
-                    <Form {...layout} layout='vertical' form={form} onFinish={onFormSubmit}>
+                <Card title={'Create or Join a Room 🌱'} className={styles.card}>
+                    <Form {...layout} layout='vertical' form={form} onFinish={onFormSubmit} size='large'>
                         <Form.Item
                             name='username'
                             label='Username'
                             rules={[{ required: true, message: "Username can't be empty" }]}
                             className='py'
                         >
-                            <Input placeholder='Enter your short name' />
+                            <Input placeholder='Enter your short name.' />
                         </Form.Item>
                         <Form.Item
                             name='room'
