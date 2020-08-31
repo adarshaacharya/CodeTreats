@@ -9,14 +9,14 @@ const CollabEditor = () => {
     return (
         <>
             <Card className={`${styles.container} ${styles.outerCard}`}>
-                    <Tabs defaultActiveKey='create' size='large'>
-                        <TabPane key='create' tab='Create Room'>
-                            <CreateRoom />
-                        </TabPane>
-                        <TabPane key='join' tab='Join Room'>
-                            <JoinRoom />
-                        </TabPane>
-                    </Tabs>
+                <Tabs defaultActiveKey='create' size='large'>
+                    <TabPane key='create' tab='Create Room'>
+                        <CreateRoom />
+                    </TabPane>
+                    <TabPane key='join' tab='Join Room'>
+                        <JoinRoom />
+                    </TabPane>
+                </Tabs>
             </Card>
         </>
     );
