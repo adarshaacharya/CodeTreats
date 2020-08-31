@@ -1,6 +1,8 @@
-<img src="assets/Github.svg" alt="Logo" />
+<p align="center">
+<img src="assets/logo.svg" alt="Logo" height="100px"/>
+</p>
 
-<p>
+<p align="center">
 <a href="https://app.codacy.com/manual/adarshaacharya/CodeTreats?utm_source=github.com&utm_medium=referral&utm_content=adarshaacharya/CodeTreats&utm_campaign=Badge_Grade_Dashboard"><img src="https://api.codacy.com/project/badge/Grade/62f781ddecba4ec3b4f79d53f380a7a1"/></a>
  <a href="https://github.com/adarshaacharya/CodeTreats/blob/master/LICENSE" target="_blank">
 <img alt="License: MIT" src="https://img.shields.io/github/license/adarshaacharya/CodeTreats" />
@@ -9,7 +11,9 @@
 <img src="https://pyheroku-badge.herokuapp.com/?app=codetreats" alt="Heroku">
 </p>
 
+<p align="center">
 Interactive platform for running, saving and sharing code snippets.
+</p>
 
 ## ⭐ Features
 
