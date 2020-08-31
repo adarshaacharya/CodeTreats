@@ -13,6 +13,7 @@ export const useRoutes = () => {
                 <Route exact path='/snippets' component={SnippetsPage} />
                 <Route exact path='/snippets/:id' component={SnippetPage} />
                 <Route exact path='/collab' component={CollabEditorPage} />
+                <Route exact path='/collab/:roomId' component={CollabEditorPage} />
             </Switch>
         </>
     );

@@ -37,8 +37,16 @@ app.use('/api/code', CodeRoute);
 app.use('/api/snippets', SnippetRoute);
 
 // socket config
-io.on('connection', () => {
-    console.log('a new connection has been established');
+io.on('connection', socket => {
+    console.log('a user has connected');
+
+    socket.on('code-change', function (data) {
+        io.emit('new-code-char', data);
+    });
+
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
 });
 
 // Serve static addes in prod env

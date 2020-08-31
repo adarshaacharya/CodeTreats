@@ -4,6 +4,9 @@ import { editorOptions } from 'config/editor/options';
 import CodeContext from '_context/code/code.context';
 import ThemeContext from '_context/theme/theme.context';
 import { Spinner } from 'layout';
+import io from 'socket.io-client';
+import { stringify } from 'querystring';
+const socket = io('http://localhost:5000');
 
 const CodeEditor: React.FC = () => {
     const codeContext = React.useContext(CodeContext);
