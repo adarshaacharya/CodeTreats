@@ -1,5 +1,5 @@
-import React from 'react';
 import { Button, Card, Form, Input } from 'antd';
+import React from 'react';
 import styles from './style.module.css';
 
 interface IVal {
@@ -19,8 +19,8 @@ const CreateRoom = () => {
     const [form] = Form.useForm();
     return (
         <>
-            <div className={styles.container}>
-                <Card title={'Create or Join a Room 🌱'} className={styles.card}>
+            <div>
+                <Card type='inner' bordered={false} className={styles.innerCard}>
                     <Form {...layout} layout='vertical' form={form} onFinish={onFormSubmit} size='large'>
                         <Form.Item
                             name='username'
@@ -28,7 +28,7 @@ const CreateRoom = () => {
                             rules={[{ required: true, message: "Username can't be empty" }]}
                             className='py'
                         >
-                            <Input placeholder='Enter your short name.' />
+                            <Input placeholder='Enter your name...' />
                         </Form.Item>
                         <Form.Item
                             name='room'
@@ -36,11 +36,11 @@ const CreateRoom = () => {
                             rules={[{ required: true, message: "Room name can't be empty" }]}
                             className='py'
                         >
-                            <Input placeholder='Create or enter existing room name.' />
+                            <Input placeholder='Enter unique room name..' />
                         </Form.Item>
                         <Form.Item>
                             <Button type='primary' htmlType='submit'>
-                                Submit
+                                Create Room
                             </Button>
                         </Form.Item>
                     </Form>

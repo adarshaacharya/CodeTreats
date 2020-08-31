@@ -11,7 +11,7 @@ import React from 'react';
 const Editor = () => {
     return (
         <>
-             <Row className='mx-1'>
+            <Row className='mx-1'>
                 <Col span={14}>
                     <CodeEditor />
                 </Col>
@@ -29,7 +29,7 @@ const Editor = () => {
             </Row>
             <Divider />
         </>
-    )
-}
+    );
+};
 
-export default Editor
+export default Editor;
