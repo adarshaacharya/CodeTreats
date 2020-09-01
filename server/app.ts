@@ -1,30 +1,15 @@
-// env variable config
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
-}
+
 import compression from 'compression';
 import cors from 'cors';
 import express, { Express, Response } from 'express';
 import path from 'path';
-import http from 'http';
-import socketio from 'socket.io';
-
-import connectDB from './database/init';
-
-//  routes
+//  import routes
 import CodeRoute from './routes/code.route';
 import SnippetRoute from './routes/snippet.route';
 
 // exporess settings
 const app: Express = express();
 app.set('env', process.env.NODE_ENV);
-
-//socket server
-const server = http.createServer(app);
-const io = socketio(server);
-
-// db
-connectDB();
 
 // handle post request
 app.use(cors());
@@ -35,19 +20,6 @@ app.use(compression());
 //routes
 app.use('/api/code', CodeRoute);
 app.use('/api/snippets', SnippetRoute);
-
-// socket config
-io.on('connection', socket => {
-    console.log('a user has connected');
-
-    socket.on('code-change', function (data) {
-        io.emit('new-code-char', data);
-    });
-
-    socket.on('disconnect', () => {
-        console.log('user disconnected');
-    });
-});
 
 // Serve static addes in prod env
 if (process.env.NODE_ENV === 'production') {
@@ -60,9 +32,19 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
+export default app;
+
+
+/*
+import connectDB from './database/init';
+connectDB()
+
 const hostname = 'localhost';
 const PORT = process.env.PORT || 5000;
 
 const handleListening = () => console.log(`✅  Listening on: http://${hostname}:${PORT}`);
 
-server.listen(PORT, handleListening);
+app.listen(PORT, handleListening);
+
+
+*/
