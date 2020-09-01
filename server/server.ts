@@ -20,8 +20,12 @@ const io = socketIO(server);
 io.on('connection', socket => {
     console.log('a user has connected');
 
-    socket.on('code-change', function (data) {
-        io.emit('new-code-char', data);
+    socket.on('create-room', data => {
+        try {
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
     });
 
     socket.on('disconnect', () => {

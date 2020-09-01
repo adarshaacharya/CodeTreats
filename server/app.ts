@@ -1,4 +1,3 @@
-
 import compression from 'compression';
 import cors from 'cors';
 import express, { Express, Response } from 'express';
@@ -33,7 +32,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 export default app;
-
 
 /*
 import connectDB from './database/init';
