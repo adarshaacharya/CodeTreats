@@ -6,7 +6,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 const items = [
     { key: '1', label: 'Home', path: '/' },
     { key: '2', label: 'Snippets', path: '/snippets' },
-    { key: '3', label: 'Collab Editor', path: '/collab' },
+    { key: '3', label: 'Collab Editor', path: '/room' },
 ];
 
 export const Navbar: React.FC = (props) => {

@@ -4,7 +4,7 @@ import React from 'react';
 import { Router } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useRoutes } from 'routes';
+import { useRoutes } from 'routing/routes';
 import history from 'utils/history';
 import CodeState from '_context/code/code.state';
 import ThemeState from '_context/theme/theme.state';

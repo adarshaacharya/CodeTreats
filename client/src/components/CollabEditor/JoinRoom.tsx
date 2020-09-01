@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './style.module.css';
 
 interface IVal {
-    room: string;
+    roomName: string;
 }
 const JoinRoom = () => {
     const layout = {
@@ -12,7 +12,7 @@ const JoinRoom = () => {
     };
 
     const onFormSubmit = (values: IVal) => {
-        console.log(values);
+        console.log(values)
     };
 
     const [form] = Form.useForm();
@@ -21,8 +21,8 @@ const JoinRoom = () => {
             <Card type='inner' bordered={false} className={styles.innerCard}>
                 <Form {...layout} layout='vertical' form={form} onFinish={onFormSubmit} size='large'>
                     <Form.Item
-                        name='room'
-                        label='Room'
+                        name='roomName'
+                        label='Room Name'
                         rules={[{ required: true, message: "Room name can't be empty" }]}
                         className='py'
                     >

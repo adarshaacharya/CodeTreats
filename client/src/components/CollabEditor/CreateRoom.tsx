@@ -1,10 +1,11 @@
 import { Button, Card, Form, Input } from 'antd';
+import socket from 'config/socket/socket';
 import React from 'react';
 import styles from './style.module.css';
 
 interface IVal {
     username: string;
-    room: string;
+    roomName: string;
 }
 const CreateRoom = () => {
     const layout = {
@@ -14,6 +15,7 @@ const CreateRoom = () => {
 
     const onFormSubmit = (values: IVal) => {
         console.log(values);
+        socket.emit('create:room', values);
     };
 
     const [form] = Form.useForm();
@@ -31,8 +33,8 @@ const CreateRoom = () => {
                             <Input placeholder='Enter your name...' />
                         </Form.Item>
                         <Form.Item
-                            name='room'
-                            label='Room'
+                            name='roomName'
+                            label='Room Name'
                             rules={[{ required: true, message: "Room name can't be empty" }]}
                             className='py'
                         >

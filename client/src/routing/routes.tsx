@@ -12,8 +12,8 @@ export const useRoutes = () => {
                 <Route exact path='/' component={HomePage} />
                 <Route exact path='/snippets' component={SnippetsPage} />
                 <Route exact path='/snippets/:id' component={SnippetPage} />
-                <Route exact path='/collab' component={CollabEditorPage} />
-                <Route exact path='/collab/:roomId' component={CollabEditorPage} />
+                <Route exact path='/room' component={CollabEditorPage} />
+                <Route exact path='/room/:roomId' component={CollabEditorPage} />
             </Switch>
         </>
     );

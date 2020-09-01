@@ -14,3 +14,7 @@ export const CLEAR_FILTER = 'CLEAR_FILTER';
 
 // theme context
 export const UPDATE_THEME: string = 'UPDATE_THEME';
+
+// room context
+export const CREATE_ROOM: string = 'CREATE_ROOM';
+export const JOIN_ROOM: string = 'JOIN_ROOM';
