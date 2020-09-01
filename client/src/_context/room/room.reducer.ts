@@ -5,6 +5,8 @@ import { Action, State } from './room.type';
 export const initialState: State = {
     roomName: '',
     users: [],
+
+    createRoom : () => null
 };
 
 //reducer

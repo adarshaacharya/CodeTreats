@@ -9,6 +9,7 @@ import history from 'utils/history';
 import CodeState from '_context/code/code.state';
 import ThemeState from '_context/theme/theme.state';
 import SnippetState from '_context/snippet/snippet.state';
+import RoomState from '_context/room/room.state';
 
 const App: React.FC = () => {
     const routes = useRoutes();
@@ -17,13 +18,15 @@ const App: React.FC = () => {
             <CodeState>
                 <SnippetState>
                     <ThemeState>
-                        <Router history={history}>
-                            <>
-                                <ToastContainer newestOnTop />
-                                <Navbar />
-                                {routes}
-                            </>
-                        </Router>
+                        <RoomState>
+                            <Router history={history}>
+                                <>
+                                    <ToastContainer newestOnTop />
+                                    <Navbar />
+                                    {routes}
+                                </>
+                            </Router>
+                        </RoomState>
                     </ThemeState>
                 </SnippetState>
             </CodeState>

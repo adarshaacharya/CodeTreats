@@ -5,6 +5,8 @@ export interface IUser {
 export interface State {
     roomName: string;
     users: IUser[];
+
+    createRoom: (roomName: string, username: string) => void;
 }
 
 export interface Action {
