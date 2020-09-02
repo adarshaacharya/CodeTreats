@@ -14,7 +14,7 @@ const CodeState: React.FC = ({ children }) => {
 
     // updateCode
     const updateCode = (code: string) => {
-        // console.clear();
+        console.clear();
         dispatch({
             type: CODE_DID_UPDATE,
             payload: code,
