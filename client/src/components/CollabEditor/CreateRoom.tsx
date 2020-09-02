@@ -1,6 +1,6 @@
 import { Button, Card, Form, Input } from 'antd';
-import socket from 'config/socket/socket';
 import React from 'react';
+import RoomContext from '_context/room/room.context';
 import styles from './style.module.css';
 
 interface IVal {
@@ -8,14 +8,16 @@ interface IVal {
     roomName: string;
 }
 const CreateRoom = () => {
+    const { createRoom } = React.useContext(RoomContext);
+
     const layout = {
         labelCol: { span: 8 },
         wrapperCol: { span: 24 },
     };
 
     const onFormSubmit = (values: IVal) => {
-        console.log(values);
-        socket.emit('create:room', values);
+        const { roomName, username } = values;
+        createRoom(username, roomName);
     };
 
     const [form] = Form.useForm();

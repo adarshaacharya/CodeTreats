@@ -6,7 +6,7 @@ export const initialState: State = {
     roomName: '',
     users: [],
 
-    createRoom : () => null
+    createRoom: () => null,
 };
 
 //reducer

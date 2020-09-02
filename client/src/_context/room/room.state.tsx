@@ -14,7 +14,10 @@ const RoomState: React.FC = ({ children }) => {
     // create room
     const createRoom = (username: string, roomName: string) => {
         try {
-            const body = { username, roomName };
+            const body = {
+                username, 
+                roomName 
+            };
             socket.emit('create:room', body);
         } catch (error) {
             console.log(error);

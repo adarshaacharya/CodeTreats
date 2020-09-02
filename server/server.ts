@@ -22,13 +22,19 @@ io.on('connection', socket => {
     console.log('✅ Connected to room.');
 
     // create new room
-    socket.on('create:room', async body => {
+    socket.on('create:room', async (body: { roomName: string; username: string }) => {
         try {
-            const { roomName } = body;
-            const newRoom = new Room({
-                roomName,
-            });
-            const room = await newRoom.save();
+            const { roomName, username } = body;
+
+            let room = new Room();
+            room.roomName = roomName;
+            const user = {
+                socketID: socket.id,
+                username,
+            };
+            room.users.push(user);
+
+            room = await room.save();
 
             const roomID = room._id.toString();
             socket.join(roomID);
