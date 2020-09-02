@@ -5,7 +5,6 @@ import history from 'utils/history';
 import RoomContext from '_context/room/room.context';
 import styles from './style.module.css';
 
-
 interface IVal {
     roomID: string;
     username: string;
