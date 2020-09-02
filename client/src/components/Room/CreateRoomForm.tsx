@@ -2,13 +2,26 @@ import { Button, Card, Form, Input } from 'antd';
 import React from 'react';
 import RoomContext from '_context/room/room.context';
 import styles from './style.module.css';
+import history from 'utils/history';
+import socket from 'config/socket/socket';
 
 interface IVal {
     username: string;
     roomName: string;
 }
-const CreateRoom = () => {
-    const { createRoom } = React.useContext(RoomContext);
+
+const CreateRoomForm = () => {
+    const { createRoom, room } = React.useContext(RoomContext);
+    console.log(room);
+    React.useEffect(() => {
+        if (room) {
+            history.push(`/room/${room._id}`);
+        }
+
+        return () => {
+            socket.removeAllListeners();
+        };
+    }, [room]);
 
     const layout = {
         labelCol: { span: 8 },
@@ -16,7 +29,6 @@ const CreateRoom = () => {
     };
 
     const onFormSubmit = (values: IVal) => {
-       
         createRoom(values);
     };
 
@@ -54,4 +66,4 @@ const CreateRoom = () => {
     );
 };
 
-export default CreateRoom;
+export default CreateRoomForm;

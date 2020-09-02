@@ -4,18 +4,18 @@ export interface IUser {
     _id: string;
 }
 export interface IRoom {
-    roomID: string;
+    _id : string;
     roomName: string;
     users: IUser[];
 }
 
 export interface State {
     room: IRoom | null;
-
-    createRoom: (values : { username : string, roomName : string}) => void;
+    createRoom: (values: { username: string; roomName: string }) => void;
 }
 
 export interface Action {
     payload?: any;
     type: string;
 }
+

@@ -1,20 +1,20 @@
 import { Card, Tabs } from 'antd';
 import React from 'react';
-import CreateRoom from './CreateRoom';
-import JoinRoom from './JoinRoom';
+import CreateRoomForm from './CreateRoomForm';
+import JoinRoomForm from './JoinRoomForm';
 import styles from './style.module.css';
 const { TabPane } = Tabs;
 
-const CollabEditor = () => {
+const Room = () => {
     return (
         <>
             <Card className={`${styles.container} ${styles.outerCard}`}>
                 <Tabs defaultActiveKey='create' size='large'>
                     <TabPane key='create' tab='Create Room'>
-                        <CreateRoom />
+                        <CreateRoomForm />
                     </TabPane>
                     <TabPane key='join' tab='Join Room'>
-                        <JoinRoom />
+                        <JoinRoomForm />
                     </TabPane>
                 </Tabs>
             </Card>
@@ -22,4 +22,4 @@ const CollabEditor = () => {
     );
 };
 
-export default CollabEditor;
+export default Room;

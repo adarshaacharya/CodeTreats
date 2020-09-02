@@ -1,8 +1,9 @@
 import socket from 'config/socket/socket';
 import * as React from 'react';
+import { UPDATE_ROOM } from '_context/types';
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
-import { State } from './room.type';
+import { IRoom, State } from './room.type';
 
 const RoomState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -21,9 +22,11 @@ const RoomState: React.FC = ({ children }) => {
             };
             socket.emit('create:room', body);
 
-            socket.on('update:room', (room: any) => {
-                console.log(room);
-                const { roomName, users, _id: roomID } = room;
+            socket.on('update:room', (room: IRoom) => {
+                dispatch({
+                    type: UPDATE_ROOM,
+                    payload: room,
+                });
             });
         } catch (error) {
             console.log(error);

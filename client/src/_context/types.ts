@@ -18,3 +18,5 @@ export const UPDATE_THEME: string = 'UPDATE_THEME';
 // room context
 export const CREATE_ROOM: string = 'CREATE_ROOM';
 export const JOIN_ROOM: string = 'JOIN_ROOM';
+export const UPDATE_ROOM: string = 'UPDATE_ROOM';
+

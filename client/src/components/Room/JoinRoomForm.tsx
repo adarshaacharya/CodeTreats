@@ -5,7 +5,7 @@ import styles from './style.module.css';
 interface IVal {
     roomName: string;
 }
-const JoinRoom = () => {
+const JoinRoomForm = () => {
     const layout = {
         labelCol: { span: 8 },
         wrapperCol: { span: 24 },
@@ -39,4 +39,4 @@ const JoinRoom = () => {
     );
 };
 
-export default JoinRoom;
+export default JoinRoomForm;
