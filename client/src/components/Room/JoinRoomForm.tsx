@@ -1,18 +1,22 @@
 import { Button, Card, Form, Input } from 'antd';
 import React from 'react';
 import styles from './style.module.css';
+import RoomContext from '_context/room/room.context';
 
 interface IVal {
-    roomName: string;
+    roomID: string;
+    username: string;
 }
 const JoinRoomForm = () => {
+    const { joinRoom } = React.useContext(RoomContext);
+
     const layout = {
         labelCol: { span: 8 },
         wrapperCol: { span: 24 },
     };
 
     const onFormSubmit = (values: IVal) => {
-        console.log(values);
+        joinRoom(values);
     };
 
     const [form] = Form.useForm();
@@ -27,6 +31,14 @@ const JoinRoomForm = () => {
                         className='py'
                     >
                         <Input placeholder='Enter room id...' />
+                    </Form.Item>
+                    <Form.Item
+                        name='username'
+                        label='Username'
+                        rules={[{ required: true, message: "Username can't be empty" }]}
+                        className='py'
+                    >
+                        <Input placeholder='Enter your short name...' />
                     </Form.Item>
                     <Form.Item>
                         <Button type='primary' htmlType='submit'>

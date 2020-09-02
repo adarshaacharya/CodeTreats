@@ -1,9 +1,11 @@
+import { message } from 'antd';
 import socket from 'config/socket/socket';
 import * as React from 'react';
 import { UPDATE_ROOM } from '_context/types';
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
 import { IRoom, State } from './room.type';
+
 
 const RoomState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -36,7 +38,16 @@ const RoomState: React.FC = ({ children }) => {
     // create room
     const joinRoom = (values: { username: string; roomID: string }) => {
         try {
-            console.log(values)
+            const { username, roomID } = values;
+            const body = {
+                username,
+                roomID,
+            };
+            socket.emit('join:room', body, (error: any) => {
+                if (error) {
+                    message.error(error.msg);
+                }
+            });
         } catch (error) {
             console.log(error);
         }
@@ -46,9 +57,9 @@ const RoomState: React.FC = ({ children }) => {
         <RoomContext.Provider
             value={{
                 room: state.room,
-                loading : state.loading,
+                loading: state.loading,
                 createRoom,
-                joinRoom
+                joinRoom,
             }}
         >
             {children}

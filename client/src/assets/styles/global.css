@@ -172,6 +172,12 @@ svg {
     color: #00d9ff;
 }
 
+.bg-danger {
+    background: #DD4F3D;
+    color: #fff;
+}
+
+
 .menu_left {
     float: right;
 }

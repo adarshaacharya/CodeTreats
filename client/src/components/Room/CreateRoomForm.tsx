@@ -12,7 +12,6 @@ interface IVal {
 
 const CreateRoomForm = () => {
     const { createRoom, room } = React.useContext(RoomContext);
-    console.log(room);
     React.useEffect(() => {
         if (room) {
             history.push(`/room/${room._id}`);

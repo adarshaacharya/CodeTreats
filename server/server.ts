@@ -7,7 +7,8 @@ import socketIO from 'socket.io';
 import app from './app';
 import connectDB from './database/init';
 import Room from './models/room.model';
-const http = require('http');
+import http from 'http';
+import mongoose from 'mongoose';
 
 // db
 connectDB();
@@ -47,15 +48,17 @@ io.on('connection', socket => {
         }
     });
 
-    
-
     // join a new room
-    socket.on('join:room', async body => {
+    socket.on('join:room', async (body, callback) => {
         try {
-            const { roomID } = body;
-            const room = await Room.findById(roomID);
+            const { roomID, username } = body;
 
-            console.log(room);
+            if (!mongoose.Types.ObjectId.isValid(roomID)) return callback({ msg: 'Room ID is not valid' });
+
+            const room = await Room.findOne({ _id: roomID });
+            if (!room) return callback({ msg: 'Room not found' });
+
+            console.log(roomID, username);
         } catch (error) {
             console.log(error, 'Error in joining room');
         }
