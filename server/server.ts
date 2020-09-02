@@ -3,12 +3,12 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 
+import http from 'http';
+import mongoose from 'mongoose';
 import socketIO from 'socket.io';
 import app from './app';
 import connectDB from './database/init';
 import Room from './models/room.model';
-import http from 'http';
-import mongoose from 'mongoose';
 
 // db
 connectDB();
@@ -55,10 +55,19 @@ io.on('connection', socket => {
 
             if (!mongoose.Types.ObjectId.isValid(roomID)) return callback({ msg: 'Room ID is not valid' });
 
-            const room = await Room.findOne({ _id: roomID });
+            let room = await Room.findOne({ _id: roomID });
             if (!room) return callback({ msg: 'Room not found' });
 
-            console.log(roomID, username);
+            socket.join(roomID); // join the socket(user) in that room
+
+            let user = {
+                socketID: socket.id,
+                username,
+            };
+            room.users.push(user);
+            room = await room.save();
+
+            io.to(roomID).emit('update:room', room);
         } catch (error) {
             console.log(error, 'Error in joining room');
         }

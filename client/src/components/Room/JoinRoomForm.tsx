@@ -1,15 +1,26 @@
 import { Button, Card, Form, Input } from 'antd';
+import socket from 'config/socket/socket';
 import React from 'react';
-import styles from './style.module.css';
+import history from 'utils/history';
 import RoomContext from '_context/room/room.context';
+import styles from './style.module.css';
+
 
 interface IVal {
     roomID: string;
     username: string;
 }
 const JoinRoomForm = () => {
-    const { joinRoom } = React.useContext(RoomContext);
+    const { joinRoom, room } = React.useContext(RoomContext);
 
+    React.useEffect(() => {
+        if (room) {
+            history.push(`/room/${room._id}`);
+        }
+        return () => {
+            socket.removeAllListeners();
+        };
+    }, [room]);
     const layout = {
         labelCol: { span: 8 },
         wrapperCol: { span: 24 },

@@ -1,7 +1,12 @@
 import React from 'react';
+import Editor from 'components/Room/Editor';
 
 const RoomPage = () => {
-    return <h1>WELCOME TO ROOM PAGE</h1>;
+    return (
+        <>
+            <Editor />
+        </>
+    );
 };
 
 export default RoomPage;

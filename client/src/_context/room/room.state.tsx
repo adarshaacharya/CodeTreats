@@ -6,7 +6,6 @@ import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
 import { IRoom, State } from './room.type';
 
-
 const RoomState: React.FC = ({ children }) => {
     const initialState: State = {
         ...initialValues,
@@ -47,6 +46,12 @@ const RoomState: React.FC = ({ children }) => {
                 if (error) {
                     message.error(error.msg);
                 }
+            });
+            socket.on('update:room', (room: IRoom) => {
+                dispatch({
+                    type: UPDATE_ROOM,
+                    payload: room,
+                });
             });
         } catch (error) {
             console.log(error);
