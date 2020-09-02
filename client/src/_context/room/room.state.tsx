@@ -33,11 +33,22 @@ const RoomState: React.FC = ({ children }) => {
         }
     };
 
+    // create room
+    const joinRoom = (values: { username: string; roomID: string }) => {
+        try {
+            console.log(values)
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <RoomContext.Provider
             value={{
                 room: state.room,
+                loading : state.loading,
                 createRoom,
+                joinRoom
             }}
         >
             {children}

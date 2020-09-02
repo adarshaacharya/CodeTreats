@@ -47,6 +47,8 @@ io.on('connection', socket => {
         }
     });
 
+    
+
     // join a new room
     socket.on('join:room', async body => {
         try {

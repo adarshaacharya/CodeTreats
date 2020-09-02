@@ -21,12 +21,12 @@ const JoinRoomForm = () => {
             <Card type='inner' bordered={false} className={styles.innerCard}>
                 <Form {...layout} layout='vertical' form={form} onFinish={onFormSubmit} size='large'>
                     <Form.Item
-                        name='roomName'
-                        label='Room Name'
-                        rules={[{ required: true, message: "Room name can't be empty" }]}
+                        name='roomID'
+                        label='Room ID'
+                        rules={[{ required: true, message: "Room ID can't be empty" }]}
                         className='py'
                     >
-                        <Input placeholder='Enter room name...' />
+                        <Input placeholder='Enter room id...' />
                     </Form.Item>
                     <Form.Item>
                         <Button type='primary' htmlType='submit'>

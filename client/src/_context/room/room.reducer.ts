@@ -4,7 +4,9 @@ import { Action, State } from './room.type';
 
 export const initialState: State = {
     room: null,
+    loading: false,
     createRoom: () => null,
+    joinRoom: () => null,
 };
 
 //reducer
