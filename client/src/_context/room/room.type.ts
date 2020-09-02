@@ -1,12 +1,18 @@
 export interface IUser {
     username: string;
+    socketID: string;
+    _id: string;
+}
+export interface IRoom {
+    roomID: string;
+    roomName: string;
+    users: IUser[];
 }
 
 export interface State {
-    roomName: string;
-    users: IUser[];
+    room: IRoom | null;
 
-    createRoom: (roomName: string, username: string) => void;
+    createRoom: (values : { username : string, roomName : string}) => void;
 }
 
 export interface Action {

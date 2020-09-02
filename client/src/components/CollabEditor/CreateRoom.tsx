@@ -16,8 +16,8 @@ const CreateRoom = () => {
     };
 
     const onFormSubmit = (values: IVal) => {
-        const { roomName, username } = values;
-        createRoom(username, roomName);
+       
+        createRoom(values);
     };
 
     const [form] = Form.useForm();

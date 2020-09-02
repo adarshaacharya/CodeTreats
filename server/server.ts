@@ -26,20 +26,22 @@ io.on('connection', socket => {
         try {
             const { roomName, username } = body;
 
-            let room = new Room();
-            room.roomName = roomName;
+            // create db room
+            let room = new Room({
+                roomName,
+            });
             const user = {
-                socketID: socket.id,
+                socketID: socket.id, // every socket(user) has unique id
                 username,
             };
             room.users.push(user);
-
             room = await room.save();
+            
+            //  create a room for sockets withn our game (socket room)
+            const roomID = room._id.toString();  // create room id
+            socket.join(roomID); // join socket(user) in that room ID -> socket(user) is in that room
 
-            const roomID = room._id.toString();
-            socket.join(roomID);
-
-            io.to(roomID).emit('update:room', room);
+            io.to(roomID).emit('update:room', room); // tell io server to send this to every server within room
         } catch (error) {
             console.log(error, 'Error in creating room');
         }

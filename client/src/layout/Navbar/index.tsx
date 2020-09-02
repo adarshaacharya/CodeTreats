@@ -1,12 +1,13 @@
+import { TeamOutlined, CodeOutlined, HomeOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import logo from 'assets/img/logo.svg';
 import React from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 const items = [
-    { key: '1', label: 'Home', path: '/' },
-    { key: '2', label: 'Snippets', path: '/snippets' },
-    { key: '3', label: 'Collab Editor', path: '/room' },
+    { key: '1', label: 'Home', path: '/', icon: <HomeOutlined /> },
+    { key: '2', label: 'Snippets', path: '/snippets', icon: <CodeOutlined /> },
+    { key: '3', label: 'Collab Editor', path: '/room', icon: <TeamOutlined /> },
 ];
 
 export const Navbar: React.FC = (props) => {
@@ -35,7 +36,9 @@ export const Navbar: React.FC = (props) => {
         <div className='mt-1 mx-1'>
             <Menu mode='horizontal' selectedKeys={[current!]} onClick={onMenuClick}>
                 {items.map((item) => (
-                    <Menu.Item key={item.key}>{item.label}</Menu.Item>
+                    <Menu.Item key={item.key} icon={item.icon}>
+                        {item.label}
+                    </Menu.Item>
                 ))}
                 <div className='menu_left'>
                     <img src={logo} height='50px' className='pt-1' alt='logo' />

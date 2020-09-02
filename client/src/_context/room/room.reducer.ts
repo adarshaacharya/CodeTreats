@@ -3,9 +3,7 @@ import { JOIN_ROOM, CREATE_ROOM } from '_context/types';
 import { Action, State } from './room.type';
 
 export const initialState: State = {
-    roomName: '',
-    users: [],
-
+    room : null,
     createRoom: () => null,
 };
 

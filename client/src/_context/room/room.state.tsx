@@ -1,8 +1,8 @@
+import socket from 'config/socket/socket';
 import * as React from 'react';
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
 import { State } from './room.type';
-import socket from 'config/socket/socket';
 
 const RoomState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -12,25 +12,28 @@ const RoomState: React.FC = ({ children }) => {
     const [state, dispatch] = React.useReducer(roomReducer, initialState);
 
     // create room
-    const createRoom = (username: string, roomName: string) => {
+    const createRoom = (values: { username: string; roomName: string }) => {
         try {
+            const { username, roomName } = values;
             const body = {
-                username, 
-                roomName 
+                username,
+                roomName,
             };
             socket.emit('create:room', body);
+
+            socket.on('update:room', (room: any) => {
+                console.log(room);
+                const { roomName, users, _id: roomID } = room;
+            });
         } catch (error) {
             console.log(error);
         }
     };
 
-    // join  room
-
     return (
         <RoomContext.Provider
             value={{
-                roomName: state.roomName,
-                users: state.users,
+                room: state.room,
                 createRoom,
             }}
         >
