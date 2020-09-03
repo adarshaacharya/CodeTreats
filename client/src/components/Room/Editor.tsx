@@ -1,14 +1,13 @@
 import { Col, Row } from 'antd';
 import React from 'react';
-import RoomContext from '_context/room/room.context';
 import RoomEditor from './RoomEditor';
 import RoomLang from './RoomLang';
 import RoomTheme from './RoomTheme';
 import Output from './Output';
 import CodeExec from './CodeExec';
+import Info from './Info';
 
 const Editor = () => {
-    const { room } = React.useContext(RoomContext);
     return (
         <>
             <Row className='mx-1'>
@@ -16,14 +15,7 @@ const Editor = () => {
                     <RoomEditor />
                 </Col>
                 <Col span={10}>
-                    <h1>{room?.roomName}</h1>
-                    <h2>Room ID : {room?._id}</h2>
-                    <p>
-                        {room?.users.map((user) => (
-                            <li>{user.username}</li>
-                        ))}
-                    </p>
-
+                    <Info />
                     <RoomLang />
                     <RoomTheme />
                     <Output />
