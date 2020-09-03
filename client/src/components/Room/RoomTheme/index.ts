@@ -1,2 +1,2 @@
-import RoomTheme from './RoomTheme'
-export default RoomTheme
+import RoomTheme from './RoomTheme';
+export default RoomTheme;

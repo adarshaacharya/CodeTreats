@@ -1,2 +1,2 @@
-import Output from './Output'
-export default Output
+import Output from './Output';
+export default Output;

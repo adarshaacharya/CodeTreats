@@ -5,6 +5,7 @@ import RoomEditor from './RoomEditor';
 import RoomLang from './RoomLang';
 import RoomTheme from './RoomTheme';
 import Output from './Output';
+import CodeExec from './CodeExec';
 
 const Editor = () => {
     const { room } = React.useContext(RoomContext);
@@ -26,6 +27,7 @@ const Editor = () => {
                     <RoomLang />
                     <RoomTheme />
                     <Output />
+                    <CodeExec />
                 </Col>
             </Row>
         </>
