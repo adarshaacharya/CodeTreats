@@ -5,7 +5,7 @@ const { TextArea } = Input;
 
 const Output = () => {
     const [output, setOutput] = React.useState({ stdout: '', stderr: '' });
-    const [loading, setLoading] = React.useState(true);
+    const [loading, setLoading] = React.useState(false);
 
     if (loading) {
         return (
