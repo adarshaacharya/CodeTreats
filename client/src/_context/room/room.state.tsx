@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import socket from 'config/socket/socket';
 import * as React from 'react';
-import { UPDATE_ROOM, CREATE_ROOM } from '_context/types';
+import { UPDATE_ROOM, CREATE_ROOM, JOIN_ROOM, UPDATE_ROOM_CODE } from '_context/types';
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
 import { IRoom, State } from './room.type';
@@ -24,7 +24,6 @@ const RoomState: React.FC = ({ children }) => {
             socket.emit('create:room', body);
 
             socket.on('update:room', (room: IRoom) => {
-                console.log("room", room)
                 dispatch({
                     type: CREATE_ROOM,
                     payload: room,
@@ -50,7 +49,7 @@ const RoomState: React.FC = ({ children }) => {
             });
             socket.on('update:room', (room: IRoom) => {
                 dispatch({
-                    type: UPDATE_ROOM,
+                    type: JOIN_ROOM,
                     payload: room,
                 });
             });
@@ -60,7 +59,13 @@ const RoomState: React.FC = ({ children }) => {
     };
 
     // update room code
-    const updateRoomCode = (code: string, roomID: string) => {};
+    const updateRoomCode = (code: string, roomID: string) => {
+        console.log(code , "code")
+        dispatch({
+            type: UPDATE_ROOM_CODE,
+            payload: code,
+        });
+    };
 
     //submit room code
     const submitRoomCode = async (code: string, languagage: string, input: string) => {};

@@ -1,22 +1,21 @@
-import { JOIN_ROOM, CREATE_ROOM, UPDATE_ROOM, UPDATE_ROOM_CODE } from '_context/types';
-
+import { CREATE_ROOM, JOIN_ROOM, UPDATE_ROOM, UPDATE_ROOM_CODE } from '_context/types';
 import { Action, State } from './room.type';
-import getTemplate from 'config/editor/examples';
+
 
 export const initialState: State = {
     _id: '',
+    roomName: '',
     activeUsers: [],
     roomCode: '',
     roomInput: '',
     roomLanguage: '',
-    roomName: '',
     roomOutput: {
         stderr: null,
         stdout: null,
     },
     roomLoaded: null, // checks if room is loaded or not for route handling
     loading: false,
-
+    
     createRoom: () => null,
     joinRoom: () => null,
 
@@ -34,13 +33,19 @@ export default function roomReducer(state: State = initialState, action: Action)
         case CREATE_ROOM:
             return {
                 ...state,
-                ...payload,
-                roomLoaded : true
+                _id: payload._id,
+                roomName: payload.roomName,
+                activeUsers: payload.activeUsers, ...state.activeUsers,
+                roomLoaded: true,
             };
 
         case JOIN_ROOM:
             return {
                 ...state,
+                _id: payload._id,
+                roomName: payload.roomName,
+                activeUsers: payload.activeUsers, ...state.activeUsers,
+                roomLoaded: true,
             };
 
         case UPDATE_ROOM:
@@ -53,7 +58,7 @@ export default function roomReducer(state: State = initialState, action: Action)
         case UPDATE_ROOM_CODE:
             return {
                 ...state,
-                room: payload,
+                roomCode: payload,
             };
 
         default:

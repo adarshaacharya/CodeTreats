@@ -18,7 +18,7 @@ const RoomEditor: React.FC = () => {
         updateRoomCode(value!, _id);
         const body = {
             value,
-            roomID: _id,
+            _id,
         };
         socket.emit('realtime:code', body);
     };

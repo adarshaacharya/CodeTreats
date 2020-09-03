@@ -22,7 +22,7 @@ const socketio = (server: any) => {
                     socketID: socket.id, // every socket(user) has unique id
                     username,
                 };
-                room.activeUsers.push(user);
+                room.activeUsers.unshift(user);
                 room = await room.save();
 
                 //  create a room for sockets withn our game (socket room)

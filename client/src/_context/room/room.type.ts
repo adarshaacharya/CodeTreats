@@ -24,17 +24,16 @@ export interface State {
     _id: string;
     roomName: string;
     activeUsers: IUser[];
-
     roomCode: string; // program
     roomInput: string | null;
     roomLanguage: string;
     roomOutput: IOutput;
-    roomLoaded : boolean | null;
-    
+    roomLoaded: boolean | null;
     loading: boolean;
+    
     createRoom: (values: { username: string; roomName: string }) => void;
     joinRoom: (values: { username: string; roomID: string }) => void;
-    
+
     updateRoomCode: (code: string, roomID: string) => void;
     updateRoomInput: (input: string) => void;
     updateRoomLanguage: (lang: string) => void;

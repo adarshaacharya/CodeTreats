@@ -11,7 +11,7 @@ interface IVal {
 }
 const JoinRoomForm = () => {
     const { joinRoom, _id } = React.useContext(RoomContext);
-    
+
     React.useEffect(() => {
         if (_id) {
             history.push(`/room/${_id}`);
