@@ -6,7 +6,7 @@ interface Props extends RouteProps {
     component: any;
 }
 const RoomRoute: React.FC<Props> = (props) => {
-    const { room } = React.useContext(RoomContext);
+    const { roomLoaded } = React.useContext(RoomContext);
 
     const { component: Component, ...rest } = props;
 
@@ -14,7 +14,7 @@ const RoomRoute: React.FC<Props> = (props) => {
         <Route
             {...rest}
             render={(props) =>
-                !room ? (
+                !roomLoaded ? (
                     <Redirect
                         to={{
                             pathname: '/room',

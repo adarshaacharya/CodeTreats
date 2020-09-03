@@ -6,20 +6,19 @@ import React from 'react';
 import RoomContext from '_context/room/room.context';
 
 const RoomEditor: React.FC = () => {
-    const { room } = React.useContext(RoomContext);
-    const [code, setCode] = React.useState('');
+    const { _id, roomCode, updateRoomCode } = React.useContext(RoomContext);
 
     React.useEffect(() => {
         socket.on('update:code', (code: string) => {
-            setCode(code);
+            updateRoomCode(code, _id);
         });
-    }, [code]);
+    }, [roomCode]);
 
     const handleEditorChange = (ev?: object, value?: string) => {
-        setCode(value!);
+        updateRoomCode(value!, _id);
         const body = {
             value,
-            roomID: room?._id,
+            roomID: _id,
         };
         socket.emit('realtime:code', body);
     };
@@ -31,7 +30,7 @@ const RoomEditor: React.FC = () => {
                 theme='dark'
                 language='javascript'
                 options={editorOptions}
-                value={code}
+                value={roomCode}
                 loading={<Spinner />}
                 onChange={handleEditorChange}
             />

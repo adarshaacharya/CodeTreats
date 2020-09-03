@@ -10,13 +10,14 @@ interface IVal {
     username: string;
 }
 const JoinRoomForm = () => {
-    const { joinRoom, room } = React.useContext(RoomContext);
-
+    const { joinRoom, _id } = React.useContext(RoomContext);
+    
     React.useEffect(() => {
-        if (room) {
-            history.push(`/room/${room._id}`);
+        if (_id) {
+            history.push(`/room/${_id}`);
         }
-    }, [room]);
+    }, [_id]);
+
     const layout = {
         labelCol: { span: 8 },
         wrapperCol: { span: 24 },

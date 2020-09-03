@@ -7,7 +7,7 @@ import RoomContext from '_context/room/room.context';
 
 const { Option } = Select;
 const RoomTheme = () => {
-    const { room } = React.useContext(RoomContext);
+    const { _id } = React.useContext(RoomContext);
     const [theme, setTheme] = React.useState('dark');
 
     React.useEffect(() => {
@@ -24,7 +24,7 @@ const RoomTheme = () => {
         }
 
         const body = {
-            roomID: room?._id,
+            roomID: _id,
             theme,
         };
         socket.emit('realtime:theme', body);

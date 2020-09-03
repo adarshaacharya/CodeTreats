@@ -2,15 +2,15 @@ import React from 'react';
 import RoomContext from '_context/room/room.context';
 
 const Info = () => {
-    const { room } = React.useContext(RoomContext);
+    const { roomName, _id, activeUsers } = React.useContext(RoomContext);
 
     return (
         <>
-            <h1>{room?.roomName}</h1>
-            <h2>Room ID : {room?._id}</h2>
+            <h1>{roomName}</h1>
+            <h2>Room ID : {_id}</h2>
             <p>
-                {room?.activeUsers.map((user) => (
-                    <li>{user.username}</li>
+                {activeUsers.map((user) => (
+                    <li key={user._id}>{user.username}</li>
                 ))}
             </p>
         </>

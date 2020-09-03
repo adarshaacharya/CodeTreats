@@ -5,7 +5,7 @@ import socket from 'config/socket/socket';
 import RoomContext from '_context/room/room.context';
 
 const RoomLang = () => {
-    const { room } = React.useContext(RoomContext);
+    const { _id } = React.useContext(RoomContext);
     const [lang, setLang] = React.useState('javascript');
     const { Option } = Select;
 
@@ -18,7 +18,7 @@ const RoomLang = () => {
     const onLanguageChange = (value: string) => {
         setLang(value);
         const body = {
-            roomID: room?._id,
+            roomID: _id,
             value,
         };
         socket.emit('realtime:lang', body);
