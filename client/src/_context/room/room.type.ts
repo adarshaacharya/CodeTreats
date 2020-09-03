@@ -6,7 +6,7 @@ export interface IUser {
 export interface IRoom {
     _id: string;
     roomName: string;
-    users: IUser[];
+    activeUsers: IUser[];
 }
 
 export interface State {

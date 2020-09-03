@@ -7,7 +7,7 @@ type IUsers = {
 
 interface IRoom extends Document {
     roomName: string;
-    users: IUsers[];
+    activeUsers: IUsers[];
 }
 
 const UserSchema: Schema = new Schema({
@@ -26,7 +26,7 @@ const RoomSchema: Schema = new Schema({
         type: String,
         required: true,
     },
-    users: [UserSchema],
+    activeUsers: [UserSchema],
 });
 
 const Room = mongoose.model<IRoom>('Room', RoomSchema);
