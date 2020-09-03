@@ -58,6 +58,18 @@ const RoomState: React.FC = ({ children }) => {
         }
     };
 
+    // update room code
+    const updateRoomCode = (code: string) => {};
+
+    //submit room code
+    const submitRoomCode = async (code: string, languagage: string, input: string) => {};
+
+    // update input
+    const updateRoomInput = (input: string) => {};
+
+    // update room lang
+    const updateRoomLanguage = (lang: string) => {};
+
     return (
         <RoomContext.Provider
             value={{
@@ -65,6 +77,10 @@ const RoomState: React.FC = ({ children }) => {
                 loading: state.loading,
                 createRoom,
                 joinRoom,
+                submitRoomCode,
+                updateRoomCode,
+                updateRoomInput,
+                updateRoomLanguage,
             }}
         >
             {children}

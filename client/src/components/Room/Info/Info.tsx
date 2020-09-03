@@ -9,7 +9,7 @@ const Info = () => {
             <h1>{room?.roomName}</h1>
             <h2>Room ID : {room?._id}</h2>
             <p>
-                {room?.users.map((user) => (
+                {room?.activeUsers.map((user) => (
                     <li>{user.username}</li>
                 ))}
             </p>
