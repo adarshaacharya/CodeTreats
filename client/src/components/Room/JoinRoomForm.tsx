@@ -16,9 +16,6 @@ const JoinRoomForm = () => {
         if (room) {
             history.push(`/room/${room._id}`);
         }
-        return () => {
-            socket.removeAllListeners();
-        };
     }, [room]);
     const layout = {
         labelCol: { span: 8 },

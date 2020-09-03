@@ -13,8 +13,7 @@ connectDB();
 
 //socket server
 const server = http.createServer(app);
-socketio(server)
-
+socketio(server);
 
 const hostname = 'localhost';
 const PORT = process.env.PORT || 5000;
