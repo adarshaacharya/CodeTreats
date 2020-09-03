@@ -93,6 +93,16 @@ io.on('connection', socket => {
         }
     });
 
+    // editor theme chaneg
+    socket.on('realtime:theme', body => {
+        try {
+            const { theme, roomID } = body;
+            io.to(roomID).emit('update:theme', theme);
+        } catch (error) {
+            console.log(error);
+        }
+    });
+
     socket.on('disconnect', () => {
         console.log('❌ Disconnected from room.');
     });

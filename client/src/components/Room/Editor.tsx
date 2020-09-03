@@ -1,8 +1,10 @@
 import { Col, Row } from 'antd';
 import React from 'react';
 import RoomContext from '_context/room/room.context';
-import CodeEditor from './CodeEditor';
-import LangSelector from './LangSelector';
+import RoomEditor from './RoomEditor';
+import RoomLang from './RoomLang';
+import RoomTheme from './RoomTheme';
+import Output from './Output';
 
 const Editor = () => {
     const { room } = React.useContext(RoomContext);
@@ -10,7 +12,7 @@ const Editor = () => {
         <>
             <Row className='mx-1'>
                 <Col span={14}>
-                    <CodeEditor />
+                    <RoomEditor />
                 </Col>
                 <Col span={10}>
                     <h1>{room?.roomName}</h1>
@@ -21,7 +23,9 @@ const Editor = () => {
                         ))}
                     </p>
 
-                    <LangSelector />
+                    <RoomLang />
+                    <RoomTheme />
+                    <Output />
                 </Col>
             </Row>
         </>

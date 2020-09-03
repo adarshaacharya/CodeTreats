@@ -4,18 +4,13 @@ import React from 'react';
 import socket from 'config/socket/socket';
 import RoomContext from '_context/room/room.context';
 
-const LangSelector = () => {
+const RoomLang = () => {
     const { room } = React.useContext(RoomContext);
     const [lang, setLang] = React.useState('javascript');
     const { Option } = Select;
 
     React.useEffect(() => {
-        setLang(lang);
-    }, []);
-    
-    React.useEffect(() => {
         socket.on('update:lang', (lang: string) => {
-            console.log(lang, 'client');
             setLang(lang);
         });
     }, [lang]);
@@ -54,4 +49,4 @@ const LangSelector = () => {
     );
 };
 
-export default LangSelector;
+export default RoomLang;

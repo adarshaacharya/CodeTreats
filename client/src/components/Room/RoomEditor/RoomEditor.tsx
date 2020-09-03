@@ -1,11 +1,11 @@
 import { ControlledEditor } from '@monaco-editor/react';
 import { editorOptions } from 'config/editor/options';
+import socket from 'config/socket/socket';
 import { Spinner } from 'layout';
 import React from 'react';
-import socket from 'config/socket/socket';
 import RoomContext from '_context/room/room.context';
 
-const CodeEditor: React.FC = () => {
+const RoomEditor: React.FC = () => {
     const { room } = React.useContext(RoomContext);
     const [code, setCode] = React.useState('');
 
@@ -39,4 +39,4 @@ const CodeEditor: React.FC = () => {
     );
 };
 
-export default CodeEditor;
+export default RoomEditor;

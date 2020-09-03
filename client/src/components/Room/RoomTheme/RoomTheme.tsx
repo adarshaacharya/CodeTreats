@@ -2,19 +2,32 @@ import { Divider, Select } from 'antd';
 import { defaultThemes, monacoThemes } from 'config/editor/themes';
 import React from 'react';
 import { defineTheme } from 'utils/define-theme';
-import ThemeContext from '_context/theme/theme.context';
+import socket from 'config/socket/socket';
+import RoomContext from '_context/room/room.context';
 
 const { Option } = Select;
-const ThemeSelector = () => {
-    const themeContext = React.useContext(ThemeContext);
-    const { theme, updateTheme } = themeContext;
+const RoomTheme = () => {
+    const { room } = React.useContext(RoomContext);
+    const [theme, setTheme] = React.useState('dark');
 
-    const handleThemeChange = (theme: string) => {
+    React.useEffect(() => {
+        socket.on('update:theme', (theme: string) => {
+            setTheme(theme);
+        });
+    }, [theme]);
+
+    const handleThemChange = (theme: string) => {
         if (defaultThemes.includes(theme)) {
-            updateTheme(theme);
+            setTheme(theme);
         } else {
-            defineTheme(theme).then((_) => updateTheme(theme));
+            defineTheme(theme).then((_) => setTheme(theme));
         }
+
+        const body = {
+            roomID: room?._id,
+            theme,
+        };
+        socket.emit('realtime:theme', body);
     };
 
     return (
@@ -27,7 +40,7 @@ const ThemeSelector = () => {
                 showSearch
                 size='large'
                 style={{ width: '100%' }}
-                onChange={handleThemeChange}
+                onChange={handleThemChange}
                 defaultValue='dark'
                 className='my-1'
                 autoFocus
@@ -51,4 +64,4 @@ const ThemeSelector = () => {
     );
 };
 
-export default ThemeSelector;
+export default RoomTheme;
