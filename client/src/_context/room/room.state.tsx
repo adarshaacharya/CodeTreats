@@ -5,10 +5,10 @@ import {
     CREATE_ROOM,
     JOIN_ROOM,
     SET_LOADING,
-    SUBMIT_ROOM_CODE,
+    UPDATE_ROOM_OUTPUT,
     UPDATE_ROOM_CODE,
     UPDATE_ROOM_INPUT,
-    UPDATE_ROOM_LANGUAGE
+    UPDATE_ROOM_LANGUAGE,
 } from '_context/types';
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
@@ -90,49 +90,20 @@ const RoomState: React.FC = ({ children }) => {
         });
     };
 
-    //submit room code -> @TO BE DELETED
-    const submitRoomCode = async (code: string, language: string, input: string, roomID: string) => {
-        try {
-            // setLoading(roomID); -- testing
 
-            const payload = {
-                language,
-                sourceCode: code,
-                userInput: input,
-                roomID: roomID,
-            };
-
-            socket.emit('realtime:run', payload);
-
-            socket.on('update:output', (output: IOutput) => {
-                dispatch({
-                    type: SUBMIT_ROOM_CODE,
-                    payload: output,
-                });
-            });
-        } catch (error) {
-            console.log(error);
-        }
+    // update output
+    const updateRoomOutput = (output: IOutput) => {
+        dispatch({
+            type: UPDATE_ROOM_OUTPUT,
+            payload: output,
+        });
     };
 
-// update output
-    const updateRoomOutput =(output : IOutput) => {
-        dispatch({
-            type : SUBMIT_ROOM_CODE,
-            payload : output
-        })
-    }
-
-
     // set loading
-    const setLoading = (roomID: string) => {
-        console.log(roomID)
-        // socket.emit('realtime:loading', roomID); -- test
-        // socket.on('update:loading', () => { -- test
-            dispatch({
-                type: SET_LOADING,
-            });
-        // }); --test
+    const setLoading = () => {
+        dispatch({
+            type: SET_LOADING,
+        });
     };
 
     return (
@@ -149,7 +120,6 @@ const RoomState: React.FC = ({ children }) => {
                 loading: state.loading,
                 createRoom,
                 joinRoom,
-                submitRoomCode,
                 updateRoomCode,
                 updateRoomInput,
                 updateRoomLanguage,

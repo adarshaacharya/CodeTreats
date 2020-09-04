@@ -18,12 +18,10 @@ const CodeExec = () => {
         });
 
         socket.on('update:loading', () => {
-            setLoading(_id)
-         })
-
+            setLoading(_id);
+        });
     }, []);
 
- 
     const onCodeSubmit = (code: string, language: string, input: string) => {
         socket.emit('realtime:loading', _id);
 
@@ -35,7 +33,7 @@ const CodeExec = () => {
         };
         socket.emit('realtime:run', payload);
     };
-    
+
     return (
         <Button
             size='large'

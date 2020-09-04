@@ -2,10 +2,10 @@ import {
     CREATE_ROOM,
     JOIN_ROOM,
     SET_LOADING,
-    SUBMIT_ROOM_CODE,
+
     UPDATE_ROOM_CODE,
     UPDATE_ROOM_INPUT,
-    UPDATE_ROOM_LANGUAGE,
+    UPDATE_ROOM_LANGUAGE, UPDATE_ROOM_OUTPUT
 } from '_context/types';
 import { Action, State } from './room.type';
 
@@ -26,7 +26,6 @@ export const initialState: State = {
     createRoom: () => null,
     joinRoom: () => null,
 
-    submitRoomCode: () => null,
     updateRoomCode: () => null,
     updateRoomInput: () => null,
     updateRoomLanguage: () => null,
@@ -77,7 +76,7 @@ export default function roomReducer(state: State = initialState, action: Action)
                 roomInput: payload,
             };
 
-        case SUBMIT_ROOM_CODE:
+        case UPDATE_ROOM_OUTPUT:
             return {
                 ...state,
                 roomOutput: payload,
