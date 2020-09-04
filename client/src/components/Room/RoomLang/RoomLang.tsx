@@ -5,7 +5,7 @@ import React from 'react';
 import RoomContext from '_context/room/room.context';
 
 const RoomLang = () => {
-    const { _id , roomLanguage, updateRoomLanguage} = React.useContext(RoomContext);
+    const { _id, roomLanguage, updateRoomLanguage } = React.useContext(RoomContext);
 
     const { Option } = Select;
 

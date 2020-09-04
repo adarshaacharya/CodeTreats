@@ -4,6 +4,7 @@ import CodeExec from './CodeExec';
 import Info from './Info';
 import Output from './Output';
 import RoomEditor from './RoomEditor';
+import RoomInput from './RoomInput';
 import RoomLang from './RoomLang';
 import RoomTheme from './RoomTheme';
 
@@ -14,10 +15,11 @@ const Editor = () => {
                 <Col span={14}>
                     <RoomEditor />
                 </Col>
-                <Col span={10}>
+                <Col span={10} className="p-1">
                     <Info />
                     <RoomLang />
                     <RoomTheme />
+                    <RoomInput />
                     <Output />
                     <CodeExec />
                 </Col>

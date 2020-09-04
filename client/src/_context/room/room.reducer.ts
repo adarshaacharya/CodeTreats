@@ -1,4 +1,11 @@
-import { CREATE_ROOM, JOIN_ROOM, UPDATE_ROOM, UPDATE_ROOM_CODE, UPDATE_ROOM_LANGUAGE } from '_context/types';
+import {
+    CREATE_ROOM,
+    JOIN_ROOM,
+    UPDATE_ROOM,
+    UPDATE_ROOM_CODE,
+    UPDATE_ROOM_LANGUAGE,
+    UPDATE_ROOM_INPUT,
+} from '_context/types';
 import { Action, State } from './room.type';
 import getTemplate from 'config/editor/examples';
 
@@ -67,6 +74,12 @@ export default function roomReducer(state: State = initialState, action: Action)
             return {
                 ...state,
                 roomLanguage: payload,
+            };
+
+        case UPDATE_ROOM_INPUT:
+            return {
+                ...state,
+                roomInput: payload,
             };
         default:
             return state;

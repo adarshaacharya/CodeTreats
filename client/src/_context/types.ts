@@ -20,4 +20,5 @@ export const CREATE_ROOM: string = 'CREATE_ROOM';
 export const JOIN_ROOM: string = 'JOIN_ROOM';
 export const UPDATE_ROOM: string = 'UPDATE_ROOM';
 export const UPDATE_ROOM_CODE: string = 'UPDATE_ROOM_CODE';
-export const UPDATE_ROOM_LANGUAGE : string = 'UPDATE_ROOM_LANGUAGE'
+export const UPDATE_ROOM_LANGUAGE: string = 'UPDATE_ROOM_LANGUAGE';
+export const UPDATE_ROOM_INPUT: string = 'UPDATE_ROOM_INPUT';

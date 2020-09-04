@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import socket from 'config/socket/socket';
 import * as React from 'react';
-import { CREATE_ROOM, JOIN_ROOM, UPDATE_ROOM_CODE, UPDATE_ROOM_LANGUAGE } from '_context/types';
+import { CREATE_ROOM, JOIN_ROOM, UPDATE_ROOM_CODE, UPDATE_ROOM_LANGUAGE, UPDATE_ROOM_INPUT } from '_context/types';
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
 import { IRoom, State } from './room.type';
@@ -67,30 +67,33 @@ const RoomState: React.FC = ({ children }) => {
     };
 
     //submit room code
-    const submitRoomCode = async (code: string, languagage: string, input: string) => {
-       
-    };
-
-    // update input
-    const updateRoomInput = (input: string) => {};
+    const submitRoomCode = async (code: string, languagage: string, input: string) => {};
 
     // update room lang
     const updateRoomLanguage = (lang: string) => {
         dispatch({
-            type : UPDATE_ROOM_LANGUAGE,
-            payload : lang
-        })
+            type: UPDATE_ROOM_LANGUAGE,
+            payload: lang,
+        });
+    };
+
+    // update input
+    const updateRoomInput = (input: string) => {
+        dispatch({
+            type: UPDATE_ROOM_INPUT,
+            payload: input,
+        });
     };
 
     return (
         <RoomContext.Provider
             value={{
                 _id: state._id,
+                roomName: state.roomName,
                 activeUsers: state.activeUsers,
                 roomCode: state.roomCode,
-                roomInput: state.roomInput,
                 roomLanguage: state.roomLanguage,
-                roomName: state.roomName,
+                roomInput: state.roomInput,
                 roomOutput: state.roomOutput,
                 roomLoaded: state.roomLoaded,
                 loading: state.loading,
