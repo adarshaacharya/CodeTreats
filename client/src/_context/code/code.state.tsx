@@ -88,7 +88,7 @@ const CodeState: React.FC = ({ children }) => {
                 updateInput,
                 updateLanguage,
                 submitCode,
-                fetchSnippetbyId
+                fetchSnippetbyId,
             }}
         >
             {children}

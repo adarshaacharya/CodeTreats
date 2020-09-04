@@ -4,9 +4,11 @@ import socket from 'config/socket/socket';
 import { Spinner } from 'layout';
 import React from 'react';
 import RoomContext from '_context/room/room.context';
+import ThemeContext from '_context/theme/theme.context';
 
 const RoomEditor: React.FC = () => {
     const { _id, roomCode, updateRoomCode } = React.useContext(RoomContext);
+    const { theme, updateTheme } = React.useContext(ThemeContext);
 
     //@ TODO : Prevent unecessary re-rendering - Optimize App
     React.useEffect(() => {
@@ -14,6 +16,7 @@ const RoomEditor: React.FC = () => {
             console.log(code, 'receiving sockeet');
             updateRoomCode(code);
         });
+
         //eslint-disable-next-line
     }, []);
 
@@ -30,7 +33,7 @@ const RoomEditor: React.FC = () => {
         <>
             <ControlledEditor
                 height='100vh'
-                theme='dark'
+                theme={theme}
                 language='javascript'
                 value={roomCode}
                 options={editorOptions}

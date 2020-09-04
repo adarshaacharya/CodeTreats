@@ -15,6 +15,7 @@ export const Navbar: React.FC = (props) => {
     const history = useHistory();
     const [current, setCurrent] = React.useState(items.find((_item) => location.pathname === _item.path)?.key); // stores current path key
 
+
     // change page route
     const onMenuClick = (item: any) => {
         const clicked = items.find((_item) => _item.key === item.key);
@@ -29,6 +30,9 @@ export const Navbar: React.FC = (props) => {
     React.useEffect(() => {
         if (location.pathname.startsWith('/snippets')) {
             setCurrent('2');
+        }
+        if (location.pathname.startsWith('/room')) {
+            setCurrent('3');
         }
     }, [location]);
 

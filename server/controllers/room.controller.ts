@@ -93,15 +93,6 @@ const socketio = (server: any) => {
             }
         });
 
-        // editor theme chaneg
-        socket.on('realtime:theme', body => {
-            try {
-                const { theme, roomID } = body;
-                io.to(roomID).emit('update:theme', theme);
-            } catch (error) {
-                console.log(error);
-            }
-        });
 
         // submit code
         socket.on('realtime:run', async body => {

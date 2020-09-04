@@ -6,8 +6,7 @@ import ThemeContext from '_context/theme/theme.context';
 
 const { Option } = Select;
 const ThemeSelector = () => {
-    const themeContext = React.useContext(ThemeContext);
-    const { theme, updateTheme } = themeContext;
+    const { theme, updateTheme } = React.useContext(ThemeContext);
 
     const handleThemeChange = (theme: string) => {
         if (defaultThemes.includes(theme)) {

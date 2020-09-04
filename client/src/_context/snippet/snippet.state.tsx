@@ -27,8 +27,6 @@ const SnippetState: React.FC = ({ children }) => {
         }
     };
 
- 
-
     // save snippet
     const addSnippet = async (snippet: ISnippet) => {
         try {

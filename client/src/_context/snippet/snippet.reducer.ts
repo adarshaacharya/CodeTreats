@@ -23,7 +23,6 @@ export default function snippetReducer(state: State = initialState, action: Acti
                 loading: false,
             };
 
-  
         case ADD_SNIPPET:
             return {
                 ...state,

@@ -7,6 +7,7 @@ import RoomEditor from './RoomEditor';
 import RoomInput from './RoomInput';
 import RoomLang from './RoomLang';
 import RoomTheme from './RoomTheme';
+import ThemeSelector from 'components/ThemeSelector';
 
 const Editor = () => {
     return (
@@ -18,7 +19,7 @@ const Editor = () => {
                 <Col span={10} className='p-1'>
                     <Info />
                     <RoomLang />
-                    <RoomTheme />
+                    <ThemeSelector />
                     <RoomInput />
                     <Output />
                     <CodeExec />
