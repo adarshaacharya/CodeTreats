@@ -74,6 +74,7 @@ const socketio = (server: any) => {
         socket.on('realtime:lang', body => {
             try {
                 const { value, roomID } = body;
+                console.log(body)
                 io.to(roomID).emit('update:lang', value);
             } catch (error) {
                 console.log(error);

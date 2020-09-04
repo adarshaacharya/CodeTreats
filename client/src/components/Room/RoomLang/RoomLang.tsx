@@ -4,16 +4,15 @@ import socket from 'config/socket/socket';
 import React from 'react';
 import RoomContext from '_context/room/room.context';
 
+const { Option } = Select;
 const RoomLang = () => {
     const { _id, roomLanguage, updateRoomLanguage } = React.useContext(RoomContext);
-
-    const { Option } = Select;
 
     React.useEffect(() => {
         socket.on('update:lang', (lang: string) => {
             updateRoomLanguage(lang);
         });
-    }, [roomLanguage]);
+    }, []);
 
     const onLanguageChange = (value: string) => {
         updateRoomLanguage(value);

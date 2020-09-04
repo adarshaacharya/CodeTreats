@@ -25,19 +25,22 @@ const RoomEditor: React.FC = () => {
         socket.emit('realtime:code', body);
     };
 
-    return (
-        <>
-            <ControlledEditor
-                height='100vh'
-                theme='dark'
-                language='javascript'
-                value={roomCode}
-                options={editorOptions}
-                loading={<Spinner />}
-                onChange={handleEditorChange}
-            />
-        </>
-    );
+    return React.useMemo(() => {
+        return (
+            <>
+                <ControlledEditor
+                    height='100vh'
+                    theme='dark'
+                    language='javascript'
+                    value={roomCode}
+                    options={editorOptions}
+                    loading={<Spinner />}
+                    onChange={handleEditorChange}
+                />
+            </>
+        );
+    }, [roomCode])
+ 
 };
 
 export default RoomEditor;
