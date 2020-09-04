@@ -30,6 +30,8 @@ export const initialState: State = {
     updateRoomCode: () => null,
     updateRoomInput: () => null,
     updateRoomLanguage: () => null,
+    updateRoomOutput: () => null,
+    setLoading: () => null,
 };
 
 //reducer

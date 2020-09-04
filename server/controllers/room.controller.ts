@@ -136,8 +136,8 @@ const socketio = (server: any) => {
         });
 
         socket.on('realtime:loading', (roomID: string) => {
-            io.to(roomID).emit('update:loading', null)
-        })
+            io.to(roomID).emit('update:loading', null);
+        });
 
         socket.on('disconnect', () => {
             console.log('❌ Disconnected from room.');

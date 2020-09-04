@@ -8,7 +8,7 @@ import {
     SUBMIT_ROOM_CODE,
     UPDATE_ROOM_CODE,
     UPDATE_ROOM_INPUT,
-    UPDATE_ROOM_LANGUAGE,
+    UPDATE_ROOM_LANGUAGE
 } from '_context/types';
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
@@ -90,10 +90,10 @@ const RoomState: React.FC = ({ children }) => {
         });
     };
 
-    //submit room code
+    //submit room code -> @TO BE DELETED
     const submitRoomCode = async (code: string, language: string, input: string, roomID: string) => {
         try {
-            setLoading(roomID);
+            // setLoading(roomID); -- testing
 
             const payload = {
                 language,
@@ -115,16 +115,25 @@ const RoomState: React.FC = ({ children }) => {
         }
     };
 
+// update output
+    const updateRoomOutput =(output : IOutput) => {
+        dispatch({
+            type : SUBMIT_ROOM_CODE,
+            payload : output
+        })
+    }
+
+
     // set loading
     const setLoading = (roomID: string) => {
-        socket.emit('realtime:loading', roomID);
-        socket.on('update:loading', () => {
+        console.log(roomID)
+        // socket.emit('realtime:loading', roomID); -- test
+        // socket.on('update:loading', () => { -- test
             dispatch({
                 type: SET_LOADING,
             });
-        });
+        // }); --test
     };
-
 
     return (
         <RoomContext.Provider
@@ -144,6 +153,8 @@ const RoomState: React.FC = ({ children }) => {
                 updateRoomCode,
                 updateRoomInput,
                 updateRoomLanguage,
+                updateRoomOutput,
+                setLoading,
             }}
         >
             {children}
