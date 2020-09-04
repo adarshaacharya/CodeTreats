@@ -1,22 +1,22 @@
 import { Divider, Select } from 'antd';
 import languages from 'config/editor/languages';
-import React from 'react';
 import socket from 'config/socket/socket';
+import React from 'react';
 import RoomContext from '_context/room/room.context';
 
 const RoomLang = () => {
-    const { _id } = React.useContext(RoomContext);
-    const [lang, setLang] = React.useState('javascript');
+    const { _id , roomLanguage, updateRoomLanguage} = React.useContext(RoomContext);
+
     const { Option } = Select;
 
     React.useEffect(() => {
         socket.on('update:lang', (lang: string) => {
-            setLang(lang);
+            updateRoomLanguage(lang);
         });
-    }, [lang]);
+    }, [roomLanguage]);
 
     const onLanguageChange = (value: string) => {
-        setLang(value);
+        updateRoomLanguage(value);
         const body = {
             roomID: _id,
             value,
@@ -34,7 +34,7 @@ const RoomLang = () => {
                 showSearch
                 style={{ width: '100%' }}
                 onChange={onLanguageChange}
-                value={lang}
+                value={roomLanguage}
                 autoFocus
                 size='large'
                 className='my-1'

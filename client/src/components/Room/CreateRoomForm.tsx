@@ -1,9 +1,8 @@
 import { Button, Card, Form, Input } from 'antd';
 import React from 'react';
+import history from 'utils/history';
 import RoomContext from '_context/room/room.context';
 import styles from './style.module.css';
-import history from 'utils/history';
-import socket from 'config/socket/socket';
 
 interface IVal {
     username: string;

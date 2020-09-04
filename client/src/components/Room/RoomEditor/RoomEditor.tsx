@@ -8,34 +8,39 @@ import RoomContext from '_context/room/room.context';
 const RoomEditor: React.FC = () => {
     const { _id, roomCode, updateRoomCode } = React.useContext(RoomContext);
 
+    //@ TODO : Prevent unecessary re-rendering - Optimize App
     React.useEffect(() => {
         socket.on('update:code', (code: string) => {
-            updateRoomCode(code, _id);
+            console.log(code, 'receiving sockeet');
+            updateRoomCode(code);
         });
-    }, [roomCode]);
+    }, []);
+
 
     const handleEditorChange = (ev?: object, value?: string) => {
-        updateRoomCode(value!, _id);
+        updateRoomCode(value!);
         const body = {
             value,
-            _id,
+            roomID: _id,
         };
         socket.emit('realtime:code', body);
     };
 
-    return (
-        <>
-            <ControlledEditor
-                height='100vh'
-                theme='dark'
-                language='javascript'
-                options={editorOptions}
-                value={roomCode}
-                loading={<Spinner />}
-                onChange={handleEditorChange}
-            />
-        </>
-    );
+
+        return (
+            <>
+                <ControlledEditor
+                    height='100vh'
+                    theme='dark'
+                    language='javascript'
+                    value={roomCode}
+                    options={editorOptions}
+                    loading={<Spinner />}
+                    onChange={handleEditorChange}
+                />
+            </>
+        );
+  
 };
 
 export default RoomEditor;

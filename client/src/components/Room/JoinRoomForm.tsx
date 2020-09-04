@@ -1,5 +1,4 @@
 import { Button, Card, Form, Input } from 'antd';
-import socket from 'config/socket/socket';
 import React from 'react';
 import history from 'utils/history';
 import RoomContext from '_context/room/room.context';

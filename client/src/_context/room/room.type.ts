@@ -30,11 +30,11 @@ export interface State {
     roomOutput: IOutput;
     roomLoaded: boolean | null;
     loading: boolean;
-    
+
     createRoom: (values: { username: string; roomName: string }) => void;
     joinRoom: (values: { username: string; roomID: string }) => void;
 
-    updateRoomCode: (code: string, roomID: string) => void;
+    updateRoomCode: (code: string) => void;
     updateRoomInput: (input: string) => void;
     updateRoomLanguage: (lang: string) => void;
     submitRoomCode: (code: string, language: string, input: string) => void;

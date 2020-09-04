@@ -1,6 +1,6 @@
-import { CREATE_ROOM, JOIN_ROOM, UPDATE_ROOM, UPDATE_ROOM_CODE } from '_context/types';
+import { CREATE_ROOM, JOIN_ROOM, UPDATE_ROOM, UPDATE_ROOM_CODE, UPDATE_ROOM_LANGUAGE } from '_context/types';
 import { Action, State } from './room.type';
-
+import getTemplate from 'config/editor/examples';
 
 export const initialState: State = {
     _id: '',
@@ -8,14 +8,14 @@ export const initialState: State = {
     activeUsers: [],
     roomCode: '',
     roomInput: '',
-    roomLanguage: '',
+    roomLanguage: 'javascript',
     roomOutput: {
         stderr: null,
         stdout: null,
     },
     roomLoaded: null, // checks if room is loaded or not for route handling
     loading: false,
-    
+
     createRoom: () => null,
     joinRoom: () => null,
 
@@ -35,7 +35,8 @@ export default function roomReducer(state: State = initialState, action: Action)
                 ...state,
                 _id: payload._id,
                 roomName: payload.roomName,
-                activeUsers: payload.activeUsers, ...state.activeUsers,
+                activeUsers: payload.activeUsers,
+                ...state.activeUsers,
                 roomLoaded: true,
             };
 
@@ -44,7 +45,8 @@ export default function roomReducer(state: State = initialState, action: Action)
                 ...state,
                 _id: payload._id,
                 roomName: payload.roomName,
-                activeUsers: payload.activeUsers, ...state.activeUsers,
+                activeUsers: payload.activeUsers,
+                ...state.activeUsers,
                 roomLoaded: true,
             };
 
@@ -61,6 +63,11 @@ export default function roomReducer(state: State = initialState, action: Action)
                 roomCode: payload,
             };
 
+        case UPDATE_ROOM_LANGUAGE:
+            return {
+                ...state,
+                roomLanguage: payload,
+            };
         default:
             return state;
     }
