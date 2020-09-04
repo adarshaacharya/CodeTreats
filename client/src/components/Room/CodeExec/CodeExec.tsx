@@ -20,6 +20,7 @@ const CodeExec = () => {
         socket.on('update:loading', () => {
             setLoading(_id);
         });
+        //eslint-disable-next-line
     }, []);
 
     const onCodeSubmit = (code: string, language: string, input: string) => {

@@ -15,6 +15,7 @@ const RoomInput = () => {
         socket.on('update:input', (input: string) => {
             updateRoomInput(input);
         });
+        //eslint-disable-next-line
     }, []);
 
     const handleInputChange = (event: React.FormEvent<HTMLTextAreaElement>): void => {

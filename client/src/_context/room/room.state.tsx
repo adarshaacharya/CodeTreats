@@ -90,7 +90,6 @@ const RoomState: React.FC = ({ children }) => {
         });
     };
 
-
     // update output
     const updateRoomOutput = (output: IOutput) => {
         dispatch({

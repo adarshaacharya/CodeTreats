@@ -12,6 +12,7 @@ const RoomLang = () => {
         socket.on('update:lang', (lang: string) => {
             updateRoomLanguage(lang);
         });
+        //eslint-disable-next-line
     }, []);
 
     const onLanguageChange = (value: string) => {

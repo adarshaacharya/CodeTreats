@@ -2,10 +2,10 @@ import {
     CREATE_ROOM,
     JOIN_ROOM,
     SET_LOADING,
-
     UPDATE_ROOM_CODE,
     UPDATE_ROOM_INPUT,
-    UPDATE_ROOM_LANGUAGE, UPDATE_ROOM_OUTPUT
+    UPDATE_ROOM_LANGUAGE,
+    UPDATE_ROOM_OUTPUT
 } from '_context/types';
 import { Action, State } from './room.type';
 

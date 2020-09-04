@@ -14,6 +14,7 @@ const RoomEditor: React.FC = () => {
             console.log(code, 'receiving sockeet');
             updateRoomCode(code);
         });
+        //eslint-disable-next-line
     }, []);
 
     const handleEditorChange = (ev?: object, value?: string) => {
@@ -25,21 +26,19 @@ const RoomEditor: React.FC = () => {
         socket.emit('realtime:code', body);
     };
 
-    return React.useMemo(() => {
-        return (
-            <>
-                <ControlledEditor
-                    height='100vh'
-                    theme='dark'
-                    language='javascript'
-                    value={roomCode}
-                    options={editorOptions}
-                    loading={<Spinner />}
-                    onChange={handleEditorChange}
-                />
-            </>
-        );
-    }, [roomCode]);
+    return (
+        <>
+            <ControlledEditor
+                height='100vh'
+                theme='dark'
+                language='javascript'
+                value={roomCode}
+                options={editorOptions}
+                loading={<Spinner />}
+                onChange={handleEditorChange}
+            />
+        </>
+    );
 };
 
 export default RoomEditor;
