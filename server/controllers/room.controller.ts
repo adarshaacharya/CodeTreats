@@ -80,6 +80,16 @@ const socketio = (server: any) => {
             }
         });
 
+        // input change
+        socket.on('realtime:input', body => {
+            try {
+                const { value, roomID } = body;
+                io.to(roomID).emit('update:input', value);
+            } catch (error) {
+                console.log(error);
+            }
+        });
+
         // editor theme chaneg
         socket.on('realtime:theme', body => {
             try {

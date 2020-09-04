@@ -15,7 +15,7 @@ const Editor = () => {
                 <Col span={14}>
                     <RoomEditor />
                 </Col>
-                <Col span={10} className="p-1">
+                <Col span={10} className='p-1'>
                     <Info />
                     <RoomLang />
                     <RoomTheme />
