@@ -1,6 +1,8 @@
 import socketIO from 'socket.io';
 import mongoose from 'mongoose';
 import Room from '../models/room.model';
+import getExtension from '../utils/lang-to-extension';
+import Axios from 'axios';
 
 const socketio = (server: any) => {
     const io = socketIO(server);
@@ -74,7 +76,7 @@ const socketio = (server: any) => {
         socket.on('realtime:lang', body => {
             try {
                 const { value, roomID } = body;
-                console.log(body)
+                console.log(body);
                 io.to(roomID).emit('update:lang', value);
             } catch (error) {
                 console.log(error);
@@ -98,6 +100,38 @@ const socketio = (server: any) => {
                 io.to(roomID).emit('update:theme', theme);
             } catch (error) {
                 console.log(error);
+            }
+        });
+
+        // submit code
+        socket.on('realtime:run', async body => {
+            try {
+                const { userInput, sourceCode, language, roomID } = body;
+
+                const extension = getExtension(language);
+                const uri = `https://run.glot.io/languages/${language}/latest/`;
+
+                const axiosConfig = {
+                    headers: {
+                        'user-agent': 'node.js',
+                        Authorization: `Token ${process.env.GLOT_TOKEN}`,
+                        'Content-type': 'application/json',
+                    },
+                };
+                const data = {
+                    stdin: userInput,
+                    files: [
+                        {
+                            name: `main.${extension}`,
+                            content: sourceCode,
+                        },
+                    ],
+                };
+                const output = await Axios.post(uri, data, axiosConfig);
+
+                io.to(roomID).emit('update:output', output.data);
+            } catch (error) {
+                console.log(error.message)
             }
         });
 

@@ -39,8 +39,7 @@ const RoomEditor: React.FC = () => {
                 />
             </>
         );
-    }, [roomCode])
- 
+    }, [roomCode]);
 };
 
 export default RoomEditor;

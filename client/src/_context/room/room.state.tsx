@@ -1,7 +1,14 @@
 import { message } from 'antd';
 import socket from 'config/socket/socket';
 import * as React from 'react';
-import { CREATE_ROOM, JOIN_ROOM, UPDATE_ROOM_CODE, UPDATE_ROOM_LANGUAGE, UPDATE_ROOM_INPUT } from '_context/types';
+import {
+    CREATE_ROOM,
+    JOIN_ROOM,
+    UPDATE_ROOM_CODE,
+    UPDATE_ROOM_LANGUAGE,
+    UPDATE_ROOM_INPUT,
+    SET_LOADING,
+} from '_context/types';
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
 import { IRoom, State } from './room.type';
@@ -66,9 +73,7 @@ const RoomState: React.FC = ({ children }) => {
         });
     };
 
-    //submit room code
-    const submitRoomCode = async (code: string, languagage: string, input: string) => {};
-
+  
     // update room lang
     const updateRoomLanguage = (lang: string) => {
         dispatch({
@@ -85,6 +90,38 @@ const RoomState: React.FC = ({ children }) => {
         });
     };
 
+      //submit room code
+      const submitRoomCode = async (code: string, language: string, input: string,
+        roomID : string
+        ) => {
+                try {
+                    setLoading()
+
+                    const payload = {
+                        language,
+                        sourceCode: code,
+                        userInput: input,
+                        roomID : roomID
+                    }
+
+                    
+
+                    
+                } catch (error) {
+            console.log(error);
+                    
+                }
+
+
+      };
+
+
+    // set loading
+    const setLoading = () => {
+        dispatch({
+            type: SET_LOADING,
+        });
+    };
     return (
         <RoomContext.Provider
             value={{

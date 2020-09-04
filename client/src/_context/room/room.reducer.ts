@@ -1,13 +1,13 @@
 import {
     CREATE_ROOM,
     JOIN_ROOM,
-    UPDATE_ROOM,
+    SET_LOADING,
+    SUBMIT_ROOM_CODE,
     UPDATE_ROOM_CODE,
-    UPDATE_ROOM_LANGUAGE,
     UPDATE_ROOM_INPUT,
+    UPDATE_ROOM_LANGUAGE,
 } from '_context/types';
 import { Action, State } from './room.type';
-import getTemplate from 'config/editor/examples';
 
 export const initialState: State = {
     _id: '',
@@ -57,13 +57,6 @@ export default function roomReducer(state: State = initialState, action: Action)
                 roomLoaded: true,
             };
 
-        case UPDATE_ROOM:
-            return {
-                ...state,
-                room: payload,
-                roomLoaded: true,
-            };
-
         case UPDATE_ROOM_CODE:
             return {
                 ...state,
@@ -81,6 +74,20 @@ export default function roomReducer(state: State = initialState, action: Action)
                 ...state,
                 roomInput: payload,
             };
+
+        case SUBMIT_ROOM_CODE:
+            return {
+                ...state,
+                roomOutput: payload,
+                loading: false,
+            };
+
+        case SET_LOADING:
+            return {
+                ...state,
+                loading: true,
+            };
+
         default:
             return state;
     }

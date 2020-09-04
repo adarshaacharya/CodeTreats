@@ -37,7 +37,7 @@ export interface State {
     updateRoomCode: (code: string) => void;
     updateRoomInput: (input: string) => void;
     updateRoomLanguage: (lang: string) => void;
-    submitRoomCode: (code: string, language: string, input: string) => void;
+    submitRoomCode: (code: string, language: string, input: string, roomID: string) => void;
 }
 
 export interface Action {
