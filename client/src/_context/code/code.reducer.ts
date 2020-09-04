@@ -1,5 +1,12 @@
 import getTemplate from 'config/editor/examples';
-import { CODE_DID_UPDATE, INPUT_DID_UPDATE, SET_LOADING, SUBMIT_CODE, UPDATE_LANGUAGE } from '_context/types';
+import {
+    CODE_DID_UPDATE,
+    INPUT_DID_UPDATE,
+    SET_LOADING,
+    SUBMIT_CODE,
+    UPDATE_LANGUAGE,
+    FETCH_SNIPPET,
+} from '_context/types';
 import { Action, State } from './code.type';
 
 //initial  value on first render
@@ -16,6 +23,7 @@ export const initialState: State = {
     updateInput: () => null,
     updateLanguage: () => null,
     submitCode: () => null,
+    fetchSnippetbyId: () => null,
 };
 
 //reducer
@@ -52,6 +60,14 @@ export default function codeReducer(state: State = initialState, action: Action)
             return {
                 ...state,
                 loading: true,
+            };
+
+        case FETCH_SNIPPET:
+            return {
+                ...state,
+                language: payload.language,
+                code: payload.sourceCode,
+                loading: false,
             };
 
         default:

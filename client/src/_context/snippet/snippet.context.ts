@@ -1,6 +1,6 @@
 import React from 'react';
-import { State } from './snippet.type';
 import { initialState } from './snippet.reducer';
+import { State } from './snippet.type';
 
 const DEFAULT_VALUE: State = {
     ...initialState,

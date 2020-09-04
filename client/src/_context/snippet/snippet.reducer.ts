@@ -6,7 +6,6 @@ export const initialState: State = {
     filtered: [],
     loading: true,
     fetchSnippets: () => null,
-    fetchSnippetbyId: () => null,
     addSnippet: () => null,
     filterSnippets: () => null,
     clearFilter: () => null,
@@ -24,14 +23,7 @@ export default function snippetReducer(state: State = initialState, action: Acti
                 loading: false,
             };
 
-        case FETCH_SNIPPET:
-            return {
-                ...state,
-                language: payload.language,
-                code: payload.sourceCode,
-                loading: false,
-            };
-
+  
         case ADD_SNIPPET:
             return {
                 ...state,

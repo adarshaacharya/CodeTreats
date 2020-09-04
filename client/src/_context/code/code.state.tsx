@@ -1,6 +1,6 @@
 import React from 'react';
 import api from 'utils/api';
-import { CODE_DID_UPDATE, INPUT_DID_UPDATE, SET_LOADING, SUBMIT_CODE, UPDATE_LANGUAGE } from '../types';
+import { CODE_DID_UPDATE, FETCH_SNIPPET, INPUT_DID_UPDATE, SET_LOADING, SUBMIT_CODE, UPDATE_LANGUAGE } from '../types';
 import CodeContext from './code.context';
 import codeReducer, { initialState as initialValues } from './code.reducer';
 import { State } from './code.type';
@@ -14,7 +14,6 @@ const CodeState: React.FC = ({ children }) => {
 
     // updateCode
     const updateCode = (code: string) => {
-        console.clear();
         dispatch({
             type: CODE_DID_UPDATE,
             payload: code,
@@ -56,6 +55,20 @@ const CodeState: React.FC = ({ children }) => {
         }
     };
 
+    // fetch single snippets
+    const fetchSnippetbyId = async (snipId: string) => {
+        try {
+            setLoading();
+            const res = await api.get(`/snippets/${snipId}`);
+            dispatch({
+                type: FETCH_SNIPPET,
+                payload: res.data,
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     // set loading
     const setLoading = () => {
         dispatch({
@@ -75,6 +88,7 @@ const CodeState: React.FC = ({ children }) => {
                 updateInput,
                 updateLanguage,
                 submitCode,
+                fetchSnippetbyId
             }}
         >
             {children}

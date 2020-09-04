@@ -12,6 +12,13 @@ const CodeEditor: React.FC = () => {
     const themeContext = React.useContext(ThemeContext);
     const { theme } = themeContext;
 
+    // React.useEffect(() => {
+    //     return () => {
+    //         console.log('unmounting codeeditor');
+    //         updateCode(code!);
+    //     };
+    // }, []);
+
     const handleEditorChange = (ev?: object, value?: string) => {
         updateCode(value!);
     };

@@ -27,19 +27,7 @@ const SnippetState: React.FC = ({ children }) => {
         }
     };
 
-    // fetch single snippets
-    const fetchSnippetbyId = async (snipId: string) => {
-        try {
-            setLoading();
-            const res = await api.get(`/snippets/${snipId}`);
-            dispatch({
-                type: FETCH_SNIPPET,
-                payload: res.data,
-            });
-        } catch (error) {
-            console.log(error);
-        }
-    };
+ 
 
     // save snippet
     const addSnippet = async (snippet: ISnippet) => {
@@ -86,7 +74,6 @@ const SnippetState: React.FC = ({ children }) => {
                 filtered: state.filtered,
                 loading: state.loading,
                 fetchSnippets,
-                fetchSnippetbyId,
                 addSnippet,
                 filterSnippets,
                 clearFilter,

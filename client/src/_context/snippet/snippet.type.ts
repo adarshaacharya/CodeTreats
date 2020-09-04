@@ -12,7 +12,6 @@ export interface State {
     loading: boolean;
 
     fetchSnippets: (pageNum?: number, limit?: number) => void;
-    fetchSnippetbyId: (sid: string) => void;
     addSnippet: (snippet: ISnippet) => void;
     filterSnippets: (text: string) => void;
     clearFilter: () => void;
