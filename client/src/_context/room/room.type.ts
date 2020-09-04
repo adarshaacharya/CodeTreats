@@ -4,7 +4,7 @@ export interface IUser {
     _id: string;
 }
 
-interface IOutput {
+export interface IOutput {
     stdout: string | null;
     stderr: string | null;
 }

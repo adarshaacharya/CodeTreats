@@ -6,6 +6,7 @@ import CodeContext from '_context/code/code.context';
 const RunCode = () => {
     const codeContext = React.useContext(CodeContext);
     const { code, input, loading, submitCode, language } = codeContext;
+    
     const onCodeSubmit = (code: string, language: string, input: string) => {
         submitCode(code, language, input);
     };

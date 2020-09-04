@@ -4,14 +4,15 @@ import * as React from 'react';
 import {
     CREATE_ROOM,
     JOIN_ROOM,
-    UPDATE_ROOM_CODE,
-    UPDATE_ROOM_LANGUAGE,
-    UPDATE_ROOM_INPUT,
     SET_LOADING,
+    SUBMIT_ROOM_CODE,
+    UPDATE_ROOM_CODE,
+    UPDATE_ROOM_INPUT,
+    UPDATE_ROOM_LANGUAGE,
 } from '_context/types';
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
-import { IRoom, State } from './room.type';
+import { IOutput, IRoom, State } from './room.type';
 
 const RoomState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -73,7 +74,6 @@ const RoomState: React.FC = ({ children }) => {
         });
     };
 
-  
     // update room lang
     const updateRoomLanguage = (lang: string) => {
         dispatch({
@@ -90,38 +90,42 @@ const RoomState: React.FC = ({ children }) => {
         });
     };
 
-      //submit room code
-      const submitRoomCode = async (code: string, language: string, input: string,
-        roomID : string
-        ) => {
-                try {
-                    setLoading()
+    //submit room code
+    const submitRoomCode = async (code: string, language: string, input: string, roomID: string) => {
+        try {
+            setLoading(roomID);
 
-                    const payload = {
-                        language,
-                        sourceCode: code,
-                        userInput: input,
-                        roomID : roomID
-                    }
+            const payload = {
+                language,
+                sourceCode: code,
+                userInput: input,
+                roomID: roomID,
+            };
 
-                    
+            socket.emit('realtime:run', payload);
 
-                    
-                } catch (error) {
+            socket.on('update:output', (output: IOutput) => {
+                dispatch({
+                    type: SUBMIT_ROOM_CODE,
+                    payload: output,
+                });
+            });
+        } catch (error) {
             console.log(error);
-                    
-                }
-
-
-      };
-
+        }
+    };
 
     // set loading
-    const setLoading = () => {
-        dispatch({
-            type: SET_LOADING,
+    const setLoading = (roomID: string) => {
+        socket.emit('realtime:loading', roomID);
+        socket.on('update:loading', () => {
+            dispatch({
+                type: SET_LOADING,
+            });
         });
     };
+
+
     return (
         <RoomContext.Provider
             value={{

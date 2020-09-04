@@ -5,8 +5,7 @@ import RoomContext from '_context/room/room.context';
 const { TextArea } = Input;
 
 const Output = () => {
-    const [output, setOutput] = React.useState({ stdout: '', stderr: '' });
-    const { loading, roomOutput, submitRoomCode } = React.useContext(RoomContext);
+    const { loading, roomOutput } = React.useContext(RoomContext);
 
     if (loading) {
         return (
@@ -19,7 +18,7 @@ const Output = () => {
         );
     }
 
-    let value = output?.stderr || output?.stdout || '';
+    let value = roomOutput?.stderr || roomOutput?.stdout || '';
     return (
         <>
             <Divider orientation='left' plain>

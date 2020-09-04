@@ -1,5 +1,8 @@
 .container {
-    margin: 5% 30%;
+    /* margin: 5% 30%; */
+    max-width: 500px;
+    margin: 50px auto;
+    justify-content: center;
 }
 
 .outerCard {

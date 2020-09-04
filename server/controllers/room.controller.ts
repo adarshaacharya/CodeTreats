@@ -131,9 +131,13 @@ const socketio = (server: any) => {
 
                 io.to(roomID).emit('update:output', output.data);
             } catch (error) {
-                console.log(error.message)
+                console.log(error.message);
             }
         });
+
+        socket.on('realtime:loading', (roomID: string) => {
+            io.to(roomID).emit('update:loading', null)
+        })
 
         socket.on('disconnect', () => {
             console.log('❌ Disconnected from room.');
