@@ -42,7 +42,7 @@ const RoomState: React.FC = ({ children }) => {
         }
     };
 
-    // create room
+    // join room
     const joinRoom = (values: { username: string; roomID: string }) => {
         try {
             const { username, roomID } = values;
@@ -76,6 +76,7 @@ const RoomState: React.FC = ({ children }) => {
 
     // update room lang
     const updateRoomLanguage = (lang: string) => {
+        console.log("update room lang action")
         dispatch({
             type: UPDATE_ROOM_LANGUAGE,
             payload: lang,

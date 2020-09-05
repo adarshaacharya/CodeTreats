@@ -93,7 +93,6 @@ const socketio = (server: any) => {
             }
         });
 
-
         // submit code
         socket.on('realtime:run', async body => {
             try {

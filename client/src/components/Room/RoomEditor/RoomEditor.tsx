@@ -7,13 +7,12 @@ import RoomContext from '_context/room/room.context';
 import ThemeContext from '_context/theme/theme.context';
 
 const RoomEditor: React.FC = () => {
-    const { _id, roomCode, updateRoomCode } = React.useContext(RoomContext);
+    const { _id, roomCode, updateRoomCode, roomLanguage } = React.useContext(RoomContext);
     const { theme, updateTheme } = React.useContext(ThemeContext);
 
     //@ TODO : Prevent unecessary re-rendering - Optimize App
     React.useEffect(() => {
         socket.on('update:code', (code: string) => {
-            console.log(code, 'receiving sockeet');
             updateRoomCode(code);
         });
 
@@ -34,7 +33,7 @@ const RoomEditor: React.FC = () => {
             <ControlledEditor
                 height='100vh'
                 theme={theme}
-                language='javascript'
+                language={roomLanguage}
                 value={roomCode}
                 options={editorOptions}
                 loading={<Spinner />}

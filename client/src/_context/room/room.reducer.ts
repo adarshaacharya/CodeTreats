@@ -8,12 +8,13 @@ import {
     UPDATE_ROOM_OUTPUT,
 } from '_context/types';
 import { Action, State } from './room.type';
+import getTemplate from 'config/editor/examples';
 
 export const initialState: State = {
     _id: '',
     roomName: '',
     activeUsers: [],
-    roomCode: '',
+    roomCode: getTemplate('javascript'),
     roomInput: '',
     roomLanguage: 'javascript',
     roomOutput: {
@@ -65,9 +66,11 @@ export default function roomReducer(state: State = initialState, action: Action)
             };
 
         case UPDATE_ROOM_LANGUAGE:
+            console.log("update room lang")
             return {
                 ...state,
                 roomLanguage: payload,
+                roomCode: getTemplate(payload),
             };
 
         case UPDATE_ROOM_INPUT:

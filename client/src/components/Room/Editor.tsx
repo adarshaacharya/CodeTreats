@@ -1,4 +1,5 @@
 import { Col, Row } from 'antd';
+import ThemeSelector from 'components/ThemeSelector';
 import React from 'react';
 import CodeExec from './CodeExec';
 import Info from './Info';
@@ -6,8 +7,6 @@ import Output from './Output';
 import RoomEditor from './RoomEditor';
 import RoomInput from './RoomInput';
 import RoomLang from './RoomLang';
-import RoomTheme from './RoomTheme';
-import ThemeSelector from 'components/ThemeSelector';
 
 const Editor = () => {
     return (
