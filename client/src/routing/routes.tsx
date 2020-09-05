@@ -15,7 +15,7 @@ export const useRoutes = () => {
                 <Route exact path='/snippets' component={SnippetsPage} />
                 <Route exact path='/snippets/:id' component={SnippetPage} />
                 <Route exact path='/room' component={JoinRoomPage} />
-                <RoomRoute exact path='/room/:roomId' component={RoomPage} />
+                <Route exact path='/room/:roomId' component={RoomPage} />
             </Switch>
         </>
     );

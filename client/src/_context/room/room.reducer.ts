@@ -66,7 +66,7 @@ export default function roomReducer(state: State = initialState, action: Action)
             };
 
         case UPDATE_ROOM_LANGUAGE:
-            console.log("update room lang")
+            console.log('update room lang');
             return {
                 ...state,
                 roomLanguage: payload,

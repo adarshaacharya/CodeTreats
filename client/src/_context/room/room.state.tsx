@@ -76,7 +76,7 @@ const RoomState: React.FC = ({ children }) => {
 
     // update room lang
     const updateRoomLanguage = (lang: string) => {
-        console.log("update room lang action")
+        console.log('update room lang action');
         dispatch({
             type: UPDATE_ROOM_LANGUAGE,
             payload: lang,
