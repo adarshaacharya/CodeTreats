@@ -6,7 +6,7 @@ interface IUsers {
 }
 
 interface IChat {
-    message: string;
+    text: string;
     sender: string;
 }
 
@@ -27,8 +27,8 @@ const UserSchema: Schema = new Schema({
     },
 });
 
-const ChatSchema: Schema = new Schema({
-    message: {
+const MessageSchema: Schema = new Schema({
+    text: {
         type: String,
         required: true,
     },
@@ -44,7 +44,7 @@ const RoomSchema: Schema = new Schema({
         required: true,
     },
     activeUsers: [UserSchema],
-    messages: [ChatSchema],
+    messages: [MessageSchema],
 });
 
 const Room = mongoose.model<IRoom>('Room', RoomSchema);

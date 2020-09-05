@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 interface IMessages {
     text: string;
+    sender: string;
     notification?: boolean;
 }
 
@@ -20,6 +21,12 @@ const Messages: React.FC<Props> = ({ messages }) => {
                 {messages.map((message) => (
                     <div key={uuidv4()}>
                         {message.notification && <Alert message={message.text} type='info' showIcon className='my' />}
+
+                        {!message.notification && (
+                            <p>
+                                {message.text} by {message.sender}
+                            </p>
+                        )}
                     </div>
                 ))}
             </ScrollToBottom>

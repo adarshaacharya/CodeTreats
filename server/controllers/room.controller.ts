@@ -131,21 +131,21 @@ const socketio = (server: any) => {
         // message
         socket.on('realtime:message', async (body, callback) => {
             try {
-                const { message, roomID, sender } = body;
+                const { text, roomID, sender } = body;
 
                 let room = await Room.findOne({
                     _id: roomID,
                 });
 
                 if (!room) return;
-                const chat = {
-                    message,
+                const message = {
+                   text,
                     sender,
                 };
-                room.messages.push(chat);
+                room.messages.push(message);
                 await room.save();
 
-                io.to(roomID).emit('update:message', chat);
+                io.to(roomID).emit('update:message', message);
                 callback();
             } catch (error) {
                 console.log(error);
