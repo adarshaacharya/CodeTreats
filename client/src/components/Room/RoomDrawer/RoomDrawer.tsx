@@ -7,6 +7,7 @@ import Messages from './Messages';
 
 interface IMessage {
     text: string;
+    notification?: boolean;
 }
 
 const RoomDrawer = () => {

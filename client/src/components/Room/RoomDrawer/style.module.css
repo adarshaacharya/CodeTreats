@@ -3,6 +3,11 @@
     background: rgb(95, 98, 99);
 }
 
+.messages {
+    padding: 5% 0;
+    overflow: auto;
+    flex: auto;
+}
 
 .chatInput {
     position: absolute;
@@ -14,4 +19,8 @@
     text-align: center;
     font-size: 0.9rem;
     margin-top: 0.3rem;
+}
+
+.notifications {
+    color: red;
 }
