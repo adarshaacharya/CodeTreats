@@ -1,3 +1,9 @@
+.activeUsers {
+    height: 30vh;
+    background: rgb(95, 98, 99);
+}
+
+
 .chatInput {
     position: absolute;
     bottom: 0;

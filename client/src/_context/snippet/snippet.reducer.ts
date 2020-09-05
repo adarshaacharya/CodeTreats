@@ -1,4 +1,4 @@
-import { ADD_SNIPPET, CLEAR_FILTER, FETCH_SNIPPET, FETCH_SNIPPETS, FILTER_SNIPPETS } from '_context/types';
+import { ADD_SNIPPET, CLEAR_FILTER, FETCH_SNIPPETS, FILTER_SNIPPETS } from '_context/types';
 import { Action, State } from './snippet.type';
 
 export const initialState: State = {

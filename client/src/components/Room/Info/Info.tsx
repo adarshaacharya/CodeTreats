@@ -2,7 +2,7 @@ import React from 'react';
 import RoomContext from '_context/room/room.context';
 
 const Info = () => {
-    const { roomName, _id, activeUsers } = React.useContext(RoomContext);
+    const { roomName, _id } = React.useContext(RoomContext);
 
     return (
         <>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import api from 'utils/api';
 import history from 'utils/history';
-import { ADD_SNIPPET, CLEAR_FILTER, FETCH_SNIPPET, FETCH_SNIPPETS, FILTER_SNIPPETS, SET_LOADING } from '../types';
+import { ADD_SNIPPET, CLEAR_FILTER, FETCH_SNIPPETS, FILTER_SNIPPETS, SET_LOADING } from '../types';
 import SnippetContext from './snippet.context';
 import snippetReducer, { initialState as initialValues } from './snippet.reducer';
 import { ISnippet, State } from './snippet.type';

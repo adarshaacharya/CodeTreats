@@ -1,11 +1,24 @@
+import { Button, Drawer } from 'antd';
+import socket from 'config/socket/socket';
 import React from 'react';
-import { Drawer, Button } from 'antd';
-import RoomContext from '_context/room/room.context';
 import ActiveUsers from './ActiveUsers';
 import ChatBox from './ChatBox';
+import Messages from './Messages';
+
+interface IMessage {
+    text: string;
+}
 
 const RoomDrawer = () => {
     const [visible, setVisible] = React.useState(false);
+    const [messages, setMessages] = React.useState<IMessage[]>([]);
+
+    // when someone joins or create room send msg to everyone
+    React.useEffect(() => {
+        socket.on('update:message', (message: IMessage) => {
+            setMessages((messages) => [...messages, message]);
+        });
+    }, []);
 
     const showDrawer = () => {
         setVisible(true);
@@ -22,6 +35,7 @@ const RoomDrawer = () => {
 
             <Drawer title='Chat Box' placement='right' closable={false} onClose={onClose} visible={visible}>
                 <ActiveUsers />
+                <Messages messages={messages} />
                 <ChatBox />
             </Drawer>
         </>

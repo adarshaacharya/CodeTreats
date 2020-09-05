@@ -32,6 +32,9 @@ const socketio = (server: any) => {
                 socket.join(roomID); // join socket(user) in that room ID -> socket(user) is in that room
 
                 io.to(roomID).emit('update:room', room); // tell io server to send this to every server within room
+
+                io.to(roomID).emit('update:message', { text: `${username} created chat!` }); // tell everyone in room that you created chat
+
             } catch (error) {
                 console.log(error, 'Error in creating room');
             }
@@ -57,6 +60,8 @@ const socketio = (server: any) => {
                 room = await room.save();
 
                 io.to(roomID).emit('update:room', room);
+                socket.to(roomID).emit('update:message', { text: `${username} joined chat!` }); // tell everyone in room that you joined chat
+
             } catch (error) {
                 console.log(error, 'Error in joining room');
             }
@@ -125,9 +130,12 @@ const socketio = (server: any) => {
             }
         });
 
+        //loading
         socket.on('realtime:loading', (roomID: string) => {
             io.to(roomID).emit('update:loading', null);
         });
+
+        //message submit
 
         socket.on('disconnect', () => {
             console.log('❌ Disconnected from room.');

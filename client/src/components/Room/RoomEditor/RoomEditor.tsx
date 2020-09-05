@@ -8,7 +8,7 @@ import ThemeContext from '_context/theme/theme.context';
 
 const RoomEditor: React.FC = () => {
     const { _id, roomCode, updateRoomCode, roomLanguage } = React.useContext(RoomContext);
-    const { theme, updateTheme } = React.useContext(ThemeContext);
+    const { theme } = React.useContext(ThemeContext);
 
     //@ TODO : Prevent unecessary re-rendering - Optimize App
     React.useEffect(() => {
