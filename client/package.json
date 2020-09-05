@@ -16,6 +16,7 @@
         "@types/react-router-dom": "^5.1.5",
         "@types/react-transition-group": "^4.4.0",
         "@types/socket.io-client": "^1.4.33",
+        "@types/uuid": "^8.3.0",
         "antd": "^4.6.0",
         "axios": "^0.19.2",
         "moment": "^2.27.0",
@@ -26,13 +27,14 @@
         "react-js-pagination": "^3.0.3",
         "react-moment": "^0.9.7",
         "react-router-dom": "^5.2.0",
-        "react-scripts": "3.4.1",
+        "react-scripts": "^3.4.3",
         "react-scroll-to-bottom": "^4.0.0",
         "react-toastify": "^6.0.8",
         "react-transition-group": "^4.4.1",
         "socket.io-client": "^2.3.0",
         "typescript": "^3.9.7",
-        "use-sound": "^1.0.2"
+        "use-sound": "^1.0.2",
+        "uuid": "^8.3.0"
     },
     "scripts": {
         "start": "react-scripts start",

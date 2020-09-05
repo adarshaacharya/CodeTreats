@@ -34,7 +34,7 @@ const RoomDrawer = () => {
                 Open
             </Button>
 
-            <Drawer title='Chat Box' placement='right' closable={false} onClose={onClose} visible={visible}>
+            <Drawer title='Chat Box' placement='right' closable={false} onClose={onClose} visible={visible} width={300}>
                 <ActiveUsers />
                 <Messages messages={messages} />
                 <ChatBox />

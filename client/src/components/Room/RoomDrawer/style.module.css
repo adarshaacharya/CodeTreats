@@ -4,14 +4,20 @@
 }
 
 .messages {
-    padding: 5% 0;
-    overflow: auto;
-    flex: auto;
+    height: 39vh;
+    width : 100%;
+    padding : 2px 0px;
+}
+
+.messages div {
+    width : 100%;
+
 }
 
 .chatInput {
     position: absolute;
     bottom: 0;
+    width : 90%;
 }
 
 .chatInputPrefix {
@@ -21,6 +27,4 @@
     margin-top: 0.3rem;
 }
 
-.notifications {
-    color: red;
-}
+

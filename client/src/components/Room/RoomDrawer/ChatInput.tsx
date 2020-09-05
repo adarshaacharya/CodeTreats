@@ -8,7 +8,6 @@ const ChatInput = () => {
     return (
         <>
             <div className={style.chatInput}>
-                <Divider />
                 <TextArea rows={3} placeholder='Type msg here.'></TextArea>
                 <p className={style.chatInputPrefix}>Hit enter to send message</p>
             </div>

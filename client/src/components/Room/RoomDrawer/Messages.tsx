@@ -1,9 +1,9 @@
+import { Alert } from 'antd';
 import React from 'react';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import style from './style.module.css';
-import { Divider, Alert } from 'antd';
-import { Avatar } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { v4 as uuidv4 } from 'uuid';
+
 
 interface IMessage {
     text: string;
@@ -19,8 +19,8 @@ const Messages: React.FC<Props> = ({ messages }) => {
         <>
             <ScrollToBottom className={style.messages}>
                 {messages.map((message) => (
-                    <div key={Date.now()}>
-                        {message.notification && <Alert message={message.text} type='info' showIcon />}
+                    <div key={uuidv4()}>
+                        {message.notification && <Alert message={message.text} type='info' showIcon className="my" />}
                     </div>
                 ))}
             </ScrollToBottom>

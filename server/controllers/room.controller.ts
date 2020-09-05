@@ -1,8 +1,8 @@
-import socketIO from 'socket.io';
+import Axios from 'axios';
 import mongoose from 'mongoose';
+import socketIO from 'socket.io';
 import Room from '../models/room.model';
 import getExtension from '../utils/lang-to-extension';
-import Axios from 'axios';
 
 const socketio = (server: any) => {
     const io = socketIO(server);
@@ -33,8 +33,7 @@ const socketio = (server: any) => {
 
                 io.to(roomID).emit('update:room', room); // tell io server to send this to every server within room
 
-                io.to(roomID).emit('update:message', { text: `${username} created chat!` }); // tell everyone in room that you created chat
-
+                io.to(roomID).emit('update:message', { text: `${username} created chat.`, notification: true }); // tell everyone in room that you created chat
             } catch (error) {
                 console.log(error, 'Error in creating room');
             }
@@ -60,8 +59,7 @@ const socketio = (server: any) => {
                 room = await room.save();
 
                 io.to(roomID).emit('update:room', room);
-                socket.to(roomID).emit('update:message', { text: `${username} joined chat!` }); // tell everyone in room that you joined chat
-
+                socket.to(roomID).emit('update:message', { text: `${username} joined chat.`, notification: true }); // tell everyone in room that you joined chat
             } catch (error) {
                 console.log(error, 'Error in joining room');
             }
@@ -130,12 +128,19 @@ const socketio = (server: any) => {
             }
         });
 
+        // message
+        socket.on('realtime:message', body => {
+            try {
+                const {} = body
+            } catch (error) {
+                console.log(error);
+            }
+        });
+
         //loading
         socket.on('realtime:loading', (roomID: string) => {
             io.to(roomID).emit('update:loading', null);
         });
-
-        //message submit
 
         socket.on('disconnect', () => {
             console.log('❌ Disconnected from room.');
