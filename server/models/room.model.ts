@@ -13,7 +13,7 @@ interface IChat {
 interface IRoom extends Document {
     roomName: string;
     activeUsers: IUsers[];
-    chat: IChat[];
+    messages: IChat[];
 }
 
 const UserSchema: Schema = new Schema({

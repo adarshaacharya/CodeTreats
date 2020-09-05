@@ -4,14 +4,13 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 import style from './style.module.css';
 import { v4 as uuidv4 } from 'uuid';
 
-
-interface IMessage {
+interface IMessages {
     text: string;
     notification?: boolean;
 }
 
 type Props = {
-    messages: IMessage[];
+    messages: IMessages[];
 };
 
 const Messages: React.FC<Props> = ({ messages }) => {
@@ -20,7 +19,7 @@ const Messages: React.FC<Props> = ({ messages }) => {
             <ScrollToBottom className={style.messages}>
                 {messages.map((message) => (
                     <div key={uuidv4()}>
-                        {message.notification && <Alert message={message.text} type='info' showIcon className="my" />}
+                        {message.notification && <Alert message={message.text} type='info' showIcon className='my' />}
                     </div>
                 ))}
             </ScrollToBottom>

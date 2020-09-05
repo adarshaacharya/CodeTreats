@@ -129,9 +129,24 @@ const socketio = (server: any) => {
         });
 
         // message
-        socket.on('realtime:message', body => {
+        socket.on('realtime:message', async (body, callback) => {
             try {
-                const {} = body
+                const { message, roomID, sender } = body;
+
+                let room = await Room.findOne({
+                    _id: roomID,
+                });
+
+                if (!room) return;
+                const chat = {
+                    message,
+                    sender,
+                };
+                room.messages.push(chat);
+                await room.save();
+
+                io.to(roomID).emit('update:message', chat);
+                callback();
             } catch (error) {
                 console.log(error);
             }
