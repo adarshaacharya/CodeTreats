@@ -8,7 +8,6 @@ const Info = () => {
         <>
             <h1>{roomName}</h1>
             <h2>Room ID : {_id}</h2>
-      
         </>
     );
 };

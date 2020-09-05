@@ -1,13 +1,17 @@
 import React from 'react';
-import { Input } from 'antd';
+import style from './style.module.css';
+import { Input, Divider } from 'antd';
 
 const { TextArea } = Input;
 
 const ChatInput = () => {
     return (
         <>
-            <TextArea rows={4} placeholder='Type msg here.'></TextArea>
-            <p className='chatinput-prefix'>Hit enter to send msg</p>
+            <div className={style.chatInput}>
+                <Divider />
+                <TextArea rows={3} placeholder='Type msg here.'></TextArea>
+                <p className={style.chatInputPrefix}>Hit enter to send message</p>
+            </div>
         </>
     );
 };

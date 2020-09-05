@@ -1,2 +1,2 @@
-import RoomDrawer from './RoomDrawer'
-export default RoomDrawer
+import RoomDrawer from './RoomDrawer';
+export default RoomDrawer;
