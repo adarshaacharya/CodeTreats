@@ -8,7 +8,7 @@ import ChatInput from './ChatInput';
 
 interface IMessages {
     text: string;
-    sender : string
+    sender: string;
     notification?: boolean;
 }
 
@@ -34,15 +34,13 @@ const RoomDrawer = () => {
     const onMessageChange = (event: React.FormEvent<HTMLTextAreaElement>): void => {
         setMessage(event.currentTarget.value);
     };
-    console.log(message);
 
     const sendMessage = () => {
         const body: IMessage = {
             roomID: _id,
             sender: 'Ram',
-            text : message,
+            text: message,
         };
-        console.log(body);
         socket.emit('realtime:message', body, () => setMessage(''));
     };
 
@@ -55,11 +53,11 @@ const RoomDrawer = () => {
 
     return (
         <>
-            <Button type='primary' onClick={showDrawer}>
+            <Button type='primary' onClick={showDrawer} className="my-1">
                 Open
             </Button>
 
-            <Drawer title='Chat Box' placement='right' closable={false} onClose={onClose} visible={visible} width={300}>
+            <Drawer placement='right' closable={false} onClose={onClose} visible={visible} width={300}>
                 <ActiveUsers />
                 <Messages messages={messages} />
                 <ChatInput sendMessage={sendMessage} message={message} onMessageChange={onMessageChange} />

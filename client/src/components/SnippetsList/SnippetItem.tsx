@@ -27,7 +27,7 @@ const SnippetItem: React.FC<Props> = ({ snippet }) => {
                     }
                 />
                 <Moment fromNow>{date}</Moment>
-                <CopyLinkButton id={`http://localhost:3000/snippets/${_id}`} />
+                <CopyLinkButton url={`/snippets/${_id!}`} />
             </List.Item>
         </>
     );

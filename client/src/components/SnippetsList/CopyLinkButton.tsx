@@ -5,10 +5,10 @@ import CopyToClipBoard from 'react-copy-to-clipboard';
 import style from './style.module.css';
 
 type Props = {
-    id: string;
+    url: string;
 };
 
-const CopyLinkButton: React.FC<Props> = ({ id }) => {
+const CopyLinkButton: React.FC<Props> = ({ url }) => {
     const [, setCopied] = React.useState(false);
     const [copiedText, setCopiedText] = React.useState('Copy Link');
     const { playClick } = useSfx();
@@ -25,7 +25,7 @@ const CopyLinkButton: React.FC<Props> = ({ id }) => {
 
     return (
         <>
-            <CopyToClipBoard text={`http://codetreats.herokuapp.com/${id}`} onCopy={onLinkCopy}>
+            <CopyToClipBoard text={`http://codetreats.herokuapp.com${url}`} onCopy={onLinkCopy}>
                 <button className={style.copy}>{copiedText}</button>
             </CopyToClipBoard>
         </>

@@ -1,0 +1,8 @@
+.info p {
+    font-size: .9rem;
+    color: rgba(235, 235, 235, 0.651);
+}
+
+.info .roomTitle {
+    color: rgb(79, 249, 255);
+}

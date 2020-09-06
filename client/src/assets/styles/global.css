@@ -120,6 +120,7 @@ body {
 .my-3 {
     margin: 3rem 0;
 }
+
 .mx-1 {
     margin: 0 1rem;
 }
@@ -137,6 +138,12 @@ body {
 }
 .mt-2 {
     margin-top: 2rem;
+}
+.mr-1 {
+    margin-right: 1rem;
+}
+.mr-2 {
+    margin-right: 2rem;
 }
 
 .center {
@@ -174,10 +181,9 @@ svg {
 }
 
 .bg-danger {
-    background: #DD4F3D;
+    background: #dd4f3d;
     color: #fff;
 }
-
 
 .menu_left {
     float: right;

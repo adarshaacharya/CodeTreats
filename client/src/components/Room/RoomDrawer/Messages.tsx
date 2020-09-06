@@ -1,8 +1,9 @@
-import { Alert } from 'antd';
+import { Alert, Divider } from 'antd';
 import React from 'react';
 import ScrollToBottom from 'react-scroll-to-bottom';
-import style from './style.module.css';
 import { v4 as uuidv4 } from 'uuid';
+import style from './style.module.css';
+import { Comment, Tooltip, Avatar } from 'antd';
 
 interface IMessages {
     text: string;
@@ -17,14 +18,23 @@ type Props = {
 const Messages: React.FC<Props> = ({ messages }) => {
     return (
         <>
+            <Divider orientation='left' plain>
+                Messages
+            </Divider>
             <ScrollToBottom className={style.messages}>
                 {messages.map((message) => (
                     <div key={uuidv4()}>
-                        {message.notification && <Alert message={message.text} type='info' showIcon className='my' />}
+                        {message.notification && (
+                            <p className={style.message}>
+                                {' '}
+                                <Alert message={message.text} type='info' showIcon />
+                            </p>
+                        )}
 
                         {!message.notification && (
-                            <p>
-                                {message.text} by {message.sender}
+                            <p className={style.message}>
+                                {message.sender}
+                                {message.text}
                             </p>
                         )}
                     </div>

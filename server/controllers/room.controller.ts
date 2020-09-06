@@ -139,7 +139,7 @@ const socketio = (server: any) => {
 
                 if (!room) return;
                 const message = {
-                   text,
+                    text,
                     sender,
                 };
                 room.messages.push(message);
