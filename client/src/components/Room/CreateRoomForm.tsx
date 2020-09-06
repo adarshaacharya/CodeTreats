@@ -1,8 +1,9 @@
-import { Button, Card, Form, Input } from 'antd';
+import { Button, Card, Form, Input, notification, message } from 'antd';
 import React from 'react';
 import history from 'utils/history';
 import RoomContext from '_context/room/room.context';
 import styles from './style.module.css';
+import { useSfx } from 'hooks';
 
 interface IVal {
     username: string;
@@ -11,6 +12,9 @@ interface IVal {
 
 const CreateRoomForm = () => {
     const { createRoom, _id } = React.useContext(RoomContext);
+
+    const { playIpl } = useSfx();
+
     React.useEffect(() => {
         if (_id) {
             history.push(`/room/${_id}`);
@@ -24,6 +28,8 @@ const CreateRoomForm = () => {
 
     const onFormSubmit = (values: IVal) => {
         createRoom(values);
+        playIpl();
+        message.success('New room created ! 🔥 ');
     };
 
     const [form] = Form.useForm();

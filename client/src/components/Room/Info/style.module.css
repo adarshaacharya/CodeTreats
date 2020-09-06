@@ -26,5 +26,6 @@
     background: rgb(26, 49, 255);
     color: #fff;
     padding: 0.6rem;
+    border-radius: 2px;
     outline: none;
 }

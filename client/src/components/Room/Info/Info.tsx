@@ -19,7 +19,7 @@ const Info = () => {
         playClick();
         setInterval(() => {
             setCopiedText('Copy');
-        }, 3000);
+        }, 5000);
     };
 
     return (
