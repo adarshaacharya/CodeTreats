@@ -10,7 +10,7 @@ interface IVal {
     username: string;
 }
 const JoinRoomForm = () => {
-    const { joinRoom, _id } = React.useContext(RoomContext);
+    const { joinRoom, _id, roomLoaded } = React.useContext(RoomContext);
     const { playIpl } = useSfx();
 
     React.useEffect(() => {
@@ -26,7 +26,7 @@ const JoinRoomForm = () => {
 
     const onFormSubmit = (values: IVal) => {
         joinRoom(values);
-        message.success("You've joined room successfully ! 🔥 ");
+
         playIpl();
     };
 

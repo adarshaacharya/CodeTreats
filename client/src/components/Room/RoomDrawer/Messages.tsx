@@ -1,10 +1,9 @@
 import { Alert, Divider } from 'antd';
+import { Message } from 'layout';
 import React from 'react';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { v4 as uuidv4 } from 'uuid';
 import style from './style.module.css';
-import { Comment, Tooltip, Avatar } from 'antd';
-import { Message } from 'layout';
 
 interface IMessages {
     text: string;

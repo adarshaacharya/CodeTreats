@@ -47,7 +47,7 @@ const socketio = (server: any) => {
                 if (!mongoose.Types.ObjectId.isValid(roomID)) return callback({ msg: 'Room ID is not valid' });
 
                 let room = await Room.findOne({ _id: roomID });
-                if (!room) return callback({ msg: 'Room not found' });
+                if (!room) return callback({ msg: 'Room not found' }); // callback for error
 
                 socket.join(roomID); // join the socket(user) in that room
 

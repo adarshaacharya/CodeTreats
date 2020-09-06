@@ -1,6 +1,7 @@
-import { Button, Drawer } from 'antd';
 import { SendOutlined } from '@ant-design/icons';
+import { Button, Drawer } from 'antd';
 import socket from 'config/socket/socket';
+import { useSfx } from 'hooks';
 import React from 'react';
 import RoomContext from '_context/room/room.context';
 import ActiveUsers from './ActiveUsers';
@@ -25,9 +26,11 @@ const RoomDrawer = () => {
     const [messages, setMessages] = React.useState<IMessages[]>([]);
     const [message, setMessage] = React.useState('');
 
-    // when someone joins or create room send msg to everyone
+    const { playGoogle, playPop } = useSfx();
+
     React.useEffect(() => {
         socket.on('update:message', (message: IMessages) => {
+            console.log("update:", message)
             setMessages((messages) => [...messages, message]);
         });
     }, []);
@@ -43,6 +46,7 @@ const RoomDrawer = () => {
             text: message,
         };
         socket.emit('realtime:message', body, () => setMessage(''));
+        playPop();
     };
 
     const showDrawer = () => {

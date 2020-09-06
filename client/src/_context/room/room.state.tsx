@@ -51,8 +51,9 @@ const RoomState: React.FC = ({ children }) => {
                 roomID,
             };
             socket.emit('join:room', body, (error: any) => {
+                //callback fun
                 if (error) {
-                    message.error(error.msg);
+                    return message.error(error.msg);
                 }
             });
             socket.on('update:room', (room: IRoom) => {
