@@ -54,7 +54,7 @@ const RoomDrawer = () => {
 
     return (
         <>
-            <Button type='primary' shape="round"  onClick={showDrawer} className='my-2' icon={<SendOutlined />}>
+            <Button type='primary' shape='round' onClick={showDrawer} className='my-2' icon={<SendOutlined />}>
                 Show Chatbox
             </Button>
 

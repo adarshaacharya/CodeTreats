@@ -11,10 +11,20 @@
     letter-spacing: 2px;
     font-family: 'Roboto Condensed', sans-serif;
     color: #fcfcfc;
+    text-shadow: 2px 2px #12474e;
 }
 
 .info {
     background: inherit;
     border-radius: 8px;
     box-shadow: 0 0 10px #3b6aeb;
+}
+
+.copyButton {
+    cursor: pointer;
+    border: none;
+    background: rgb(26, 49, 255);
+    color: #fff;
+    padding: 0.6rem;
+    outline: none;
 }
