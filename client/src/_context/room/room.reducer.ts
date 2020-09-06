@@ -6,6 +6,7 @@ import {
     UPDATE_ROOM_INPUT,
     UPDATE_ROOM_LANGUAGE,
     UPDATE_ROOM_OUTPUT,
+    SET_CURRENT_USER,
 } from '_context/types';
 import { Action, State } from './room.type';
 import getTemplate from 'config/editor/examples';
@@ -13,6 +14,7 @@ import getTemplate from 'config/editor/examples';
 export const initialState: State = {
     _id: '',
     roomName: '',
+    currentUser: '',
     activeUsers: [],
     roomCode: getTemplate('javascript'),
     roomInput: '',
@@ -31,6 +33,7 @@ export const initialState: State = {
     updateRoomInput: () => null,
     updateRoomLanguage: () => null,
     updateRoomOutput: () => null,
+    setRoomUser: () => null,
     setLoading: () => null,
 };
 
@@ -40,24 +43,16 @@ export default function roomReducer(state: State = initialState, action: Action)
 
     switch (type) {
         case CREATE_ROOM:
+        case JOIN_ROOM:
+            console.log(payload , "reudcer")
             return {
                 ...state,
                 _id: payload._id,
                 roomName: payload.roomName,
                 activeUsers: payload.activeUsers,
-                ...state.activeUsers,
                 roomLoaded: true,
             };
 
-        case JOIN_ROOM:
-            return {
-                ...state,
-                _id: payload._id,
-                roomName: payload.roomName,
-                activeUsers: payload.activeUsers,
-                ...state.activeUsers,
-                roomLoaded: true,
-            };
 
         case UPDATE_ROOM_CODE:
             return {
@@ -84,6 +79,12 @@ export default function roomReducer(state: State = initialState, action: Action)
                 ...state,
                 roomOutput: payload,
                 loading: false,
+            };
+
+        case SET_CURRENT_USER:
+            return {
+                ...state,
+                currentUser: payload,
             };
 
         case SET_LOADING:

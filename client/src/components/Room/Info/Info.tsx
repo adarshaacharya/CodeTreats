@@ -6,7 +6,7 @@ import RoomContext from '_context/room/room.context';
 import style from './style.module.css';
 
 const Info = () => {
-    const { roomName, _id } = React.useContext(RoomContext);
+    const { roomName, _id, currentUser } = React.useContext(RoomContext);
     const { playClick } = useSfx();
 
     const [, setCopied] = React.useState(false);
@@ -25,7 +25,10 @@ const Info = () => {
     return (
         <>
             <Card className={style.info}>
-                <h3 className={style.roomTitle}> {roomName} </h3>
+                <Row>
+                    <h3 className={style.roomTitle}> {roomName} </h3>
+                    {currentUser}
+                </Row>
                 <p>Copy & send the room ID below and ask your friends to join the room.</p>
 
                 <Row>

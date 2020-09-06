@@ -9,6 +9,7 @@ import {
     UPDATE_ROOM_CODE,
     UPDATE_ROOM_INPUT,
     UPDATE_ROOM_LANGUAGE,
+    SET_CURRENT_USER,
 } from '_context/types';
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
@@ -37,6 +38,7 @@ const RoomState: React.FC = ({ children }) => {
                     payload: room,
                 });
             });
+            setRoomUser(username); // set username in state
         } catch (error) {
             console.log(error);
         }
@@ -56,6 +58,9 @@ const RoomState: React.FC = ({ children }) => {
                     return message.error(error.msg);
                 }
             });
+
+            setRoomUser(username); // set username in state
+
             socket.on('update:room', (room: IRoom) => {
                 dispatch({
                     type: JOIN_ROOM,
@@ -100,6 +105,15 @@ const RoomState: React.FC = ({ children }) => {
         });
     };
 
+    // set user in state
+    const setRoomUser = (username: string) => {
+        console.log(username)
+        dispatch({
+            type: SET_CURRENT_USER,
+            payload: username,
+        });
+    };
+
     // set loading
     const setLoading = () => {
         dispatch({
@@ -112,6 +126,7 @@ const RoomState: React.FC = ({ children }) => {
             value={{
                 _id: state._id,
                 roomName: state.roomName,
+                currentUser: state.currentUser,
                 activeUsers: state.activeUsers,
                 roomCode: state.roomCode,
                 roomLanguage: state.roomLanguage,
@@ -126,6 +141,7 @@ const RoomState: React.FC = ({ children }) => {
                 updateRoomLanguage,
                 updateRoomOutput,
                 setLoading,
+                setRoomUser,
             }}
         >
             {children}

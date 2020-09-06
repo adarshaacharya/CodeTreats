@@ -43,6 +43,7 @@ const RoomSchema: Schema = new Schema({
         type: String,
         required: true,
     },
+
     activeUsers: [UserSchema],
     messages: [MessageSchema],
 });

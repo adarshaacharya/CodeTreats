@@ -23,6 +23,7 @@ export interface IRoom {
 export interface State {
     _id: string;
     roomName: string;
+    currentUser: string;
     activeUsers: IUser[];
     roomCode: string; // program
     roomInput: string | null;
@@ -38,6 +39,7 @@ export interface State {
     updateRoomInput: (input: string) => void;
     updateRoomLanguage: (lang: string) => void;
     updateRoomOutput: (output: IOutput) => void;
+    setRoomUser : (username : string) => void
     setLoading: (roomID: string) => void;
 }
 

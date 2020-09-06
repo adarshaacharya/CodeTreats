@@ -21,4 +21,5 @@ export const JOIN_ROOM: string = 'JOIN_ROOM';
 export const UPDATE_ROOM_CODE: string = 'UPDATE_ROOM_CODE';
 export const UPDATE_ROOM_LANGUAGE: string = 'UPDATE_ROOM_LANGUAGE';
 export const UPDATE_ROOM_INPUT: string = 'UPDATE_ROOM_INPUT';
-export const UPDATE_ROOM_OUTPUT = 'UPDATE_ROOM_OUTPUT';
+export const UPDATE_ROOM_OUTPUT: string = 'UPDATE_ROOM_OUTPUT';
+export const SET_CURRENT_USER: string = 'SET_CURRENT_USER';
