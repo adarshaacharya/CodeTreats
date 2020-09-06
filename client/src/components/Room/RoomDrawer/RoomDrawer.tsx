@@ -1,5 +1,5 @@
 import { SendOutlined } from '@ant-design/icons';
-import { Button, Drawer } from 'antd';
+import { Button, Drawer, Badge } from 'antd';
 import socket from 'config/socket/socket';
 import { useSfx } from 'hooks';
 import React from 'react';
@@ -30,7 +30,7 @@ const RoomDrawer = () => {
 
     React.useEffect(() => {
         socket.on('update:message', (message: IMessages) => {
-            console.log("update:", message)
+            console.log('update:', message);
             setMessages((messages) => [...messages, message]);
         });
     }, []);
@@ -58,9 +58,11 @@ const RoomDrawer = () => {
 
     return (
         <>
-            <Button type='primary' shape='round' onClick={showDrawer} className='my-2' icon={<SendOutlined />}>
-                Show Chatbox
-            </Button>
+            <Badge count={messages.length} className='my-2' overflowCount={10}>
+                <Button type='primary' shape='round' onClick={showDrawer} icon={<SendOutlined />}>
+                    Show Chatbox
+                </Button>
+            </Badge>
 
             <Drawer placement='right' closable={false} onClose={onClose} visible={visible} width={300}>
                 <ActiveUsers />

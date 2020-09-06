@@ -4,7 +4,6 @@ import ipl from 'assets/sounds/ipl.mp3';
 import message from 'assets/sounds/message.mp3';
 import pop from 'assets/sounds/pop.mp3';
 
-
 import useSound from 'use-sound';
 
 export const useSfx = () => {
@@ -32,6 +31,6 @@ export const useSfx = () => {
         playClick,
         playIpl,
         playGoogle,
-        playPop
+        playPop,
     };
 };
