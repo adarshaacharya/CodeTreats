@@ -44,7 +44,7 @@ export default function roomReducer(state: State = initialState, action: Action)
     switch (type) {
         case CREATE_ROOM:
         case JOIN_ROOM:
-            console.log(payload , "reudcer")
+            console.log(payload, 'reudcer');
             return {
                 ...state,
                 _id: payload._id,
@@ -52,7 +52,6 @@ export default function roomReducer(state: State = initialState, action: Action)
                 activeUsers: payload.activeUsers,
                 roomLoaded: true,
             };
-
 
         case UPDATE_ROOM_CODE:
             return {

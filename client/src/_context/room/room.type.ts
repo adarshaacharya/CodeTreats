@@ -39,7 +39,7 @@ export interface State {
     updateRoomInput: (input: string) => void;
     updateRoomLanguage: (lang: string) => void;
     updateRoomOutput: (output: IOutput) => void;
-    setRoomUser : (username : string) => void
+    setRoomUser: (username: string) => void;
     setLoading: (roomID: string) => void;
 }
 

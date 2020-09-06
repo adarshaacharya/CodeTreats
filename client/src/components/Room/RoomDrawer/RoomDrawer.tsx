@@ -21,7 +21,7 @@ interface IMessage {
 }
 
 const RoomDrawer = () => {
-    const { _id } = React.useContext(RoomContext);
+    const { _id, currentUser } = React.useContext(RoomContext);
     const [visible, setVisible] = React.useState(false);
     const [messages, setMessages] = React.useState<IMessages[]>([]);
     const [message, setMessage] = React.useState('');
@@ -42,7 +42,7 @@ const RoomDrawer = () => {
     const sendMessage = () => {
         const body: IMessage = {
             roomID: _id,
-            sender: 'Ram',
+            sender: currentUser,
             text: message,
         };
         socket.emit('realtime:message', body, () => setMessage(''));

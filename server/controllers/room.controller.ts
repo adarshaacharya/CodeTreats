@@ -28,11 +28,9 @@ const socketio = (server: any) => {
                 room.activeUsers.unshift(user);
                 room = await room.save();
 
-               
                 //  create a room for sockets withn our game (socket room)
                 const roomID = room._id.toString(); // create room id
                 socket.join(roomID); // join socket(user) in that room ID -> socket(user) is in that room
-
 
                 io.to(roomID).emit('update:room', room); // tell io server to send this to every server within room
 
@@ -64,7 +62,6 @@ const socketio = (server: any) => {
                 room.activeUsers.push(user);
                 room = await room.save();
 
-               
                 io.to(roomID).emit('update:room', room);
                 socket.to(roomID).emit('update:message', { text: `${username} joined chat.`, notification: true }); // tell everyone in room that you joined chat
             } catch (error) {

@@ -107,7 +107,7 @@ const RoomState: React.FC = ({ children }) => {
 
     // set user in state
     const setRoomUser = (username: string) => {
-        console.log(username)
+        console.log(username);
         dispatch({
             type: SET_CURRENT_USER,
             payload: username,
