@@ -4,6 +4,7 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 import { v4 as uuidv4 } from 'uuid';
 import style from './style.module.css';
 import { Comment, Tooltip, Avatar } from 'antd';
+import { Message } from 'layout';
 
 interface IMessages {
     text: string;
@@ -25,17 +26,16 @@ const Messages: React.FC<Props> = ({ messages }) => {
                 {messages.map((message) => (
                     <div key={uuidv4()}>
                         {message.notification && (
-                            <p className={style.message}>
+                            <div className={style.message}>
                                 {' '}
                                 <Alert message={message.text} type='info' showIcon />
-                            </p>
+                            </div>
                         )}
 
                         {!message.notification && (
-                            <p className={style.message}>
-                                {message.sender}
-                                {message.text}
-                            </p>
+                            <div className={style.message}>
+                                <Message text={message.text} sender={message.sender} />
+                            </div>
                         )}
                     </div>
                 ))}

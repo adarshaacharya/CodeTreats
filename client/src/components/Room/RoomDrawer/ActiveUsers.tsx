@@ -17,17 +17,17 @@ const ActiveUsers = () => {
                 Active ( {activeUsers.length} )
             </Divider>
             <ScrollToBottom className={style.activeUsers}>
-                <p>
+                <div>
                     {activeUsers.map((user) => (
-                        <>
-                            <Space key={user.socketID} size='middle'>
+                        <div key={user.socketID} className="py pointer">
+                            <Space size='middle'>
                                 <img src={onlineIcon} alt='online icon' />
                                 <Avatar size='small' icon={<UserOutlined />} />
                                 {user.username}
                             </Space>
-                        </>
+                        </div>
                     ))}
-                </p>
+                </div>
             </ScrollToBottom>
         </>
     );

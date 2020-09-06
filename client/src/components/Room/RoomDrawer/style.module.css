@@ -10,18 +10,20 @@
 }
 
 .message {
-    margin-right: 6px;
+    margin : 10px 7px 13px 0px;
+    cursor : pointer;
 }
 
 
 
-.messages /* width */
+.messages
 ::-webkit-scrollbar {
     width: 8px;
 }
 
+
 /* Track */
-.messages ::-webkit-scrollbar-track {
+.messages  ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
 
@@ -47,4 +49,27 @@
     text-align: center;
     font-size: 0.9rem;
     margin-top: 0.3rem;
+}
+
+
+
+.activeUsers
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+/* Track */
+.activeUsers  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.activeUsers ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+.activeUsers ::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

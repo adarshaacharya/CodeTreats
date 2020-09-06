@@ -63,6 +63,10 @@ body {
     text-align: center;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 /* Padding */
 .p {
     padding: 0.5rem;

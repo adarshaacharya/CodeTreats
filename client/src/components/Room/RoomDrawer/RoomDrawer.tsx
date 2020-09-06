@@ -53,7 +53,7 @@ const RoomDrawer = () => {
 
     return (
         <>
-            <Button type='primary' onClick={showDrawer} className="my-1">
+            <Button type='primary' onClick={showDrawer} className='my-1'>
                 Open
             </Button>
 
