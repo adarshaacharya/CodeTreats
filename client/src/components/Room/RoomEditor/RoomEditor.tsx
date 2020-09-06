@@ -31,7 +31,7 @@ const RoomEditor: React.FC = () => {
     return (
         <>
             <ControlledEditor
-                height='100vh'
+                height='100%'
                 theme={theme}
                 language={roomLanguage}
                 value={roomCode}

@@ -1,10 +1,11 @@
 import { Button, Drawer } from 'antd';
+import { SendOutlined } from '@ant-design/icons';
 import socket from 'config/socket/socket';
 import React from 'react';
-import ActiveUsers from './ActiveUsers';
-import Messages from './Messages';
 import RoomContext from '_context/room/room.context';
+import ActiveUsers from './ActiveUsers';
 import ChatInput from './ChatInput';
+import Messages from './Messages';
 
 interface IMessages {
     text: string;
@@ -53,8 +54,8 @@ const RoomDrawer = () => {
 
     return (
         <>
-            <Button type='primary' onClick={showDrawer} className='my-1'>
-                Open
+            <Button type='primary' shape="round"  onClick={showDrawer} className='my-2' icon={<SendOutlined />}>
+                Show Chatbox
             </Button>
 
             <Drawer placement='right' closable={false} onClose={onClose} visible={visible} width={300}>

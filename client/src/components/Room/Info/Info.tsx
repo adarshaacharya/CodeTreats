@@ -10,10 +10,7 @@ const Info = () => {
     return (
         <>
             <Card className={style.info}>
-                <Title level={3} className={style.roomTitle}>
-                    {' '}
-                    {roomName.toUpperCase()}{' '}
-                </Title>
+                <h3 className={style.roomTitle}> {roomName} </h3>
                 <p>Copy & send the room ID below and ask your friends to join the room.</p>
                 <Alert message={_id} />
             </Card>

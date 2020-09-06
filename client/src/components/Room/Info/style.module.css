@@ -1,8 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
 .info p {
-    font-size: .9rem;
+    font-size: 0.9rem;
     color: rgba(235, 235, 235, 0.651);
 }
 
 .info .roomTitle {
-    color: rgb(79, 249, 255);
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #fcfcfc;
+}
+
+.info {
+    background: inherit;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #3b6aeb;
 }

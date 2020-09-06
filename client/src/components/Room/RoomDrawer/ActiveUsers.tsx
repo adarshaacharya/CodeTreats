@@ -19,7 +19,7 @@ const ActiveUsers = () => {
             <ScrollToBottom className={style.activeUsers}>
                 <div>
                     {activeUsers.map((user) => (
-                        <div key={user.socketID} className="py pointer">
+                        <div key={user.socketID} className='py pointer'>
                             <Space size='middle'>
                                 <img src={onlineIcon} alt='online icon' />
                                 <Avatar size='small' icon={<UserOutlined />} />
