@@ -20,6 +20,14 @@ export interface IRoom {
     roomOutput: IOutput;
 }
 
+
+export interface IMessages {
+    text: string;
+    sender: string;
+    notification?: boolean;
+}
+
+
 export interface State {
     _id: string;
     roomName: string;
@@ -29,6 +37,7 @@ export interface State {
     roomInput: string | null;
     roomLanguage: string;
     roomOutput: IOutput;
+    roomMessages : IMessages [];
     roomLoaded: boolean | null;
     loading: boolean;
 
@@ -39,6 +48,7 @@ export interface State {
     updateRoomInput: (input: string) => void;
     updateRoomLanguage: (lang: string) => void;
     updateRoomOutput: (output: IOutput) => void;
+    updateMessages : (message : IMessages) => void
     setRoomUser: (username: string) => void;
     setLoading: (roomID: string) => void;
 }

@@ -7,6 +7,7 @@ import {
     UPDATE_ROOM_LANGUAGE,
     UPDATE_ROOM_OUTPUT,
     SET_CURRENT_USER,
+    UPDATE_ROOM_MESSAGES,
 } from '_context/types';
 import { Action, State } from './room.type';
 import getTemplate from 'config/editor/examples';
@@ -23,6 +24,7 @@ export const initialState: State = {
         stderr: null,
         stdout: null,
     },
+    roomMessages : [],
     roomLoaded: null, // checks if room is loaded or not for route handling
     loading: false,
 
@@ -33,6 +35,7 @@ export const initialState: State = {
     updateRoomInput: () => null,
     updateRoomLanguage: () => null,
     updateRoomOutput: () => null,
+    updateMessages : () => null,
     setRoomUser: () => null,
     setLoading: () => null,
 };
@@ -79,6 +82,12 @@ export default function roomReducer(state: State = initialState, action: Action)
                 roomOutput: payload,
                 loading: false,
             };
+
+        case UPDATE_ROOM_MESSAGES:
+            return {
+                ...state,
+                roomMessages : payload
+            }
 
         case SET_CURRENT_USER:
             return {

@@ -7,7 +7,7 @@ import style from './style.module.css';
 
 interface IMessages {
     text: string;
-    sender: string;
+    sender: string;  
     notification?: boolean;
 }
 
@@ -16,31 +16,34 @@ type Props = {
 };
 
 const Messages: React.FC<Props> = ({ messages }) => {
-    return (
-        <>
-            <Divider orientation='left' plain>
-                Messages
-            </Divider>
-            <ScrollToBottom className={style.messages}>
-                {messages.map((message) => (
-                    <div key={uuidv4()}>
-                        {message.notification && (
-                            <div className={style.message}>
-                                {' '}
-                                <Alert message={message.text} type='info' showIcon />
-                            </div>
-                        )}
-
-                        {!message.notification && (
-                            <div className={style.message}>
-                                <Message text={message.text} sender={message.sender} />
-                            </div>
-                        )}
-                    </div>
-                ))}
-            </ScrollToBottom>
-        </>
-    );
+    return React.useMemo(() => {
+        return (
+            <>
+                <Divider orientation='left' plain>
+                    Messages
+                </Divider>
+                <ScrollToBottom className={style.messages}>
+                    {messages.map((message) => (
+                        <div key={uuidv4()}>
+                            {message.notification && (
+                                <div className={style.message}>
+                                    {' '}
+                                    <Alert message={message.text} type='info' showIcon />
+                                </div>
+                            )}
+    
+                            {!message.notification && (
+                                <div className={style.message}>
+                                    <Message text={message.text} sender={message.sender} />
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </ScrollToBottom>
+            </>
+        );
+    }, [messages])
+   
 };
 
 export default Messages;

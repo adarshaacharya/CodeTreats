@@ -10,10 +10,11 @@ import {
     UPDATE_ROOM_INPUT,
     UPDATE_ROOM_LANGUAGE,
     SET_CURRENT_USER,
+    UPDATE_ROOM_MESSAGES,
 } from '_context/types';
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
-import { IOutput, IRoom, State } from './room.type';
+import { IOutput, IRoom, State, IMessages } from './room.type';
 
 const RoomState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -82,7 +83,6 @@ const RoomState: React.FC = ({ children }) => {
 
     // update room lang
     const updateRoomLanguage = (lang: string) => {
-        console.log('update room lang action');
         dispatch({
             type: UPDATE_ROOM_LANGUAGE,
             payload: lang,
@@ -104,6 +104,16 @@ const RoomState: React.FC = ({ children }) => {
             payload: output,
         });
     };
+
+
+    //  update messsages
+    const updateMessages = (message : IMessages) => {
+        dispatch({
+            type: UPDATE_ROOM_MESSAGES,
+            payload: message,
+        });
+    }
+
 
     // set user in state
     const setRoomUser = (username: string) => {
@@ -133,6 +143,7 @@ const RoomState: React.FC = ({ children }) => {
                 roomInput: state.roomInput,
                 roomOutput: state.roomOutput,
                 roomLoaded: state.roomLoaded,
+                roomMessages : state.roomMessages,
                 loading: state.loading,
                 createRoom,
                 joinRoom,
@@ -140,6 +151,7 @@ const RoomState: React.FC = ({ children }) => {
                 updateRoomInput,
                 updateRoomLanguage,
                 updateRoomOutput,
+                updateMessages,
                 setLoading,
                 setRoomUser,
             }}

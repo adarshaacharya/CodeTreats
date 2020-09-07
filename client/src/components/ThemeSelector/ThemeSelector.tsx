@@ -5,7 +5,6 @@ import React from 'react';
 import { defineTheme } from 'utils/define-theme';
 import ThemeContext from '_context/theme/theme.context';
 
-
 const { Option } = Select;
 const ThemeSelector = () => {
     const { theme, updateTheme } = React.useContext(ThemeContext);
@@ -23,7 +22,7 @@ const ThemeSelector = () => {
             <Divider orientation='center' plain>
                 {' '}
                 Select theme &nbsp;
-                <Tooltip title="Effect will be seen only in your room.">
+                <Tooltip title='Effect will be seen only in your room.'>
                     <ExclamationCircleOutlined />
                 </Tooltip>
             </Divider>

@@ -23,3 +23,4 @@ export const UPDATE_ROOM_LANGUAGE: string = 'UPDATE_ROOM_LANGUAGE';
 export const UPDATE_ROOM_INPUT: string = 'UPDATE_ROOM_INPUT';
 export const UPDATE_ROOM_OUTPUT: string = 'UPDATE_ROOM_OUTPUT';
 export const SET_CURRENT_USER: string = 'SET_CURRENT_USER';
+export const UPDATE_ROOM_MESSAGES: string = 'UPDATE_ROOM_ MESSAGES';

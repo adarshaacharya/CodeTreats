@@ -30,7 +30,6 @@ const RoomDrawer = () => {
 
     React.useEffect(() => {
         socket.on('update:message', (message: IMessages) => {
-            console.log('update:', message);
             setMessages((messages) => [...messages, message]);
         });
     }, []);
