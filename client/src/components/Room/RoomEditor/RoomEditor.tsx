@@ -11,7 +11,7 @@ const RoomEditor: React.FC = () => {
     const { theme } = React.useContext(ThemeContext);
 
     //@ TODO : Prevent unecessary re-rendering - Optimize App
-    React.useEffect(() => {
+    React.useCallback(() => {
         socket.on('update:code', (code: string) => {
             updateRoomCode(code);
         });

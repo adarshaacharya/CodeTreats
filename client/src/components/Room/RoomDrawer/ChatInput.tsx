@@ -13,6 +13,8 @@ interface IMessage {
     text: string;
 }
 
+
+
 const ChatInput: React.FC = () => {
     const { _id, currentUser } = React.useContext(RoomContext);
     const [message, setMessage] = React.useState('');
@@ -28,25 +30,26 @@ const ChatInput: React.FC = () => {
             sender: currentUser,
             text: message,
         };
+
         // send msg to server
         socket.emit('realtime:message', body, () => setMessage(''));
         playPop();
     };
 
-    return (
-        <>
-            <div className={style.chatInput}>
-                <TextArea
-                    rows={3}
-                    placeholder='Type msg here.'
-                    onPressEnter={sendMessage}
-                    value={message}
-                    onChange={onMessageChange}
-                ></TextArea>
-                <p className={style.chatInputPrefix}>Hit enter to send message</p>
-            </div>
-        </>
-    );
+        return (
+            <>
+                <div className={style.chatInput}>
+                    <TextArea
+                        rows={1}
+                        placeholder='Type msg here.'
+                        onPressEnter={sendMessage}
+                        value={message}
+                        onChange={onMessageChange}
+                    ></TextArea>
+                    <p className={style.chatInputPrefix}>Hit enter to send message</p>
+                </div>
+            </>
+        );
 };
 
 export default ChatInput;

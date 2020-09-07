@@ -1,7 +1,6 @@
 import { Button, Card, Form, Input, message } from 'antd';
 import { useSfx } from 'hooks';
 import React from 'react';
-import history from 'utils/history';
 import RoomContext from '_context/room/room.context';
 import styles from './style.module.css';
 
@@ -11,15 +10,9 @@ interface IVal {
 }
 
 const CreateRoomForm = () => {
-    const { createRoom, _id } = React.useContext(RoomContext);
+    const { createRoom } = React.useContext(RoomContext);
 
     const { playIpl } = useSfx();
-
-    React.useEffect(() => {
-        if (_id) {
-            history.push(`/room/${_id}`);
-        }
-    }, [_id]);
 
     const layout = {
         labelCol: { span: 8 },

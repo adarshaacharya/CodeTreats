@@ -15,6 +15,7 @@ import {
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
 import { IOutput, IRoom, State, IMessages } from './room.type';
+import history from 'utils/history';
 
 const RoomState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -38,6 +39,7 @@ const RoomState: React.FC = ({ children }) => {
                     type: CREATE_ROOM,
                     payload: room,
                 });
+                history.push(`/room/${room._id}`)
             });
             setRoomUser(username); // set username in state
         } catch (error) {
@@ -67,6 +69,7 @@ const RoomState: React.FC = ({ children }) => {
                     type: JOIN_ROOM,
                     payload: room,
                 });
+                history.push(`/room/${roomID}`)
             });
         } catch (error) {
             console.log(error);

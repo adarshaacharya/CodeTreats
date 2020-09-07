@@ -6,8 +6,6 @@ import { v4 as uuidv4 } from 'uuid';
 import RoomContext from '_context/room/room.context';
 import style from './style.module.css';
 
-
-
 const Messages = () => {
     const { roomMessages } = React.useContext(RoomContext);
 
