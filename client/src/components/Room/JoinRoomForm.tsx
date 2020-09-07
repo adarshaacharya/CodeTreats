@@ -46,7 +46,10 @@ const JoinRoomForm = () => {
                     <Form.Item
                         name='username'
                         label='Username'
-                        rules={[{ required: true, message: "Username can't be empty" }]}
+                        rules={[
+                            { required: true, message: "Username can't be empty" },
+                            { max: 8, message: 'Username must be maximum 8 characters.' },
+                        ]}
                         className='py'
                     >
                         <Input placeholder='Enter your short name...' />

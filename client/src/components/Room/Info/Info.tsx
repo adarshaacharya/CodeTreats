@@ -1,4 +1,5 @@
-import { Alert, Button, Card, message, Space, Row } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
+import { Alert, Avatar, Card, message, Row, Space, Col, Divider } from 'antd';
 import { useSfx } from 'hooks';
 import React from 'react';
 import CopyToClipBoard from 'react-copy-to-clipboard';
@@ -26,9 +27,12 @@ const Info = () => {
         <>
             <Card className={style.info}>
                 <Row>
-                    <h3 className={style.roomTitle}> {roomName} </h3>
-                    {currentUser}
+                    <h4 className={style.welcome}>
+                        Hi {currentUser} ! <br />
+                        You're welcome to {roomName}{' '}
+                    </h4>
                 </Row>
+
                 <p>Copy & send the room ID below and ask your friends to join the room.</p>
 
                 <Row>
