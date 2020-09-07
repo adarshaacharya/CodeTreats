@@ -78,7 +78,8 @@ const socketio = (server: any) => {
         socket.on('realtime:code', body => {
             try {
                 const { value, roomID } = body;
-                io.to(roomID).emit('update:code', value);
+
+                    socket.broadcast.to(roomID).emit('update:code', value);
             } catch (error) {
                 console.log(error);
             }

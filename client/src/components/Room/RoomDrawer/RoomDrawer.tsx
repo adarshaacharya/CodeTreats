@@ -7,7 +7,6 @@ import ActiveUsers from './ActiveUsers';
 import ChatInput from './ChatInput';
 import Messages from './Messages';
 
-
 interface IMessages {
     text: string;
     sender: string;
@@ -20,14 +19,14 @@ const RoomDrawer = () => {
 
     React.useEffect(() => {
         // receive msg from server
-        console.log("rendering chat comp")
+        console.log('rendering chat comp');
         socket.on('update:message', (message: IMessages) => {
             updateMessages(message);
         });
 
         return () => {
             socket.removeAllListeners();
-          };
+        };
         //eslint-disable-next-line
     }, []);
 

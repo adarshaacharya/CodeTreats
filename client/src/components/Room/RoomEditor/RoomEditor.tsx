@@ -6,17 +6,24 @@ import React from 'react';
 import RoomContext from '_context/room/room.context';
 import ThemeContext from '_context/theme/theme.context';
 
-const RoomEditor: React.FC = () => {
+const RoomEditor: React.FC = React.memo(() => {
     const { _id, roomCode, updateRoomCode, roomLanguage } = React.useContext(RoomContext);
     const { theme } = React.useContext(ThemeContext);
 
+    // const [roomCode, setRoomCode]  = React.useState("")
+    // const updateRoomCode = (code : string) => {
+    //     setRoomCode(code)
+    // }
+
     //@ TODO : Prevent unecessary re-rendering - Optimize App
-    React.useCallback(() => {
+    React.useEffect(() => {
         socket.on('update:code', (code: string) => {
+            console.log(code);
             updateRoomCode(code);
         });
-
-        //eslint-disable-next-line
+        return () => {
+            socket.removeAllListeners();
+        };
     }, []);
 
     const handleEditorChange = (ev?: object, value?: string) => {
@@ -28,19 +35,21 @@ const RoomEditor: React.FC = () => {
         socket.emit('realtime:code', body);
     };
 
-    return (
-        <>
-            <ControlledEditor
-                height='100%'
-                theme={theme}
-                language={roomLanguage}
-                value={roomCode}
-                options={editorOptions}
-                loading={<Spinner />}
-                onChange={handleEditorChange}
-            />
-        </>
-    );
-};
+    return React.useMemo(() => {
+        return (
+            <>
+                <ControlledEditor
+                    height='100%'
+                    theme={theme}
+                    language={roomLanguage}
+                    value={roomCode}
+                    options={editorOptions}
+                    loading={<Spinner />}
+                    onChange={handleEditorChange}
+                />
+            </>
+        );
+    }, [roomCode]);
+});
 
 export default RoomEditor;

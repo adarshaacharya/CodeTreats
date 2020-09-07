@@ -39,7 +39,7 @@ const RoomState: React.FC = ({ children }) => {
                     type: CREATE_ROOM,
                     payload: room,
                 });
-                history.push(`/room/${room._id}`)
+                history.push(`/room/${room._id}`);
             });
             setRoomUser(username); // set username in state
         } catch (error) {
@@ -69,7 +69,7 @@ const RoomState: React.FC = ({ children }) => {
                     type: JOIN_ROOM,
                     payload: room,
                 });
-                history.push(`/room/${roomID}`)
+                history.push(`/room/${roomID}`);
             });
         } catch (error) {
             console.log(error);
@@ -78,6 +78,7 @@ const RoomState: React.FC = ({ children }) => {
 
     // update room code
     const updateRoomCode = (code: string) => {
+        console.log("update room code")
         dispatch({
             type: UPDATE_ROOM_CODE,
             payload: code,
