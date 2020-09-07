@@ -1,7 +1,6 @@
 import { SendOutlined } from '@ant-design/icons';
-import { Button, Drawer, Badge } from 'antd';
+import { Badge, Button, Drawer } from 'antd';
 import socket from 'config/socket/socket';
-import { useSfx } from 'hooks';
 import React from 'react';
 import RoomContext from '_context/room/room.context';
 import ActiveUsers from './ActiveUsers';
@@ -14,39 +13,17 @@ interface IMessages {
     notification?: boolean;
 }
 
-interface IMessage {
-    sender: string;
-    roomID: string;
-    text: string;
-}
-
 const RoomDrawer = () => {
-    const { _id, currentUser } = React.useContext(RoomContext);
+    const {roomMessages ,updateMessages} = React.useContext(RoomContext);
     const [visible, setVisible] = React.useState(false);
-    const [messages, setMessages] = React.useState<IMessages[]>([]);
-    const [message, setMessage] = React.useState('');
 
-    const { playGoogle, playPop } = useSfx();
 
     React.useEffect(() => {
+        // receive msg from server
         socket.on('update:message', (message: IMessages) => {
-            setMessages((messages) => [...messages, message]);
+            updateMessages(message);
         });
     }, []);
-
-    const onMessageChange = (event: React.FormEvent<HTMLTextAreaElement>): void => {
-        setMessage(event.currentTarget.value);
-    };
-
-    const sendMessage = () => {
-        const body: IMessage = {
-            roomID: _id,
-            sender: currentUser,
-            text: message,
-        };
-        socket.emit('realtime:message', body, () => setMessage(''));
-        playPop();
-    };
 
     const showDrawer = () => {
         setVisible(true);
@@ -57,7 +34,7 @@ const RoomDrawer = () => {
 
     return (
         <>
-            <Badge count={messages.length} className='my-2' overflowCount={10}>
+            <Badge count={roomMessages.length} className='my-2' overflowCount={10}>
                 <Button type='primary' shape='round' onClick={showDrawer} icon={<SendOutlined />}>
                     Show Chatbox
                 </Button>
@@ -65,8 +42,8 @@ const RoomDrawer = () => {
 
             <Drawer placement='right' closable={false} onClose={onClose} visible={visible} width={300}>
                 <ActiveUsers />
-                <Messages messages={messages} />
-                <ChatInput sendMessage={sendMessage} message={message} onMessageChange={onMessageChange} />
+                <Messages  />
+                <ChatInput />
             </Drawer>
         </>
     );

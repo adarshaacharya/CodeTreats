@@ -10,9 +10,6 @@ import RoomLang from './RoomLang';
 import RoomDrawer from './RoomDrawer';
 
 const Editor = () => {
-
-
-    
     return (
         <>
             <Row className='mx-1'>

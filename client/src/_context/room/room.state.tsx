@@ -105,15 +105,14 @@ const RoomState: React.FC = ({ children }) => {
         });
     };
 
-
     //  update messsages
-    const updateMessages = (message : IMessages) => {
+    const updateMessages = (message: IMessages) => {
+        console.log("message from reducer", message)
         dispatch({
             type: UPDATE_ROOM_MESSAGES,
             payload: message,
         });
-    }
-
+    };
 
     // set user in state
     const setRoomUser = (username: string) => {
@@ -143,7 +142,7 @@ const RoomState: React.FC = ({ children }) => {
                 roomInput: state.roomInput,
                 roomOutput: state.roomOutput,
                 roomLoaded: state.roomLoaded,
-                roomMessages : state.roomMessages,
+                roomMessages: state.roomMessages,
                 loading: state.loading,
                 createRoom,
                 joinRoom,

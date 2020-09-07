@@ -24,7 +24,7 @@ export const initialState: State = {
         stderr: null,
         stdout: null,
     },
-    roomMessages : [],
+    roomMessages: [],
     roomLoaded: null, // checks if room is loaded or not for route handling
     loading: false,
 
@@ -35,7 +35,7 @@ export const initialState: State = {
     updateRoomInput: () => null,
     updateRoomLanguage: () => null,
     updateRoomOutput: () => null,
-    updateMessages : () => null,
+    updateMessages: () => null,
     setRoomUser: () => null,
     setLoading: () => null,
 };
@@ -86,8 +86,8 @@ export default function roomReducer(state: State = initialState, action: Action)
         case UPDATE_ROOM_MESSAGES:
             return {
                 ...state,
-                roomMessages : payload
-            }
+                roomMessages: [...state.roomMessages, payload],
+            };
 
         case SET_CURRENT_USER:
             return {
