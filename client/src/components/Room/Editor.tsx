@@ -1,13 +1,13 @@
-import { Col, Row, Divider } from 'antd';
+import { Col, Row } from 'antd';
 import ThemeSelector from 'components/ThemeSelector';
 import React from 'react';
 import CodeExec from './CodeExec';
 import Info from './Info';
 import Output from './Output';
+import RoomDrawer from './RoomDrawer';
 import RoomEditor from './RoomEditor';
 import RoomInput from './RoomInput';
 import RoomLang from './RoomLang';
-import RoomDrawer from './RoomDrawer';
 
 const Editor = () => {
     return (

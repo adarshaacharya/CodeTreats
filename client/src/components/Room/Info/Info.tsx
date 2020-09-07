@@ -1,5 +1,4 @@
-import { UserOutlined } from '@ant-design/icons';
-import { Alert, Avatar, Card, message, Row, Space, Col, Divider } from 'antd';
+import { Alert, Card, message, Row } from 'antd';
 import { useSfx } from 'hooks';
 import React from 'react';
 import CopyToClipBoard from 'react-copy-to-clipboard';

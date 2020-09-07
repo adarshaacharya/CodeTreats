@@ -14,15 +14,16 @@ interface IMessages {
 }
 
 const RoomDrawer = () => {
-    const { roomMessages, updateMessages, _id } = React.useContext(RoomContext);
+    const { roomMessages, updateMessages } = React.useContext(RoomContext);
     const [visible, setVisible] = React.useState(false);
 
     React.useEffect(() => {
         // receive msg from server
         socket.on('update:message', (message: IMessages) => {
-            console.log('update:message from drawer', message);
             updateMessages(message);
         });
+
+        //eslint-disable-next-line
     }, []);
 
     const showDrawer = () => {
@@ -32,23 +33,21 @@ const RoomDrawer = () => {
         setVisible(false);
     };
 
-        return (
-            <>
-                <Badge count={roomMessages.length} className='my-2' overflowCount={10}>
-                    <Button type='primary' shape='round' onClick={showDrawer} icon={<SendOutlined />}>
-                        Show Chatbox
-                    </Button>
-                </Badge>
+    return (
+        <>
+            <Badge count={roomMessages.length} className='my-2' overflowCount={10}>
+                <Button type='primary' shape='round' onClick={showDrawer} icon={<SendOutlined />}>
+                    Show Chatbox
+                </Button>
+            </Badge>
 
-                <Drawer placement='right' closable={false} onClose={onClose} visible={visible} width={300}>
-                    <ActiveUsers />
-                    <Messages />
-                    <ChatInput />
-                </Drawer>
-            </>
-        );
-   
-      
+            <Drawer placement='right' closable={false} onClose={onClose} visible={visible} width={300}>
+                <ActiveUsers />
+                <Messages />
+                <ChatInput />
+            </Drawer>
+        </>
+    );
 };
 
 export default RoomDrawer;

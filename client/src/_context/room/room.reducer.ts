@@ -1,16 +1,21 @@
+import getTemplate from 'config/editor/examples';
 import {
     CREATE_ROOM,
     JOIN_ROOM,
-    SET_LOADING,
+
+
+
+
+
+    SET_CURRENT_USER, SET_LOADING,
     UPDATE_ROOM_CODE,
     UPDATE_ROOM_INPUT,
     UPDATE_ROOM_LANGUAGE,
-    UPDATE_ROOM_OUTPUT,
-    SET_CURRENT_USER,
-    UPDATE_ROOM_MESSAGES,
+
+
+    UPDATE_ROOM_MESSAGES, UPDATE_ROOM_OUTPUT
 } from '_context/types';
 import { Action, State } from './room.type';
-import getTemplate from 'config/editor/examples';
 
 export const initialState: State = {
     _id: '',
@@ -82,7 +87,6 @@ export default function roomReducer(state: State = initialState, action: Action)
             };
 
         case UPDATE_ROOM_MESSAGES:
-            console.log('message from reducer', payload);
             return {
                 ...state,
                 roomMessages: [...state.roomMessages, payload],

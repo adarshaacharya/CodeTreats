@@ -19,7 +19,7 @@ const ThemeSelector = () => {
 
     return (
         <>
-            <Divider orientation='center' plain>
+            <Divider orientation='left' plain>
                 {' '}
                 Select theme &nbsp;
                 <Tooltip title='Effect will be seen only in your room.'>
