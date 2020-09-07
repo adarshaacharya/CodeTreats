@@ -1,8 +1,10 @@
-import { Divider, Select } from 'antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
+import { Divider, Select, Tooltip } from 'antd';
 import { defaultThemes, monacoThemes } from 'config/editor/themes';
 import React from 'react';
 import { defineTheme } from 'utils/define-theme';
 import ThemeContext from '_context/theme/theme.context';
+
 
 const { Option } = Select;
 const ThemeSelector = () => {
@@ -18,9 +20,12 @@ const ThemeSelector = () => {
 
     return (
         <>
-            <Divider orientation='left' plain>
+            <Divider orientation='center' plain>
                 {' '}
-                Select theme{' '}
+                Select theme &nbsp;
+                <Tooltip title="Effect will be seen only in your room.">
+                    <ExclamationCircleOutlined />
+                </Tooltip>
             </Divider>
             <Select
                 showSearch

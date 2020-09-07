@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd';
+import { Col, Row, Divider } from 'antd';
 import ThemeSelector from 'components/ThemeSelector';
 import React from 'react';
 import CodeExec from './CodeExec';
@@ -20,10 +20,10 @@ const Editor = () => {
                     <Info />
                     <RoomDrawer />
                     <Row>
-                        <Col span='8' className='mx-1'>
+                        <Col span={8}>
                             <RoomLang />
                         </Col>
-                        <Col span='8' className='mx-1'>
+                        <Col span={8} offset={4}>
                             <ThemeSelector />
                         </Col>
                     </Row>

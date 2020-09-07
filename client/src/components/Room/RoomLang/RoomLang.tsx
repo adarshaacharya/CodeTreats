@@ -26,7 +26,7 @@ const RoomLang = () => {
 
     return (
         <>
-            <Divider orientation='left' plain>
+            <Divider orientation='center' plain>
                 {' '}
                 Select language{' '}
             </Divider>
