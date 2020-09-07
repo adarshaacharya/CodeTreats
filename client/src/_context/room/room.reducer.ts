@@ -47,7 +47,6 @@ export default function roomReducer(state: State = initialState, action: Action)
     switch (type) {
         case CREATE_ROOM:
         case JOIN_ROOM:
-            console.log(payload, 'reudcer');
             return {
                 ...state,
                 _id: payload._id,
@@ -63,7 +62,6 @@ export default function roomReducer(state: State = initialState, action: Action)
             };
 
         case UPDATE_ROOM_LANGUAGE:
-            console.log('update room lang');
             return {
                 ...state,
                 roomLanguage: payload,
@@ -84,6 +82,7 @@ export default function roomReducer(state: State = initialState, action: Action)
             };
 
         case UPDATE_ROOM_MESSAGES:
+            console.log('message from reducer', payload);
             return {
                 ...state,
                 roomMessages: [...state.roomMessages, payload],

@@ -36,6 +36,7 @@ const socketio = (server: any) => {
 
                 io.to(roomID).emit('update:message', {
                     text: `${username} created chat.`,
+                    sender: username,
                     notification: true,
                 }); // tell everyone in room that you created chat
             } catch (error) {
@@ -65,7 +66,9 @@ const socketio = (server: any) => {
                 io.to(roomID).emit('update:room', room);
 
                 socket.emit('update:message', { text: `Welcome ${username}.`, notification: true });
-                socket.to(roomID).emit('update:message', { text: `${username} joined chat.`, notification: true }); // tell everyone in room that you joined chat
+                socket
+                    .to(roomID)
+                    .emit('update:message', { text: `${username} joined chat.`, notification: true, sender: username }); // tell everyone in room that you joined chat
             } catch (error) {
                 console.log(error, 'Error in joining room');
             }

@@ -12,10 +12,13 @@ interface IMessage {
     roomID: string;
     text: string;
 }
+
+
 const ChatInput: React.FC = () => {
     const { _id, currentUser } = React.useContext(RoomContext);
     const [message, setMessage] = React.useState('');
     const { playPop } = useSfx();
+
 
     const onMessageChange = (event: React.FormEvent<HTMLTextAreaElement>): void => {
         setMessage(event.currentTarget.value);
@@ -31,7 +34,6 @@ const ChatInput: React.FC = () => {
         socket.emit('realtime:message', body, () => setMessage(''));
         playPop();
     };
-
 
     return (
         <>

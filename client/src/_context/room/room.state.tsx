@@ -107,7 +107,7 @@ const RoomState: React.FC = ({ children }) => {
 
     //  update messsages
     const updateMessages = (message: IMessages) => {
-        console.log("message from reducer", message)
+        console.log('updatemessage from state', message);
         dispatch({
             type: UPDATE_ROOM_MESSAGES,
             payload: message,
@@ -116,7 +116,6 @@ const RoomState: React.FC = ({ children }) => {
 
     // set user in state
     const setRoomUser = (username: string) => {
-        console.log(username);
         dispatch({
             type: SET_CURRENT_USER,
             payload: username,
