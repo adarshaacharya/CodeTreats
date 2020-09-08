@@ -14,16 +14,19 @@
 </p>
 
 <p align="center">
-Interactive platform for running, saving and sharing code snippets.
+In-browser IDE for running, collaborating, saving and sharing code snippets. 
 </p>
 
 ## ⭐ Features
 
--   Code Editor with VS Code like interactive environment with features like auto-completion, code-formatting
+-   In-browser IDE with VS Code like text editor having features like auto-completion, code-formatting
 -   Supports three languages
--   15+ Themes Support
--   Save snippets pubicilty with shareable link
+-   15+ Themes Support 🤯 
+-   Save snippets publicly with shareable link
 -   Search snippets with title
+-   Realtime Collaboration *(unlimited users)* 🔥
+-   Realtime Chat 💥
+
 
 ## 📺 Prerequisites
 
