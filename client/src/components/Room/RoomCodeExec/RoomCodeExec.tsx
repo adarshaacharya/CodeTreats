@@ -5,7 +5,7 @@ import React from 'react';
 import RoomContext from '_context/room/room.context';
 import { IOutput } from '_context/room/room.type';
 
-const CodeExec = () => {
+const RoomCodeExec = () => {
     const { _id, roomCode, loading, roomLanguage, roomInput, updateRoomOutput, setLoading } = React.useContext(
         RoomContext
     );
@@ -48,4 +48,4 @@ const CodeExec = () => {
     );
 };
 
-export default CodeExec;
+export default RoomCodeExec;

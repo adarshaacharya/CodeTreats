@@ -1,11 +1,9 @@
 import { SendOutlined } from '@ant-design/icons';
-import { Badge, Button, Drawer } from 'antd';
+import { Badge, Button } from 'antd';
 import socket from 'config/socket/socket';
 import React from 'react';
 import RoomContext from '_context/room/room.context';
-import ActiveUsers from './ActiveUsers';
-import ChatInput from './ChatInput';
-import Messages from './Messages';
+import ChatDrawer from './ChatDrawer';
 
 interface IMessages {
     text: string;
@@ -13,7 +11,7 @@ interface IMessages {
     notification?: boolean;
 }
 
-const RoomDrawer = () => {
+const Chatbox = () => {
     const { roomMessages, updateMessages } = React.useContext(RoomContext);
     const [visible, setVisible] = React.useState(false);
 
@@ -45,13 +43,9 @@ const RoomDrawer = () => {
                 </Button>
             </Badge>
 
-            <Drawer placement='right' closable={false} onClose={onClose} visible={visible} width={300}>
-                <ActiveUsers />
-                <Messages />
-                <ChatInput />
-            </Drawer>
+            <ChatDrawer onClose={onClose} visible={visible} />
         </>
     );
 };
 
-export default RoomDrawer;
+export default Chatbox;

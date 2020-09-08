@@ -1,10 +1,10 @@
 import { Col, Row } from 'antd';
 import ThemeSelector from 'components/ThemeSelector';
 import React from 'react';
-import CodeExec from 'components/Room/CodeExec';
+import CodeExec from 'components/Room/RoomCodeExec';
 import Info from 'components/Room/Info';
 import Output from 'components/Room/Output';
-import RoomDrawer from 'components/Room/RoomDrawer';
+import RoomDrawer from 'components/Room/Chatbox';
 import RoomEditor from 'components/Room/RoomEditor';
 import RoomInput from 'components/Room/RoomInput';
 import RoomLang from 'components/Room/RoomLang';

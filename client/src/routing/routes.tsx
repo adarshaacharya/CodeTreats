@@ -1,10 +1,10 @@
+import JoinRoomPage from 'pages/CollabPage/CollabPage';
 import HomePage from 'pages/HomePage/HomePage';
+import RoomPage from 'pages/RoomPage/RoomPage';
 import SnippetPage from 'pages/SnippetPage/SnippetPage';
 import SnippetsPage from 'pages/SnippetsPage/SnippetsPage';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import JoinRoomPage from 'pages/CollabPage/CollabPage';
-import RoomPage from 'pages/RoomPage/RoomPage';
 import RoomRoute from './RoomRoute';
 
 export const useRoutes = () => {

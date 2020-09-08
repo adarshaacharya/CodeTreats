@@ -27,8 +27,8 @@ const Info = () => {
             <Card className={style.info}>
                 <Row>
                     <h4 className={style.welcome}>
-                        Hi {currentUser} !{' '} 👋 <br />
-                        You're welcome to {roomName}{' '}🔥
+                        Hi {currentUser} ! 👋 <br />
+                        You're welcome to {roomName} 🔥
                     </h4>
                 </Row>
 

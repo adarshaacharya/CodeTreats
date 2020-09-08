@@ -1,7 +1,7 @@
 import { Card, Tabs } from 'antd';
 import React from 'react';
-import CreateRoom from 'components/Room/CreateRoom';
-import JoinRoom from 'components/Room/JoinRoom';
+import CreateRoom from 'components/CreateRoom';
+import JoinRoom from 'components/JoinRoom';
 import styles from './style.module.css';
 const { TabPane } = Tabs;
 
