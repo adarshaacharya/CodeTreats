@@ -7,9 +7,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useRoutes } from 'routing/routes';
 import history from 'utils/history';
 import CodeState from '_context/code/code.state';
-import ThemeState from '_context/theme/theme.state';
-import SnippetState from '_context/snippet/snippet.state';
 import RoomState from '_context/room/room.state';
+import SnippetState from '_context/snippet/snippet.state';
+import ThemeState from '_context/theme/theme.state';
 
 const App: React.FC = () => {
     const routes = useRoutes();
@@ -17,8 +17,8 @@ const App: React.FC = () => {
         <>
             <CodeState>
                 <SnippetState>
-                    <ThemeState>
-                        <RoomState>
+                    <RoomState>
+                        <ThemeState>
                             <Router history={history}>
                                 <>
                                     <ToastContainer newestOnTop />
@@ -26,8 +26,8 @@ const App: React.FC = () => {
                                     {routes}
                                 </>
                             </Router>
-                        </RoomState>
-                    </ThemeState>
+                        </ThemeState>
+                    </RoomState>
                 </SnippetState>
             </CodeState>
         </>
