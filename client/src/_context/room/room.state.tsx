@@ -137,9 +137,9 @@ const RoomState: React.FC = ({ children }) => {
     //leave room
     const leaveRoom = () => {
         dispatch({
-            type : LEAVE_ROOM
-        })
-    }
+            type: LEAVE_ROOM,
+        });
+    };
 
     return (
         <RoomContext.Provider
@@ -164,7 +164,7 @@ const RoomState: React.FC = ({ children }) => {
                 updateMessages,
                 setLoading,
                 setRoomUser,
-                leaveRoom
+                leaveRoom,
             }}
         >
             {children}

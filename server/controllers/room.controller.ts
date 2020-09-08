@@ -169,7 +169,7 @@ const socketio = (server: any) => {
         socket.on('leave:room', body => {
             const { username, roomID } = body;
 
-            socket.emit('update:message', { text: `${username} has left room.`, notification: true });
+            io.to(roomID).emit('update:message', { text: `${username} has left room.`, notification: true });
             socket.leave(roomID);
         });
 

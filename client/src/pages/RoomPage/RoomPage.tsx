@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd';
+import { Col, Row, Space } from 'antd';
 import Chatbox from 'components/Room/Chatbox';
 import LeaveRoom from 'components/Room/LeaveRoom';
 import RoomCodeExec from 'components/Room/RoomCodeExec';
@@ -19,8 +19,14 @@ const RoomPage = () => {
                 </Col>
                 <Col span={10} className='p-1'>
                     <RoomInfo />
-                    <Chatbox />
-                    <LeaveRoom />
+
+                    <Row>
+                        <Space size='large'>
+                            <Chatbox />
+                            <LeaveRoom />
+                        </Space>
+                    </Row>
+
                     <Row>
                         <Col span={8}>
                             <RoomLang />

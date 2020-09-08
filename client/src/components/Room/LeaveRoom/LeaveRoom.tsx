@@ -1,7 +1,8 @@
-import React from 'react';
-import { Button } from 'antd';
-import RoomContext from '_context/room/room.context';
+import { PoweroffOutlined } from '@ant-design/icons';
+import { Button, message, Popconfirm } from 'antd';
 import socket from 'config/socket/socket';
+import React from 'react';
+import RoomContext from '_context/room/room.context';
 
 const LeaveRoom = () => {
     const { _id, currentUser, leaveRoom } = React.useContext(RoomContext);
@@ -15,9 +16,22 @@ const LeaveRoom = () => {
         leaveRoom();
     };
 
+    const confirm = () => leaveCurrentRoom();
+    const cancel = () => message.error('You are safe 😇');
+      
     return (
         <>
-            <Button onClick={leaveCurrentRoom}>Leave Room</Button>
+            <Popconfirm
+                title='Are you sure to leave this room?'
+                onConfirm={confirm}
+                onCancel={cancel}
+                okText='Yes'
+                cancelText='No'
+            >
+                <Button type='primary' danger shape='round' icon={<PoweroffOutlined />}>
+                    Leave Room
+                </Button>
+            </Popconfirm>
         </>
     );
 };
