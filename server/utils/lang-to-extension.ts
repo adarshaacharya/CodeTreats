@@ -16,6 +16,10 @@ export default function getExtension(language: string) {
         case 'cpp':
             extension = 'cpp';
             break;
+
+        case 'c':
+            extension = 'c';
+            break;
     }
 
     return extension;

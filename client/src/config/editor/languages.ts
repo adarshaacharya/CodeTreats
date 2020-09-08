@@ -12,6 +12,10 @@ const languageOptions = [
         value: 'typescript',
     },
     {
+        label: 'C',
+        value: 'c',
+    },
+    {
         label: 'C++',
         value: 'cpp',
     },
