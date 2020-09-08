@@ -7,7 +7,6 @@ import RoomContext from '_context/room/room.context';
 const LeaveRoom = () => {
     const { _id, currentUser, leaveRoom } = React.useContext(RoomContext);
 
-
     const leaveCurrentRoom = () => {
         const body = {
             roomID: _id,
@@ -16,7 +15,6 @@ const LeaveRoom = () => {
         socket.emit('leave:room', body);
         leaveRoom();
     };
-
 
     const confirm = () => leaveCurrentRoom();
     const cancel = () => message.error('You are safe 😇');

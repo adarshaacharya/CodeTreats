@@ -22,18 +22,13 @@ const Chatbox = () => {
             updateMessages(message);
         });
 
-        socket.on('update:active-users', (users: IUser) => [
-            console.log("users from client", users)
-        ])
-
+        socket.on('update:active-users', (users: IUser) => [console.log('users from client', users)]);
 
         return () => {
             socket.removeAllListeners();
         };
         //eslint-disable-next-line
     }, []);
-
-
 
     const showDrawer = () => {
         setVisible(true);

@@ -171,15 +171,12 @@ const socketio = (server: any) => {
             const { username, roomID } = body;
             const socketID = socket.id.toString();
 
-           await Room.updateOne({}, { $pull: { activeUsers: { socketID: socketID } } });
+            await Room.updateOne({}, { $pull: { activeUsers: { socketID: socketID } } });
 
             io.to(roomID).emit('update:message', { text: `${username} has left room.`, notification: true });
 
             socket.leave(roomID);
         });
-
-
-     
 
         socket.on('disconnect', () => {
             console.log('❌ Disconnected from room.');

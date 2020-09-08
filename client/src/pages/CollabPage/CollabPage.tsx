@@ -13,6 +13,8 @@ const CollabPage = () => {
     // if already room created join that room
     React.useEffect(() => {
         if (roomLoaded) history.push(`/room/${_id}`);
+
+        //eslint-disable-next-line
     }, []);
 
     return (

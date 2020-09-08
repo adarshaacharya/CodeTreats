@@ -25,4 +25,4 @@ export const UPDATE_ROOM_OUTPUT: string = 'UPDATE_ROOM_OUTPUT';
 export const SET_CURRENT_USER: string = 'SET_CURRENT_USER';
 export const UPDATE_ROOM_MESSAGES: string = 'UPDATE_ROOM_ MESSAGES';
 export const LEAVE_ROOM: string = 'LEAVE_ROOM';
-export const UPDATE_ROOM_USERS : string = 'UPDATE_ROOM_USERS'
+export const UPDATE_ROOM_USERS: string = 'UPDATE_ROOM_USERS';
