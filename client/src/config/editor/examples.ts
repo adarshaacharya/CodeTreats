@@ -30,6 +30,10 @@ export default function getTemplate(lang: string) {
         case 'java':
             template = `public class main {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println("Hello World!");\n\t}\n} `;
             break;
+
+        case 'csharp':
+            template=`using System;\nclass MainClass {\n\tstatic void Main(){\n\t\tConsole.WriteLine("Hello World!");\n\t}\n}`
+            break;
     }
     return template;
 }

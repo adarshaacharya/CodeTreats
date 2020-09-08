@@ -27,6 +27,10 @@ const languageOptions = [
         label: 'Java',
         value: 'java',
     },
+    {
+        label: 'C#',
+        value: 'csharp',
+    },
 ];
 
 export default languageOptions;

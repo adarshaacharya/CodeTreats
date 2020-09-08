@@ -28,6 +28,10 @@ export default function getExtension(language: string) {
         case 'java':
             extension = 'java';
             break;
+
+        case 'csharp':
+            extension = 'cs';
+            break;
     }
 
     return extension;
