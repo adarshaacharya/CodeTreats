@@ -26,6 +26,10 @@ export default function getTemplate(lang: string) {
         case 'go':
             template = `package main\n\nimport (\n\t"fmt"\n)\n\nfunc main() {\n\tfmt.Println("Hello World in Go!")\n} `;
             break;
+
+        case 'java':
+            template = `public class main {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println("Hello World!");\n\t}\n} `;
+            break;
     }
     return template;
 }

@@ -23,6 +23,10 @@ const languageOptions = [
         label: 'Go',
         value: 'go',
     },
+    {
+        label: 'Java',
+        value: 'java',
+    },
 ];
 
 export default languageOptions;

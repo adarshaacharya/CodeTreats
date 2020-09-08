@@ -24,6 +24,10 @@ export default function getExtension(language: string) {
         case 'go':
             extension = 'go';
             break;
+
+        case 'java':
+            extension = 'java';
+            break;
     }
 
     return extension;
