@@ -4,7 +4,7 @@ import RoomContext from '_context/room/room.context';
 import socket from 'config/socket/socket';
 
 const LeaveRoom = () => {
-    const { _id, currentUser } = React.useContext(RoomContext);
+    const { _id, currentUser, leaveRoom } = React.useContext(RoomContext);
 
     const leaveCurrentRoom = () => {
         const body = {
@@ -12,6 +12,7 @@ const LeaveRoom = () => {
             username: currentUser,
         };
         socket.emit('leave:room', body);
+        leaveRoom();
     };
 
     return (

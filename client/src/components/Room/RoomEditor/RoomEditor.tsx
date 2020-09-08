@@ -10,7 +10,6 @@ const RoomEditor: React.FC = React.memo(() => {
     const { _id, roomCode, updateRoomCode, roomLanguage } = React.useContext(RoomContext);
     const { theme } = React.useContext(ThemeContext);
 
-
     React.useEffect(() => {
         socket.on('update:code', (code: string) => {
             console.log(code);

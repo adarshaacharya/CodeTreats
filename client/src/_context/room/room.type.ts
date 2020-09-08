@@ -49,6 +49,7 @@ export interface State {
     updateMessages: (message: IMessages) => void;
     setRoomUser: (username: string) => void;
     setLoading: (roomID: string) => void;
+    leaveRoom: () => void;
 }
 
 export interface Action {

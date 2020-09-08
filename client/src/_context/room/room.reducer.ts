@@ -9,6 +9,7 @@ import {
     UPDATE_ROOM_LANGUAGE,
     UPDATE_ROOM_MESSAGES,
     UPDATE_ROOM_OUTPUT,
+    LEAVE_ROOM,
 } from '_context/types';
 import { Action, State } from './room.type';
 
@@ -38,6 +39,7 @@ export const initialState: State = {
     updateMessages: () => null,
     setRoomUser: () => null,
     setLoading: () => null,
+    leaveRoom: () => null,
 };
 
 //reducer
@@ -97,6 +99,25 @@ export default function roomReducer(state: State = initialState, action: Action)
             return {
                 ...state,
                 loading: true,
+            };
+
+        case LEAVE_ROOM:
+            return {
+                ...state,
+                _id: '',
+                roomName: '',
+                currentUser: '',
+                activeUsers: [],
+                roomCode: '',
+                roomInput: '',
+                roomLanguage: 'javascript',
+                roomOutput: {
+                    stderr: null,
+                    stdout: null,
+                },
+                roomMessages: [],
+                roomLoaded: null,
+                loading: false,
             };
 
         default:

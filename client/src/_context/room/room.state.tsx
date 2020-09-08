@@ -11,6 +11,7 @@ import {
     UPDATE_ROOM_LANGUAGE,
     SET_CURRENT_USER,
     UPDATE_ROOM_MESSAGES,
+    LEAVE_ROOM,
 } from '_context/types';
 import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
@@ -133,6 +134,13 @@ const RoomState: React.FC = ({ children }) => {
         });
     };
 
+    //leave room
+    const leaveRoom = () => {
+        dispatch({
+            type : LEAVE_ROOM
+        })
+    }
+
     return (
         <RoomContext.Provider
             value={{
@@ -156,6 +164,7 @@ const RoomState: React.FC = ({ children }) => {
                 updateMessages,
                 setLoading,
                 setRoomUser,
+                leaveRoom
             }}
         >
             {children}
