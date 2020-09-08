@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconJavascript, IconPython, IconTypescript } from 'components/icons';
+import { IconJavascript, IconPython, IconTypescript, IconCpp } from 'components/icons';
 
 type Props = {
     name: string;
@@ -17,6 +17,9 @@ const FormattedIcon = (props: Props): JSX.Element => {
 
         case 'python':
             return <IconPython />;
+
+        case 'cpp':
+            return <IconCpp />;
 
         default:
             throw new Error('Unknown icon type: ' + name);

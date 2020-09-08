@@ -12,6 +12,10 @@ export default function getExtension(language: string) {
         case 'typescript':
             extension = 'ts';
             break;
+
+        case 'cpp':
+            extension = 'cpp';
+            break;
     }
 
     return extension;
