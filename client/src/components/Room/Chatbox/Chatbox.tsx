@@ -4,6 +4,7 @@ import socket from 'config/socket/socket';
 import React from 'react';
 import RoomContext from '_context/room/room.context';
 import ChatDrawer from './ChatDrawer';
+import { IUser } from '_context/room/room.type';
 
 interface IMessages {
     text: string;
@@ -17,16 +18,22 @@ const Chatbox = () => {
 
     React.useEffect(() => {
         // receive msg from server
-        console.log('rendering chat comp');
         socket.on('update:message', (message: IMessages) => {
             updateMessages(message);
         });
+
+        socket.on('update:active-users', (users: IUser) => [
+            console.log("users from client", users)
+        ])
+
 
         return () => {
             socket.removeAllListeners();
         };
         //eslint-disable-next-line
     }, []);
+
+
 
     const showDrawer = () => {
         setVisible(true);

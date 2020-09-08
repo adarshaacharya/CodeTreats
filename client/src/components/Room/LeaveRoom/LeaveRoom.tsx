@@ -7,6 +7,7 @@ import RoomContext from '_context/room/room.context';
 const LeaveRoom = () => {
     const { _id, currentUser, leaveRoom } = React.useContext(RoomContext);
 
+
     const leaveCurrentRoom = () => {
         const body = {
             roomID: _id,
@@ -16,9 +17,10 @@ const LeaveRoom = () => {
         leaveRoom();
     };
 
+
     const confirm = () => leaveCurrentRoom();
     const cancel = () => message.error('You are safe 😇');
-      
+
     return (
         <>
             <Popconfirm
