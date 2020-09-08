@@ -6,11 +6,9 @@ import CodeContext from '_context/code/code.context';
 import ThemeContext from '_context/theme/theme.context';
 
 const CodeEditor: React.FC = () => {
-    const codeContext = React.useContext(CodeContext);
-    const { code, updateCode, language } = codeContext;
+    const { code, updateCode, language } = React.useContext(CodeContext);
+    const { theme } = React.useContext(ThemeContext);
 
-    const themeContext = React.useContext(ThemeContext);
-    const { theme } = themeContext;
 
     const handleEditorChange = (ev?: object, value?: string) => {
         updateCode(value!);
