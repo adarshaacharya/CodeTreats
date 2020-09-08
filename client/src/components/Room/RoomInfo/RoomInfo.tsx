@@ -5,7 +5,7 @@ import CopyToClipBoard from 'react-copy-to-clipboard';
 import RoomContext from '_context/room/room.context';
 import style from './style.module.css';
 
-const Info = () => {
+const RoomInfo = () => {
     const { roomName, _id, currentUser } = React.useContext(RoomContext);
     const { playClick } = useSfx();
 
@@ -45,4 +45,4 @@ const Info = () => {
     );
 };
 
-export default Info;
+export default RoomInfo;

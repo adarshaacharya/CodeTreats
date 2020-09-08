@@ -1,10 +1,10 @@
 import { Col, Row } from 'antd';
 import ThemeSelector from 'components/ThemeSelector';
 import React from 'react';
-import CodeExec from 'components/Room/RoomCodeExec';
-import Info from 'components/Room/Info';
-import Output from 'components/Room/Output';
-import RoomDrawer from 'components/Room/Chatbox';
+import RoomCodeExec from 'components/Room/RoomCodeExec';
+import RoomInfo from 'components/Room/RoomInfo';
+import RoomOutput from 'components/Room/RoomOutput';
+import Chatbox from 'components/Room/Chatbox';
 import RoomEditor from 'components/Room/RoomEditor';
 import RoomInput from 'components/Room/RoomInput';
 import RoomLang from 'components/Room/RoomLang';
@@ -17,8 +17,8 @@ const RoomPage = () => {
                     <RoomEditor />
                 </Col>
                 <Col span={10} className='p-1'>
-                    <Info />
-                    <RoomDrawer />
+                    <RoomInfo />
+                    <Chatbox />
                     <Row>
                         <Col span={8}>
                             <RoomLang />
@@ -28,8 +28,8 @@ const RoomPage = () => {
                         </Col>
                     </Row>
                     <RoomInput />
-                    <Output />
-                    <CodeExec />
+                    <RoomOutput />
+                    <RoomCodeExec />
                 </Col>
             </Row>
         </>

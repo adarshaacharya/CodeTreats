@@ -4,7 +4,7 @@ import RoomContext from '_context/room/room.context';
 
 const { TextArea } = Input;
 
-const Output = () => {
+const RoomOutput = () => {
     const { loading, roomOutput } = React.useContext(RoomContext);
 
     if (loading) {
@@ -29,4 +29,4 @@ const Output = () => {
     );
 };
 
-export default Output;
+export default RoomOutput;
