@@ -12,7 +12,6 @@ const RoomEditor: React.FC = () => {
 
     React.useEffect(() => {
         socket.on('update:code', (code: string) => {
-            console.log(code);
             updateRoomCode(code);
         });
         return () => {
@@ -31,21 +30,19 @@ const RoomEditor: React.FC = () => {
         socket.emit('realtime:code', body);
     };
 
-    return React.useMemo(() => {
-        return (
-            <>
-                <ControlledEditor
-                    height='100%'
-                    theme={theme}
-                    language={roomLanguage}
-                    value={roomCode}
-                    options={editorOptions}
-                    loading={<Spinner />}
-                    onChange={handleEditorChange}
-                />
-            </>
-        );
-    }, [roomCode]);
-}
+    return (
+        <>
+            <ControlledEditor
+                height='100%'
+                theme={theme}
+                language={roomLanguage}
+                value={roomCode}
+                options={editorOptions}
+                loading={<Spinner />}
+                onChange={handleEditorChange}
+            />
+        </>
+    );
+};
 
 export default RoomEditor;
