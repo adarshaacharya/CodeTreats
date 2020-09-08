@@ -6,7 +6,7 @@ import React from 'react';
 import RoomContext from '_context/room/room.context';
 import ThemeContext from '_context/theme/theme.context';
 
-const RoomEditor: React.FC = React.memo(() => {
+const RoomEditor: React.FC = () => {
     const { _id, roomCode, updateRoomCode, roomLanguage } = React.useContext(RoomContext);
     const { theme } = React.useContext(ThemeContext);
 
@@ -18,6 +18,8 @@ const RoomEditor: React.FC = React.memo(() => {
         return () => {
             socket.removeAllListeners();
         };
+
+        //eslint-disable-next-line
     }, []);
 
     const handleEditorChange = (ev?: object, value?: string) => {
@@ -44,6 +46,6 @@ const RoomEditor: React.FC = React.memo(() => {
             </>
         );
     }, [roomCode]);
-});
+}
 
 export default RoomEditor;

@@ -112,7 +112,6 @@ const RoomState: React.FC = ({ children }) => {
 
     //  update messsages
     const updateMessages = (message: IMessages) => {
-        console.log('updatemessage from state', message);
         dispatch({
             type: UPDATE_ROOM_MESSAGES,
             payload: message,
