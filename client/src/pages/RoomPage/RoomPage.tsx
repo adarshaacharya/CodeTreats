@@ -1,5 +1,6 @@
 import { Col, Row } from 'antd';
 import Chatbox from 'components/Room/Chatbox';
+import LeaveRoom from 'components/Room/LeaveRoom';
 import RoomCodeExec from 'components/Room/RoomCodeExec';
 import RoomEditor from 'components/Room/RoomEditor';
 import RoomInfo from 'components/Room/RoomInfo';
@@ -10,8 +11,6 @@ import ThemeSelector from 'components/ThemeSelector';
 import React from 'react';
 
 const RoomPage = () => {
-    
-
     return (
         <>
             <Row className='mx-1'>
@@ -21,6 +20,7 @@ const RoomPage = () => {
                 <Col span={10} className='p-1'>
                     <RoomInfo />
                     <Chatbox />
+                    <LeaveRoom />
                     <Row>
                         <Col span={8}>
                             <RoomLang />

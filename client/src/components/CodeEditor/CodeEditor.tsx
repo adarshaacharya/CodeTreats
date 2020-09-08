@@ -9,7 +9,6 @@ const CodeEditor: React.FC = () => {
     const { code, updateCode, language } = React.useContext(CodeContext);
     const { theme } = React.useContext(ThemeContext);
 
-
     const handleEditorChange = (ev?: object, value?: string) => {
         updateCode(value!);
     };

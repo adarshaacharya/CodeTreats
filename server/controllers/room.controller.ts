@@ -166,6 +166,13 @@ const socketio = (server: any) => {
             io.to(roomID).emit('update:loading', null);
         });
 
+        socket.on('leave:room', body => {
+            const { username, roomID } = body;
+
+            socket.emit('update:message', { text: `${username} has left room.`, notification: true });
+            socket.leave(roomID);
+        });
+
         socket.on('disconnect', () => {
             console.log('❌ Disconnected from room.');
         });
