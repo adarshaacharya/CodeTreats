@@ -78,7 +78,7 @@ const RoomState: React.FC = ({ children }) => {
 
     // update room code
     const updateRoomCode = (code: string) => {
-        console.log("update room code")
+        console.log('update room code');
         dispatch({
             type: UPDATE_ROOM_CODE,
             payload: code,

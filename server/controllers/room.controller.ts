@@ -79,7 +79,7 @@ const socketio = (server: any) => {
             try {
                 const { value, roomID } = body;
 
-                    socket.broadcast.to(roomID).emit('update:code', value);
+                socket.broadcast.to(roomID).emit('update:code', value);
             } catch (error) {
                 console.log(error);
             }
@@ -89,8 +89,7 @@ const socketio = (server: any) => {
         socket.on('realtime:lang', body => {
             try {
                 const { value, roomID } = body;
-                console.log(body);
-                io.to(roomID).emit('update:lang', value);
+                socket.broadcast.to(roomID).emit('update:lang', value);
             } catch (error) {
                 console.log(error);
             }
@@ -100,7 +99,7 @@ const socketio = (server: any) => {
         socket.on('realtime:input', body => {
             try {
                 const { value, roomID } = body;
-                io.to(roomID).emit('update:input', value);
+                socket.broadcast.to(roomID).emit('update:input', value);
             } catch (error) {
                 console.log(error);
             }
@@ -132,7 +131,7 @@ const socketio = (server: any) => {
                 };
                 const output = await Axios.post(uri, data, axiosConfig);
 
-                io.to(roomID).emit('update:output', output.data);
+                socket.broadcast.to(roomID).emit('update:output', output.data);
             } catch (error) {
                 console.log(error.message);
             }

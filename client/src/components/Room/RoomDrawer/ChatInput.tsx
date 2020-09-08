@@ -38,7 +38,7 @@ const ChatInput: React.FC = () => {
         <>
             <div className={style.chatInput}>
                 <TextArea
-                    rows={1}
+                    rows={2}
                     placeholder='Type msg here.'
                     onPressEnter={sendMessage}
                     value={message}
