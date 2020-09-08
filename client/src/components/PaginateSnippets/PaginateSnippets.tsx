@@ -20,7 +20,7 @@ const PaginateSnippets: React.FC<Props> = ({ handlePageChange, currentPage }) =>
                     defaultCurrent={1}
                     current={currentPage}
                     total={TOTAL_COUNT}
-                    showSizeChanger={false}
+                    pageSize={5}
                 />
             </div>
         </>

@@ -32,7 +32,7 @@ export default function getTemplate(lang: string) {
             break;
 
         case 'csharp':
-            template=`using System;\nclass MainClass {\n\tstatic void Main(){\n\t\tConsole.WriteLine("Hello World!");\n\t}\n}`
+            template = `using System;\nclass MainClass {\n\tstatic void Main(){\n\t\tConsole.WriteLine("Hello World!");\n\t}\n}`;
             break;
     }
     return template;
