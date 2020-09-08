@@ -8,7 +8,7 @@ interface IVal {
     roomID: string;
     username: string;
 }
-const JoinRoomForm = () => {
+const JoinRoom = () => {
     const { joinRoom, _id } = React.useContext(RoomContext);
     const { playIpl } = useSfx();
 
@@ -58,4 +58,4 @@ const JoinRoomForm = () => {
     );
 };
 
-export default JoinRoomForm;
+export default JoinRoom;

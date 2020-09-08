@@ -9,7 +9,7 @@ interface IVal {
     roomName: string;
 }
 
-const CreateRoomForm = () => {
+const CreateRoom = () => {
     const { createRoom } = React.useContext(RoomContext);
 
     const { playIpl } = useSfx();
@@ -65,4 +65,4 @@ const CreateRoomForm = () => {
     );
 };
 
-export default CreateRoomForm;
+export default CreateRoom;

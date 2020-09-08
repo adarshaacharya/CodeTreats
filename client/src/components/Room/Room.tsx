@@ -1,7 +1,7 @@
 import { Card, Tabs } from 'antd';
 import React from 'react';
-import CreateRoomForm from './CreateRoomForm';
-import JoinRoomForm from './JoinRoomForm';
+import CreateRoom from './CreateRoom';
+import JoinRoom from './JoinRoom';
 import styles from './style.module.css';
 const { TabPane } = Tabs;
 
@@ -11,10 +11,10 @@ const Room = () => {
             <Card className={`${styles.container} ${styles.outerCard}`}>
                 <Tabs defaultActiveKey='create' size='large'>
                     <TabPane key='create' tab='Create Room'>
-                        <CreateRoomForm />
+                        <CreateRoom />
                     </TabPane>
                     <TabPane key='join' tab='Join Room'>
-                        <JoinRoomForm />
+                        <JoinRoom />
                     </TabPane>
                 </Tabs>
             </Card>
