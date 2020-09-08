@@ -20,6 +20,10 @@ export default function getExtension(language: string) {
         case 'c':
             extension = 'c';
             break;
+
+        case 'go':
+            extension = 'go';
+            break;
     }
 
     return extension;

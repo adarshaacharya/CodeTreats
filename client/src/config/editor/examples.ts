@@ -22,6 +22,10 @@ export default function getTemplate(lang: string) {
             template = `#include<iostream>\n\nusing namespace std;\n\nint main() {\n\tcout << "Hello, World!";\n\treturn 0;\n}\n
             `;
             break;
+
+        case 'go':
+            template = `package main\n\nimport (\n\t"fmt"\n)\n\nfunc main() {\n\tfmt.Println("Hello World in Go!")\n} `;
+            break;
     }
     return template;
 }

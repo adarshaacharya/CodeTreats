@@ -19,6 +19,10 @@ const languageOptions = [
         label: 'C++',
         value: 'cpp',
     },
+    {
+        label: 'Go',
+        value: 'go',
+    },
 ];
 
 export default languageOptions;
