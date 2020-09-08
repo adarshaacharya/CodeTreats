@@ -1,2 +1,2 @@
-import JoinRoom from './JoinRoom'
-export default JoinRoom
+import JoinRoom from './JoinRoom';
+export default JoinRoom;

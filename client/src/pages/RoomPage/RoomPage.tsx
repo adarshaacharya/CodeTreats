@@ -1,15 +1,15 @@
 import { Col, Row } from 'antd';
 import ThemeSelector from 'components/ThemeSelector';
 import React from 'react';
-import CodeExec from './CodeExec';
-import Info from './Info';
-import Output from './Output';
-import RoomDrawer from './RoomDrawer';
-import RoomEditor from './RoomEditor';
-import RoomInput from './RoomInput';
-import RoomLang from './RoomLang';
+import CodeExec from 'components/Room/CodeExec';
+import Info from 'components/Room/Info';
+import Output from 'components/Room/Output';
+import RoomDrawer from 'components/Room/RoomDrawer';
+import RoomEditor from 'components/Room/RoomEditor';
+import RoomInput from 'components/Room/RoomInput';
+import RoomLang from 'components/Room/RoomLang';
 
-const Editor = () => {
+const RoomPage = () => {
     return (
         <>
             <Row className='mx-1'>
@@ -36,4 +36,4 @@ const Editor = () => {
     );
 };
 
-export default Editor;
+export default RoomPage;
