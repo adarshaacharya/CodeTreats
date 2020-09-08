@@ -5,12 +5,6 @@ const IconGo = () => {
         <>
             <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'>
                 <title>Go</title>
-                <defs>
-                    <path id='a' d='M18.8 1h90.5v126h-90.5z' />
-                </defs>
-                <clipPath id='b'>
-                    <use overflow='visible' />
-                </clipPath>
                 <path
                     fill='#F6D2A2'
                     fill-rule='evenodd'
