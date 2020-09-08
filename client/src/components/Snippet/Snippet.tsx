@@ -9,15 +9,14 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import CodeContext from '_context/code/code.context';
 import ThemeSelector from 'components/ThemeSelector';
-import SnippetContext from '_context/snippet/snippet.context';
 
 const Snippet = () => {
     const { id } = useParams();
-    const { fetchSnippetbyId } = React.useContext(SnippetContext);
-    const { code, updateCode, updateLanguage, language } = React.useContext(CodeContext);
+    const { code, updateCode, updateLanguage, language, fetchSnippetbyId } = React.useContext(CodeContext);
 
     React.useEffect(() => {
         fetchSnippetbyId(id);
+
         // code cleanup(important to switch diff editor)
         return () => {
             console.log('🦄 Unmounting Component..');

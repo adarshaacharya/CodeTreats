@@ -1,6 +1,10 @@
-# Code Treats
+<p align="center">
+<a href="http://codetreats.herokuapp.com/">
+<img src="assets/logo.svg" alt="Logo" height="100px"/>
+</a>
+</p>
 
-<p>
+<p align="center">
 <a href="https://app.codacy.com/manual/adarshaacharya/CodeTreats?utm_source=github.com&utm_medium=referral&utm_content=adarshaacharya/CodeTreats&utm_campaign=Badge_Grade_Dashboard"><img src="https://api.codacy.com/project/badge/Grade/62f781ddecba4ec3b4f79d53f380a7a1"/></a>
  <a href="https://github.com/adarshaacharya/CodeTreats/blob/master/LICENSE" target="_blank">
 <img alt="License: MIT" src="https://img.shields.io/github/license/adarshaacharya/CodeTreats" />
@@ -9,15 +13,20 @@
 <img src="https://pyheroku-badge.herokuapp.com/?app=codetreats" alt="Heroku">
 </p>
 
-Interactive platform for running, saving and sharing code snippets.
+<p align="center">
+In-browser IDE for running, collaborating, saving and sharing code snippets. 
+</p>
 
 ## ⭐ Features
 
--   Code Editor with VS Code like interactive environment with features like auto-completion, code-formatting
+-   In-browser IDE with VS Code like text editor having features like auto-completion, code-formatting
 -   Supports three languages
--   15+ Themes Support
--   Save snippets pubicilty with shareable link
+-   15+ Themes Support 🤯 
+-   Save snippets publicly with shareable link
 -   Search snippets with title
+-   Realtime Collaboration *(unlimited users)* 🔥
+-   Realtime Chat 💥
+
 
 ## 📺 Prerequisites
 

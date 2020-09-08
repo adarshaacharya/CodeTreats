@@ -1,0 +1,75 @@
+.activeUsers {
+    height: 25vh;
+    width: 100%;
+}
+
+.messages {
+    height: 35vh;
+    width: 100%;
+    padding: 2px 0px;
+}
+
+.message {
+    margin : 10px 7px 13px 0px;
+    cursor : pointer;
+}
+
+
+
+.messages
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+/* Track */
+.messages  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.messages ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+.messages ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* chatinput */
+.chatInput {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+}
+
+.chatInputPrefix {
+    color: rgba(255, 255, 255, 0.719);
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+
+
+.activeUsers
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+/* Track */
+.activeUsers  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.activeUsers ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+.activeUsers ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

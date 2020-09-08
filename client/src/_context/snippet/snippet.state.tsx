@@ -1,7 +1,7 @@
 import * as React from 'react';
 import api from 'utils/api';
 import history from 'utils/history';
-import { ADD_SNIPPET, CLEAR_FILTER, FETCH_SNIPPET, FETCH_SNIPPETS, FILTER_SNIPPETS, SET_LOADING } from '../types';
+import { ADD_SNIPPET, CLEAR_FILTER, FETCH_SNIPPETS, FILTER_SNIPPETS, SET_LOADING } from '../types';
 import SnippetContext from './snippet.context';
 import snippetReducer, { initialState as initialValues } from './snippet.reducer';
 import { ISnippet, State } from './snippet.type';
@@ -20,20 +20,6 @@ const SnippetState: React.FC = ({ children }) => {
             const res = await api.get(`/snippets`);
             dispatch({
                 type: FETCH_SNIPPETS,
-                payload: res.data,
-            });
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    // fetch single snippets
-    const fetchSnippetbyId = async (snipId: string) => {
-        try {
-            setLoading();
-            const res = await api.get(`/snippets/${snipId}`);
-            dispatch({
-                type: FETCH_SNIPPET,
                 payload: res.data,
             });
         } catch (error) {
@@ -86,7 +72,6 @@ const SnippetState: React.FC = ({ children }) => {
                 filtered: state.filtered,
                 loading: state.loading,
                 fetchSnippets,
-                fetchSnippetbyId,
                 addSnippet,
                 filterSnippets,
                 clearFilter,

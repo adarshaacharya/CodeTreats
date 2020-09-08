@@ -1,22 +1,14 @@
-// env variable config
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
-}
 import compression from 'compression';
 import cors from 'cors';
 import express, { Express, Response } from 'express';
 import path from 'path';
-import connectDB from './database/init';
-//  routes
+//  import routes
 import CodeRoute from './routes/code.route';
 import SnippetRoute from './routes/snippet.route';
 
 // exporess settings
 const app: Express = express();
 app.set('env', process.env.NODE_ENV);
-
-// db
-connectDB();
 
 // handle post request
 app.use(cors());
@@ -39,9 +31,18 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
+export default app;
+
+/*
+import connectDB from './database/init';
+connectDB()
+
 const hostname = 'localhost';
 const PORT = process.env.PORT || 5000;
 
 const handleListening = () => console.log(`✅  Listening on: http://${hostname}:${PORT}`);
 
 app.listen(PORT, handleListening);
+
+
+*/

@@ -1,0 +1,19 @@
+.container {
+    /* margin: 5% 30%; */
+    max-width: 500px;
+    margin: 50px auto;
+    justify-content: center;
+}
+
+.outerCard {
+    background: inherit;
+    border-radius: 6px;
+    border: 2px solid #73c4fa ;
+    /* box-shadow: 0 -2px 10px rgb(75, 120, 202);
+     */
+     box-shadow : 0px 2px 20px rgba(0, 151, 251, 0.616);
+}
+
+.innerCard {
+    background: inherit;
+}

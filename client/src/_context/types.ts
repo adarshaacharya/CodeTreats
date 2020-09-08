@@ -14,3 +14,15 @@ export const CLEAR_FILTER = 'CLEAR_FILTER';
 
 // theme context
 export const UPDATE_THEME: string = 'UPDATE_THEME';
+
+// room context
+export const CREATE_ROOM: string = 'CREATE_ROOM';
+export const JOIN_ROOM: string = 'JOIN_ROOM';
+export const UPDATE_ROOM_CODE: string = 'UPDATE_ROOM_CODE';
+export const UPDATE_ROOM_LANGUAGE: string = 'UPDATE_ROOM_LANGUAGE';
+export const UPDATE_ROOM_INPUT: string = 'UPDATE_ROOM_INPUT';
+export const UPDATE_ROOM_OUTPUT: string = 'UPDATE_ROOM_OUTPUT';
+export const SET_CURRENT_USER: string = 'SET_CURRENT_USER';
+export const UPDATE_ROOM_MESSAGES: string = 'UPDATE_ROOM_ MESSAGES';
+export const LEAVE_ROOM: string = 'LEAVE_ROOM';
+export const UPDATE_ROOM_USERS : string = 'UPDATE_ROOM_USERS'

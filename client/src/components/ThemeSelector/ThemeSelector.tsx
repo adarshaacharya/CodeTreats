@@ -1,4 +1,5 @@
-import { Divider, Select } from 'antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
+import { Divider, Select, Tooltip } from 'antd';
 import { defaultThemes, monacoThemes } from 'config/editor/themes';
 import React from 'react';
 import { defineTheme } from 'utils/define-theme';
@@ -6,10 +7,9 @@ import ThemeContext from '_context/theme/theme.context';
 
 const { Option } = Select;
 const ThemeSelector = () => {
-    const themeContext = React.useContext(ThemeContext);
-    const { theme, updateTheme } = themeContext;
+    const { theme, updateTheme } = React.useContext(ThemeContext);
 
-    const handleThemChange = (theme: string) => {
+    const handleThemeChange = (theme: string) => {
         if (defaultThemes.includes(theme)) {
             updateTheme(theme);
         } else {
@@ -21,13 +21,16 @@ const ThemeSelector = () => {
         <>
             <Divider orientation='left' plain>
                 {' '}
-                Select theme{' '}
+                Select theme &nbsp;
+                <Tooltip title='Effect will be seen only in your room.'>
+                    <ExclamationCircleOutlined />
+                </Tooltip>
             </Divider>
             <Select
                 showSearch
                 size='large'
                 style={{ width: '100%' }}
-                onChange={handleThemChange}
+                onChange={handleThemeChange}
                 defaultValue='dark'
                 className='my-1'
                 autoFocus
