@@ -2,12 +2,10 @@ import { Select, Divider } from 'antd';
 import React from 'react';
 import languages from 'config/editor/languages';
 import CodeContext from '_context/code/code.context';
+const { Option } = Select;
 
 const LanguageSelector = () => {
-    const codeContext = React.useContext(CodeContext);
-    const { updateLanguage, language } = codeContext;
-
-    const { Option } = Select;
+    const { updateLanguage, language } = React.useContext(CodeContext);
 
     const onLanguageChange = (value: string) => {
         updateLanguage(value);
