@@ -11,6 +11,10 @@ const languageOptions = [
         label: 'Typescript',
         value: 'typescript',
     },
+    {
+        label: 'C++',
+        value: 'cpp',
+    },
 ];
 
 export default languageOptions;
