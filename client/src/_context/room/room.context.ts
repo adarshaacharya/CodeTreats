@@ -8,3 +8,9 @@ const DEFAULT_VALUE: State = {
 
 const RoomContext = React.createContext(DEFAULT_VALUE);
 export default RoomContext;
+
+
+export const useRoomContext = () => {
+    return React.useContext(RoomContext);
+};
+

@@ -8,3 +8,8 @@ const DEFAULT_VALUE: State = {
 const SnippetContext = React.createContext(DEFAULT_VALUE);
 
 export default SnippetContext;
+
+
+export const useSnippetContext = () => {
+    return React.useContext(SnippetContext);
+};
