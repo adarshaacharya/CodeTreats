@@ -1,11 +1,11 @@
 import { Divider, Input } from 'antd';
 import React from 'react';
-import RoomContext from '_context/room/room.context';
+import { useRoomContext } from '_context/room/room.context';
 
 const { TextArea } = Input;
 
 const RoomOutput = () => {
-    const { loading, roomOutput } = React.useContext(RoomContext);
+    const { loading, roomOutput } = useRoomContext();
 
     if (loading) {
         return (

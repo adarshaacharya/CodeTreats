@@ -2,10 +2,10 @@ import { PoweroffOutlined } from '@ant-design/icons';
 import { Button, message, Popconfirm } from 'antd';
 import socket from 'config/socket/socket';
 import React from 'react';
-import RoomContext from '_context/room/room.context';
+import { useRoomContext } from '_context/room/room.context';
 
 const LeaveRoom = () => {
-    const { _id, currentUser, leaveRoom } = React.useContext(RoomContext);
+    const { _id, currentUser, leaveRoom } = useRoomContext()
 
     const leaveCurrentRoom = () => {
         const body = {

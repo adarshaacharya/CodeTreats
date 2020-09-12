@@ -3,12 +3,12 @@ import { Button, Form, Input, Modal } from 'antd';
 import { useForm, useModal, useSfx } from 'hooks';
 import { notify } from 'layout';
 import React from 'react';
-import CodeContext from '_context/code/code.context';
-import SnippetContext from '_context/snippet/snippet.context';
+import { useCodeContext } from '_context/code/code.context';
+import { useSnippetContext } from '_context/snippet/snippet.context';
 
 const SaveSnippet: React.FC = () => {
-    const { code, language } = React.useContext(CodeContext);
-    const { addSnippet } = React.useContext(SnippetContext);
+    const { code, language } = useCodeContext();
+    const { addSnippet } = useSnippetContext();
 
     const { playTing } = useSfx();
     const { showModal, closeModal, visible, setVisible } = useModal(false);

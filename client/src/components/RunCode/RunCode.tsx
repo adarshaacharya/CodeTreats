@@ -1,11 +1,10 @@
 import { CaretRightOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import React from 'react';
-import CodeContext from '_context/code/code.context';
+import { useCodeContext } from '_context/code/code.context';
 
 const RunCode = () => {
-    const codeContext = React.useContext(CodeContext);
-    const { code, input, loading, submitCode, language } = codeContext;
+    const { code, input, loading, submitCode, language } = useCodeContext();
 
     const onCodeSubmit = (code: string, language: string, input: string) => {
         submitCode(code, language, input);

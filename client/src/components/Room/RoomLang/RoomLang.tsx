@@ -2,11 +2,11 @@ import { Divider, Select } from 'antd';
 import languages from 'config/editor/languages';
 import socket from 'config/socket/socket';
 import React from 'react';
-import RoomContext from '_context/room/room.context';
+import { useRoomContext } from '_context/room/room.context';
 
 const { Option } = Select;
 const RoomLang = () => {
-    const { _id, roomLanguage, updateRoomLanguage } = React.useContext(RoomContext);
+    const { _id, roomLanguage, updateRoomLanguage } = useRoomContext();
 
     React.useEffect(() => {
         socket.on('update:lang', (lang: string) => {

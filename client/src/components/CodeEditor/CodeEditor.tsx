@@ -3,11 +3,11 @@ import { editorOptions } from 'config/editor/options';
 import { Spinner } from 'layout';
 import React from 'react';
 import { useCodeContext } from '_context/code/code.context';
-import ThemeContext from '_context/theme/theme.context';
+import { useThemeContext } from '_context/theme/theme.context';
 
 const CodeEditor: React.FC = () => {
     const { code, updateCode, language } = useCodeContext();
-    const { theme } = React.useContext(ThemeContext);
+    const { theme } = useThemeContext();
 
     const handleEditorChange = (ev?: object, value?: string) => {
         updateCode(value!);

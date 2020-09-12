@@ -1,12 +1,11 @@
-import { Input, Divider } from 'antd';
+import { Divider, Input } from 'antd';
 import React from 'react';
-import CodeContext from '_context/code/code.context';
+import { useCodeContext } from '_context/code/code.context';
 
 const { TextArea } = Input;
 
 const OutputPanel: React.FC = () => {
-    const codeContext = React.useContext(CodeContext);
-    const { output, loading } = codeContext;
+    const { output, loading } = useCodeContext();
 
     if (loading) {
         return (

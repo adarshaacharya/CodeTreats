@@ -1,25 +1,24 @@
 import { Button, Card, Form, Input, message } from 'antd';
 import { useSfx } from 'hooks';
 import React from 'react';
-import RoomContext from '_context/room/room.context';
+import { useRoomContext } from '_context/room/room.context';
 import styles from './style.module.css';
 
 interface IVal {
     roomID: string;
     username: string;
 }
-const JoinRoom = () => {
-    const { joinRoom } = React.useContext(RoomContext);
-    const { playIpl } = useSfx();
+const layout = {
+    labelCol: { span: 8 },
+    wrapperCol: { span: 24 },
+};
 
-    const layout = {
-        labelCol: { span: 8 },
-        wrapperCol: { span: 24 },
-    };
+const JoinRoom = () => {
+    const { joinRoom } = useRoomContext();
+    const { playIpl } = useSfx();
 
     const onFormSubmit = (values: IVal) => {
         joinRoom(values);
-
         message.success('You have joined the room. 🥳');
         playIpl();
     };

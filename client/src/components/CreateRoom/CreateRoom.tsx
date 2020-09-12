@@ -1,7 +1,7 @@
 import { Button, Card, Form, Input, message } from 'antd';
 import { useSfx } from 'hooks';
 import React from 'react';
-import RoomContext from '_context/room/room.context';
+import { useRoomContext } from '_context/room/room.context';
 import styles from './style.module.css';
 
 interface IVal {
@@ -9,15 +9,14 @@ interface IVal {
     roomName: string;
 }
 
+const layout = {
+    labelCol: { span: 8 },
+    wrapperCol: { span: 24 },
+};
+
 const CreateRoom = () => {
-    const { createRoom } = React.useContext(RoomContext);
-
+    const { createRoom } = useRoomContext();
     const { playIpl } = useSfx();
-
-    const layout = {
-        labelCol: { span: 8 },
-        wrapperCol: { span: 24 },
-    };
 
     const onFormSubmit = (values: IVal) => {
         createRoom(values);

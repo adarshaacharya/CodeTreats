@@ -3,12 +3,12 @@ import { editorOptions } from 'config/editor/options';
 import socket from 'config/socket/socket';
 import { Spinner } from 'layout';
 import React from 'react';
-import RoomContext from '_context/room/room.context';
-import ThemeContext from '_context/theme/theme.context';
+import { useRoomContext } from '_context/room/room.context';
+import { useThemeContext } from '_context/theme/theme.context';
 
 const RoomEditor: React.FC = () => {
-    const { _id, roomCode, updateRoomCode, roomLanguage } = React.useContext(RoomContext);
-    const { theme } = React.useContext(ThemeContext);
+    const { _id, roomCode, updateRoomCode, roomLanguage } = useRoomContext();
+    const { theme } = useThemeContext();
 
     React.useEffect(() => {
         socket.on('update:code', (code: string) => {
