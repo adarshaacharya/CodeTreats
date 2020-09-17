@@ -3,11 +3,11 @@ import { Divider, Select, Tooltip } from 'antd';
 import { defaultThemes, monacoThemes } from 'config/editor/themes';
 import React from 'react';
 import { defineTheme } from 'utils/define-theme';
-import ThemeContext from '_context/theme/theme.context';
+import { useThemeContext } from '_context/theme/theme.context';
 
 const { Option } = Select;
 const ThemeSelector = () => {
-    const { theme, updateTheme } = React.useContext(ThemeContext);
+    const { theme, updateTheme } = useThemeContext();
 
     const handleThemeChange = (theme: string) => {
         if (defaultThemes.includes(theme)) {

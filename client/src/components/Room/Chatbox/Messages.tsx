@@ -3,11 +3,11 @@ import { Message } from 'layout';
 import React from 'react';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { v4 as uuidv4 } from 'uuid';
-import RoomContext from '_context/room/room.context';
+import { useRoomContext } from '_context/room/room.context';
 import style from './style.module.css';
 
 const Messages = () => {
-    const { roomMessages } = React.useContext(RoomContext);
+    const { roomMessages } = useRoomContext()
 
     return React.useMemo(() => {
         return (

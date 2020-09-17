@@ -1,21 +1,22 @@
-import { Col, Row, Space, Divider } from 'antd';
+import { Col, Divider, Row, Space } from 'antd';
 import CodeEditor from 'components/CodeEditor';
 import InputPanel from 'components/InputPanel';
 import LanguageSelector from 'components/LanguageSelector';
 import OutputPanel from 'components/OutputPanel';
 import RunCode from 'components/RunCode';
 import SaveSnippet from 'components/SaveSnippet';
+import ThemeSelector from 'components/ThemeSelector';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import CodeContext from '_context/code/code.context';
-import ThemeSelector from 'components/ThemeSelector';
+import { useCodeContext } from '_context/code/code.context';
 
 const Snippet = () => {
-    const { id } = useParams();
-    const { code, updateCode, updateLanguage, language, fetchSnippetbyId } = React.useContext(CodeContext);
+    const { snippetId } = useParams();
+
+    const { code, updateCode, updateLanguage, language, fetchSnippetbyId } = useCodeContext()
 
     React.useEffect(() => {
-        fetchSnippetbyId(id);
+        fetchSnippetbyId(snippetId);
 
         // code cleanup(important to switch diff editor)
         return () => {
@@ -24,7 +25,7 @@ const Snippet = () => {
             updateLanguage(language);
         };
         // eslint-disable-next-line
-    }, [id]);
+    }, [snippetId]);
 
     return (
         <>

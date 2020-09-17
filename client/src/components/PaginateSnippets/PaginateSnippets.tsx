@@ -1,6 +1,6 @@
 import { Pagination } from 'antd';
 import React from 'react';
-import SnippetContext from '_context/snippet/snippet.context';
+import { useSnippetContext } from '_context/snippet/snippet.context';
 
 type Props = {
     handlePageChange: (pageNumber: number) => void;
@@ -8,7 +8,7 @@ type Props = {
 };
 
 const PaginateSnippets: React.FC<Props> = ({ handlePageChange, currentPage }) => {
-    const { snippets } = React.useContext(SnippetContext);
+    const { snippets } = useSnippetContext()
 
     const TOTAL_COUNT = snippets.length;
 

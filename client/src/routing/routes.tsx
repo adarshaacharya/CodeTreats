@@ -13,7 +13,7 @@ export const useRoutes = () => {
             <Switch>
                 <Route exact path='/' component={HomePage} />
                 <Route exact path='/snippets' component={SnippetsPage} />
-                <Route exact path='/snippets/:id' component={SnippetPage} />
+                <Route exact path='/snippets/:snippetId' component={SnippetPage} />
                 <Route exact path='/room' component={JoinRoomPage} />
                 <RoomRoute exact path='/room/:roomId' component={RoomPage} />
             </Switch>

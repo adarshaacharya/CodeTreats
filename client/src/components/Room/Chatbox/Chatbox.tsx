@@ -2,9 +2,9 @@ import { SendOutlined } from '@ant-design/icons';
 import { Badge, Button } from 'antd';
 import socket from 'config/socket/socket';
 import React from 'react';
-import RoomContext from '_context/room/room.context';
-import ChatDrawer from './ChatDrawer';
+import { useRoomContext } from '_context/room/room.context';
 import { IUser } from '_context/room/room.type';
+import ChatDrawer from './ChatDrawer';
 
 interface IMessages {
     text: string;
@@ -13,7 +13,7 @@ interface IMessages {
 }
 
 const Chatbox = () => {
-    const { roomMessages, updateMessages } = React.useContext(RoomContext);
+    const { roomMessages, updateMessages } = useRoomContext()
     const [visible, setVisible] = React.useState(false);
 
     React.useEffect(() => {

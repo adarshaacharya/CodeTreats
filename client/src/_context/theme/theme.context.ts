@@ -9,3 +9,7 @@ const DEFAULT_VALUE: State = {
 const ThemeContext = React.createContext(DEFAULT_VALUE);
 
 export default ThemeContext;
+
+export const useThemeContext = () => {
+    return React.useContext(ThemeContext);
+};

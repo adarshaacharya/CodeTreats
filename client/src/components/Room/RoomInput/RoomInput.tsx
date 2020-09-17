@@ -1,15 +1,15 @@
-import { Input, Divider, Tooltip } from 'antd';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import React from 'react';
-import RoomContext from '_context/room/room.context';
+import { Divider, Input, Tooltip } from 'antd';
 import socket from 'config/socket/socket';
+import React from 'react';
+import { useRoomContext } from '_context/room/room.context';
 
-const text =
+const INPUT_TOOLTIP =
     "Only provide input if you ask user for input, else leave empty. Some browser based language like Javascript, Typescipt doesn't accept terminal inputs.";
 const { TextArea } = Input;
 
 const RoomInput = () => {
-    const { updateRoomInput, _id, roomInput } = React.useContext(RoomContext);
+    const { updateRoomInput, _id, roomInput } = useRoomContext();
 
     React.useEffect(() => {
         socket.on('update:input', (input: string) => {
@@ -34,7 +34,7 @@ const RoomInput = () => {
             <Divider orientation='left' plain>
                 {' '}
                 Custom Input (stdin) &nbsp;
-                <Tooltip title={text}>
+                <Tooltip title={INPUT_TOOLTIP}>
                     <ExclamationCircleOutlined />
                 </Tooltip>
             </Divider>

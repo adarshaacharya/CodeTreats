@@ -1,13 +1,13 @@
 import { UserOutlined } from '@ant-design/icons';
-import { Avatar, Space, Divider } from 'antd';
+import { Avatar, Divider, Space } from 'antd';
 import onlineIcon from 'assets/img/onlineIcon.png';
 import React from 'react';
 import ScrollToBottom from 'react-scroll-to-bottom';
-import RoomContext from '_context/room/room.context';
+import { useRoomContext } from '_context/room/room.context';
 import style from './style.module.css';
 
 const ActiveUsers = () => {
-    const { activeUsers } = React.useContext(RoomContext);
+    const { activeUsers } = useRoomContext()
 
     if (activeUsers.length < 1) return <p>No users online.</p>;
 

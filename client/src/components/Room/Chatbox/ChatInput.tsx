@@ -2,7 +2,7 @@ import { Input } from 'antd';
 import socket from 'config/socket/socket';
 import { useSfx } from 'hooks';
 import React from 'react';
-import RoomContext from '_context/room/room.context';
+import { useRoomContext } from '_context/room/room.context';
 import style from './style.module.css';
 
 const { TextArea } = Input;
@@ -14,7 +14,7 @@ interface IMessage {
 }
 
 const ChatInput: React.FC = () => {
-    const { _id, currentUser } = React.useContext(RoomContext);
+    const { _id, currentUser } = useRoomContext()
     const [message, setMessage] = React.useState('');
     const { playPop } = useSfx();
 

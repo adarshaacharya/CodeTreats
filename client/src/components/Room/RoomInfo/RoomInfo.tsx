@@ -2,11 +2,11 @@ import { Alert, Card, message, Row } from 'antd';
 import { useSfx } from 'hooks';
 import React from 'react';
 import CopyToClipBoard from 'react-copy-to-clipboard';
-import RoomContext from '_context/room/room.context';
+import { useRoomContext } from '_context/room/room.context';
 import style from './style.module.css';
 
 const RoomInfo = () => {
-    const { roomName, _id, currentUser } = React.useContext(RoomContext);
+    const { roomName, _id, currentUser } = useRoomContext();
     const { playClick } = useSfx();
 
     const [, setCopied] = React.useState(false);
