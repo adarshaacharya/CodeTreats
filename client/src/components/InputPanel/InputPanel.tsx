@@ -6,8 +6,8 @@ import { useCodeContext } from '_context/code/code.context';
 const INPUT_TOOLTIP =
     "Only provide input if you ask user for input, else leave empty. Some browser based language like Javascript, Typescipt doesn't accept terminal inputs.";
 
-    const InputPanel = () => {
-    const  { updateInput } = useCodeContext();
+const InputPanel = () => {
+    const { updateInput } = useCodeContext();
 
     const { TextArea } = Input;
     return (

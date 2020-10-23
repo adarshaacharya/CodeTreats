@@ -5,7 +5,7 @@ import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
 
 const LeaveRoom = () => {
-    const { _id, currentUser, leaveRoom } = useRoomContext()
+    const { _id, currentUser, leaveRoom } = useRoomContext();
 
     const leaveCurrentRoom = () => {
         const body = {

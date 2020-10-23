@@ -13,7 +13,7 @@ interface IMessages {
 }
 
 const Chatbox = () => {
-    const { roomMessages, updateMessages } = useRoomContext()
+    const { roomMessages, updateMessages } = useRoomContext();
     const [visible, setVisible] = React.useState(false);
 
     React.useEffect(() => {

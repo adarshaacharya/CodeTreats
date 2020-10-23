@@ -5,7 +5,7 @@ import { useCodeContext } from '_context/code/code.context';
 const { Option } = Select;
 
 const LanguageSelector = () => {
-    const { updateLanguage, language } = useCodeContext()
+    const { updateLanguage, language } = useCodeContext();
 
     const onLanguageChange = (value: string) => {
         updateLanguage(value);

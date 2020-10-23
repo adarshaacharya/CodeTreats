@@ -13,7 +13,7 @@ import { useCodeContext } from '_context/code/code.context';
 const Snippet = () => {
     const { snippetId } = useParams();
 
-    const { code, updateCode, updateLanguage, language, fetchSnippetbyId } = useCodeContext()
+    const { code, updateCode, updateLanguage, language, fetchSnippetbyId } = useCodeContext();
 
     React.useEffect(() => {
         fetchSnippetbyId(snippetId);
