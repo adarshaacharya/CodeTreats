@@ -6,7 +6,7 @@ import { useRoomContext } from '_context/room/room.context';
 import { IOutput } from '_context/room/room.type';
 
 const RoomCodeExec = () => {
-    const { _id, roomCode, loading, roomLanguage, roomInput, updateRoomOutput, setLoading } = useRoomContext()
+    const { _id, roomCode, loading, roomLanguage, roomInput, updateRoomOutput, setLoading } = useRoomContext();
 
     // initialize socket once using lifecycle method so that it will listen from next time
     // here both output and loading of output is decided so both are initialized

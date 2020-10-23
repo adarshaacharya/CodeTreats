@@ -7,7 +7,7 @@ import { useRoomContext } from '_context/room/room.context';
 import style from './style.module.css';
 
 const ActiveUsers = () => {
-    const { activeUsers } = useRoomContext()
+    const { activeUsers } = useRoomContext();
 
     if (activeUsers.length < 1) return <p>No users online.</p>;
 

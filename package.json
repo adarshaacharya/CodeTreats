@@ -24,6 +24,7 @@
     "format": "prettier --write \"server/**/*.{ts,tsx,js,jsx}\" \"client/**/*.{ts,tsx,js,jsx}\""
   },
   "keywords": [
+    "codetreats",
     "typescript",
     "mern",
     "react",

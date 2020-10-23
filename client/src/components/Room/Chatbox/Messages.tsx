@@ -7,7 +7,7 @@ import { useRoomContext } from '_context/room/room.context';
 import style from './style.module.css';
 
 const Messages = () => {
-    const { roomMessages } = useRoomContext()
+    const { roomMessages } = useRoomContext();
 
     return React.useMemo(() => {
         return (

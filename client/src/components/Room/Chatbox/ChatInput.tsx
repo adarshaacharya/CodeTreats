@@ -14,7 +14,7 @@ interface IMessage {
 }
 
 const ChatInput: React.FC = () => {
-    const { _id, currentUser } = useRoomContext()
+    const { _id, currentUser } = useRoomContext();
     const [message, setMessage] = React.useState('');
     const { playPop } = useSfx();
 
