@@ -3,13 +3,13 @@ import PaginateSnippets from 'components/PaginateSnippets';
 import { Spinner } from 'layout';
 import React from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import SnippetContext, { useSnippetContext } from '_context/snippet/snippet.context';
+import { useSnippetContext } from '_context/snippet/snippet.context';
 import SnippetItem from './SnippetItem';
 
 const SnippetsList = () => {
     const { snippets, fetchSnippets, loading, filtered } = useSnippetContext();
 
-    // pages state
+    // pages <state></state>
     const [currentPage, setCurrentPage] = React.useState(1);
     const [snippetsCountPerPage] = React.useState(5);
 
