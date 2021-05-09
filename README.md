@@ -1,6 +1,11 @@
 <p align="center">
+<<<<<<< HEAD
 <a href="https://codetreats.herokuapp.com/">
 <img src="assets/logo.svg" alt="Logo" height="100px"/>
+=======
+<a href="http://codetreats.herokuapp.com/">
+<img src="assets/logo1.svg" alt="Logo" height="100px"/>
+>>>>>>> develop👷
 </a>
 </p>
 
