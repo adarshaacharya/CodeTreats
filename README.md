@@ -1,6 +1,6 @@
 <p align="center">
 <a href="http://codetreats.herokuapp.com/">
-<img src="assets/logo.svg" alt="Logo" height="100px"/>
+<img src="assets/logo1.svg" alt="Logo" height="100px"/>
 </a>
 </p>
 
