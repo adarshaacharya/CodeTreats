@@ -51,7 +51,7 @@ const CodeState: React.FC = ({ children }) => {
                 payload: res.data,
             });
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     };
 
@@ -65,7 +65,7 @@ const CodeState: React.FC = ({ children }) => {
                 payload: res.data,
             });
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     };
 

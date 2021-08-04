@@ -23,7 +23,7 @@ const SnippetState: React.FC = ({ children }) => {
                 payload: res.data,
             });
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     };
 
@@ -39,7 +39,7 @@ const SnippetState: React.FC = ({ children }) => {
             // programmatic navigation from custom history obj
             history.push('/snippets');
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     };
 

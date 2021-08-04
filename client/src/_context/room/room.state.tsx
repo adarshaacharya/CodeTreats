@@ -44,7 +44,7 @@ const RoomState: React.FC = ({ children }) => {
             });
             setRoomUser(username); // set username in state
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     };
 
@@ -79,7 +79,6 @@ const RoomState: React.FC = ({ children }) => {
 
     // update room code
     const updateRoomCode = (code: string) => {
-        console.log('update room code');
         dispatch({
             type: UPDATE_ROOM_CODE,
             payload: code,
