@@ -1,6 +1,7 @@
 import { ControlledEditor } from '@monaco-editor/react';
 import { editorOptions } from 'config/editor/options';
 import socket from 'config/socket/socket';
+import { SOCKETS_EVENT_REALTIME_CODE, SOCKETS_EVENT_UPDATE_CODE } from 'constants/sockets';
 import { Spinner } from 'layout';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
@@ -11,7 +12,7 @@ const RoomEditor: React.FC = () => {
     const { theme } = useThemeContext();
 
     React.useEffect(() => {
-        socket.on('update:code', (code: string) => {
+        socket.on(SOCKETS_EVENT_UPDATE_CODE, (code: string) => {
             updateRoomCode(code);
         });
         return () => {
@@ -27,7 +28,7 @@ const RoomEditor: React.FC = () => {
             value,
             roomID: _id,
         };
-        socket.emit('realtime:code', body);
+        socket.emit(SOCKETS_EVENT_REALTIME_CODE, body);
     };
 
     return (

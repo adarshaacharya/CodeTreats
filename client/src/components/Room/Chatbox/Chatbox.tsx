@@ -1,6 +1,7 @@
 import { SendOutlined } from '@ant-design/icons';
 import { Badge, Button } from 'antd';
 import socket from 'config/socket/socket';
+import { SOCKETS_EVENT_UPDATE_MESSAGE } from 'constants/sockets';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
 import { IUser } from '_context/room/room.type';
@@ -18,7 +19,7 @@ const Chatbox = () => {
 
     React.useEffect(() => {
         // receive msg from server
-        socket.on('update:message', (message: IMessages) => {
+        socket.on(SOCKETS_EVENT_UPDATE_MESSAGE, (message: IMessages) => {
             updateMessages(message);
         });
 

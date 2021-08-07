@@ -1,6 +1,7 @@
 import { Divider, Select } from 'antd';
 import languages from 'config/editor/languages';
 import socket from 'config/socket/socket';
+import { SOCKETS_EVENT_REALTIME_LANGUAGE, SOCKETS_EVENT_UPDATE_LANGUAGE } from 'constants/sockets';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
 
@@ -9,7 +10,7 @@ const RoomLang = () => {
     const { _id, roomLanguage, updateRoomLanguage } = useRoomContext();
 
     React.useEffect(() => {
-        socket.on('update:lang', (lang: string) => {
+        socket.on(SOCKETS_EVENT_UPDATE_LANGUAGE, (lang: string) => {
             updateRoomLanguage(lang);
         });
         //eslint-disable-next-line
@@ -21,7 +22,7 @@ const RoomLang = () => {
             roomID: _id,
             value,
         };
-        socket.emit('realtime:lang', body);
+        socket.emit(SOCKETS_EVENT_REALTIME_LANGUAGE, body);
     };
 
     return (

@@ -1,5 +1,6 @@
 import { Input } from 'antd';
 import socket from 'config/socket/socket';
+import { SOCKETS_EVENTS_REALTIME_MESSAGE } from 'constants/sockets';
 import { useSfx } from 'hooks';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
@@ -30,7 +31,7 @@ const ChatInput: React.FC = () => {
         };
 
         // send msg to server
-        socket.emit('realtime:message', body, () => setMessage(''));
+        socket.emit(SOCKETS_EVENTS_REALTIME_MESSAGE, body, () => setMessage(''));
         playPop();
     };
 

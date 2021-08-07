@@ -17,6 +17,7 @@ import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
 import { IOutput, IRoom, State, IMessages } from './room.type';
 import history from 'utils/history';
+import { SOCKETS_EVENT_CREATE_ROOM, SOCKETS_EVENT_UPDATE_ROOM, SOCKETS_EVENT_USER_JOINED } from 'constants/sockets';
 
 const RoomState: React.FC = ({ children }) => {
     const initialState: State = {
@@ -33,9 +34,9 @@ const RoomState: React.FC = ({ children }) => {
                 username,
                 roomName,
             };
-            socket.emit('create:room', body);
+            socket.emit(SOCKETS_EVENT_CREATE_ROOM, body);
 
-            socket.on('update:room', (room: IRoom) => {
+            socket.on(SOCKETS_EVENT_UPDATE_ROOM, (room: IRoom) => {
                 dispatch({
                     type: CREATE_ROOM,
                     payload: room,
@@ -56,7 +57,7 @@ const RoomState: React.FC = ({ children }) => {
                 username,
                 roomID,
             };
-            socket.emit('join:room', body, (error: any) => {
+            socket.emit(SOCKETS_EVENT_USER_JOINED, body, (error: any) => {
                 //callback fun
                 if (error) {
                     return message.error(error.msg);
@@ -65,7 +66,7 @@ const RoomState: React.FC = ({ children }) => {
 
             setRoomUser(username); // set username in state
 
-            socket.on('update:room', (room: IRoom) => {
+            socket.on(SOCKETS_EVENT_UPDATE_ROOM, (room: IRoom) => {
                 dispatch({
                     type: JOIN_ROOM,
                     payload: room,

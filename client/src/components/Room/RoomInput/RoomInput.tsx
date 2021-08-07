@@ -1,8 +1,10 @@
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Divider, Input, Tooltip } from 'antd';
 import socket from 'config/socket/socket';
+import { SOCKETS_EVENT_REALTIME_INPUT } from 'constants/sockets';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
+import { UPDATE_ROOM_INPUT } from '_context/types';
 
 const INPUT_TOOLTIP =
     "Only provide input if you ask user for input, else leave empty. Some browser based language like Javascript, Typescipt doesn't accept terminal inputs.";
@@ -12,7 +14,7 @@ const RoomInput = () => {
     const { updateRoomInput, _id, roomInput } = useRoomContext();
 
     React.useEffect(() => {
-        socket.on('update:input', (input: string) => {
+        socket.on(UPDATE_ROOM_INPUT, (input: string) => {
             updateRoomInput(input);
         });
         //eslint-disable-next-line
@@ -27,7 +29,7 @@ const RoomInput = () => {
             value,
         };
 
-        socket.emit('realtime:input', body);
+        socket.emit(SOCKETS_EVENT_REALTIME_INPUT, body);
     };
     return (
         <>

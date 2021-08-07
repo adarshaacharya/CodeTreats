@@ -1,6 +1,7 @@
 import { CaretRightOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import socket from 'config/socket/socket';
+import { SOCKETS_EVENTS_REALTIME_LOADING, SOCKETS_EVENTS_REALTIME_RUN, SOCKETS_EVENTS_UPDATE_LOADING, SOCKETS_EVENTS_UPDATE_OUTPUT } from 'constants/sockets';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
 import { IOutput } from '_context/room/room.type';
@@ -11,18 +12,18 @@ const RoomCodeExec = () => {
     // initialize socket once using lifecycle method so that it will listen from next time
     // here both output and loading of output is decided so both are initialized
     React.useEffect(() => {
-        socket.on('update:output', (output: IOutput) => {
+        socket.on(SOCKETS_EVENTS_UPDATE_OUTPUT, (output: IOutput) => {
             updateRoomOutput(output);
         });
 
-        socket.on('update:loading', () => {
+        socket.on(SOCKETS_EVENTS_UPDATE_LOADING, () => {
             setLoading(_id);
         });
         //eslint-disable-next-line
     }, []);
 
     const onCodeSubmit = (code: string, language: string, input: string) => {
-        socket.emit('realtime:loading', _id);
+        socket.emit(SOCKETS_EVENTS_REALTIME_LOADING, _id);
 
         const payload = {
             language,
@@ -30,7 +31,7 @@ const RoomCodeExec = () => {
             userInput: input,
             roomID: _id,
         };
-        socket.emit('realtime:run', payload);
+        socket.emit(SOCKETS_EVENTS_REALTIME_RUN, payload);
     };
 
     return (
