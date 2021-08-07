@@ -1,42 +1,26 @@
-/**
- * sockets name
- */
-export const SOCKETS_EVENT = 'socket:event';
+export const SOCKETS_EVENT = `socket.event`;
 
-/**
- * sockets event: user joined
- */
-// export const SOCKETS_EVENT_USER_JOINED = `${SOCKETS_EVENT}.user.joined`;
+export const SOCKETS_EVENT_CONNECTED = `${SOCKETS_EVENT}.connection`;
+export const SOCKETS_EVENT_DISCONNECTED = `${SOCKETS_EVENT}.disconnect`;
+export const SOCKETS_EVENT_CONNECTION_ERROR = `${SOCKETS_EVENT}.connection.error`;
 
-/**
- * sockets event: user left
- */
-//  export const SOCKETS_EVENT_USER_LEFT = `${SOCKETS_EVENT}.user.left`;
+export const SOCKETS_EVENT_USER_JOINED = `${SOCKETS_EVENT}.join.room`;
+export const SOCKETS_EVENT_USER_LEFT = `${SOCKETS_EVENT}.leave.room`;
 
-//  export const SOCKETS_EVENT_CONNECTED = `${SOCKETS_EVENT}.connected`;
-//  export const SOCKETS_EVENT_DISCONNECTED = `${SOCKETS_EVENT}.disconnected`;
-//  export const SOCKETS_EVENT_CONNECTION_ERROR = `${SOCKETS_EVENT}.connection.error`;
+export const SOCKETS_EVENT_CREATE_ROOM = `${SOCKETS_EVENT}.create.room`;
+export const SOCKETS_EVENT_UPDATE_ROOM = `${SOCKETS_EVENT}.update.room`;
 
-export const SOCKETS_EVENT_CONNECTED = `connection`;
-export const SOCKETS_EVENT_DISCONNECTED = 'disconnect';
+export const SOCKETS_EVENT_REALTIME_LANGUAGE = `${SOCKETS_EVENT}.realtime.lang`;
+export const SOCKETS_EVENT_REALTIME_CODE = `${SOCKETS_EVENT}.realtime.code`;
+export const SOCKETS_EVENT_REALTIME_INPUT = `${SOCKETS_EVENT}.realtime.input`;
+export const SOCKETS_EVENTS_REALTIME_OUTPUT = `${SOCKETS_EVENT}.realtime.output`;
+export const SOCKETS_EVENTS_REALTIME_RUN = `${SOCKETS_EVENT}.realtime.run`;
+export const SOCKETS_EVENTS_REALTIME_MESSAGE = `${SOCKETS_EVENT}.realtime.message`;
+export const SOCKETS_EVENTS_REALTIME_LOADING = `${SOCKETS_EVENT}.realtime.loading`;
 
-export const SOCKETS_EVENT_USER_JOINED = 'join:room';
-export const SOCKETS_EVENT_USER_LEFT = 'leave:room';
-
-export const SOCKETS_EVENT_CREATE_ROOM = 'create:room';
-export const SOCKETS_EVENT_UPDATE_ROOM = 'update:room';
-
-export const SOCKETS_EVENT_REALTIME_LANGUAGE = 'realtime:lang';
-export const SOCKETS_EVENT_REALTIME_CODE = 'realtime:code';
-export const SOCKETS_EVENT_REALTIME_INPUT = 'realtime:input';
-export const SOCKETS_EVENTS_REALTIME_OUTPUT = 'realtime:output';
-export const SOCKETS_EVENTS_REALTIME_RUN = 'realtime:run';
-export const SOCKETS_EVENTS_REALTIME_MESSAGE = 'realtime:message';
-export const SOCKETS_EVENTS_REALTIME_LOADING = 'realtime:loading';
-
-export const SOCKETS_EVENT_UPDATE_LANGUAGE = 'update:lang';
-export const SOCKETS_EVENT_UPDATE_CODE = 'update:code';
-export const SOCKETS_EVENT_UPDATE_INPUT = 'update:input';
-export const SOCKETS_EVENTS_UPDATE_OUTPUT = 'update:output';
-export const SOCKETS_EVENTS_UPDATE_LOADING = 'update:loading';
-export const SOCKETS_EVENT_UPDATE_MESSAGE = 'update:message';
+export const SOCKETS_EVENT_UPDATE_LANGUAGE = `${SOCKETS_EVENT}.update.lang`;
+export const SOCKETS_EVENT_UPDATE_CODE = `${SOCKETS_EVENT}.update.code`;
+export const SOCKETS_EVENT_UPDATE_INPUT = `${SOCKETS_EVENT}.update.input`;
+export const SOCKETS_EVENTS_UPDATE_OUTPUT = `${SOCKETS_EVENT}.update.output`;
+export const SOCKETS_EVENTS_UPDATE_LOADING = `${SOCKETS_EVENT}.update.loading`;
+export const SOCKETS_EVENT_UPDATE_MESSAGE = `${SOCKETS_EVENT}.update.message`;

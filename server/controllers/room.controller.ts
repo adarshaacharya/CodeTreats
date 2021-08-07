@@ -20,7 +20,7 @@ import {
     SOCKETS_EVENT_USER_LEFT,
 } from '../constants/sockets';
 import mongoose from 'mongoose';
-import socketIO from 'socket.io';
+import socketIO, { Socket } from 'socket.io';
 import Room from '../models/room.model';
 import getExtension from '../utils/lang-to-extension';
 
@@ -28,7 +28,7 @@ const socketio = (server: any) => {
     const io = socketIO(server);
 
     // socket config
-    io.on(SOCKETS_EVENT_CONNECTED, socket => {
+    io.on(SOCKETS_EVENT_CONNECTED, (socket : Socket) => {
         console.log('✅ Connected to room.');
 
         // create new room

@@ -1,7 +1,12 @@
 import { CaretRightOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import socket from 'config/socket/socket';
-import { SOCKETS_EVENTS_REALTIME_LOADING, SOCKETS_EVENTS_REALTIME_RUN, SOCKETS_EVENTS_UPDATE_LOADING, SOCKETS_EVENTS_UPDATE_OUTPUT } from 'constants/sockets';
+import {
+    SOCKETS_EVENTS_REALTIME_LOADING,
+    SOCKETS_EVENTS_REALTIME_RUN,
+    SOCKETS_EVENTS_UPDATE_LOADING,
+    SOCKETS_EVENTS_UPDATE_OUTPUT,
+} from 'constants/sockets';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
 import { IOutput } from '_context/room/room.type';
