@@ -19,6 +19,7 @@ const RoomOutput = () => {
     }
 
     let value = roomOutput?.stderr || roomOutput?.stdout || '';
+    console.log(value);
     return (
         <>
             <Divider orientation='left' plain>

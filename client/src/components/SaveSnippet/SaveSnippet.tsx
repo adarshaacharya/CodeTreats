@@ -35,7 +35,7 @@ const SaveSnippet: React.FC = () => {
                 notify.dark('Code has been saved successfully 😎');
             }, 2000);
         } catch (error) {
-            console.log('Validate Failed:', error);
+            console.error('Validate Failed:', error);
         }
     };
 

@@ -1,6 +1,7 @@
 import { PoweroffOutlined } from '@ant-design/icons';
 import { Button, message, Popconfirm } from 'antd';
 import socket from 'config/socket/socket';
+import { SOCKETS_EVENT_USER_LEFT } from 'constants/sockets';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
 
@@ -12,7 +13,7 @@ const LeaveRoom = () => {
             roomID: _id,
             username: currentUser,
         };
-        socket.emit('leave:room', body);
+        socket.emit(SOCKETS_EVENT_USER_LEFT, body);
         leaveRoom();
     };
 
