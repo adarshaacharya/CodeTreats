@@ -28,7 +28,7 @@ export default function getTemplate(lang: string) {
             break;
 
         case 'java':
-            template = `class main {\n\tpublic static void main(String[] args) {\n\t\tint a = 10;\n\t\tSystem.out.println(a);\n\t}\n} `;
+            template = `class Main {\n\tpublic static void main(String[] args) {\n\t\tint a = 10;\n\t\tSystem.out.println(a);\n\t}\n} `;
             break;
 
         case 'csharp':
