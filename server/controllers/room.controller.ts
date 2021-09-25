@@ -23,12 +23,13 @@ import mongoose from 'mongoose';
 import socketIO, { Socket } from 'socket.io';
 import Room from '../models/room.model';
 import getExtension from '../utils/lang-to-extension';
+import { Server } from 'http';
 
-const socketio = (server: any) => {
+const socketio = (server: Server) => {
     const io = socketIO(server);
 
     // socket config
-    io.on(SOCKETS_EVENT_CONNECTED, (socket : Socket) => {
+    io.on(SOCKETS_EVENT_CONNECTED, (socket: Socket) => {
         console.log('✅ Connected to room.');
 
         // create new room
