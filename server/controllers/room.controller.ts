@@ -156,6 +156,7 @@ const socketio = (server: Server) => {
 
                 io.to(roomID).emit(SOCKETS_EVENTS_UPDATE_OUTPUT, output.data);
             } catch (error) {
+                // @ts-ignore
                 console.log(error.message);
             }
         });

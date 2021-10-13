@@ -20,8 +20,8 @@ const CreateRoom = () => {
 
     const onFormSubmit = (values: IVal) => {
         createRoom(values);
-        playIpl();
-        message.success('New room created ! 🔥 ');
+        // playIpl();
+        // message.success('New room created ! 🔥 ');
     };
 
     const [form] = Form.useForm();

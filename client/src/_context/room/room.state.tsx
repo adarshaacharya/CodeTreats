@@ -42,6 +42,7 @@ const RoomState: React.FC = ({ children }) => {
                     payload: room,
                 });
                 history.push(`/room/${room._id}`);
+                message.success('New room created ! 🔥 ');
             });
             setRoomUser(username); // set username in state
         } catch (error) {

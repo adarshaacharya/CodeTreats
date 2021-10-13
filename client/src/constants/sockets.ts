@@ -1,7 +1,7 @@
 export const SOCKETS_EVENT = `socket.event`;
 
-export const SOCKETS_EVENT_CONNECTED = `${SOCKETS_EVENT}.connection`;
-export const SOCKETS_EVENT_DISCONNECTED = `${SOCKETS_EVENT}.disconnect`;
+export const SOCKETS_EVENT_CONNECTED = `connect`;
+export const SOCKETS_EVENT_DISCONNECTED = `disconnect`;
 export const SOCKETS_EVENT_CONNECTION_ERROR = `${SOCKETS_EVENT}.connection.error`;
 
 export const SOCKETS_EVENT_USER_JOINED = `${SOCKETS_EVENT}.join.room`;
