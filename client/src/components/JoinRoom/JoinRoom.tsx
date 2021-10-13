@@ -1,5 +1,4 @@
-import { Button, Card, Form, Input, message } from 'antd';
-import { useSfx } from 'hooks';
+import { Button, Card, Form, Input } from 'antd';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
 import styles from './style.module.css';
@@ -15,12 +14,9 @@ const layout = {
 
 const JoinRoom = () => {
     const { joinRoom } = useRoomContext();
-    const { playIpl } = useSfx();
 
     const onFormSubmit = (values: IVal) => {
         joinRoom(values);
-        message.success('You have joined the room. 🥳');
-        playIpl();
     };
 
     const [form] = Form.useForm();
@@ -41,7 +37,7 @@ const JoinRoom = () => {
                         label='Username'
                         rules={[
                             { required: true, message: "Username can't be empty" },
-                            { max: 8, message: 'Username must be maximum 8 characters.' },
+                            { max: 20, message: 'Username must be maximum 20 characters.' },
                         ]}
                         className='py'
                     >

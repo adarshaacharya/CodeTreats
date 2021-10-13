@@ -72,6 +72,8 @@ const RoomState: React.FC = ({ children }) => {
                     type: JOIN_ROOM,
                     payload: room,
                 });
+                message.success('You have joined the room. 🥳');
+
                 history.push(`/room/${roomID}`);
             });
         } catch (error) {
