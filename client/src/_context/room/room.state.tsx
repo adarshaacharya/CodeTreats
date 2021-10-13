@@ -42,6 +42,7 @@ const RoomState: React.FC = ({ children }) => {
                     payload: room,
                 });
                 history.push(`/room/${room._id}`);
+                message.success('New room created ! 🔥 ');
             });
             setRoomUser(username); // set username in state
         } catch (error) {
@@ -71,6 +72,8 @@ const RoomState: React.FC = ({ children }) => {
                     type: JOIN_ROOM,
                     payload: room,
                 });
+                message.success('You have joined the room. 🥳');
+
                 history.push(`/room/${roomID}`);
             });
         } catch (error) {

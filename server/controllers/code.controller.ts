@@ -30,6 +30,7 @@ export const SubmitCode = async (req: Request, res: Response): Promise<void> => 
         const output = await Axios.post(uri, data, axiosConfig);
         res.status(201).json(output.data);
     } catch (err) {
+        // @ts-ignore
         console.log(err.message);
         res.status(500).json({ msg: 'Server error' });
     }
