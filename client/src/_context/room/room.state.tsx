@@ -17,7 +17,7 @@ import RoomContext from './room.context';
 import roomReducer, { initialState as initialValues } from './room.reducer';
 import { IOutput, IRoom, State, IMessages } from './room.type';
 import history from 'utils/history';
-import { SOCKETS_EVENT_CREATE_ROOM, SOCKETS_EVENT_UPDATE_ROOM, SOCKETS_EVENT_USER_JOINED } from 'constants/sockets';
+import { SOCKETS_EVENT_CREATE_ROOM, SOCKETS_EVENT_UPDATE_ROOM, SOCKETS_EVENT_USER_JOINED } from 'constants/socketEvents';
 
 const RoomState: React.FC = ({ children }) => {
     const initialState: State = {

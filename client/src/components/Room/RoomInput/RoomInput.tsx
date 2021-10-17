@@ -1,7 +1,7 @@
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Divider, Input, Tooltip } from 'antd';
 import socket from 'config/socket/socket';
-import { SOCKETS_EVENT_REALTIME_INPUT } from 'constants/sockets';
+import { SOCKETS_EVENT_REALTIME_INPUT } from 'constants/socketEvents';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
 import { UPDATE_ROOM_INPUT } from '_context/types';

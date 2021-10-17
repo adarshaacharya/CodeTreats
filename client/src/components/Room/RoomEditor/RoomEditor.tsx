@@ -1,7 +1,7 @@
 import { ControlledEditor } from '@monaco-editor/react';
 import { editorOptions } from 'config/editor/options';
 import socket from 'config/socket/socket';
-import { SOCKETS_EVENT_REALTIME_CODE, SOCKETS_EVENT_UPDATE_CODE } from 'constants/sockets';
+import { SOCKETS_EVENT_REALTIME_CODE, SOCKETS_EVENT_UPDATE_CODE } from 'constants/socketEvents';
 import { Spinner } from 'layout';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
