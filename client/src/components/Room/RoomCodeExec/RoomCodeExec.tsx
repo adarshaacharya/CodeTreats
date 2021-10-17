@@ -6,7 +6,7 @@ import {
     SOCKETS_EVENTS_REALTIME_RUN,
     SOCKETS_EVENTS_UPDATE_LOADING,
     SOCKETS_EVENTS_UPDATE_OUTPUT,
-} from 'constants/sockets';
+} from 'constants/socketEvents';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
 import { IOutput } from '_context/room/room.type';

@@ -1,7 +1,7 @@
 import { Divider, Select } from 'antd';
 import languages from 'config/editor/languages';
 import socket from 'config/socket/socket';
-import { SOCKETS_EVENT_REALTIME_LANGUAGE, SOCKETS_EVENT_UPDATE_LANGUAGE } from 'constants/sockets';
+import { SOCKETS_EVENT_REALTIME_LANGUAGE, SOCKETS_EVENT_UPDATE_LANGUAGE } from 'constants/socketEvents';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
 

@@ -1,6 +1,6 @@
 import { Input } from 'antd';
 import socket from 'config/socket/socket';
-import { SOCKETS_EVENTS_REALTIME_MESSAGE } from 'constants/sockets';
+import { SOCKETS_EVENTS_REALTIME_MESSAGE } from 'constants/socketEvents';
 import { useSfx } from 'hooks';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';

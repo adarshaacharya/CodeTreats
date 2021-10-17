@@ -1,7 +1,7 @@
 import { PoweroffOutlined } from '@ant-design/icons';
 import { Button, message, Popconfirm } from 'antd';
 import socket from 'config/socket/socket';
-import { SOCKETS_EVENT_USER_LEFT } from 'constants/sockets';
+import { SOCKETS_EVENT_USER_LEFT } from 'constants/socketEvents';
 import React from 'react';
 import { useRoomContext } from '_context/room/room.context';
 
