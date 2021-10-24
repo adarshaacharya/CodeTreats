@@ -20,7 +20,7 @@ In-browser IDE for running, collaborating, saving and sharing code snippets.
 ## ⭐ Features
 
 -   In-browser IDE with VS Code like text editor having features like auto-completion, code-formatting
--   Supports three languages
+-   8+ Programming Languages support
 -   15+ Themes Support 🤯
 -   Save snippets publicly with shareable link
 -   Search snippets with title
